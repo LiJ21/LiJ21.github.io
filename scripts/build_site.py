@@ -38,6 +38,12 @@ def citation(p):
     return f"{p['journal']} {p['volume']}, {p['pages']} ({p['year']})"
 
 def publication(p, compact=False):
+    if compact:
+        pdf = link(p['pdf'], 'PDF', extra=f'aria-label="{escape("Read PDF: "+p["title"],quote=True)}"') if p['pdf'] else ''
+        return f'''<article class="publication publication-compact" id="{p['id']}">
+          <h3>{link(p['url'], escape(p['title']))}</h3>
+          <div class="compact-meta"><span>{escape(citation(p))}</span>{pdf}</div>
+        </article>'''
     authors = ', '.join('<strong>'+escape(a)+'</strong>' if a in ['Jiajun Li','J. Li','J Li'] else escape(a) for a in p['authors'])
     buttons = [link(p['url'], 'Journal ↗' if p['kind']=='article' else 'Abstract ↗' if p['kind']=='abstract' else 'arXiv ↗')]
     if p['pdf']:
@@ -68,7 +74,7 @@ def shell(filename, title, description, body, script=False):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{escape(description,quote=True)}">
-  <meta name="theme-color" content="#132b46">
+  <meta name="theme-color" content="#003b71">
   <meta property="og:title" content="{escape(title,quote=True)} · Jiajun Li">
   <meta property="og:description" content="{escape(description,quote=True)}">
   <meta property="og:type" content="website">
@@ -77,10 +83,10 @@ def shell(filename, title, description, body, script=False):
   <link rel="stylesheet" href="assets/style.css">
   {'<script src="assets/publications.js" defer></script>' if script else ''}
 </head>
-<body>
+<body{' class="home-page"' if filename == 'index.html' else ''}>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-wrap">
-    <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JL<span>_</span></span><span>Jiajun Li<small>RESEARCH / ENGINEERING</small></span></a><nav aria-label="Main navigation">{nav}</nav></header>
+    <header class="site-header"><nav aria-label="Main navigation">{nav}</nav></header>
     <main id="main">{body}</main>
     {footer}
   </div>
@@ -111,27 +117,37 @@ selected = sorted(
     (p for p in PUBLICATIONS if p.get('selected')),
     key=lambda p: (-p['year'], -p.get('citation_count', 0), p['title']),
 )
-body=f'''<section class="home-hero">
-  <div class="hero-copy"><p class="eyebrow"><span class="status-mark" aria-hidden="true"></span> QUANTITATIVE RESEARCH · ZÜRICH, SWITZERLAND</p><h1>Jiajun Li</h1><p class="hero-subtitle">AI, computation,<br>and trading.</p><p class="intro">I research and develop algorithms across quantitative finance, AI, and quantum physics. For more than a decade, I’ve built high-performance software and optimized performance-critical code.</p><div class="actions">{link('publications.html','Explore publications <span aria-hidden="true">↗</span>','button')}{link('projects.html','Browse projects →','text-link')}</div></div>
-  <aside class="hero-profile" aria-label="Profile at a glance">
-    <dl><div><dt>Current role</dt><dd><strong>Quantitative Researcher</strong><span>Qube Research &amp; Technologies</span><span class="profile-location">Zürich, Switzerland</span></dd></div>
-    <div><dt>Research &amp; engineering</dt><dd><ul><li>High-frequency trading &amp; market microstructure</li><li>AI inference &amp; high-performance computing</li><li>Nonequilibrium quantum physics</li></ul></dd></div></dl>
-    <div class="profile-links" aria-label="External profiles">{link(SCHOLAR,'Google Scholar ↗')}{link(GITHUB,'GitHub ↗')}{link(LINKEDIN,'LinkedIn ↗')}</div>
-  </aside>
+body=f'''<section class="home-intro">
+  <div class="home-heading"><h1>Jiajun Li</h1>
+  <p class="home-tagline">AI, computation, and trading.</p></div>
+  <div class="home-details">
+  <p class="home-bio">Quantitative researcher at Qube Research &amp; Technologies in Zürich.</p>
+  <div class="home-description"><p class="home-bio">I develop algorithms and computational methods across quantitative finance, AI, and quantum physics. My current work applies machine learning and high-performance computing to high-frequency trading, market microstructure research, and short-term forecasting. Previously, I studied strongly correlated quantum systems and nonequilibrium light–matter dynamics.</p>
+  <p class="home-bio">For more than a decade, I’ve built high-performance software in C++, Python, Fortran, and CUDA. My open-source work includes quantum simulation tools, low-latency AI inference, and efficient C++ data structures.</p>
+  <div class="home-links">{link(SCHOLAR,'Google Scholar')}{link(GITHUB,'GitHub')}{link(LINKEDIN,'LinkedIn')}</div></div></div>
 </section>
-<section class="focus-strip" aria-label="Areas of work"><div><span class="eyebrow">01 / RESEARCH</span><h2>Nonequilibrium physics</h2><p>Correlated electrons, hidden phases, and quantum light.</p></div><div><span class="eyebrow">02 / METHODS</span><h2>Scientific computing</h2><p>Many-body solvers, dynamics, and efficient simulation.</p></div><div><span class="eyebrow">03 / ENGINEERING</span><h2>Performance-aware C++</h2><p>Data structures, inference, and CPU/GPU execution.</p></div></section>
-<section class="section">{section_heading('RESEARCH / SELECTED WORK','Selected publications',link('publications.html','Full publication record →','text-link'))}<div class="publication-list">{''.join(publication(p,True) for p in selected)}</div></section>
-<section class="section projects-preview">{section_heading('ENGINEERING / OPEN SOURCE','From models to code',link('projects.html','All projects →','text-link'))}<div class="project-grid">{''.join(project_card(p,True) for p in PROJECTS[:2])}</div></section>
-<section class="closing"><div><p class="eyebrow">BACKGROUND</p><h2>A foundation in physics.<br>A focus on computation.</h2></div><div><p>My academic work spans quantum many-body dynamics, nonequilibrium phases, and numerical approaches to strongly correlated systems.</p>{link('about.html','Read my background →','text-link')}</div></section>'''
+<section class="home-experience" aria-labelledby="experience-heading">
+  <div class="home-section-heading"><h2 id="experience-heading">Experience</h2>{link('about.html','Full background →')}</div>
+  <ul class="experience-list">
+    <li><span class="experience-date">2025 — present</span><span><strong>Qube Research &amp; Technologies</strong><span class="experience-role">Quantitative Researcher · Zürich</span></span></li>
+    <li><span class="experience-date">2022 — 2025</span><span><strong>IMC Trading</strong><span class="experience-role">Quantitative Developer, 2022–2024; garden leave, 2024–2025 · Zug</span></span></li>
+    <li><span class="experience-date">2021 — 2022</span><span><strong>Paul Scherrer Institut</strong><span class="experience-role">PSI Fellow · Villigen</span></span></li>
+    <li><span class="experience-date">2017 — 2021</span><span><strong>FAU Erlangen–Nürnberg</strong><span class="experience-role">Postdoctoral Research Associate · Erlangen</span></span></li>
+  </ul>
+</section>
+<section class="home-publications" aria-labelledby="selected-heading">
+  <div class="home-section-heading"><h2 id="selected-heading">Selected publications</h2>{link('publications.html','All publications →')}</div>
+  <div class="publication-list">{''.join(publication(p,True) for p in selected)}</div>
+</section>'''
 shell('index.html','Overview','Jiajun Li — AI, computation, and trading. Quantitative researcher and physicist building high-performance software.',body)
 
-body=hero('PROFILE / BACKGROUND','Research meets engineering.','I’m Jiajun Li, a quantitative researcher in the Zürich area. I develop algorithms and computational methods across quantum physics, quantitative finance, and AI.')+f'''
-<div class="two-column section"><aside class="side-heading"><span class="eyebrow">01 / PROFILE</span><h2>From quantum systems<br>to real-time decisions.</h2></aside><div class="prose"><p>For more than 10 years, I have designed high-performance software and libraries, and optimized performance-critical code in C++, Python, Fortran, and CUDA.</p><p>Since 2022, I have worked at IMC Trading and Qube Research &amp; Technologies on high-frequency trading strategies, short-term forecasting from market microstructure, real-time C++ trading systems, and low-latency AI inference.</p><p>Before quantitative finance, I spent a decade studying many-body quantum physics, particularly strongly correlated systems and nonequilibrium, non-Markovian light–matter dynamics. My research contributed to steady-state dynamical mean-field theory, gauge-invariant light–matter models, quantum Monte Carlo methods, and NESSi 2.0.</p><ul class="tags" aria-label="Programming languages"><li>C++</li><li>Python</li><li>Fortran</li><li>CUDA</li></ul><div class="inline-links">{link(LINKEDIN,'LinkedIn profile ↗')}{link(SCHOLAR,'Google Scholar ↗')}</div></div></div>
+body=hero('PROFILE / BACKGROUND','Research meets engineering.','I’m a quantitative researcher based in Zürich. My work concerns machine learning, market microstructure, and real-time computation.')+f'''
+<div class="two-column section"><aside class="side-heading"><span class="eyebrow">01 / PROFILE</span><h2>From machine learning<br>to real-time decisions.</h2></aside><div class="prose"><p>Since 2022, I have worked at IMC Trading and Qube Research &amp; Technologies on high-frequency trading and short-term forecasting. My work includes machine-learning models for market-making strategies, market microstructure research, and the implementation of trading systems and low-latency inference in C++.</p><p>I have spent more than a decade developing computational methods and scientific software, mainly in C++, Python, Fortran, and CUDA. Much of this work involves numerical algorithms and performance-critical code.</p><p>Trained as a theoretical physicist, I combine mathematical insight with a hands-on, empirical approach to time series research, trading strategy design, and performance engineering. My work at QRT and IMC has deepened my understanding of statistics and market microstructure.</p><ul class="tags" aria-label="Programming languages"><li>C++</li><li>Python</li><li>Fortran</li><li>CUDA</li></ul><div class="inline-links">{link(LINKEDIN,'LinkedIn profile ↗')}{link(SCHOLAR,'Google Scholar ↗')}</div></div></div>
 <section class="section">{section_heading('02 / EXPERIENCE','Industry &amp; research')}<div class="timeline">
 <article><span class="timeline-label">MAR 2025 — PRESENT</span><div><h3>Quantitative Researcher</h3><p class="venue">Qube Research &amp; Technologies · Zürich, Switzerland</p><p>High-frequency trading and short-term alpha research.</p></div></article>
-<article><span class="timeline-label">NOV 2022 — MAR 2025</span><div><h3>IMC Trading</h3><p class="venue">Zug, Switzerland</p><p><strong>Quantitative Developer · Nov 2022 – Apr 2024</strong><br>Machine-learning signals for market-making strategies, delta-one market-access engineering, and market microstructure research.</p><p class="career-note">Garden leave · Apr 2024 – Mar 2025</p></div></article>
+<article><span class="timeline-label">NOV 2022 — MAR 2025</span><div><h3>Quantitative Developer</h3><p class="venue">IMC Trading · Zug, Switzerland</p><p><strong>Nov 2022 – Apr 2024</strong><br>Machine-learning signals for market-making strategies, delta-one market-access engineering, and market microstructure research.</p><p class="career-note">Garden leave · Apr 2024 – Mar 2025</p></div></article>
 <article><span class="timeline-label">AUG 2021 — OCT 2022</span><div><h3>PSI Fellow</h3><p class="venue">Paul Scherrer Institut · Villigen, Switzerland</p><p>Quantum Monte Carlo algorithms and Green’s-function approximations; light-induced superconductivity and photodoping; optimal control of laser-induced quantum states in solids.</p></div></article>
-<article><span class="timeline-label">AUG 2017 — AUG 2021</span><div><h3>Senior Research Associate</h3><p class="venue">FAU Erlangen–Nürnberg · Erlangen, Germany</p><p>Foundations of strongly coupled lattice quantum electrodynamics, hidden phases in photodoped Mott insulators, and steady-state photodoping theory. Developed time-truncation and steady-state methods for non-Markovian integro-differential equations.</p></div></article>
+<article><span class="timeline-label">AUG 2017 — AUG 2021</span><div><h3>Postdoctoral Research Associate</h3><p class="venue">FAU Erlangen–Nürnberg · Erlangen, Germany</p><p>Foundations of strongly coupled lattice quantum electrodynamics, hidden phases in photodoped Mott insulators, and steady-state photodoping theory. Developed time-truncation and steady-state methods for non-Markovian integro-differential equations.</p></div></article>
 </div></section>
 <section class="section">{section_heading('03 / EDUCATION','A foundation in physics')}<div class="timeline">
 <article><span class="timeline-label">PHD / PHYSICS</span><div><h3>University at Buffalo</h3><p class="venue">State University of New York</p><p>Thesis: <em>Non-equilibrium Effects in Dissipative Strongly Correlated Systems</em> (2017).</p><p>President of the Physics Graduate Student Association; member of the UB Chinese Football Team.</p>{link('https://arxiv.org/pdf/2009.12865','Read the thesis · PDF ↓','text-link')}</div></article>
@@ -155,8 +171,8 @@ body=hero('RESEARCH / PUBLICATION RECORD','Publications.','Journal articles, pre
 <details class="record-notes"><summary>About this bibliography</summary><p>Compiled from the 46 records in my Google Scholar profile, with four duplicate preprint entries consolidated into their published papers. Earlier titles remain available under “Earlier titles / versions.” The 2024 paper on photon-mediated spin interactions is additionally verified through arXiv and the publisher’s metadata. This gives 43 distinct records.</p><p>Publication metadata and access links were checked on 19 October 2026. Preprints are identified separately from journal articles. Downloads are hosted by the publisher or arXiv.</p></details>'''
 shell('publications.html','Publications','Complete publication record of Jiajun Li, with journal links, arXiv PDFs, and downloadable BibTeX.',body,True)
 
-body=hero('CONTACT / PROFILES','Get in touch.','For professional connections, research, and open-source work, you can find me through the profiles below.')+f'''<section class="contact-grid section"><a href="{LINKEDIN}" class="contact-card"><span class="eyebrow">01 / PROFESSIONAL</span><h2>LinkedIn <span aria-hidden="true">↗</span></h2><p>Experience, background, and professional connections.</p><span class="contact-handle">linkedin.com/in/jiajunli</span></a><a href="{escape(SCHOLAR,quote=True)}" class="contact-card"><span class="eyebrow">02 / RESEARCH</span><h2>Google Scholar <span aria-hidden="true">↗</span></h2><p>Publications, citations, and related research.</p><span class="contact-handle">Jiajun Li / Google Scholar</span></a><a href="{GITHUB}" class="contact-card"><span class="eyebrow">03 / CODE</span><h2>GitHub <span aria-hidden="true">↗</span></h2><p>Source code, documentation, and project discussions.</p><span class="contact-handle">github.com/LiJ21</span></a></section><div class="contact-location"><span class="eyebrow">BASED IN</span><p>Zürich area, Switzerland</p></div>'''
-shell('contact.html','Contact','Connect with Jiajun Li on LinkedIn, Google Scholar, and GitHub.',body)
+body=hero('CONTACT / PROFILES','Get in touch.','For professional connections, research, and open-source work, you can reach me by email or through the profiles below.')+f'''<p class="contact-email">Email: <a href="mailto:jiajunligg@gmail.com">jiajunligg@gmail.com</a></p><section class="contact-grid section"><a href="{LINKEDIN}" class="contact-card"><span class="eyebrow">01 / PROFESSIONAL</span><h2>LinkedIn <span aria-hidden="true">↗</span></h2><p>Experience, background, and professional connections.</p><span class="contact-handle">linkedin.com/in/jiajunli</span></a><a href="{escape(SCHOLAR,quote=True)}" class="contact-card"><span class="eyebrow">02 / RESEARCH</span><h2>Google Scholar <span aria-hidden="true">↗</span></h2><p>Publications, citations, and related research.</p><span class="contact-handle">Jiajun Li / Google Scholar</span></a><a href="{GITHUB}" class="contact-card"><span class="eyebrow">03 / CODE</span><h2>GitHub <span aria-hidden="true">↗</span></h2><p>Source code, documentation, and project discussions.</p><span class="contact-handle">github.com/LiJ21</span></a></section><div class="contact-location"><span class="eyebrow">BASED IN</span><p>Zürich area, Switzerland</p></div>'''
+shell('contact.html','Contact','Contact Jiajun Li by email or connect on LinkedIn, Google Scholar, and GitHub.',body)
 shell('404.html','Page not found','The requested page could not be found.',hero('404 / PAGE NOT FOUND','Outside the domain.','This page does not exist or has moved.')+'<div class="actions section">'+link('/','Return to overview →','button')+'</div>')
 p=ROOT/'404.html';p.write_text(p.read_text().replace('href="assets/','href="/assets/').replace('href="index.html"','href="/index.html"').replace('href="about.html"','href="/about.html"').replace('href="publications.html"','href="/publications.html"').replace('href="projects.html"','href="/projects.html"').replace('href="contact.html"','href="/contact.html"'))
 (ROOT/'assets/publications.bib').write_text('% Jiajun Li — publication record, checked 2026-10-19\n% UTF-8; compatible with biblatex/biber.\n\n'+'\n\n'.join(bibtex(p) for p in PUBLICATIONS)+'\n')

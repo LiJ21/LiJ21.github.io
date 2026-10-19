@@ -2,6 +2,8 @@
 
 A static academic and engineering portfolio for GitHub Pages. Pages are served directly from the repository root, with no runtime dependencies or third-party scripts.
 
+The visual design takes cues from [PSI](https://www.psi.ch/en): black-and-white sans-serif typography, deep blue accents inspired by Citadel Securities, subtle gray-blue color fields, and simple editorial rows. The homepage retains a concise introduction and selected publications. All fonts use a local system stack.
+
 ## Local preview
 
 ```sh
@@ -12,7 +14,7 @@ Open http://localhost:8000. Stop with Ctrl+C.
 
 ## Content and maintenance
 
-- `index.html`: profile, selected research, and featured projects.
+- `index.html`: minimal introduction, profile links, a compact experience timeline, and five compact selected publications.
 - `about.html`: professional background, education, and research themes.
 - `publications.html`: searchable full bibliography, paper links, and individual BibTeX citations.
 - `projects.html`: QLeaf, QuDrip, OptIndex, RL Tools, and the collaborative NESSi 2.0 contribution.
@@ -33,7 +35,7 @@ Commit both the source edits and the generated HTML/BibTeX. GitHub Pages does no
 
 ## Homepage selection
 
-The `selected` flags in `data/publications.json` control the homepage. The selection includes NESSi 2.0, memory-truncated Kadanoff–Baym equations, both Aaram Kim quantum Monte Carlo / vertex-method papers, both first-author PRLs, and the three most-cited remaining non-PRL journal papers. The complete bibliography remains unchanged.
+The `selected` flags in `data/publications.json` control the homepage. The selection includes NESSi 2.0, both first-author Physical Review Letters papers, Aaram Kim’s Physical Review Letters paper on vertex-based treatment of light–matter systems, and the Nature Communications paper. The complete bibliography remains unchanged.
 
 Selections display newest year first, with citation count as the same-year tiebreaker. Citation counts use the Scholar snapshot retrieved on 19 October 2026; a subsequent refresh was rate-limited. Counts are recorded as editorial metadata and are not displayed on the site.
 
