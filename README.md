@@ -31,6 +31,12 @@ python3 scripts/build_site.py
 
 Commit both the source edits and the generated HTML/BibTeX. GitHub Pages does not need to run the generator. All publication records and links remain available without JavaScript. Search matches title, authors, venue, year, DOI, arXiv ID, and earlier titles, ignoring case and diacritics.
 
+## Homepage selection
+
+The `selected` flags in `data/publications.json` control the homepage. The selection includes NESSi 2.0, memory-truncated Kadanoff–Baym equations, both Aaram Kim quantum Monte Carlo / vertex-method papers, both first-author PRLs, and the three most-cited remaining non-PRL journal papers. The complete bibliography remains unchanged.
+
+Selections display newest year first, with citation count as the same-year tiebreaker. Citation counts use the Scholar snapshot retrieved on 19 October 2026; a subsequent refresh was rate-limited. Counts are recorded as editorial metadata and are not displayed on the site.
+
 ## Sources and editorial decisions
 
 Checked on 19 October 2026:

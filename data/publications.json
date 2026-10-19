@@ -25,9 +25,11 @@
     "url": "https://arxiv.org/abs/2605.02606",
     "pdf": "https://arxiv.org/pdf/2605.02606",
     "pdf_source": "arxiv",
-    "selected": false,
+    "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:ZeXyd9-uunAC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-46",
@@ -77,7 +79,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:hqOjcs7Dif8C",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 14,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-24",
@@ -100,9 +104,11 @@
     "url": "https://doi.org/10.1103/PhysRevB.107.205115",
     "pdf": "https://arxiv.org/pdf/2202.10176",
     "pdf_source": "arxiv",
-    "selected": true,
+    "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:5nxA0vEk-isC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 13,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-22",
@@ -127,7 +133,9 @@
     "pdf_source": "arxiv",
     "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:eQOLeE2rZwMC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 17,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-19",
@@ -151,7 +159,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:Y0pCki6q_DkC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 21,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-12",
@@ -175,7 +185,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:zYLM7Y9cAGgC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 36,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-05",
@@ -198,7 +210,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:YsMSGLbcyi4C",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 70,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-13",
@@ -224,7 +238,9 @@
     "pdf_source": "arxiv",
     "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:2osOgNQ5qMEC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 34,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-34",
@@ -248,7 +264,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:8k81kl-MbHgC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-15",
@@ -270,9 +288,11 @@
     "url": "https://doi.org/10.1103/PhysRevB.106.085124",
     "pdf": "https://arxiv.org/pdf/2204.13562",
     "pdf_source": "arxiv",
-    "selected": false,
+    "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:qjMakFHDy7sC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 27,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-35",
@@ -295,7 +315,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:QIV2ME_5wuYC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-09",
@@ -317,7 +339,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:UebtZRa9Y70C",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 48,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-20",
@@ -341,7 +365,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:WF5omc3nYNoC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 21,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-14",
@@ -364,7 +390,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:_FxGoFyzp5QC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 34,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-16",
@@ -393,7 +421,9 @@
         "year": 2020,
         "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:IjCSPb-OGe4C"
       }
-    ]
+    ],
+    "citation_count": 26,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-00",
@@ -419,7 +449,9 @@
     "pdf_source": "arxiv",
     "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:Wp0gIr-vW9MC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 206,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-03",
@@ -441,7 +473,9 @@
     "pdf_source": "arxiv",
     "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:Tyk-4Ss8FVUC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 105,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-01",
@@ -463,9 +497,11 @@
     "url": "https://doi.org/10.1103/PhysRevResearch.2.033033",
     "pdf": "https://link.aps.org/pdf/10.1103/PhysRevResearch.2.033033",
     "pdf_source": "publisher",
-    "selected": false,
+    "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:UeHWp8X0CEIC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 119,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-25",
@@ -489,7 +525,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:W7OEmFMy1HYC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 10,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-26",
@@ -513,7 +551,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:9yKSN-GCB0IC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 6,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-28",
@@ -536,7 +576,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:roLk4NBRz8UC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 3,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-02",
@@ -558,7 +600,7 @@
     "url": "https://doi.org/10.1103/PhysRevB.102.165136",
     "pdf": "https://arxiv.org/pdf/1908.08693",
     "pdf_source": "arxiv",
-    "selected": false,
+    "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:LkGwnXOMwfcC",
     "aliases": [
       {
@@ -566,7 +608,9 @@
         "year": 2019,
         "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:u5HHmVD_uO8C"
       }
-    ]
+    ],
+    "citation_count": 112,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-08",
@@ -590,7 +634,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:0EnyYjriUFMC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 55,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-36",
@@ -614,7 +660,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:kNdYIx-mwKoC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-06",
@@ -647,7 +695,9 @@
     "pdf_source": "publisher",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:L8Ckcad2t8MC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 67,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-38",
@@ -671,7 +721,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:4DMP91E08xMC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-21",
@@ -694,7 +746,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:ufrVoPGSRksC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 18,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-30",
@@ -718,7 +772,9 @@
     "pdf_source": "publisher",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:Zph67rFs4hoC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 1,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-37",
@@ -740,7 +796,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:dhFuZR0502QC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-18",
@@ -762,7 +820,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:9ZlFYXVOiuMC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 23,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-11",
@@ -786,7 +846,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:MXK_kJrjxJIC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 38,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-39",
@@ -808,7 +870,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:Se3iqnhoufwC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-07",
@@ -830,9 +894,11 @@
     "url": "https://doi.org/10.1038/s41467-018-07051-x",
     "pdf": "https://www.nature.com/articles/s41467-018-07051-x.pdf",
     "pdf_source": "publisher",
-    "selected": true,
+    "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:u-x6o8ySG0sC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 60,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-10",
@@ -867,7 +933,9 @@
         "year": 2016,
         "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:M3ejUd6NZC8C"
       }
-    ]
+    ],
+    "citation_count": 39,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-31",
@@ -888,7 +956,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:_kc_bZDykSQC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 1,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-40",
@@ -912,7 +982,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:4TOpqqG69KYC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-42",
@@ -936,7 +1008,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:KlAtU1dfN6UC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-04",
@@ -958,9 +1032,11 @@
     "url": "https://doi.org/10.1103/PhysRevLett.114.226403",
     "pdf": "https://arxiv.org/pdf/1410.0626",
     "pdf_source": "arxiv",
-    "selected": false,
+    "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:qxL8FJ1GzNcC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 100,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-43",
@@ -982,7 +1058,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:mVmsd5A6BfQC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-44",
@@ -1006,7 +1084,9 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:ULOm3_A8WrAC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-17",
@@ -1028,7 +1108,9 @@
     "pdf_source": "arxiv",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:3fE2CSJIrl8C",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 25,
+    "citation_count_checked": "2026-10-19"
   },
   {
     "id": "paper-45",
@@ -1050,6 +1132,8 @@
     "pdf_source": "",
     "selected": false,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:7PzlFSSx8tAC",
-    "aliases": []
+    "aliases": [],
+    "citation_count": 0,
+    "citation_count_checked": "2026-10-19"
   }
 ]

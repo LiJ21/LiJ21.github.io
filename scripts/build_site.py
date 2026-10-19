@@ -106,7 +106,11 @@ def project_card(p,compact=False):
     details='' if compact else f'<p class="project-detail">{p["detail"]}</p>'
     return f'<article class="project-card"><p class="eyebrow">{p["category"]}</p><h3>{link(repo_url,p["name"]+" ↗")}</h3><p class="project-subtitle">{p["subtitle"]}</p><p>{p["text"]}</p>{details}<ul class="tags" aria-label="Technologies">'+''.join(f'<li>{t}</li>' for t in p['tags'])+f'</ul><div class="project-links">{link(repo_url,"Repository ↗")}{p["extra"]}</div></article>'
 
-selected=[next(p for p in PUBLICATIONS if p['id']==id) for id in ['paper-24','paper-22','paper-13','paper-00','paper-03','paper-07']]
+# Selection lives in the reviewed dataset; newest year first, citations break ties.
+selected = sorted(
+    (p for p in PUBLICATIONS if p.get('selected')),
+    key=lambda p: (-p['year'], -p.get('citation_count', 0), p['title']),
+)
 body=f'''<section class="home-hero">
   <div class="hero-copy"><p class="eyebrow"><span class="status-mark" aria-hidden="true"></span> QUANTITATIVE RESEARCH · ZÜRICH, SWITZERLAND</p><h1>Jiajun Li</h1><p class="hero-subtitle">AI, computation,<br>and trading.</p><p class="intro">I research and develop algorithms across quantitative finance, AI, and quantum physics. For more than a decade, I’ve built high-performance software and optimized performance-critical code.</p><div class="actions">{link('publications.html','Explore publications <span aria-hidden="true">↗</span>','button')}{link('projects.html','Browse projects →','text-link')}</div></div>
   <aside class="hero-profile" aria-label="Profile at a glance">
