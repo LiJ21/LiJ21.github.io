@@ -216,3 +216,15 @@ footer { border-top: 2px solid var(--ink); font-size: 12px; }
 }
 
 .contact-email { margin: 28px 0 0; font-size: 17px; overflow-wrap: anywhere; }
+
+.home-education { border-top: 1px solid var(--line); padding-top: 16px; margin: 0; font-size: 14px; color: var(--muted); }
+.home-education strong { color: var(--ink); font-weight: 600; }
+.home-projects { border-top: 3px solid var(--ink); padding: 32px 0 36px; }
+.selected-project-list article { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 24px; padding: 16px 0; border-top: 1px solid var(--line); }
+.selected-project-list h3 { font-size: 15px; font-weight: 600; margin: 0; }
+.selected-project-list p { font-size: 14px; color: var(--muted); margin: 0; }
+.selected-project-list a { text-decoration: underline; }
+@media (max-width: 760px) {
+  .home-projects { padding: 28px 0 32px; }
+  .selected-project-list article { grid-template-columns: 1fr; gap: 6px; }
+}

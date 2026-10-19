@@ -14,7 +14,7 @@ Open http://localhost:8000. Stop with Ctrl+C.
 
 ## Content and maintenance
 
-- `index.html`: minimal introduction, profile links, a compact experience timeline, and five compact selected publications.
+- `index.html`: minimal introduction, profile links, a compact experience timeline, a PhD summary, three selected-project categories, and five compact selected publications.
 - `about.html`: professional background, education, and research themes.
 - `publications.html`: searchable full bibliography, paper links, and individual BibTeX citations.
 - `projects.html`: QLeaf, QuDrip, OptIndex, RL Tools, and the collaborative NESSi 2.0 contribution.
