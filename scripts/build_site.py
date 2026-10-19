@@ -99,7 +99,7 @@ def hero(label, title, intro):
     return f'<section class="page-hero"><p class="eyebrow">{label}</p><h1>{title}</h1><p class="intro">{intro}</p></section>'
 
 PROJECTS=[
- dict(name='QLeaf',subtitle='Low-latency tree inference',category='01 / SYSTEMS & MACHINE LEARNING',tags=['C++','CUDA','CPU / GPU'],text='Single-row inference for large ensembles of shallow decision trees. QLeaf investigates how memory layout, CPU affinity, persistent GPU kernels, and host–device coordination affect end-to-end latency.',detail='A focused benchmark and implementation toolkit for latency-sensitive inference. The current interface returns a scalar raw margin; benchmark results depend on the model, hardware, and execution policy.',href='QLeaf',extra=link(GITHUB+'/QLeaf/blob/main/BENCHMARK.md','Benchmark methodology ↗')),
+ dict(name='QLeaf',subtitle='Low-latency tree inference',category='01 / SYSTEMS & MACHINE LEARNING',tags=['C++','CUDA','CPU / GPU'],text='A low-latency tree inference framework, reaching single-digit microsecond latency for hundreds to thousands of shallow trees.',detail='QLeaf aggressively optimizes data transfer and cross-block coordination, and uses a lock-free host–device handoff to bring end-to-end latency close to the limits of host–device communication.',href='QLeaf',extra=link(GITHUB+'/QLeaf/blob/main/BENCHMARK.md','Benchmarks ↗')),
  dict(name='QuDrip',subtitle='Exact quantum many-body simulation',category='02 / COMPUTATIONAL PHYSICS',tags=['C++','Eigen','Krylov methods'],text='A toolbox for constructing constrained Hilbert spaces, quantum operators, and Hamiltonians. Sparse-matrix and Krylov methods support ground-state calculations, real-time evolution, and Lindblad dynamics.',detail='Designed for flexible small-to-medium quantum systems, including fermionic and bosonic degrees of freedom. Used in research on quantum-light control and photodoped superconductivity.',href='QuDrip',extra=link('publications.html#paper-03','Related publication →')),
  dict(name='OptIndex',subtitle='Safe intrusive object store',category='03 / DATA STRUCTURES',tags=['C++','Boost.Intrusive','Memory management'],text='A safe intrusive object store with stable addresses and compile-time index definitions. Centralized storage and object lifetime management keep optional or partitioned views consistent without duplicating objects.',detail='Built for bounded working sets and repeated queries, with explicit indexing control and an optional fixed-size pool. The design addresses consistency across indices without duplicating the stored objects.',href='OptIndex',extra=''),
  dict(name='RL Tools',subtitle='Composable reinforcement learning',category='04 / LEARNING ALGORITHMS',tags=['C++','Templates','LibTorch'],text='A lightweight reinforcement learning framework that separates agents from their value models. SARSA and Q-learning agents work with tabular storage or Torch-based function approximators.',detail='Template-based interfaces keep the interaction loop small: observe a state, select an action, and collect a reward. Core components are header-only; neural models use LibTorch.',href='rl_tools',extra='')
@@ -109,7 +109,7 @@ PROJECTS.append(dict(name='NESSi 2.0',subtitle='Nonequilibrium systems simulatio
 
 def project_card(p,compact=False):
     repo_url = p['href'] if p['href'].startswith('https://') else GITHUB+'/'+p['href']
-    details='' if compact else f'<p class="project-detail">{p["detail"]}</p>'
+    details='' if compact or not p['detail'] else f'<p class="project-detail">{p["detail"]}</p>'
     return f'<article class="project-card"><p class="eyebrow">{p["category"]}</p><h3>{link(repo_url,p["name"]+" ↗")}</h3><p class="project-subtitle">{p["subtitle"]}</p><p>{p["text"]}</p>{details}<ul class="tags" aria-label="Technologies">'+''.join(f'<li>{t}</li>' for t in p['tags'])+f'</ul><div class="project-links">{link(repo_url,"Repository ↗")}{p["extra"]}</div></article>'
 
 # Selection lives in the reviewed dataset; newest year first, citations break ties.
@@ -140,7 +140,7 @@ body=f'''<section class="home-intro">
   <div class="home-section-heading"><h2 id="projects-heading">Selected projects</h2>{link('projects.html','All projects →')}</div>
   <div class="selected-project-list">
     <article><h3>Low latency tools</h3><p>{link(GITHUB+'/OptIndex','OptIndex')} — A safe intrusive C++ object store with stable addresses, managed object lifetimes, and optional indices.</p></article>
-    <article><h3>AI inference optimization</h3><p>{link(GITHUB+'/QLeaf','QLeaf')} — Low-latency decision-tree ensemble inference on CPUs and GPUs.</p></article>
+    <article><h3>AI inference optimization</h3><p>{link(GITHUB+'/QLeaf','QLeaf')} — A low-latency tree inference framework, reaching single-digit microsecond latency for hundreds to thousands of shallow trees.</p></article>
     <article><h3>Quantum physics</h3><p>{link('https://github.com/nessi-cntr/nessi','NESSi 2.0')} — Collaborative software for nonequilibrium Green’s-function simulations; {link(GITHUB+'/QuDrip','QuDrip')} — Exact quantum many-body simulation and dynamics.</p></article>
   </div>
 </section>
