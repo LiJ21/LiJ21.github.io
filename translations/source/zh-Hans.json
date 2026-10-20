@@ -344,48 +344,6 @@
     "source": "Questions and methods",
     "source_hash": "112391cb974e4afabf2af3f6f49b40597620cd6d38a6ba5ab0648ba5704b45e9"
   },
-  "about.block37": {
-    "context": "about.html",
-    "protected": {},
-    "replacements": {},
-    "source": "Driven quantum matter",
-    "source_hash": "98c67c67544a9b99b7baa074bec5cbb3eb8758dfd631ac0ddbb2c481d382c9df"
-  },
-  "about.block38": {
-    "context": "about.html",
-    "protected": {},
-    "replacements": {},
-    "source": "Photodoping, resistive switching, hidden superconductivity, and the dynamics of correlated electrons away from equilibrium.",
-    "source_hash": "74781992e77988a46d5f33c9b2e6916b36061799962757c3e416a15940c24eca"
-  },
-  "about.block39": {
-    "context": "about.html",
-    "protected": {},
-    "replacements": {},
-    "source": "Light–matter interaction",
-    "source_hash": "29ad0b1f37511236ccdf06f0003988576197aa2d266c4a06e1553751d8ffb00b"
-  },
-  "about.block40": {
-    "context": "about.html",
-    "protected": {},
-    "replacements": {},
-    "source": "Gauge-invariant descriptions of strongly coupled light and matter, collective behavior in cavities, and photon-mediated interactions.",
-    "source_hash": "b5073bee42c389af28de4e9f4c1b962673d0deec5c9aae08ab56014cc5bf5d08"
-  },
-  "about.block41": {
-    "context": "about.html",
-    "protected": {},
-    "replacements": {},
-    "source": "Numerical many-body methods",
-    "source_hash": "b337dd3c4d880284b53bfdf86b93a16781e1ce4c831f858044b6875f9c60ec39"
-  },
-  "about.block42": {
-    "context": "about.html",
-    "protected": {},
-    "replacements": {},
-    "source": "Quantum Monte Carlo, impurity solvers, dynamical mean-field theory, and efficient treatment of non-Markovian dynamics.",
-    "source_hash": "ea4dd01d855f7e2453614782f0d2af0ba44f002c278b0a28ab0f210279043539"
-  },
   "about.html.description": {
     "context": "about.html",
     "protected": {
@@ -409,6 +367,52 @@
     },
     "source": "Background · ⟦0⟧",
     "source_hash": "aa31489fc319411e021ede826c035ff1da6a011e11506b10462d4b4f00a58641"
+  },
+  "about.themes.finance.description": {
+    "context": "about.html",
+    "protected": {},
+    "replacements": {},
+    "source": "Market microstructure, short-term forecasting, and the design and implementation of high-frequency trading strategies.",
+    "source_hash": "0cabe8d117b487272dd1f50737e32c8cc238cf3b9a5e0233f15619e68b33d10a"
+  },
+  "about.themes.finance.title": {
+    "context": "about.html",
+    "protected": {},
+    "replacements": {},
+    "source": "Quantitative Finance",
+    "source_hash": "b2c72032159dcc5b195222fb159c46eae8a4657b3e43bd10cd253b9701129850"
+  },
+  "about.themes.ml.description": {
+    "context": "about.html",
+    "protected": {
+      "⟦0⟧": "inference"
+    },
+    "replacements": {
+      "⟦0⟧": "推理"
+    },
+    "source": "Machine learning for time series, low-latency ⟦0⟧, and high-performance computing on CPUs and GPUs.",
+    "source_hash": "eaeab8a48b30e87e4eabb7590795fd007e968a3717ec1029765d0218b147d2f4"
+  },
+  "about.themes.ml.title": {
+    "context": "about.html",
+    "protected": {},
+    "replacements": {},
+    "source": "Machine learning and Compute Systems",
+    "source_hash": "9ddb7032d800d56942095441f72a2a9a9d47fb9623a7f24955bc39fac097894f"
+  },
+  "about.themes.physics.description": {
+    "context": "about.html",
+    "protected": {},
+    "replacements": {},
+    "source": "Driven correlated quantum systems, photodoping and hidden phases, strongly coupled light and matter, and photon-mediated interactions.",
+    "source_hash": "b79d8bc7f1adc5f0f9010589cb1630d2155d2386197dc0c674434c1de4a31a8c"
+  },
+  "about.themes.physics.title": {
+    "context": "about.html",
+    "protected": {},
+    "replacements": {},
+    "source": "Light–matter dynamics",
+    "source_hash": "6c22eab892913f4f69d20cf666b48094a4218b5bececcf8cf2c2705a88d7d3d9"
   },
   "attribute.048e90919b7c51c4": {
     "context": "blog/qleaf-inference-latency/index.html",
@@ -1597,14 +1601,10 @@
   },
   "home.role": {
     "context": "index.html",
-    "protected": {
-      "⟦0⟧": "Qube Research &amp; Technologies"
-    },
-    "replacements": {
-      "⟦0⟧": "Qube Research &amp; Technologies"
-    },
-    "source": "Quantitative researcher at ⟦0⟧ in Zürich.",
-    "source_hash": "dbfc1a28e9dc4ac63c02487065737aeb1ddb65b39984285817c6ffabef4f9a4d"
+    "protected": {},
+    "replacements": {},
+    "source": "Quant Researcher at QRT",
+    "source_hash": "0123fa4a983bf199bff83c0b3721dbcef4729d5c284184e960df64a90512245c"
   },
   "home.software": {
     "context": "index.html",
@@ -3420,35 +3420,6 @@
     },
     "source": "⟦0⟧ tools for scientific computing and performance-sensitive systems. Each project explores a specific computational problem, with source code and implementation details on ⟦1⟧.",
     "source_hash": "8d9b3cc4143ec6ba2a9569d71c78b0bfca705b766425c69f16d34abe9a433943"
-  },
-  "projects.block04": {
-    "context": "projects.html",
-    "protected": {},
-    "replacements": {},
-    "source": "RESEARCH ↔ SOFTWARE",
-    "source_hash": "dea415ea055a18413d02bce10500f81278861d0cc48e71afb7f0d50d0c0aa6bb"
-  },
-  "projects.block05": {
-    "context": "projects.html",
-    "protected": {},
-    "replacements": {},
-    "source": "Code behind the physics.",
-    "source_hash": "13b22bfbd21412d242f5d16a45518ac6738ec4e0c50871e953c2623c7d52f7fe"
-  },
-  "projects.block06": {
-    "context": "projects.html",
-    "protected": {
-      "⟦0⟧": "QuDrip",
-      "⟦1⟧": "NESSi",
-      "⟦2⟧": "2.0"
-    },
-    "replacements": {
-      "⟦0⟧": "QuDrip",
-      "⟦1⟧": "NESSi",
-      "⟦2⟧": "2.0"
-    },
-    "source": "⟦0⟧ supports research on light-controlled quantum matter and photodoped superconductivity. The publication record also includes the collaborative ⟦1⟧ ⟦2⟧ simulation package.",
-    "source_hash": "fdcef8a6c9a07697d1e81e86aba3d48976a2659bde8afbe42d6de696ec822493"
   },
   "projects.html.description": {
     "context": "projects.html",

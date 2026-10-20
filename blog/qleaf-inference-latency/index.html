@@ -12,16 +12,16 @@
 <title>How can we optimize batch-one tree inference to a few microseconds? · Jiajun Li</title>
 <link href="https://jjli.info/blog/qleaf-inference-latency/" rel="canonical"/>
 <meta content="https://jjli.info/blog/qleaf-inference-latency/" property="og:url"/>
-<link href="/feed.xml" rel="alternate" title="Jiajun Li — Notes" type="application/rss+xml"/>
-<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="/assets/style.css" rel="stylesheet"/>
+<link href="../../feed.xml" rel="alternate" title="Jiajun Li — Notes" type="application/rss+xml"/>
+<link href="../../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
 <link href="https://jjli.info/blog/qleaf-inference-latency/" hreflang="en" rel="alternate"/><link href="https://jjli.info/zh/blog/qleaf-inference-latency/" hreflang="zh-Hans" rel="alternate"/><link href="https://jjli.info/blog/qleaf-inference-latency/" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="site-wrap">
-<header class="site-header"><nav aria-label="Main navigation"><a href="/index.html">Overview</a><a href="/about.html">Background</a><a href="/publications.html">Publications</a><a href="/projects.html">Projects</a><a aria-current="page" href="/blog.html">Notes</a><a href="/contact.html">Contact</a></nav><div aria-label="Language" class="language-switch" translate="no"><a aria-current="true" href="/blog/qleaf-inference-latency/" hreflang="en" lang="en">English</a><a href="/zh/blog/qleaf-inference-latency/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></div></header>
+<header class="site-header"><nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../../about.html">Background</a><a href="../../publications.html">Publications</a><a href="../../projects.html">Projects</a><a aria-current="page" href="../../blog.html">Notes</a><a href="../../contact.html">Contact</a></nav><div aria-label="Language" class="language-switch" translate="no"><a aria-current="true" href="index.html" hreflang="en" lang="en">English</a><a href="../../zh/blog/qleaf-inference-latency/index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></div></header>
 <main id="main"><!-- Generated from content/posts by build_notes.py --><article class="note-article">
-<p><a href="/blog.html">← All notes</a></p>
+<p><a href="../../blog.html">← All notes</a></p>
 <header><div class="note-meta"><time datetime="2026-10-19">19 October 2026</time><span>Machine learning</span><span>Systems</span></div><h1>How can we optimize batch-one tree inference to a few microseconds?</h1><p class="note-deck">We introduce QLeaf, a framework and benchmark project that reduces latency throughout the inference path, from kernel launches to host–device handoff.</p></header>
 <div class="note-content"><!-- i18n: qleaf.block001 -->
 <p data-i18n="note.qleaf-inference-latency.qleaf.block001">In the era of AI and deep learning, what is the point of talking about tree models? A practical reason is that they still perform well, sometimes at the state of the art, on a variety of problems involving tabular data, ranging from pattern recognition in high-energy physics to real-time decision problems in robotics. Tree models pose different challenges in training and inference than neural networks do. In this note, we focus on inference. For example, gradient boosting, one of the most popular tree-based methods, usually produces a large number of shallow trees.</p>
@@ -91,7 +91,7 @@
 <p data-i18n="note.qleaf-inference-latency.qleaf.block013">C++ types select the node layout, worker implementation, load balancer, and reducer. Runtime JSON supplies the model and worker settings, such as CPU affinity. This makes it possible to change the execution policy while retaining the same prediction interface and workload.</p>
 <!-- i18n: qleaf.block014 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block014">
-<div aria-label="QLeaf framework diagram" class="diagram-scroll" role="region" tabindex="0"><img alt="A forest and worker configuration initialize an Inferrer. Each row goes to CPU or CUDA workers; their partial results are collected and summed into one raw margin." height="390" src="/assets/posts/qleaf-inference-latency/framework.svg" width="720"/></div>
+<div aria-label="QLeaf framework diagram" class="diagram-scroll" role="region" tabindex="0"><img alt="A forest and worker configuration initialize an Inferrer. Each row goes to CPU or CUDA workers; their partial results are collected and summed into one raw margin." height="390" src="../../assets/posts/qleaf-inference-latency/framework.svg" width="720"/></div>
 <figcaption>The forest and workers are prepared once. Prediction reuses them for each input row.</figcaption>
 </figure>
 <!-- i18n: qleaf.block015 -->
@@ -127,7 +127,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block026">Launching and joining threads around every prediction would add setup and scheduling work to a request lasting only a few microseconds. QLeaf instead constructs persistent threads with the inferrer. Each thread owns a tree partition and can be pinned to a CPU core.</p>
 <!-- i18n: qleaf.block027 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block027">
-<div aria-label="CPU worker lifetime comparison" class="diagram-scroll" role="region" tabindex="0"><img alt="Per-request thread creation repeats startup, evaluation, and joining for every row. QLeaf starts workers once, then repeatedly publishes a pointer, evaluates trees, and collects results." height="340" src="/assets/posts/qleaf-inference-latency/cpu-workers.svg" width="720"/></div>
+<div aria-label="CPU worker lifetime comparison" class="diagram-scroll" role="region" tabindex="0"><img alt="Per-request thread creation repeats startup, evaluation, and joining for every row. QLeaf starts workers once, then repeatedly publishes a pointer, evaluates trees, and collects results." height="340" src="../../assets/posts/qleaf-inference-latency/cpu-workers.svg" width="720"/></div>
 <figcaption>The upper row illustrates per-request thread creation; it is not a separately measured benchmark baseline. QLeaf keeps its workers alive between requests.</figcaption>
 </figure>
 <!-- i18n: qleaf.block028 -->
@@ -186,7 +186,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block039">A thread can follow one tree path while many trees are processed in parallel. There is little arithmetic per tree, so kernel launch, input movement, synchronization, and result visibility account for significant parts of the request time. More arithmetic throughput does not remove those costs.</p>
 <!-- i18n: qleaf.block040 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block040">
-<div aria-label="PCIe communication and tree evaluation" class="diagram-scroll" role="region" tabindex="0"><img alt="The host sends a feature row across PCIe, the GPU evaluates resident trees and coordinates results, and output returns across PCIe. Timing covers the complete round trip." height="340" src="/assets/posts/qleaf-inference-latency/request-path.svg" width="720"/></div>
+<div aria-label="PCIe communication and tree evaluation" class="diagram-scroll" role="region" tabindex="0"><img alt="The host sends a feature row across PCIe, the GPU evaluates resident trees and coordinates results, and output returns across PCIe. Timing covers the complete round trip." height="340" src="../../assets/posts/qleaf-inference-latency/request-path.svg" width="720"/></div>
 <figcaption>The measurement includes both crossings and completion. This is a data-flow diagram, not a measured breakdown of time.</figcaption>
 </figure>
 <!-- i18n: qleaf.block041 -->
@@ -195,7 +195,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block042">A persistent kernel is launched once and loops over requests. This is the GPU counterpart of the CPU worker pool: setup is moved out of the steady-state path, and each new row arrives through a handoff protocol.</p>
 <!-- i18n: qleaf.block043 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block043">
-<div aria-label="GPU one-shot and persistent execution" class="diagram-scroll" role="region" tabindex="0"><img alt="One-shot inference launches, evaluates, and synchronizes for every row. A persistent kernel launches once, then repeatedly waits for requests, evaluates trees, and publishes results." height="340" src="/assets/posts/qleaf-inference-latency/gpu-workers.svg" width="720"/></div>
+<div aria-label="GPU one-shot and persistent execution" class="diagram-scroll" role="region" tabindex="0"><img alt="One-shot inference launches, evaluates, and synchronizes for every row. A persistent kernel launches once, then repeatedly waits for requests, evaluates trees, and publishes results." height="340" src="../../assets/posts/qleaf-inference-latency/gpu-workers.svg" width="720"/></div>
 <figcaption>Persistence removes repeated launches. The kernel still needs to detect requests and make results visible to the host.</figcaption>
 </figure>
 <!-- i18n: qleaf.block044 -->
@@ -212,7 +212,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block049">The alternative retains local block reduction and removes the shared completion step. <strong>Each block writes its sum into its own host-visible, pinned result slot.</strong> The CPU waits until all slots have been filled, then sums the values in the small array of block results.</p>
 <!-- i18n: qleaf.block050 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block050">
-<div aria-label="Cross-block completion versus independent host slots" class="diagram-scroll" role="region" tabindex="0"><img alt="Initially, GPU blocks converge on a shared atomic sum and completion counter, and the last block publishes one result. Alternatively, each block writes to its own pinned host-memory slot across PCIe, and the CPU sums the values." height="440" src="/assets/posts/qleaf-inference-latency/completion.svg" width="720"/></div>
+<div aria-label="Cross-block completion versus independent host slots" class="diagram-scroll" role="region" tabindex="0"><img alt="Initially, GPU blocks converge on a shared atomic sum and completion counter, and the last block publishes one result. Alternatively, each block writes to its own pinned host-memory slot across PCIe, and the CPU sums the values." height="440" src="../../assets/posts/qleaf-inference-latency/completion.svg" width="720"/></div>
 <figcaption>Moving the final reduction to the host removes the GPU's shared completion point. Each block still reduces its own tree results.</figcaption>
 </figure>
 <!-- i18n: qleaf.block051 -->
@@ -233,7 +233,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block058">Pinned memory is host memory whose pages are kept resident. It can serve as a source for explicit transfers. Mapping additionally makes it accessible to GPU loads and stores. On a discrete GPU, mapped host access still crosses the interconnect: “zero copy” avoids an explicit copy into a separate device buffer, not physical data movement. <a href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#zero-copy">NVIDIA's memory guide</a> explains the distinction.</p>
 <!-- i18n: qleaf.block059 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block059">
-<div aria-label="Explicit copy versus mapped pinned input" class="diagram-scroll" role="region" tabindex="0"><img alt="An explicit-copy path uses cudaMemcpy over PCIe to populate a device buffer. A mapped path lets the GPU load pinned host memory over PCIe directly, optionally staging it on the device before evaluation. Both move data across PCIe." height="420" src="/assets/posts/qleaf-inference-latency/input-memory.svg" width="720"/></div>
+<div aria-label="Explicit copy versus mapped pinned input" class="diagram-scroll" role="region" tabindex="0"><img alt="An explicit-copy path uses cudaMemcpy over PCIe to populate a device buffer. A mapped path lets the GPU load pinned host memory over PCIe directly, optionally staging it on the device before evaluation. Both move data across PCIe." height="420" src="../../assets/posts/qleaf-inference-latency/input-memory.svg" width="720"/></div>
 <figcaption>Pinning and copying are separate choices. Mapping removes a per-request copy operation; staging can keep repeated feature reads on the GPU.</figcaption>
 </figure>
 <!-- i18n: qleaf.block060 -->

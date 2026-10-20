@@ -12,16 +12,16 @@
 <title>如何将单样本树模型推理优化到几微秒？ · Jiajun Li</title>
 <link href="https://jjli.info/zh/blog/qleaf-inference-latency/" rel="canonical"/>
 <meta content="https://jjli.info/zh/blog/qleaf-inference-latency/" property="og:url"/>
-<link href="/zh/feed.xml" rel="alternate" title="Jiajun Li — Notes" type="application/rss+xml"/>
-<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="/assets/style.css" rel="stylesheet"/>
+<link href="../../feed.xml" rel="alternate" title="Jiajun Li — Notes" type="application/rss+xml"/>
+<link href="../../../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../../assets/style.css" rel="stylesheet"/>
 <link href="https://jjli.info/blog/qleaf-inference-latency/" hreflang="en" rel="alternate"/><link href="https://jjli.info/zh/blog/qleaf-inference-latency/" hreflang="zh-Hans" rel="alternate"/><link href="https://jjli.info/blog/qleaf-inference-latency/" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#main">跳至正文</a>
 <div class="site-wrap">
-<header class="site-header"><nav aria-label="主导航"><a href="/zh/">概览</a><a href="/zh/about.html">背景</a><a href="/zh/publications.html">论文</a><a href="/zh/projects.html">项目</a><a aria-current="page" href="/zh/blog.html">笔记</a><a href="/zh/contact.html">联系</a></nav><div aria-label="Language" class="language-switch" translate="no"><a href="/blog/qleaf-inference-latency/" hreflang="en" lang="en">English</a><a aria-current="true" href="/zh/blog/qleaf-inference-latency/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></div></header>
+<header class="site-header"><nav aria-label="主导航"><a href="../../index.html">概览</a><a href="../../about.html">背景</a><a href="../../publications.html">论文</a><a href="../../projects.html">项目</a><a aria-current="page" href="../../blog.html">笔记</a><a href="../../contact.html">联系</a></nav><div aria-label="Language" class="language-switch" translate="no"><a href="../../../blog/qleaf-inference-latency/index.html" hreflang="en" lang="en">English</a><a aria-current="true" href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></div></header>
 <main id="main"><aside class="translation-notice">本页部分文字为机器辅助翻译。 <a data-original-link="true" href="https://jjli.info/blog/qleaf-inference-latency/">查看英文原文</a></aside><!-- Generated from content/posts by build_notes.py --><article class="note-article">
-<p><a href="/zh/blog.html">← 全部笔记</a></p>
+<p><a href="../../blog.html">← 全部笔记</a></p>
 <header><div class="note-meta"><time datetime="2026-10-19"><span>2026 年 10 月 19 日</span></time><span>机器学习</span><span>计算系统</span></div><h1>如何将单样本树模型推理优化到几微秒？</h1><p class="note-deck">本文介绍 QLeaf：一个框架与基准测试项目，从内核启动到主机与设备之间的交接，逐步降低整条推理路径上的延迟。</p></header>
 <div class="note-content"><!-- i18n: qleaf.block001 -->
 <p data-i18n="note.qleaf-inference-latency.qleaf.block001">在 AI 和深度学习的时代，为什么还要讨论树模型？一个实际的原因是，在各种表格数据问题上，从高能物理中的模式识别到机器人中的实时决策，树模型仍然表现良好，有时甚至达到最优水平。树模型在训练和推理中面临的挑战与神经网络不同。本文关注推理。例如，梯度提升作为最常用的树模型方法之一，通常会生成大量浅层树。</p>
@@ -91,7 +91,7 @@
 <p data-i18n="note.qleaf-inference-latency.qleaf.block013">C++ 类型决定节点布局、工作单元实现、负载均衡器与归约器。运行时 JSON 提供模型和工作单元配置，例如 CPU 亲和性。因此，可以在保持预测接口和工作负载不变的情况下，改变执行策略。</p>
 <!-- i18n: qleaf.block014 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block014">
-<div aria-label="QLeaf 框架示意图" class="diagram-scroll" role="region" tabindex="0"><img alt="树集合与工作单元配置用于初始化 Inferrer。每一行交给 CPU 或 CUDA 工作单元，部分结果收集后求和，得到一个原始预测分数。" height="390" src="/zh/assets/posts/qleaf-inference-latency/framework.svg" width="720"/></div>
+<div aria-label="QLeaf 框架示意图" class="diagram-scroll" role="region" tabindex="0"><img alt="树集合与工作单元配置用于初始化 Inferrer。每一行交给 CPU 或 CUDA 工作单元，部分结果收集后求和，得到一个原始预测分数。" height="390" src="../../assets/posts/qleaf-inference-latency/framework.svg" width="720"/></div>
 <figcaption>树集合与工作单元只准备一次，随后对每一行输入重复使用。</figcaption>
 </figure>
 <!-- i18n: qleaf.block015 -->
@@ -127,7 +127,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block026">如果每次预测都创建线程并等待其结束，就会给一个仅持续几微秒的请求增加初始化和调度工作。QLeaf 在构造推理器时就创建常驻线程。每个线程持有一组树，并可绑定到一个 CPU 核心。</p>
 <!-- i18n: qleaf.block027 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block027">
-<div aria-label="CPU 工作线程生命周期比较" class="diagram-scroll" role="region" tabindex="0"><img alt="逐请求创建线程意味着每一行都重复启动、计算和等待结束。QLeaf 只启动一次工作线程，随后反复发布指针、计算树并收集结果。" height="340" src="/zh/assets/posts/qleaf-inference-latency/cpu-workers.svg" width="720"/></div>
+<div aria-label="CPU 工作线程生命周期比较" class="diagram-scroll" role="region" tabindex="0"><img alt="逐请求创建线程意味着每一行都重复启动、计算和等待结束。QLeaf 只启动一次工作线程，随后反复发布指针、计算树并收集结果。" height="340" src="../../assets/posts/qleaf-inference-latency/cpu-workers.svg" width="720"/></div>
 <figcaption>上行示意每次请求都创建线程的情况，并非单独测量过的基准。QLeaf 在请求之间保持工作线程存活。</figcaption>
 </figure>
 <!-- i18n: qleaf.block028 -->
@@ -186,7 +186,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block039">一个线程可以沿一棵树的路径执行，同时并行处理许多树。每棵树的算术运算很少，因此内核启动、输入传输、同步和结果可见性占据了请求时间的很大一部分。更多的算术吞吐量并不能消除这些成本。</p>
 <!-- i18n: qleaf.block040 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block040">
-<div aria-label="PCIe 通信与树计算" class="diagram-scroll" role="region" tabindex="0"><img alt="主机经 PCIe 发送特征行，GPU 计算驻留的树并协调结果，输出经 PCIe 返回。计时覆盖整个往返过程。" height="340" src="/zh/assets/posts/qleaf-inference-latency/request-path.svg" width="720"/></div>
+<div aria-label="PCIe 通信与树计算" class="diagram-scroll" role="region" tabindex="0"><img alt="主机经 PCIe 发送特征行，GPU 计算驻留的树并协调结果，输出经 PCIe 返回。计时覆盖整个往返过程。" height="340" src="../../assets/posts/qleaf-inference-latency/request-path.svg" width="720"/></div>
 <figcaption>测量包括两次跨互连传输和完成操作。这是一张数据流示意图，并非实测耗时的分解。</figcaption>
 </figure>
 <!-- i18n: qleaf.block041 -->
@@ -195,7 +195,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block042">常驻内核只启动一次，然后循环处理请求。这相当于 CPU 工作线程池在 GPU 上的对应形式：初始化移出稳态路径，每一行新数据通过交接协议到达。</p>
 <!-- i18n: qleaf.block043 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block043">
-<div aria-label="GPU 单次启动与常驻执行" class="diagram-scroll" role="region" tabindex="0"><img alt="单次推理对每一行都进行启动、计算和同步。常驻内核只启动一次，随后反复等待请求、计算树并发布结果。" height="340" src="/zh/assets/posts/qleaf-inference-latency/gpu-workers.svg" width="720"/></div>
+<div aria-label="GPU 单次启动与常驻执行" class="diagram-scroll" role="region" tabindex="0"><img alt="单次推理对每一行都进行启动、计算和同步。常驻内核只启动一次，随后反复等待请求、计算树并发布结果。" height="340" src="../../assets/posts/qleaf-inference-latency/gpu-workers.svg" width="720"/></div>
 <figcaption>常驻消除了重复启动，但内核仍需检测请求，并使结果对主机可见。</figcaption>
 </figure>
 <!-- i18n: qleaf.block044 -->
@@ -212,7 +212,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block049">替代方案保留线程块内部归约，移除共享完成步骤。<strong>每个线程块把自己的和写入独立的、主机可见的锁页结果槽位。</strong> CPU 等待所有槽位填满，然后对这组小规模线程块结果求和。</p>
 <!-- i18n: qleaf.block050 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block050">
-<div aria-label="跨线程块完成协调与独立主机槽位的比较" class="diagram-scroll" role="region" tabindex="0"><img alt="最初，各 GPU 线程块汇聚到共享原子和与完成计数器，最后一个线程块发布结果。替代方案让每个线程块经 PCIe 写入自己的锁页主机内存槽位，再由 CPU 求和。" height="440" src="/zh/assets/posts/qleaf-inference-latency/completion.svg" width="720"/></div>
+<div aria-label="跨线程块完成协调与独立主机槽位的比较" class="diagram-scroll" role="region" tabindex="0"><img alt="最初，各 GPU 线程块汇聚到共享原子和与完成计数器，最后一个线程块发布结果。替代方案让每个线程块经 PCIe 写入自己的锁页主机内存槽位，再由 CPU 求和。" height="440" src="../../assets/posts/qleaf-inference-latency/completion.svg" width="720"/></div>
 <figcaption>把最终归约移到主机，消除了 GPU 上共享的完成点。每个线程块仍然对自己的树结果进行归约。</figcaption>
 </figure>
 <!-- i18n: qleaf.block051 -->
@@ -233,7 +233,7 @@ auto margin = inferrer.predict(features);
 <p data-i18n="note.qleaf-inference-latency.qleaf.block058">锁页内存是页面保持驻留的主机内存，可作为显式传输的数据源。映射进一步使它能够被 GPU 的加载和存储操作访问。在独立 GPU 上，访问映射主机内存仍需经过互连：“零复制”避免的是向独立设备缓冲区的显式复制，并非物理数据移动。<a href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#zero-copy">NVIDIA 的内存指南</a>解释了这一差别。</p>
 <!-- i18n: qleaf.block059 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block059">
-<div aria-label="显式复制与映射锁页输入的比较" class="diagram-scroll" role="region" tabindex="0"><img alt="显式复制路径通过 cudaMemcpy 经 PCIe 填充设备缓冲区。映射路径让 GPU 直接经 PCIe 读取锁页主机内存，并可在计算前暂存到设备上。两者都经过 PCIe 移动数据。" height="420" src="/zh/assets/posts/qleaf-inference-latency/input-memory.svg" width="720"/></div>
+<div aria-label="显式复制与映射锁页输入的比较" class="diagram-scroll" role="region" tabindex="0"><img alt="显式复制路径通过 cudaMemcpy 经 PCIe 填充设备缓冲区。映射路径让 GPU 直接经 PCIe 读取锁页主机内存，并可在计算前暂存到设备上。两者都经过 PCIe 移动数据。" height="420" src="../../assets/posts/qleaf-inference-latency/input-memory.svg" width="720"/></div>
 <figcaption>锁页与复制是不同的选择。映射省去了每次请求的复制操作；暂存则可让重复的特征读取留在 GPU 上。</figcaption>
 </figure>
 <!-- i18n: qleaf.block060 -->

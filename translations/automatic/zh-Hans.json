@@ -184,36 +184,6 @@
     "source_hash": "112391cb974e4afabf2af3f6f49b40597620cd6d38a6ba5ab0648ba5704b45e9",
     "text": "问题与方法"
   },
-  "about.block37": {
-    "provider": "assistant-draft",
-    "source_hash": "98c67c67544a9b99b7baa074bec5cbb3eb8758dfd631ac0ddbb2c481d382c9df",
-    "text": "受驱动的量子物质"
-  },
-  "about.block38": {
-    "provider": "assistant-draft",
-    "source_hash": "74781992e77988a46d5f33c9b2e6916b36061799962757c3e416a15940c24eca",
-    "text": "光掺杂、电阻开关、隐藏超导，以及关联电子偏离平衡态后的动力学。"
-  },
-  "about.block39": {
-    "provider": "assistant-draft",
-    "source_hash": "29ad0b1f37511236ccdf06f0003988576197aa2d266c4a06e1553751d8ffb00b",
-    "text": "光与物质相互作用"
-  },
-  "about.block40": {
-    "provider": "assistant-draft",
-    "source_hash": "b5073bee42c389af28de4e9f4c1b962673d0deec5c9aae08ab56014cc5bf5d08",
-    "text": "强耦合光与物质系统的规范不变描述、腔中的集体行为，以及光子介导的相互作用。"
-  },
-  "about.block41": {
-    "provider": "assistant-draft",
-    "source_hash": "b337dd3c4d880284b53bfdf86b93a16781e1ce4c831f858044b6875f9c60ec39",
-    "text": "数值多体方法"
-  },
-  "about.block42": {
-    "provider": "assistant-draft",
-    "source_hash": "ea4dd01d855f7e2453614782f0d2af0ba44f002c278b0a28ab0f210279043539",
-    "text": "量子蒙特卡洛、杂质求解器、动力学平均场理论，以及非马尔可夫动力学的高效处理。"
-  },
   "about.html.description": {
     "provider": "assistant-draft",
     "source_hash": "f1a07da690d66fef9d274f85e56118c4bbbc7b75e1bdb6ddf72abd94655561ac",
@@ -223,6 +193,36 @@
     "provider": "assistant-draft",
     "source_hash": "aa31489fc319411e021ede826c035ff1da6a011e11506b10462d4b4f00a58641",
     "text": "个人背景 · ⟦0⟧"
+  },
+  "about.themes.finance.description": {
+    "provider": "assistant-draft",
+    "source_hash": "0cabe8d117b487272dd1f50737e32c8cc238cf3b9a5e0233f15619e68b33d10a",
+    "text": "市场微观结构、短期预测，以及高频交易策略的设计与实现。"
+  },
+  "about.themes.finance.title": {
+    "provider": "assistant-draft",
+    "source_hash": "b2c72032159dcc5b195222fb159c46eae8a4657b3e43bd10cd253b9701129850",
+    "text": "量化金融"
+  },
+  "about.themes.ml.description": {
+    "provider": "assistant-draft",
+    "source_hash": "eaeab8a48b30e87e4eabb7590795fd007e968a3717ec1029765d0218b147d2f4",
+    "text": "时间序列机器学习、低延迟⟦0⟧，以及 CPU 和 GPU 上的高性能计算。"
+  },
+  "about.themes.ml.title": {
+    "provider": "assistant-draft",
+    "source_hash": "9ddb7032d800d56942095441f72a2a9a9d47fb9623a7f24955bc39fac097894f",
+    "text": "机器学习与计算系统"
+  },
+  "about.themes.physics.description": {
+    "provider": "assistant-draft",
+    "source_hash": "b79d8bc7f1adc5f0f9010589cb1630d2155d2386197dc0c674434c1de4a31a8c",
+    "text": "受驱动的强关联量子系统、光掺杂与隐藏相、光与物质的强耦合，以及光子介导的相互作用。"
+  },
+  "about.themes.physics.title": {
+    "provider": "assistant-draft",
+    "source_hash": "6c22eab892913f4f69d20cf666b48094a4218b5bececcf8cf2c2705a88d7d3d9",
+    "text": "光与物质相互作用的动力学"
   },
   "attribute.048e90919b7c51c4": {
     "provider": "assistant-draft",
@@ -901,8 +901,8 @@
   },
   "home.role": {
     "provider": "assistant-draft",
-    "source_hash": "dbfc1a28e9dc4ac63c02487065737aeb1ddb65b39984285817c6ffabef4f9a4d",
-    "text": "现任 ⟦0⟧ 量化研究员，工作地点为苏黎世。"
+    "source_hash": "0123fa4a983bf199bff83c0b3721dbcef4729d5c284184e960df64a90512245c",
+    "text": "QRT 量化研究员"
   },
   "home.software": {
     "provider": "assistant-draft",
@@ -1586,8 +1586,8 @@
   },
   "projects.block05": {
     "provider": "assistant-draft",
-    "source_hash": "13b22bfbd21412d242f5d16a45518ac6738ec4e0c50871e953c2623c7d52f7fe",
-    "text": "物理研究背后的代码。"
+    "source_hash": "0a67c31051976a4a1b21d6c6e4d11b81f3a21f1cf6e55e3c2e738a016538cba9",
+    "text": "用代码开展研究与工程实践。"
   },
   "projects.block06": {
     "provider": "assistant-draft",

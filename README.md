@@ -45,8 +45,9 @@ portrait in `assets/me.jpeg`.
 Translations use authored overrides first, then a current automatic draft, then
 English. Initial Chinese drafts are included, so ordinary builds work offline.
 See [the translation guide](translations/README.md) for paragraph overrides,
-complete Chinese notes, review reports, and API updates. Use an HTTP preview:
-root-relative links do not work by opening HTML files directly.
+complete Chinese notes, review reports, and API updates. Generated pages use
+relative links so they also work when opened directly as HTML files. Preview
+the generated root `index.html`, not the source fragments in `content/pages/`.
 
 ```sh
 python3 scripts/update_translations.py

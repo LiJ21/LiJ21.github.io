@@ -102,7 +102,9 @@ class GeneratedSiteTests(unittest.TestCase):
                 if name != "404.html":
                     self.assertEqual(len(soup.select('link[hreflang]')), 3)
                 for tag in soup.select("[href], [src]"):
-                    url = urlsplit(tag.get("href", tag.get("src")))
+                    value = tag.get("href", tag.get("src"))
+                    self.assertFalse(value.startswith("/"), f"File-preview incompatible path: {value}")
+                    url = urlsplit(value)
                     if url.scheme or url.netloc or not url.path:
                         continue
                     target = ROOT / url.path.lstrip("/") if url.path.startswith("/") else ROOT / prefix / Path(name).parent / url.path

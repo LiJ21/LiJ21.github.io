@@ -5,6 +5,7 @@ from hashlib import sha256
 from html import escape
 from pathlib import Path
 import json
+import posixpath
 import re
 from urllib.parse import urljoin, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
@@ -291,6 +292,17 @@ def build_languages(root, page_names, note_count):
                     elif prefix and path=='/feed.xml':path='/'+prefix+'/feed.xml'
                     elif path in svg_map:path=svg_map[path]
                     tag[attr]=urlunsplit(('', '',path,parsed.query,parsed.fragment))
+            # Keep generated pages usable in file previews and under a URL subdirectory.
+            # Canonical/hreflang metadata and explicit original-page links stay absolute.
+            for tag in soup.find_all(True):
+                for attr in ['href', 'src']:
+                    value=tag.get(attr, '')
+                    if not value.startswith('/') or value.startswith('//'):continue
+                    parsed=urlsplit(value)
+                    path=parsed.path
+                    if path.endswith('/'):path+='index.html'
+                    relative=posixpath.relpath(path.lstrip('/'),posixpath.dirname(outname) or '.')
+                    tag[attr]=urlunsplit(('', '',relative,parsed.query,parsed.fragment))
             counter=soup.select_one('#result-count')
             if counter:counter['data-count-template']=language['count_template']
             destination=root/outname;destination.parent.mkdir(parents=True,exist_ok=True)
