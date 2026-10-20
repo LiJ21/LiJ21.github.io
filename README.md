@@ -61,3 +61,64 @@ Local HTML landmarks, navigation, fragment links, bibliography coverage, JavaScr
 Push the files to `main` in `LiJ21/LiJ21.github.io`. Configure the repository's **Settings → Pages** to deploy from the `main` branch and `/ (root)` directory. The intended site address is https://lij21.github.io/.
 
 `.nojekyll` keeps the deployment a plain static site. This edit does not commit, push, or alter hosting settings.
+
+## Notes
+
+Notes are authored in `content/posts/*.md` and rendered to `blog/<slug>/index.html`.
+`blog.html` lists published notes newest first, and `feed.xml` provides an RSS feed.
+The explicit slug keeps the URL stable when the date or title changes.
+
+Install the build dependencies once in a virtual environment:
+
+```sh
+python3 -m venv .venv
+python3 -m pip --python .venv/bin/python install -r requirements.txt
+```
+
+If the system lacks `ensurepip`, create the environment with `python3 -m venv --without-pip .venv` instead, then use the same pip command above. The existing `python3 scripts/build_site.py` command automatically uses `.venv` when its dependencies are not available in the current interpreter.
+
+Create an article with YAML metadata followed by Markdown:
+
+```markdown
+---
+title: "A new note"
+slug: a-new-note
+date: 2026-10-19
+summary: "A short description for the notes list and RSS feed."
+tags: [Systems, Machine learning]
+draft: true
+---
+
+Start the article here. Use level-two headings for sections.
+```
+
+Markdown supports tables, fenced code blocks, links, images, and footnotes.
+Place figures in `assets/posts/<slug>/` and reference them with root-relative
+paths such as `/assets/posts/a-new-note/figure.svg`. Article slugs must be unique,
+lowercase words separated by hyphens. Dates use `YYYY-MM-DD`.
+
+Set `draft: false` to include a note in the site and feed, then run:
+
+```sh
+.venv/bin/python scripts/build_site.py
+python3 -m http.server 8000
+```
+
+Visit `/blog.html` to preview. Commit the Markdown source, generated pages,
+updated navigation, and feed together. No server-side database or JavaScript is
+required for notes. Generation removes previously generated article pages when
+notes are deleted or returned to draft. Drafts are omitted from rendered pages
+and RSS, but their Markdown remains visible if the repository is public.
+
+The first note follows QLeaf’s latency ablation, framework structure, CPU workers,
+and GPU optimizations. It links to a fixed source revision and includes six SVG
+diagrams under `assets/posts/qleaf-inference-latency/`. To edit the diagrams, change
+`scripts/draw_qleaf_diagrams.py` and run `python3 scripts/draw_qleaf_diagrams.py`.
+The generated SVG files are served directly, without a diagram-rendering runtime.
+
+## Search engine sitemap
+
+Every build regenerates `sitemap.xml` with the main pages and published notes,
+using `https://jjli.info`. Drafts and the 404 page are excluded. `robots.txt`
+allows crawling and points to the sitemap. After deploying, submit
+`https://jjli.info/sitemap.xml` in Google Search Console → Sitemaps.

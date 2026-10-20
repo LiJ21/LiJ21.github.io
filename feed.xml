@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0">
+  <channel>
+    <title>Jiajun Li — Notes</title>
+    <link>https://jjli.info/blog.html</link>
+    <description>Notes on machine learning, systems, markets, and physics.</description>
+    <language>en</language>
+    <item>
+      <title>How can we optimize batch-one tree inference to a few microseconds?</title>
+      <link>https://jjli.info/blog/qleaf-inference-latency/</link>
+      <guid>https://jjli.info/blog/qleaf-inference-latency/</guid>
+      <description>We introduce QLeaf, a framework and benchmark project that reduces latency throughout the inference path, from kernel launches to host–device handoff.</description>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+      <category>Machine learning</category>
+      <category>Systems</category>
+    </item>
+  </channel>
+</rss>

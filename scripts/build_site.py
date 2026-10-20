@@ -4,13 +4,24 @@ from pathlib import Path
 from html import escape
 import json
 import re
+import os
+import sys
+import posixpath
+import xml.etree.ElementTree as ET
+from importlib.util import find_spec
 
 ROOT = Path(__file__).resolve().parent.parent
+if any(find_spec(module) is None for module in ('markdown', 'yaml')):
+    local_python = ROOT / '.venv/bin/python'
+    if local_python.exists() and Path(sys.prefix) != ROOT / '.venv':
+        os.execv(str(local_python), [str(local_python), str(Path(__file__).resolve()), *sys.argv[1:]])
+    raise SystemExit('Missing build dependencies. Install requirements.txt in .venv; see README.md → Notes.')
+from build_notes import build_notes, SITE
 PUBLICATIONS = json.loads((ROOT / 'data/publications.json').read_text())
 SCHOLAR = 'https://scholar.google.com/citations?user=tP-VfEAAAAAJ&hl=en'
 LINKEDIN = 'https://www.linkedin.com/in/jiajunli/'
 GITHUB = 'https://github.com/LiJ21'
-NAV = [('index.html', 'Overview'), ('about.html', 'Background'), ('publications.html', 'Publications'), ('projects.html', 'Projects'), ('contact.html', 'Contact')]
+NAV = [('index.html', 'Overview'), ('about.html', 'Background'), ('publications.html', 'Publications'), ('projects.html', 'Projects'), ('blog.html', 'Notes'), ('contact.html', 'Contact')]
 TYPES = {'article': 'Journal / proceedings', 'preprint': 'Preprint', 'thesis': 'Thesis', 'abstract': 'Meeting abstract'}
 
 def link(url, text, cls='', extra=''):
@@ -65,8 +76,13 @@ def publication(p, compact=False):
 def section_heading(n, title, trailing=''):
     return f'<div class="section-heading"><div><span class="eyebrow">{n}</span><h2>{title}</h2></div>{trailing}</div>'
 
+SITEMAP_URLS = []
+
 def shell(filename, title, description, body, script=False):
-    nav=''.join(link(f,t,extra='aria-current="page"' if f==filename else '') for f,t in NAV)
+    if filename != '404.html':
+        route = '/' if filename == 'index.html' else '/' + filename.removesuffix('index.html') if filename.endswith('/index.html') else '/' + filename
+        SITEMAP_URLS.append(SITE + route)
+    nav=''.join(link('/'+f,t,extra='aria-current="page"' if f==filename or (f=='blog.html' and filename.startswith('blog/')) else '') for f,t in NAV)
     footer=f'<footer><p>© 2026 Jiajun Li</p><p>AI · Computation · Trading</p><div>{link(SCHOLAR,"Scholar ↗")}{link(GITHUB,"GitHub ↗")}{link(LINKEDIN,"LinkedIn ↗")}</div></footer>'
     html=f'''<!doctype html>
 <html lang="en">
@@ -79,8 +95,9 @@ def shell(filename, title, description, body, script=False):
   <meta property="og:description" content="{escape(description,quote=True)}">
   <meta property="og:type" content="website">
   <title>{escape(title)} · Jiajun Li</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="Jiajun Li — Notes" href="/feed.xml">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css">
   {'<script src="assets/publications.js" defer></script>' if script else ''}
 </head>
 <body{' class="home-page"' if filename == 'index.html' else ''}>
@@ -93,6 +110,16 @@ def shell(filename, title, description, body, script=False):
 </body>
 </html>
 '''
+    if filename != '404.html':
+        # Relative paths also allow direct file previews and subdirectory hosting.
+        def relative_url(match):
+            target = match.group(2)
+            if target.endswith('/'):
+                target += 'index.html'
+            target = posixpath.relpath(target, posixpath.dirname(filename) or '.')
+            return match.group(1) + target + '"'
+        html = re.sub(r'(\b(?:href|src)=")/(?!/)([^"]*)"', relative_url, html)
+    (ROOT/filename).parent.mkdir(parents=True, exist_ok=True)
     (ROOT/filename).write_text("\n".join(line.rstrip() for line in html.splitlines()) + "\n")
 
 def hero(label, title, intro):
@@ -185,4 +212,16 @@ shell('contact.html','Contact','Contact Jiajun Li by email or connect on LinkedI
 shell('404.html','Page not found','The requested page could not be found.',hero('404 / PAGE NOT FOUND','Outside the domain.','This page does not exist or has moved.')+'<div class="actions section">'+link('/','Return to overview →','button')+'</div>')
 p=ROOT/'404.html';p.write_text(p.read_text().replace('href="assets/','href="/assets/').replace('href="index.html"','href="/index.html"').replace('href="about.html"','href="/about.html"').replace('href="publications.html"','href="/publications.html"').replace('href="projects.html"','href="/projects.html"').replace('href="contact.html"','href="/contact.html"'))
 (ROOT/'assets/publications.bib').write_text('% Jiajun Li — publication record, checked 2026-10-19\n% UTF-8; compatible with biblatex/biber.\n\n'+'\n\n'.join(bibtex(p) for p in PUBLICATIONS)+'\n')
-print(f'Generated six pages and {len(PUBLICATIONS)} BibTeX entries.')
+note_count = build_notes(ROOT, shell, hero)
+print(f'Generated seven main pages, {note_count} notes, RSS, and {len(PUBLICATIONS)} BibTeX entries.')
+
+# Include only pages rendered in this build; drafts and the error page stay out.
+namespace = 'http://www.sitemaps.org/schemas/sitemap/0.9'
+ET.register_namespace('', namespace)
+sitemap = ET.Element(f'{{{namespace}}}urlset')
+for url in sorted(set(SITEMAP_URLS)):
+    entry = ET.SubElement(sitemap, f'{{{namespace}}}url')
+    ET.SubElement(entry, f'{{{namespace}}}loc').text = url
+ET.indent(sitemap)
+ET.ElementTree(sitemap).write(ROOT/'sitemap.xml', encoding='utf-8', xml_declaration=True)
+(ROOT/'robots.txt').write_text(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')

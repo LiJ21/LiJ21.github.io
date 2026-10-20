@@ -228,3 +228,34 @@ footer { border-top: 2px solid var(--ink); font-size: 12px; }
   .home-projects { padding: 28px 0 32px; }
   .selected-project-list article { grid-template-columns: 1fr; gap: 6px; }
 }
+
+/* Notes share the site shell, with a narrower column for sustained reading. */
+.notes-list { max-width: 800px; padding: 32px 0 56px; }
+.note-preview { border-top: 1px solid var(--line); padding: 28px 0; }
+.note-preview h2 { font-size: 26px; margin: 12px 0; }
+.note-preview p { color: var(--muted); margin: 0; }
+.note-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--muted); font-size: 12px; }
+.note-article { max-width: 760px; margin: 0 auto; padding: 40px 0 64px; }
+.note-article header { padding: 20px 0 28px; border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+.note-article h1 { font-size: clamp(34px, 5vw, 50px); letter-spacing: -1.4px; margin: 18px 0; }
+.note-deck { font-size: 19px; color: var(--muted); margin: 0; }
+.note-content { font-size: 16px; line-height: 1.8; overflow-wrap: anywhere; }
+.note-content h2 { font-size: 27px; margin: 36px 0 16px; }
+.note-content h3 { margin-top: 28px; }
+.note-content a { text-decoration: underline; }
+.note-content img { max-width: 100%; height: auto; }
+.note-content pre { overflow-x: auto; background: var(--soft); padding: 18px; font-size: 13px; }
+.note-content code { font-family: var(--mono); }
+.note-content table { display: block; overflow-x: auto; border-collapse: collapse; font-size: 14px; margin: 24px 0; }
+.note-content th, .note-content td { border-bottom: 1px solid var(--line); padding: 12px; text-align: left; }
+.note-content th { background: var(--soft); line-height: 1.4; }
+.note-content blockquote { border-left: 3px solid var(--blue); margin-left: 0; padding-left: 22px; color: var(--muted); }
+.note-figure { margin: 30px 0; }
+.diagram-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 4px; }
+.diagram-scroll:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.note-content .diagram-scroll img { display: block; width: 100%; min-width: 620px; height: auto; }
+.note-figure figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 10px; }
+@media print {
+  .note-content .diagram-scroll img { min-width: 0; }
+  .note-figure { break-inside: avoid; }
+}

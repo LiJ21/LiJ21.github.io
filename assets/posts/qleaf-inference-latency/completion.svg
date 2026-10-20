@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" role="img" aria-labelledby="title">
+<title id="title">Shared GPU completion versus independent host result slots</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#003b71"/></marker></defs>
+<rect width="720" height="440" fill="white"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#172b3e">
+<text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#003b71">SHARED DEVICE-SIDE COMPLETION</text>
+<rect x="28" y="55" width="155" height="34" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="105.5" y="77.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Block 0: local sum</text>
+<path d="M185 72 L271 120" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="28" y="104" width="155" height="34" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="105.5" y="126.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Block 1: local sum</text>
+<path d="M185 121 L271 120" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="28" y="153" width="155" height="34" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="105.5" y="175.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Block 2: local sum</text>
+<path d="M185 170 L271 120" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="274" y="78" width="225" height="85" rx="4" fill="#003b71" stroke="#003b71"/>
+<text x="386.5" y="115.5" font-size="15" font-weight="400" text-anchor="middle" fill="white">Atomic sum + counter</text>
+<text x="386.5" y="135.5" font-size="15" font-weight="400" text-anchor="middle" fill="white">last block publishes</text>
+<rect x="555" y="91" width="137" height="58" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="623.5" y="125.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">Host result</text>
+<path d="M500 120 L552 120" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="28" y="202" font-size="14" font-weight="400" text-anchor="start" fill="#172b3e">All blocks update shared completion state on the GPU.</text>
+<path d="M28 221 L692 221" fill="none" stroke="#bccbd7" stroke-dasharray="5 5"/>
+<text x="28" y="250" font-size="13" font-weight="600" text-anchor="start" fill="#003b71">INDEPENDENT HOST-VISIBLE SLOTS</text>
+<text x="268" y="276" font-size="12" font-weight="600" text-anchor="middle" fill="#003b71">PCIe</text>
+<text x="400" y="276" font-size="12" font-weight="400" text-anchor="middle" fill="#172b3e">Pinned host memory</text>
+<path d="M268 285 L268 408" fill="none" stroke="#bccbd7" stroke-dasharray="5 5"/>
+<rect x="28" y="290" width="155" height="32" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="105.5" y="311.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Block 0: local sum</text>
+<rect x="331" y="290" width="138" height="32" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="400.0" y="311.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Slot 0</text>
+<path d="M185 306 L328 306" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M471 306 L552 351" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="28" y="335" width="155" height="32" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="105.5" y="356.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Block 1: local sum</text>
+<rect x="331" y="335" width="138" height="32" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="400.0" y="356.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Slot 1</text>
+<path d="M185 351 L328 351" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M471 351 L552 351" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="28" y="380" width="155" height="32" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="105.5" y="401.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Block 2: local sum</text>
+<rect x="331" y="380" width="138" height="32" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="400.0" y="401.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Slot 2</text>
+<path d="M185 396 L328 396" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M471 396 L552 351" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="555" y="321" width="137" height="60" rx="4" fill="#003b71" stroke="#003b71"/>
+<text x="623.5" y="346.0" font-size="14" font-weight="400" text-anchor="middle" fill="white">Host collects</text>
+<text x="623.5" y="366.0" font-size="14" font-weight="400" text-anchor="middle" fill="white">and sums</text>
+</g></svg>

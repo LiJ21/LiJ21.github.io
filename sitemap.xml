@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jjli.info/</loc>
+  </url>
+  <url>
+    <loc>https://jjli.info/about.html</loc>
+  </url>
+  <url>
+    <loc>https://jjli.info/blog.html</loc>
+  </url>
+  <url>
+    <loc>https://jjli.info/blog/qleaf-inference-latency/</loc>
+  </url>
+  <url>
+    <loc>https://jjli.info/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://jjli.info/projects.html</loc>
+  </url>
+  <url>
+    <loc>https://jjli.info/publications.html</loc>
+  </url>
+</urlset>

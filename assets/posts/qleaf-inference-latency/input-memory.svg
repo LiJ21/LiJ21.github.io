@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title">
+<title id="title">Explicit copies and mapped host input both cross PCIe</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#003b71"/></marker></defs>
+<rect width="720" height="420" fill="white"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#172b3e">
+<text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#003b71">EXPLICIT INPUT COPY</text>
+<rect x="28" y="70" width="172" height="64" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="114.0" y="97.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">Host row</text>
+<text x="114.0" y="117.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">may be pinned</text>
+<rect x="338" y="70" width="160" height="64" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="418.0" y="107.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">Device buffer</text>
+<rect x="548" y="70" width="144" height="64" rx="4" fill="#003b71" stroke="#003b71"/>
+<text x="620.0" y="107.0" font-size="15" font-weight="400" text-anchor="middle" fill="white">Evaluate</text>
+<path d="M201 102 L335 102" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="268" y="79" font-size="13" font-weight="400" text-anchor="middle" fill="#172b3e">cudaMemcpy</text>
+<text x="268" y="123" font-size="12" font-weight="400" text-anchor="middle" fill="#172b3e">over PCIe</text>
+<path d="M499 102 L545 102" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="28" y="162" font-size="14" font-weight="400" text-anchor="start" fill="#172b3e">Transfer the row, then use device-local reads during evaluation.</text>
+<path d="M28 188 L692 188" fill="none" stroke="#bccbd7" stroke-dasharray="5 5"/>
+<text x="28" y="218" font-size="13" font-weight="600" text-anchor="start" fill="#003b71">MAPPED PINNED INPUT</text>
+<rect x="28" y="258" width="172" height="64" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="114.0" y="285.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">Mapped host row</text>
+<text x="114.0" y="305.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">pinned pages</text>
+<rect x="338" y="258" width="160" height="64" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
+<text x="418.0" y="285.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">GPU loads</text>
+<text x="418.0" y="305.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">optional staging</text>
+<rect x="548" y="258" width="144" height="64" rx="4" fill="#003b71" stroke="#003b71"/>
+<text x="620.0" y="295.0" font-size="15" font-weight="400" text-anchor="middle" fill="white">Evaluate</text>
+<path d="M201 290 L335 290" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="268" y="267" font-size="13" font-weight="400" text-anchor="middle" fill="#172b3e">direct loads</text>
+<text x="268" y="312" font-size="12" font-weight="400" text-anchor="middle" fill="#172b3e">over PCIe</text>
+<path d="M499 290 L545 290" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="28" y="355" font-size="14" font-weight="400" text-anchor="start" fill="#172b3e">Avoid the explicit input copy; stage on-device to reuse features.</text>
+<text x="28" y="389" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Pinned ≠ device-local. Mapping removes a copy call, not the interconnect.</text>
+</g></svg>
