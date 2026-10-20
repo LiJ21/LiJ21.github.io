@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="720" height="340" viewBox="0 0 720 340" role="img" aria-labelledby="title">
+<ns0:title id="title">GPU：逐请求启动与常驻工作线程</ns0:title>
+<ns0:defs><ns0:marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><ns0:path d="M0 0 L8 4 L0 8Z" fill="#111111" /></ns0:marker></ns0:defs>
+<ns0:rect width="720" height="340" fill="white" />
+<ns0:g font-family="Arial, Helvetica, sans-serif" fill="#111111">
+<ns0:text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#111111">GPU · 逐请求启动</ns0:text>
+<ns0:text x="28" y="59" font-size="13" font-weight="400" text-anchor="start" fill="#111111">第 1 行</ns0:text>
+<ns0:rect x="28" y="74" width="94" height="47" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="75.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">启动</ns0:text>
+<ns0:path d="M123 97 L129 97" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="130" y="74" width="94" height="47" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="177.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="white">计算</ns0:text>
+<ns0:path d="M225 97 L231 97" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="232" y="74" width="94" height="47" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="279.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">同步</ns0:text>
+<ns0:text x="380" y="59" font-size="13" font-weight="400" text-anchor="start" fill="#111111">第 2 行</ns0:text>
+<ns0:rect x="380" y="74" width="94" height="47" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="427.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">启动</ns0:text>
+<ns0:path d="M475 97 L481 97" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="482" y="74" width="94" height="47" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="529.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="white">计算</ns0:text>
+<ns0:path d="M577 97 L583 97" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="584" y="74" width="94" height="47" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="631.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">同步</ns0:text>
+<ns0:text x="28" y="151" font-size="14" font-weight="400" text-anchor="start" fill="#111111">每一行都重复初始化与完成操作</ns0:text>
+<ns0:path d="M28 170 L692 170" fill="none" stroke="#d2d2d2" stroke-dasharray="5 5" />
+<ns0:text x="28" y="199" font-size="13" font-weight="600" text-anchor="start" fill="#111111">GPU · 常驻</ns0:text>
+<ns0:rect x="24" y="214" width="672" height="90" rx="4" fill="#fafafa" stroke="#d2d2d2" />
+<ns0:text x="40" y="237" font-size="13" font-weight="400" text-anchor="start" fill="#111111">内核只启动一次 · 常驻线程块等待后续请求</ns0:text>
+<ns0:rect x="40" y="250" width="92" height="38" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="86.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">通知</ns0:text>
+<ns0:path d="M133 269 L139 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="140" y="250" width="92" height="38" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="186.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="white">计算</ns0:text>
+<ns0:path d="M233 269 L239 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="240" y="250" width="92" height="38" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="286.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">发布</ns0:text>
+<ns0:rect x="386" y="250" width="92" height="38" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="432.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">通知</ns0:text>
+<ns0:path d="M479 269 L485 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="486" y="250" width="92" height="38" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="532.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="white">计算</ns0:text>
+<ns0:path d="M579 269 L585 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="586" y="250" width="92" height="38" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="632.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">发布</ns0:text>
+<ns0:path d="M334 269 L381 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:text x="28" y="328" font-size="12" font-weight="400" text-anchor="start" fill="#505050">流程示意；方框宽度不代表测得的耗时。</ns0:text>
+</ns0:g></ns0:svg>

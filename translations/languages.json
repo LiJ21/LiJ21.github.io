@@ -1,0 +1,4 @@
+[
+  {"code":"en","prefix":"","label":"English","count_template":"{visible} of {total} publications"},
+  {"code":"zh-Hans","prefix":"zh","label":"简体中文","count_template":"共 {total} 篇，显示 {visible} 篇","notice":"本页部分文字为机器辅助翻译。","fallback_notice":"尚未完成翻译的部分保留英文。","original_label":"查看英文原文","feed_title":"Jiajun Li — 技术笔记","feed_description":"关于机器学习、计算系统、市场与物理的笔记。"}
+]

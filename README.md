@@ -20,18 +20,38 @@ Open http://localhost:8000. Stop with Ctrl+C.
 - `projects.html`: QLeaf, QuDrip, OptIndex, RL Tools, and the collaborative NESSi 2.0 contribution.
 - `contact.html`: LinkedIn, Google Scholar, and GitHub profiles.
 - `data/publications.json`: reviewed bibliographic metadata and access links.
-- `scripts/build_site.py`: page templates, profile copy, project descriptions, and static generation.
+- `content/pages/*.html`: editable English page content, including the profile.
+- `content/pages.yaml`: page titles and descriptions.
+- `content/projects.yaml`: project descriptions.
+- `scripts/build_site.py`: shared page layout and static generation.
 - `assets/style.css`: responsive layout and print styling.
 - `assets/publications.js`: progressive search, type/year filters, and reset behavior.
 - `assets/publications.bib`: downloadable UTF-8 bibliography (biblatex/biber recommended).
 
-Edit the publication dataset or the page content in `scripts/build_site.py`, then regenerate:
+Edit the publication dataset or files under `content/`, then regenerate:
 
 ```sh
 python3 scripts/build_site.py
 ```
 
 Commit both the source edits and the generated HTML/BibTeX. GitHub Pages does not need to run the generator. All publication records and links remain available without JavaScript. Search matches title, authors, venue, year, DOI, arXiv ID, and earlier titles, ignoring case and diacritics.
+
+## Languages
+
+English pages remain at their existing URLs; Simplified Chinese pages are under
+`/zh/`. The language switch keeps the current page. The homepage uses the supplied
+portrait in `assets/me.jpeg`.
+
+Translations use authored overrides first, then a current automatic draft, then
+English. Initial Chinese drafts are included, so ordinary builds work offline.
+See [the translation guide](translations/README.md) for paragraph overrides,
+complete Chinese notes, review reports, and API updates. Use an HTTP preview:
+root-relative links do not work by opening HTML files directly.
+
+```sh
+python3 scripts/update_translations.py
+.venv/bin/python -m unittest discover -s tests -v
+```
 
 ## Homepage selection
 
@@ -54,7 +74,15 @@ The bibliography contains 28 journal/proceedings articles, 4 standalone preprint
 
 ## Validation
 
-Local HTML landmarks, navigation, fragment links, bibliography coverage, JavaScript syntax, and publication filter behavior passed checks. All six pages and their assets served successfully over local HTTP. Thirty PDF links returned PDF content; two APS PDF endpoints returned HTTP 403 and the IOP PDF endpoint returned a bot challenge. Those three publisher-provided links remain in place. Browser-based visual QA was unavailable because no browser surface was connected.
+The bilingual build has automated checks for translation precedence, stale-source
+behavior, complete authored notes, protected benchmark numbers/code, local links,
+assets, and language metadata. Browser checks cover the portrait, Chinese layout,
+language switch, translated diagram, and publication search. The Google API
+request is tested with a mock; no live API credentials are configured.
+
+During the original bibliography check, thirty PDF links returned PDF content;
+two APS PDF endpoints returned HTTP 403 and the IOP PDF endpoint returned a bot
+challenge. Those three publisher-provided links remain in place.
 
 ## Publish
 

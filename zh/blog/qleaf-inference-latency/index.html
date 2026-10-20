@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="本文介绍 QLeaf：一个框架与基准测试项目，从内核启动到主机与设备之间的交接，逐步降低整条推理路径上的延迟。" name="description"/>
+<meta content="#111111" name="theme-color"/>
+<meta content="如何将单样本树模型推理优化到几微秒？ · Jiajun Li" property="og:title"/>
+<meta content="本文介绍 QLeaf：一个框架与基准测试项目，从内核启动到主机与设备之间的交接，逐步降低整条推理路径上的延迟。" property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>如何将单样本树模型推理优化到几微秒？ · Jiajun Li</title>
+<link href="https://jjli.info/zh/blog/qleaf-inference-latency/" rel="canonical"/>
+<meta content="https://jjli.info/zh/blog/qleaf-inference-latency/" property="og:url"/>
+<link href="/zh/feed.xml" rel="alternate" title="Jiajun Li — Notes" type="application/rss+xml"/>
+<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/style.css" rel="stylesheet"/>
+<link href="https://jjli.info/blog/qleaf-inference-latency/" hreflang="en" rel="alternate"/><link href="https://jjli.info/zh/blog/qleaf-inference-latency/" hreflang="zh-Hans" rel="alternate"/><link href="https://jjli.info/blog/qleaf-inference-latency/" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#main">跳至正文</a>
+<div class="site-wrap">
+<header class="site-header"><nav aria-label="主导航"><a href="/zh/">概览</a><a href="/zh/about.html">背景</a><a href="/zh/publications.html">论文</a><a href="/zh/projects.html">项目</a><a aria-current="page" href="/zh/blog.html">笔记</a><a href="/zh/contact.html">联系</a></nav><div aria-label="Language" class="language-switch" translate="no"><a href="/blog/qleaf-inference-latency/" hreflang="en" lang="en">English</a><a aria-current="true" href="/zh/blog/qleaf-inference-latency/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></div></header>
+<main id="main"><aside class="translation-notice">本页部分文字为机器辅助翻译。 <a data-original-link="true" href="https://jjli.info/blog/qleaf-inference-latency/">查看英文原文</a></aside><!-- Generated from content/posts by build_notes.py --><article class="note-article">
+<p><a href="/zh/blog.html">← 全部笔记</a></p>
+<header><div class="note-meta"><time datetime="2026-10-19"><span>2026 年 10 月 19 日</span></time><span>机器学习</span><span>计算系统</span></div><h1>如何将单样本树模型推理优化到几微秒？</h1><p class="note-deck">本文介绍 QLeaf：一个框架与基准测试项目，从内核启动到主机与设备之间的交接，逐步降低整条推理路径上的延迟。</p></header>
+<div class="note-content"><!-- i18n: qleaf.block001 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block001">在 AI 和深度学习的时代，为什么还要讨论树模型？一个实际的原因是，在各种表格数据问题上，从高能物理中的模式识别到机器人中的实时决策，树模型仍然表现良好，有时甚至达到最优水平。树模型在训练和推理中面临的挑战与神经网络不同。本文关注推理。例如，梯度提升作为最常用的树模型方法之一，通常会生成大量浅层树。</p>
+<!-- i18n: qleaf.block002 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block002">大量树提供了可观的并行度，但有限的深度意味着，无论使用 CPU 还是 GPU，处理器在每棵树上完成的工作都很少。这并不是 GPU 擅长的典型负载：把树分配给线程后，每个线程的工作可能少到不足以让 GPU 忙起来。在单样本推理这一极端情形下，主机与设备之间的交接和协调开销可能主导端到端延迟。对于算术强度较高的负载，这些开销通常能分摊到更多计算上。因此，传统做法是使用 CPU 进行树模型推理，并在可能时利用多个核心并行计算。</p>
+<!-- i18n: qleaf.block003 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block003">本文介绍 QLeaf，一个系统性的基准测试框架，也可能用于生产环境。它为多线程 CPU 与 GPU 后端提供统一接口。我们先看延迟消融实验和框架结构，再讨论采用常驻工作线程与无锁交接的 CPU 实现。随后从朴素的 GPU 实现出发，通过一系列优化，得到具有竞争力的 GPU 实现。有意思的是，请求时间中究竟有多少花在树计算之外，以及如何通过一些不太常规的技巧降低这部分开销。</p>
+<!-- i18n: qleaf.block004 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block004"><strong>本文内容：</strong> <a href="#latency-ablation">延迟消融</a> · <a href="#framework">框架</a> · <a href="#cpu">CPU</a> · <a href="#gpu">GPU</a> · <a href="#workload">负载的影响</a></p>
+<!-- i18n: qleaf.block005 -->
+<h2 data-i18n="note.qleaf-inference-latency.qleaf.block005" id="latency-ablation">从延迟消融实验开始</h2>
+<!-- i18n: qleaf.block006 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block006">下表展示了针对<strong> 5,000 棵深度为六的 HIGGS 树</strong>的一条优化路径，输入包含 28 个特征，每个线程块使用 512 个 CUDA 线程。常驻内核各行的优化依次累积；单次启动一行是独立的参考。数值为主机到主机的延迟，单位是微秒。</p>
+<!-- i18n: qleaf.block007 -->
+<table data-i18n="note.qleaf-inference-latency.qleaf.block007">
+<thead>
+<tr>
+<th>GPU 遍历配置</th>
+<th style="text-align: right;">中位数，µs</th>
+<th style="text-align: right;">p99，µs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单次启动内核，映射输入</td>
+<td style="text-align: right;">11.247</td>
+<td style="text-align: right;">12.239</td>
+</tr>
+<tr>
+<td>初始常驻内核，复制输入</td>
+<td style="text-align: right;">26.735</td>
+<td style="text-align: right;">30.703</td>
+</tr>
+<tr>
+<td>移除设备端跨线程块完成协调</td>
+<td style="text-align: right;">17.487</td>
+<td style="text-align: right;">20.671</td>
+</tr>
+<tr>
+<td>使用单一请求轮询者</td>
+<td style="text-align: right;">8.631</td>
+<td style="text-align: right;">9.375</td>
+</tr>
+<tr>
+<td>读取映射的主机输入</td>
+<td style="text-align: right;">7.079</td>
+<td style="text-align: right;">7.771</td>
+</tr>
+<tr>
+<td>暂存输入并使用哨兵值通知</td>
+<td style="text-align: right;">6.891</td>
+<td style="text-align: right;">7.375</td>
+</tr>
+</tbody>
+</table>
+<!-- i18n: qleaf.block008 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block008">起初，让内核常驻反而使请求<strong>更慢</strong>。移除跨线程块的完成协调、减少请求轮询者数量，带来了最大的收益；随后改变输入交接方式，使中位数降到七微秒以下。后文会逐一解释每行优化背后的机制。</p>
+<!-- i18n: qleaf.block009 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block009">计时从特征暂存前开始，到 CPU 可以读取结果时结束。对于映射输入，当前特征行复制到映射主机缓冲区的过程也包含在这个区间内。每次运行包含 10,000 次预热请求和 100,000 次测量请求。模型加载与工作线程初始化不计入稳态测量。</p>
+<!-- i18n: qleaf.block010 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block010">基准测试机器配备 Intel Core i7-12700F 和一块显存为 12 GiB、支持 CUDA 的消费级 GPU。主要比较中关闭 CPU 睿频；GPU 的应用时钟请求值分别为 SM 1,800 MHz、显存 7,501 MHz。第二组负载 epsilon 有 2,000 个特征，而非 28 个。两组负载均使用深度为六、分别包含 500、1,000、2,000 和 5,000 棵树的集成模型。<a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/BENCHMARK.md">完整基准报告</a>记录了分布、配置和数据来源。</p>
+<!-- i18n: qleaf.block011 -->
+<h2 data-i18n="note.qleaf-inference-latency.qleaf.block011" id="framework">框架：模型、工作单元与归约</h2>
+<!-- i18n: qleaf.block012 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block012">核心接口是 <code>qleaf::Inferrer</code>。它持有模型表示，将树集合划分给工作单元，提交特征行并收集各工作单元的结果。目前预测输出是一个标量原始分数，即各棵树输出之和。</p>
+<!-- i18n: qleaf.block013 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block013">C++ 类型决定节点布局、工作单元实现、负载均衡器与归约器。运行时 JSON 提供模型和工作单元配置，例如 CPU 亲和性。因此，可以在保持预测接口和工作负载不变的情况下，改变执行策略。</p>
+<!-- i18n: qleaf.block014 -->
+<figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block014">
+<div aria-label="QLeaf 框架示意图" class="diagram-scroll" role="region" tabindex="0"><img alt="树集合与工作单元配置用于初始化 Inferrer。每一行交给 CPU 或 CUDA 工作单元，部分结果收集后求和，得到一个原始预测分数。" height="390" src="/zh/assets/posts/qleaf-inference-latency/framework.svg" width="720"/></div>
+<figcaption>树集合与工作单元只准备一次，随后对每一行输入重复使用。</figcaption>
+</figure>
+<!-- i18n: qleaf.block015 -->
+<ul data-i18n="note.qleaf-inference-latency.qleaf.block015">
+<li><strong>节点缓冲区：</strong>保存树数据。<code>CompactNodeBuffer</code> 将分裂阈值与特征索引存放在不同数组中；<code>TreeNodeBuffer</code> 提供直接的节点布局。</li>
+<li><strong>负载均衡器：</strong>将树分组分配给工作单元。默认的 <code>FairBalancer</code> 按树的数量均分。</li>
+<li><strong>工作单元：</strong>计算分配给自己的树。CPU 遍历、CPU 位掩码计算与 CUDA 工作单元使用同一接口。<code>ThreadedWorker</code> 在 CPU 工作单元外封装一个常驻主机线程。</li>
+<li><strong>归约器：</strong>合并各工作单元的部分和。<code>RegressionReducer</code> 将其相加，得到原始分数。</li>
+</ul>
+<!-- i18n: qleaf.block016 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block016">在接口层面，一次请求很简单：</p>
+<!-- i18n: qleaf.block017 -->
+<pre data-i18n="note.qleaf-inference-latency.qleaf.block017"><code class="language-cpp">// The concrete Inferrer type selects the backend and layout.
+auto margin = inferrer.predict(features);
+</code></pre>
+<!-- i18n: qleaf.block018 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block018">在内部，推理器先向所有工作单元提交特征行，再收集结果，让线程化工作单元能并发计算各自的分区。一个 CUDA 工作单元管理自己的线程块网格，这是工作单元内部的另一层并行。</p>
+<!-- i18n: qleaf.block019 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block019">实现位于 <a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/include/qleaf.h"><code>qleaf.h</code></a>；CUDA 策略和工作单元位于 <a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/include/gworkers.cuh"><code>gworkers.cuh</code></a>。</p>
+<!-- i18n: qleaf.block020 -->
+<h2 data-i18n="note.qleaf-inference-latency.qleaf.block020" id="cpu">CPU：减少每棵树的工作，并让工作线程保持就绪</h2>
+<!-- i18n: qleaf.block021 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block021">每棵树只沿一条路径遍历</h3>
+<!-- i18n: qleaf.block022 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block022">对于深度为六的二叉树，推理只需进行六次分裂判断，然后读取叶节点的值，无需检查所有内部节点。QLeaf 的分支遍历工作单元在每一层通过算术运算计算下一节点索引，并累加各棵树的叶值。</p>
+<!-- i18n: qleaf.block023 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block023">这是针对紧凑模型表示的一段小循环。代码向编译器暴露了不存在别名这一条件，为跨树向量化留下空间。不过，单条路径内的依赖仍然存在：下一个特征与阈值取决于前一次比较。</p>
+<!-- i18n: qleaf.block024 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block024">另一种位掩码工作单元会计算条件，并对可达叶节点的掩码求交。这让工作更规则，但比沿单一路径遍历需要更多比较。对于浅层树，额外工作必须通过并行执行获得足够收益才有意义。</p>
+<!-- i18n: qleaf.block025 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block025">线程只创建一次，随后交接请求</h3>
+<!-- i18n: qleaf.block026 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block026">如果每次预测都创建线程并等待其结束，就会给一个仅持续几微秒的请求增加初始化和调度工作。QLeaf 在构造推理器时就创建常驻线程。每个线程持有一组树，并可绑定到一个 CPU 核心。</p>
+<!-- i18n: qleaf.block027 -->
+<figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block027">
+<div aria-label="CPU 工作线程生命周期比较" class="diagram-scroll" role="region" tabindex="0"><img alt="逐请求创建线程意味着每一行都重复启动、计算和等待结束。QLeaf 只启动一次工作线程，随后反复发布指针、计算树并收集结果。" height="340" src="/zh/assets/posts/qleaf-inference-latency/cpu-workers.svg" width="720"/></div>
+<figcaption>上行示意每次请求都创建线程的情况，并非单独测量过的基准。QLeaf 在请求之间保持工作线程存活。</figcaption>
+</figure>
+<!-- i18n: qleaf.block028 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block028">交接使用原子操作，而非由互斥锁保护的任务队列。调用者通过 release store 发布特征指针。工作线程用 acquire load 观察到指针后，计算自己的分区，再以 release 语义发布就绪标志。调用者通过 acquire load 等待，随后读取结果。特征行在预测完成前始终保持有效。</p>
+<!-- i18n: qleaf.block029 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block029">指针和就绪标志构成一个小型请求—响应协议，同一时刻只有一个在途请求。这避免了稳态路径上的线程启动或阻塞唤醒。工作线程在等待时自旋，因此这种低延迟配置即使在请求之间也会占用核心。</p>
+<!-- i18n: qleaf.block030 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block030">线程放置也是算法的一部分</h3>
+<!-- i18n: qleaf.block031 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block031">在混合架构 CPU 上，“八个线程”并不是完整的配置。物理核心、同核 SMT 线程和能效核不能互换。基准比较了物理核心优先与同核线程优先的放置方式，并预留一个逻辑 CPU 负责分发。</p>
+<!-- i18n: qleaf.block032 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block032">在使用两个、四个或八个工作线程的 24 项比较中，物理核心优先赢得了 18 项。使用 16 个工作线程时，同核线程优先在八项比较中赢得七项。后一种顺序可以先使用性能核的 SMT 同核线程，再把工作分配到能效核。</p>
+<!-- i18n: qleaf.block033 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block033">对于 5,000 棵 HIGGS 树，八个工作线程在物理核心优先时耗时 <strong>12.351 µs</strong>，同核线程优先时为 <strong>28.751 µs</strong>。使用 16 个工作线程时，结果反转：分别为 <strong>24.191 µs</strong> 和 <strong>11.959 µs</strong>。只有工作分配与放置方式能抵消额外协调开销时，增加线程才有帮助。</p>
+<!-- i18n: qleaf.block034 -->
+<table data-i18n="note.qleaf-inference-latency.qleaf.block034">
+<thead>
+<tr>
+<th>工作负载</th>
+<th style="text-align: right;">最佳 CPU 中位数，µs</th>
+<th style="text-align: right;">最佳未缓存 GPU 中位数，µs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HIGGS，500 棵树</td>
+<td style="text-align: right;">2.177</td>
+<td style="text-align: right;">3.803</td>
+</tr>
+<tr>
+<td>HIGGS，5,000 棵树</td>
+<td style="text-align: right;">11.959</td>
+<td style="text-align: right;">6.891</td>
+</tr>
+<tr>
+<td>epsilon，500 棵树</td>
+<td style="text-align: right;">2.427</td>
+<td style="text-align: right;">7.027</td>
+</tr>
+<tr>
+<td>epsilon，5,000 棵树</td>
+<td style="text-align: right;">12.559</td>
+<td style="text-align: right;">9.871</td>
+</tr>
+</tbody>
+</table>
+<!-- i18n: qleaf.block035 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block035">这些 CPU 结果使用关闭睿频的策略。另行测量的开启睿频的 CPU 参考中，5,000 棵 HIGGS 树达到 <strong>5.679 µs</strong>，5,000 棵 epsilon 树达到 <strong>6.191 µs</strong>。纯主机请求完全避免了与设备的往返通信，而 CPU 频率在这个时间尺度上很重要。</p>
+<!-- i18n: qleaf.block036 -->
+<h2 data-i18n="note.qleaf-inference-latency.qleaf.block036" id="gpu">GPU：把延迟预算用在树计算上</h2>
+<!-- i18n: qleaf.block037 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block037">1. 每个请求启动一次内核</h3>
+<!-- i18n: qleaf.block038 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block038">最简单的 GPU 路径是启动网格、计算树集合、等待完成，再将各线程块的部分和返回主机进行最终求和。树集合已驻留在 GPU 上，无需在每次预测时重新传输。</p>
+<!-- i18n: qleaf.block039 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block039">一个线程可以沿一棵树的路径执行，同时并行处理许多树。每棵树的算术运算很少，因此内核启动、输入传输、同步和结果可见性占据了请求时间的很大一部分。更多的算术吞吐量并不能消除这些成本。</p>
+<!-- i18n: qleaf.block040 -->
+<figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block040">
+<div aria-label="PCIe 通信与树计算" class="diagram-scroll" role="region" tabindex="0"><img alt="主机经 PCIe 发送特征行，GPU 计算驻留的树并协调结果，输出经 PCIe 返回。计时覆盖整个往返过程。" height="340" src="/zh/assets/posts/qleaf-inference-latency/request-path.svg" width="720"/></div>
+<figcaption>测量包括两次跨互连传输和完成操作。这是一张数据流示意图，并非实测耗时的分解。</figcaption>
+</figure>
+<!-- i18n: qleaf.block041 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block041">2. 让内核常驻</h3>
+<!-- i18n: qleaf.block042 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block042">常驻内核只启动一次，然后循环处理请求。这相当于 CPU 工作线程池在 GPU 上的对应形式：初始化移出稳态路径，每一行新数据通过交接协议到达。</p>
+<!-- i18n: qleaf.block043 -->
+<figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block043">
+<div aria-label="GPU 单次启动与常驻执行" class="diagram-scroll" role="region" tabindex="0"><img alt="单次推理对每一行都进行启动、计算和同步。常驻内核只启动一次，随后反复等待请求、计算树并发布结果。" height="340" src="/zh/assets/posts/qleaf-inference-latency/gpu-workers.svg" width="720"/></div>
+<figcaption>常驻消除了重复启动，但内核仍需检测请求，并使结果对主机可见。</figcaption>
+</figure>
+<!-- i18n: qleaf.block044 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block044">最初的常驻实现将特征行复制到设备内存，推进序列标志，让所有线程块轮询它，再通过设备范围的完成逻辑合并结果。其延迟中位数为 <strong>26.735 µs</strong>，高于单次启动、映射输入参考的 <strong>11.247 µs</strong>。这项比较同时改变了输入路径和启动策略，展示的是初始设计的成本，而非单独隔离内核启动开销。</p>
+<!-- i18n: qleaf.block045 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block045">当协议要求所有线程块都能取得进展时，常驻网格必须能同时驻留在设备上。QLeaf 会检查共同驻留条件，而不是假设任意大小的网格都能参与握手。</p>
+<!-- i18n: qleaf.block046 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block046">3. 让线程块独立完成，在主机上归约</h3>
+<!-- i18n: qleaf.block047 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block047">每个线程块首先在内部归约自己的树输出。最初的设计将部分和原子地加到共享的设备结果中，并更新共享完成计数器。最后到达的线程块发布完整结果并通知主机。</p>
+<!-- i18n: qleaf.block048 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block048">各线程块独立计算树，但完成时会争用共享状态。原子累加与最后到达者的协调，在请求中引入了一个串行步骤。</p>
+<!-- i18n: qleaf.block049 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block049">替代方案保留线程块内部归约，移除共享完成步骤。<strong>每个线程块把自己的和写入独立的、主机可见的锁页结果槽位。</strong> CPU 等待所有槽位填满，然后对这组小规模线程块结果求和。</p>
+<!-- i18n: qleaf.block050 -->
+<figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block050">
+<div aria-label="跨线程块完成协调与独立主机槽位的比较" class="diagram-scroll" role="region" tabindex="0"><img alt="最初，各 GPU 线程块汇聚到共享原子和与完成计数器，最后一个线程块发布结果。替代方案让每个线程块经 PCIe 写入自己的锁页主机内存槽位，再由 CPU 求和。" height="440" src="/zh/assets/posts/qleaf-inference-latency/completion.svg" width="720"/></div>
+<figcaption>把最终归约移到主机，消除了 GPU 上共享的完成点。每个线程块仍然对自己的树结果进行归约。</figcaption>
+</figure>
+<!-- i18n: qleaf.block051 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block051">对于 5,000 棵 HIGGS 树，中位数从 <strong>26.735 降至 17.487 µs</strong>，p99 从 <strong>30.703 降至 20.671 µs</strong>。CPU 多做少量工作，就能简化设备端路径。</p>
+<!-- i18n: qleaf.block052 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block052">尚未填充的槽位包含 NaN；一个非 NaN 的部分和同时也充当完成标志。主机收集结果后重新初始化槽位。这依赖于部分和非 NaN 以及单请求协议。独立槽位消除了线程块之间的争用，但结果发布与缓冲区复用仍然需要明确定义的协议。</p>
+<!-- i18n: qleaf.block053 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block053">4. 一个线程块轮询主机，其余等待设备状态</h3>
+<!-- i18n: qleaf.block054 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block054">如果每个线程块都反复读取一个系统可见的请求标志，成本会很高。许多消费者检查同一个标志，会制造流量，却没有完成有用的树计算。</p>
+<!-- i18n: qleaf.block055 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block055">单轮询者策略把这项工作交给零号线程块，由它检测请求并更新设备范围的广播序列。其他线程块等待设备端序列。在带暂存的变体中，零号线程块还会先准备特征行，再广播就绪状态。</p>
+<!-- i18n: qleaf.block056 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block056">这改变了等待发生的<em>位置</em>：大多数线程块不再观察主机可见的请求状态。对于 5,000 棵 HIGGS 树，中位数从 <strong>17.487 降至 8.631 µs</strong>。对于 500 棵树，反而从 <strong>6.419 小幅升至 6.647 µs</strong>。线程块较少时，新增的广播阶段能消除的流量也较少。</p>
+<!-- i18n: qleaf.block057 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block057">5. 映射锁页输入与显式复制</h3>
+<!-- i18n: qleaf.block058 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block058">锁页内存是页面保持驻留的主机内存，可作为显式传输的数据源。映射进一步使它能够被 GPU 的加载和存储操作访问。在独立 GPU 上，访问映射主机内存仍需经过互连：“零复制”避免的是向独立设备缓冲区的显式复制，并非物理数据移动。<a href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#zero-copy">NVIDIA 的内存指南</a>解释了这一差别。</p>
+<!-- i18n: qleaf.block059 -->
+<figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block059">
+<div aria-label="显式复制与映射锁页输入的比较" class="diagram-scroll" role="region" tabindex="0"><img alt="显式复制路径通过 cudaMemcpy 经 PCIe 填充设备缓冲区。映射路径让 GPU 直接经 PCIe 读取锁页主机内存，并可在计算前暂存到设备上。两者都经过 PCIe 移动数据。" height="420" src="/zh/assets/posts/qleaf-inference-latency/input-memory.svg" width="720"/></div>
+<figcaption>锁页与复制是不同的选择。映射省去了每次请求的复制操作；暂存则可让重复的特征读取留在 GPU 上。</figcaption>
+</figure>
+<!-- i18n: qleaf.block060 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block060">对于较小的特征行，发起并完成一次复制的成本可能高于实际移动这些字节的成本。HIGGS 的浮点特征仅有 <strong>112 字节</strong>。消除轮询风暴后，映射输入使 5,000 棵树的延迟中位数从 <strong>8.631 降至 7.079 µs</strong>。</p>
+<!-- i18n: qleaf.block061 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block061">如果许多工作单元反复从主机内存读取较大的特征行，直接访问的吸引力就会下降。暂存解决了这一复用问题：主导线程块将行读入设备缓冲区，发布就绪状态，各工作单元再使用暂存副本计算。CPU 仍需把每一行写入映射输入缓冲区；这次主机端复制仍包含在基准计时区间内。</p>
+<!-- i18n: qleaf.block062 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block062">6. 让数据自行表明已到达</h3>
+<!-- i18n: qleaf.block063 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block063">序列标志协议将数据发布与通知分开：先准备特征，再发布具有顺序保证的请求标志。哨兵协议把这两项操作合在一起。</p>
+<!-- i18n: qleaf.block064 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block064">请求到来前，映射输入包含预留哨兵值。CPU 写入特征行。主导线程块检查并暂存特征，直到所有值都已到达，然后把映射输入重置为哨兵值，再通过设备端状态广播请求。计算读取的是暂存行，因此重置输入不会破坏正在处理的数据。</p>
+<!-- i18n: qleaf.block065 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block065">主机等待所有结果后才发送下一行。特征值必须有限，且不能使用预留的 <code>+/-FLT_MAX</code> 哨兵值。在这一协议下，稳态交接中由数据到达替代单独的主机可见请求标志。</p>
+<!-- i18n: qleaf.block066 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block066">对于 5,000 棵 HIGGS 树，中位数从 <strong>7.079 降至 6.891 µs</strong>，p99 从 <strong>7.771 降至 7.375 µs</strong>。收益小于前面的协调优化。这一步同时切换了暂存和哨兵通知，因此没有单独测量其中任何一项变化。</p>
+<!-- i18n: qleaf.block067 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block067">7. 挖掘每棵树内部有用的并行性</h3>
+<!-- i18n: qleaf.block068 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block068">遍历只走一条路径，但后续步骤依赖前面的比较。位掩码计算进行更多比较，再合并可能叶节点的掩码。它的潜在优势是可以由多个执行通道分担工作。</p>
+<!-- i18n: qleaf.block069 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block069">每棵树只用一个线程时，额外工作通常得不偿失：带暂存的常驻位掩码路径处理 5,000 棵 HIGGS 树需 <strong>18.479 µs</strong>。调到每棵树四个线程后降为 <strong>12.311 µs</strong>，在受控比较中仍高于遍历的 <strong>6.891 µs</strong>。</p>
+<!-- i18n: qleaf.block070 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block070">布局也很重要。节点优先存储将相邻树中同一位置的节点放在一起；当相邻执行通道处理不同树时，这有助于合并访存。当多个通道处理同一棵树时，另一种布局可能更合适。对于 epsilon，在 1,000 和 2,000 棵树时，经调优的行优先位掩码工作单元是最佳 GPU 变体。布局和每棵树的线程数需要一起考虑。</p>
+<!-- i18n: qleaf.block071 -->
+<h3 data-i18n="note.qleaf-inference-latency.qleaf.block071">8. 在常驻工作集容得下时缓存树</h3>
+<!-- i18n: qleaf.block072 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block072">常驻内核可跨请求将树数据保存在共享内存中，避免反复从全局内存读取这些节点。代价是占用更多共享内存，可能限制常驻线程块的数量。</p>
+<!-- i18n: qleaf.block073 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block073">对于 500 棵 HIGGS 树，缓存参数扫描中匹配的未缓存遍历耗时 <strong>4.191 µs</strong>，单波次缓存为 <strong>3.333 µs</strong>。更广泛扫描中的最佳未缓存结果是 <strong>3.803 µs</strong>；使用匹配比较，才能区分缓存与线程块大小调优的影响。5,000 棵树的缓存常驻变体被跳过，因为其网格无法共同驻留。</p>
+<!-- i18n: qleaf.block074 -->
+<h2 data-i18n="note.qleaf-inference-latency.qleaf.block074" id="workload">工作负载改变了什么？</h2>
+<!-- i18n: qleaf.block075 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block075">epsilon 的特征行约为 <strong>7.8 KiB</strong>，而 HIGGS 只有 112 字节。在 5,000 棵树时，移除跨线程块完成协调并选择轮询策略，使 epsilon 遍历从 <strong>16.639 降至 9.871 µs</strong>。加入映射与暂存通知后，反而增至 <strong>10.479 µs</strong>。此时复制输入的路径更合适。</p>
+<!-- i18n: qleaf.block076 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block076">这也解释了为什么 QLeaf 提供可组合的策略，而不是为所有负载选定一个配置。特征宽度改变通信成本，树集合的大小改变可分配的工作量，树深度与计算方法改变每棵树内部的工作，共享内存用量则改变哪些常驻网格能够同时驻留。</p>
+<!-- i18n: qleaf.block077 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block077">对于单样本推理，优化应从良好的 CPU 实现和完整请求的测量开始。在 GPU 上，消除重复启动只是第一步。降低跨线程块完成协调、主机轮询和输入交接的开销，才让常驻路径具有竞争力。最终延迟越来越受通信与结果可见性的影响；消融实验展示了降低这些成本的方法，但并未测量物理上的通信下界。</p>
+<!-- i18n: qleaf.block078 -->
+<p data-i18n="note.qleaf-inference-latency.qleaf.block078">框架代码位于 <a href="https://github.com/LiJ21/QLeaf">QLeaf 仓库</a>。<a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/BENCHMARK.md">本文使用的基准报告</a>与<a href="https://github.com/LiJ21/QLeaf/tree/3019985b98235074e39104be1a6a3be7dbba917f">同一版本的源代码</a>提供完整配置和实现细节。</p></div>
+</article></main>
+<footer><p>© 2026 Jiajun Li</p><p>人工智能 · 计算 · 交易</p><div><a href="https://scholar.google.com/citations?user=tP-VfEAAAAAJ&amp;hl=en">学术资料 ↗</a><a href="https://github.com/LiJ21">GitHub ↗</a><a href="https://www.linkedin.com/in/jiajunli/">LinkedIn ↗</a></div></footer>
+</div>
+</body>
+</html>

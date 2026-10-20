@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" role="img" aria-labelledby="title">
+<ns0:title id="title">共享的 GPU 完成状态与独立的主机结果槽位</ns0:title>
+<ns0:defs><ns0:marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><ns0:path d="M0 0 L8 4 L0 8Z" fill="#111111" /></ns0:marker></ns0:defs>
+<ns0:rect width="720" height="440" fill="white" />
+<ns0:g font-family="Arial, Helvetica, sans-serif" fill="#111111">
+<ns0:text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#111111">设备端共享完成状态</ns0:text>
+<ns0:rect x="28" y="55" width="155" height="34" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="105.5" y="77.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">线程块 0：局部和</ns0:text>
+<ns0:path d="M185 72 L271 120" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="28" y="104" width="155" height="34" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="105.5" y="126.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">线程块 1：局部和</ns0:text>
+<ns0:path d="M185 121 L271 120" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="28" y="153" width="155" height="34" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="105.5" y="175.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">线程块 2：局部和</ns0:text>
+<ns0:path d="M185 170 L271 120" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="274" y="78" width="225" height="85" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="386.5" y="115.5" font-size="15" font-weight="400" text-anchor="middle" fill="white">原子求和 + 计数器</ns0:text>
+<ns0:text x="386.5" y="135.5" font-size="15" font-weight="400" text-anchor="middle" fill="white">最后完成的线程块发布结果</ns0:text>
+<ns0:rect x="555" y="91" width="137" height="58" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="623.5" y="125.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">主机端结果</ns0:text>
+<ns0:path d="M500 120 L552 120" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:text x="28" y="202" font-size="14" font-weight="400" text-anchor="start" fill="#111111">所有线程块更新 GPU 上共享的完成状态。</ns0:text>
+<ns0:path d="M28 221 L692 221" fill="none" stroke="#d2d2d2" stroke-dasharray="5 5" />
+<ns0:text x="28" y="250" font-size="13" font-weight="600" text-anchor="start" fill="#111111">主机可见的独立槽位</ns0:text>
+<ns0:text x="268" y="276" font-size="12" font-weight="600" text-anchor="middle" fill="#111111">PCIe</ns0:text>
+<ns0:text x="400" y="276" font-size="12" font-weight="400" text-anchor="middle" fill="#111111">锁页主机内存</ns0:text>
+<ns0:path d="M268 285 L268 408" fill="none" stroke="#d2d2d2" stroke-dasharray="5 5" />
+<ns0:rect x="28" y="290" width="155" height="32" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="105.5" y="311.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">线程块 0：局部和</ns0:text>
+<ns0:rect x="331" y="290" width="138" height="32" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="400.0" y="311.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">槽位 0</ns0:text>
+<ns0:path d="M185 306 L328 306" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:path d="M471 306 L552 351" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="28" y="335" width="155" height="32" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="105.5" y="356.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">线程块 1：局部和</ns0:text>
+<ns0:rect x="331" y="335" width="138" height="32" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="400.0" y="356.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">槽位 1</ns0:text>
+<ns0:path d="M185 351 L328 351" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:path d="M471 351 L552 351" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="28" y="380" width="155" height="32" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="105.5" y="401.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">线程块 2：局部和</ns0:text>
+<ns0:rect x="331" y="380" width="138" height="32" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="400.0" y="401.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">槽位 2</ns0:text>
+<ns0:path d="M185 396 L328 396" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:path d="M471 396 L552 351" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="555" y="321" width="137" height="60" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="623.5" y="346.0" font-size="14" font-weight="400" text-anchor="middle" fill="white">主机收集</ns0:text>
+<ns0:text x="623.5" y="366.0" font-size="14" font-weight="400" text-anchor="middle" fill="white">并求和</ns0:text>
+</ns0:g></ns0:svg>

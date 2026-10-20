@@ -24,7 +24,8 @@
       paper.element.hidden = !matches;
       visible += Number(matches);
     });
-    count.textContent = `${visible} of ${papers.length} publication${papers.length === 1 ? '' : 's'}`;
+    count.textContent = (count.dataset.countTemplate || '{visible} of {total} publications')
+      .replace('{visible}', String(visible)).replace('{total}', String(papers.length));
     empty.hidden = visible !== 0;
   }
   form.hidden = false;

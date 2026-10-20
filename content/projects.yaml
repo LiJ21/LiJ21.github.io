@@ -1,0 +1,75 @@
+- name: QLeaf
+  subtitle: Low-latency tree inference
+  category: 01 / SYSTEMS & MACHINE LEARNING
+  tags:
+  - C++
+  - CUDA
+  - CPU / GPU
+  text: A low-latency tree inference framework, reaching single-digit microsecond
+    latency for hundreds to thousands of shallow trees.
+  detail: QLeaf aggressively optimizes data transfer and cross-block coordination,
+    and uses a lock-free host–device handoff to bring end-to-end latency close to
+    the limits of host–device communication.
+  href: QLeaf
+  extra: <a href="https://github.com/LiJ21/QLeaf/blob/main/BENCHMARK.md" >Benchmarks
+    ↗</a>
+- name: QuDrip
+  subtitle: Exact quantum many-body simulation
+  category: 02 / COMPUTATIONAL PHYSICS
+  tags:
+  - C++
+  - Eigen
+  - Krylov methods
+  text: A toolbox for constructing constrained Hilbert spaces, quantum operators,
+    and Hamiltonians. Sparse-matrix and Krylov methods support ground-state calculations,
+    real-time evolution, and Lindblad dynamics.
+  detail: Designed for flexible small-to-medium quantum systems, including fermionic
+    and bosonic degrees of freedom. Used in research on quantum-light control and
+    photodoped superconductivity.
+  href: QuDrip
+  extra: <a href="publications.html#paper-03" >Related publication →</a>
+- name: OptIndex
+  subtitle: Safe intrusive object store
+  category: 03 / DATA STRUCTURES
+  tags:
+  - C++
+  - Boost.Intrusive
+  - Memory management
+  text: A safe intrusive object store with stable addresses and compile-time index
+    definitions. Centralized storage and object lifetime management keep optional
+    or partitioned views consistent without duplicating objects.
+  detail: Built for bounded working sets and repeated queries, with explicit indexing
+    control and an optional fixed-size pool. The design addresses consistency across
+    indices without duplicating the stored objects.
+  href: OptIndex
+  extra: ''
+- name: RL Tools
+  subtitle: Composable reinforcement learning
+  category: 04 / LEARNING ALGORITHMS
+  tags:
+  - C++
+  - Templates
+  - LibTorch
+  text: A lightweight reinforcement learning framework that separates agents from
+    their value models. SARSA and Q-learning agents work with tabular storage or Torch-based
+    function approximators.
+  detail: 'Template-based interfaces keep the interaction loop small: observe a state,
+    select an action, and collect a reward. Core components are header-only; neural
+    models use LibTorch.'
+  href: rl_tools
+  extra: ''
+- name: NESSi 2.0
+  subtitle: Nonequilibrium systems simulation
+  category: 05 / COLLABORATIVE RESEARCH SOFTWARE
+  tags:
+  - C++
+  - Green’s functions
+  - DMFT
+  text: A shared research library for nonequilibrium Green’s functions and interacting
+    quantum systems. Version 2.0 adds memory-truncated time propagation and steady-state
+    calculations.
+  detail: I contributed to the development of NESSi 2.0 through my research on nonequilibrium
+    many-body methods. The package supports accurate numerical integration and distributed-memory
+    calculations for quantum dynamics.
+  href: https://github.com/nessi-cntr/nessi
+  extra: <a href="publications.html#paper-33" >NESSi 2.0 paper →</a>

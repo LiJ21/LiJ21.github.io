@@ -1,0 +1,2047 @@
+{
+  "404.block01": {
+    "provider": "assistant-draft",
+    "source_hash": "528334b88d8c12b960703e8404a5d92a6ce83349349b576e59263fb50b7d3ff0",
+    "text": "⟦0⟧ / 页面未找到"
+  },
+  "404.block02": {
+    "provider": "assistant-draft",
+    "source_hash": "6b0a99c5c5daadde3ab71ad808ee26e552461401a8b7381c16d840237f6e50f1",
+    "text": "超出定义域。"
+  },
+  "404.block03": {
+    "provider": "assistant-draft",
+    "source_hash": "7ae895f0d3c5abd59286cbd22a8832ad1281973affc6cf7ea638104aa760a791",
+    "text": "这个页面不存在或已移动。"
+  },
+  "404.html.description": {
+    "provider": "assistant-draft",
+    "source_hash": "038d20624bc73ffa270f19e525233e3ffa61357e854bacc5085ee0005c201a3b",
+    "text": "未找到请求的页面。"
+  },
+  "404.html.title": {
+    "provider": "assistant-draft",
+    "source_hash": "606ca6af79396ab1663013d27cdb5e08f5687813c22bd8509e4a8bffd2ff9c6f",
+    "text": "页面未找到 · ⟦0⟧"
+  },
+  "about.block01": {
+    "provider": "assistant-draft",
+    "source_hash": "74ab0c3640945e2c0d7db9965369ebdc37ec66e07eb91679a9e6172ef9d23ecf",
+    "text": "个人简介 / 背景"
+  },
+  "about.block02": {
+    "provider": "assistant-draft",
+    "source_hash": "b406b5aee2bc7025475a80e4627edec3e2b7d65f4765dba3d2d6407b41d582fb",
+    "text": "研究与工程。"
+  },
+  "about.block03": {
+    "provider": "assistant-draft",
+    "source_hash": "c58986ee3dcde230edd0dd045895ebb9bb4ef907336dfbda8e5dccbbcb8e1a4b",
+    "text": "我是一名在苏黎世工作的量化研究员，研究方向包括机器学习、⟦0⟧和实时计算。"
+  },
+  "about.block04": {
+    "provider": "assistant-draft",
+    "source_hash": "a9942bec88c4eba768a1052f4ac8438bf2d1341455fffcebb4f63f4589e881d2",
+    "text": "从机器学习⟦0⟧到实时决策。"
+  },
+  "about.block05": {
+    "provider": "assistant-draft",
+    "source_hash": "e0306c713e3cd4e3075f63cb7a52f829c42ff706e8baf33ec7d896c3068f6c18",
+    "text": "自 ⟦0⟧ 年起，我先后在 ⟦1⟧ 和 ⟦2⟧ 从事高频交易与短期预测。工作包括为做市策略开发机器学习模型、开展⟦3⟧研究，以及使用 ⟦5⟧ 实现交易系统和低延迟⟦4⟧。"
+  },
+  "about.block06": {
+    "provider": "assistant-draft",
+    "source_hash": "3e961ac41d191b99d9bfb3c8f7018bdd18467749f3b9055c51b1f1799db9aa75",
+    "text": "十余年来，我主要使用 ⟦0⟧、⟦1⟧、⟦2⟧ 和 ⟦3⟧ 开发计算方法与科研软件，其中相当一部分工作涉及数值算法和对性能要求严格的代码。"
+  },
+  "about.block07": {
+    "provider": "assistant-draft",
+    "source_hash": "a4faf7a959b379c4d449b0b231606f96d0c58c1d7e0bc1300d13fab7cd8e8862",
+    "text": "理论物理训练使我在时间序列研究、交易策略设计和性能工程中，将数学上的理解与动手实践、实证检验结合起来。在 QRT 和 IMC 的工作进一步加深了我对统计学和⟦0⟧的理解。"
+  },
+  "about.block12": {
+    "provider": "assistant-draft",
+    "source_hash": "d7a0a3a977f6c33a0ded69e5acfd143630800a3be42dd27c6a4a2a0145fe64dc",
+    "text": "业界与科研"
+  },
+  "about.block13": {
+    "provider": "assistant-draft",
+    "source_hash": "da8dbe57e661cd8c8cb167d13a1f6659e5c56171f4d1c41e8d3c18e0f0cd88e0",
+    "text": "量化研究员"
+  },
+  "about.block14": {
+    "provider": "assistant-draft",
+    "source_hash": "c9b7f6e360cb9e7dfca59af3f642f236acce0a39d294f7f7d4f9cb37e214fc45",
+    "text": "⟦0⟧ · 瑞士苏黎世"
+  },
+  "about.block15": {
+    "provider": "assistant-draft",
+    "source_hash": "27b0e1b2447a4bf0c73662f86e94c2d2007649db2addff76c89b389adbd30bef",
+    "text": "高频交易与短期 alpha 研究。"
+  },
+  "about.block16": {
+    "provider": "assistant-draft",
+    "source_hash": "72ab811e34addfaed8e636089ff5f4f1c95862f3322fe50ad77bddf35843af99",
+    "text": "量化开发员"
+  },
+  "about.block17": {
+    "provider": "assistant-draft",
+    "source_hash": "e63d9501de62a7fbfb429b9e8a9389f2386159fb8136a433bc9809996bdaae60",
+    "text": "⟦0⟧ · 瑞士楚格"
+  },
+  "about.block18": {
+    "provider": "assistant-draft",
+    "source_hash": "8529999179c1e699f30dafa209d4fe210b7a87d3ad33ca402b509c8fe6ef24ad",
+    "text": "⟦0⟧⟦1⟧ 年 11 月 – ⟦2⟧ 年 4 月⟦3⟧⟦4⟧做市策略中的机器学习信号、Delta-one 市场接入工程，以及⟦5⟧研究。"
+  },
+  "about.block19": {
+    "provider": "assistant-draft",
+    "source_hash": "f1c62a3ff18fa5a8f6dbe7a5d4f632443110256adad182d997ae7ed1e55b4525",
+    "text": "离职前带薪休假 · ⟦0⟧ 年 4 月 – ⟦1⟧ 年 3 月"
+  },
+  "about.block20": {
+    "provider": "assistant-draft",
+    "source_hash": "d60327f98b401820c661e537b0d48c2986463961984096699831b0c1af10bede",
+    "text": "PSI Fellow"
+  },
+  "about.block21": {
+    "provider": "assistant-draft",
+    "source_hash": "195bc0de2c6c795e6c486c1a14834d4fc77977537373ff398d64717c8561e5b0",
+    "text": "保罗谢勒研究所 · 瑞士菲利根"
+  },
+  "about.block22": {
+    "provider": "assistant-draft",
+    "source_hash": "2b5a717b2492142a8c360ecb9278fb841dfd9f33681958cfb9deb677536d030c",
+    "text": "量子蒙特卡洛算法与格林函数近似；光诱导超导与光掺杂；激光诱导固体量子态的最优控制。"
+  },
+  "about.block23": {
+    "provider": "assistant-draft",
+    "source_hash": "1f1f3e904346f61b11b01c2555b1e9aa920487b8acce05799a338d3b87e037ed",
+    "text": "博士后研究员"
+  },
+  "about.block24": {
+    "provider": "assistant-draft",
+    "source_hash": "acb29d7252b6b0c38dfd0acc77a42b5a059ff50986e3bce64e4029371068b4f4",
+    "text": "埃尔朗根–纽伦堡大学 · 德国埃尔朗根"
+  },
+  "about.block25": {
+    "provider": "assistant-draft",
+    "source_hash": "ff4cf3b4aee3f87c77f477ca50ef1bd6953f66f9be6154a947a1ebc193371ba7",
+    "text": "强耦合晶格量子电动力学的理论基础、光掺杂莫特绝缘体中的隐藏相，以及光掺杂稳态理论。开发了求解非马尔可夫积分微分方程的时间截断与稳态方法。"
+  },
+  "about.block26": {
+    "provider": "assistant-draft",
+    "source_hash": "b4ea2de4c117f1fe0e8630baaab0918815cc45fc5217ef3e12ad68e627703454",
+    "text": "物理学背景"
+  },
+  "about.block27": {
+    "provider": "assistant-draft",
+    "source_hash": "aa881c95e3b61399e1656edc430507edf88355bd08215a86f01831fe4ccf03c4",
+    "text": "布法罗大学"
+  },
+  "about.block28": {
+    "provider": "assistant-draft",
+    "source_hash": "5f6ca7bc8a0b790a394c57fa9ace8c2a12ac4456e20cb4eb754dbdc625c2eebf",
+    "text": "纽约州立大学"
+  },
+  "about.block29": {
+    "provider": "assistant-draft",
+    "source_hash": "1c755b6c2bd1969ef3ddacfe6cbaa0a228ceec52f4fef5227810d1d05ca9e89c",
+    "text": "学位论文：⟦0⟧耗散强关联系统中的非平衡效应⟦1⟧（⟦2⟧）。"
+  },
+  "about.block30": {
+    "provider": "assistant-draft",
+    "source_hash": "83b6c2755b1704791a63753852d9bbe781018d01ca15043fdb34fbf8062eff51",
+    "text": "曾任物理研究生协会主席，并参加布法罗大学中国足球队。"
+  },
+  "about.block31": {
+    "provider": "assistant-draft",
+    "source_hash": "c163cf3f920f77e51743a51e8d1a4ead60dad5ebc972483998d28e0773efdd2e",
+    "text": "北京师范大学"
+  },
+  "about.block32": {
+    "provider": "assistant-draft",
+    "source_hash": "6441437db571d83b8e1a5178b0a0927ca86a7f9999e77103ad78a91fbe0c883f",
+    "text": "学位论文：⟦0⟧电磁波在纳米异质结构上的米氏散射。⟦1⟧"
+  },
+  "about.block33": {
+    "provider": "assistant-draft",
+    "source_hash": "dde8107da2790c6502c407d1f137261d9b24664866da1d24fc9abf24775035eb",
+    "text": "参加白鸽志愿者协会、奇点剧社和校辩论队。"
+  },
+  "about.block34": {
+    "provider": "assistant-draft",
+    "source_hash": "87288f689e68b838fc5647bde5c302ac7af2b9323d037168213c766aff081544",
+    "text": "计算科学"
+  },
+  "about.block35": {
+    "provider": "assistant-draft",
+    "source_hash": "7c7791a6ad8258d9bcc873d47e48e141701de9a290cecf3093eea10e1cb9bcc9",
+    "text": "高级证书 · 布法罗大学"
+  },
+  "about.block36": {
+    "provider": "assistant-draft",
+    "source_hash": "112391cb974e4afabf2af3f6f49b40597620cd6d38a6ba5ab0648ba5704b45e9",
+    "text": "问题与方法"
+  },
+  "about.block37": {
+    "provider": "assistant-draft",
+    "source_hash": "98c67c67544a9b99b7baa074bec5cbb3eb8758dfd631ac0ddbb2c481d382c9df",
+    "text": "受驱动的量子物质"
+  },
+  "about.block38": {
+    "provider": "assistant-draft",
+    "source_hash": "74781992e77988a46d5f33c9b2e6916b36061799962757c3e416a15940c24eca",
+    "text": "光掺杂、电阻开关、隐藏超导，以及关联电子偏离平衡态后的动力学。"
+  },
+  "about.block39": {
+    "provider": "assistant-draft",
+    "source_hash": "29ad0b1f37511236ccdf06f0003988576197aa2d266c4a06e1553751d8ffb00b",
+    "text": "光与物质相互作用"
+  },
+  "about.block40": {
+    "provider": "assistant-draft",
+    "source_hash": "b5073bee42c389af28de4e9f4c1b962673d0deec5c9aae08ab56014cc5bf5d08",
+    "text": "强耦合光与物质系统的规范不变描述、腔中的集体行为，以及光子介导的相互作用。"
+  },
+  "about.block41": {
+    "provider": "assistant-draft",
+    "source_hash": "b337dd3c4d880284b53bfdf86b93a16781e1ce4c831f858044b6875f9c60ec39",
+    "text": "数值多体方法"
+  },
+  "about.block42": {
+    "provider": "assistant-draft",
+    "source_hash": "ea4dd01d855f7e2453614782f0d2af0ba44f002c278b0a28ab0f210279043539",
+    "text": "量子蒙特卡洛、杂质求解器、动力学平均场理论，以及非马尔可夫动力学的高效处理。"
+  },
+  "about.html.description": {
+    "provider": "assistant-draft",
+    "source_hash": "f1a07da690d66fef9d274f85e56118c4bbbc7b75e1bdb6ddf72abd94655561ac",
+    "text": "⟦0⟧ 在 QRT、⟦1⟧、PSI 和 FAU 的工作经历，以及在布法罗大学和北京师范大学的物理学教育背景。"
+  },
+  "about.html.title": {
+    "provider": "assistant-draft",
+    "source_hash": "aa31489fc319411e021ede826c035ff1da6a011e11506b10462d4b4f00a58641",
+    "text": "个人背景 · ⟦0⟧"
+  },
+  "attribute.048e90919b7c51c4": {
+    "provider": "assistant-draft",
+    "source_hash": "390123b85e77d250121649e9827f87fafb1aafaa4f7dfef8771707bf8306d096",
+    "text": "树集合与工作单元配置用于初始化 Inferrer。每一行交给 ⟦0⟧ 或 ⟦1⟧ 工作单元，部分结果收集后求和，得到一个原始预测分数。"
+  },
+  "attribute.0675b41e72f9569a": {
+    "provider": "assistant-draft",
+    "source_hash": "9edbbdf7134ef01e7571d40e29dac5a22a710fd12b99dc151b159331ab91c083",
+    "text": "显式复制与映射锁页输入的比较"
+  },
+  "attribute.0c85ff9f6ed03c81": {
+    "provider": "assistant-draft",
+    "source_hash": "1d7776ab7b0265b654871e876b5afe82977134f833a942224e02e100970c76f0",
+    "text": "编程语言"
+  },
+  "attribute.1ad933b8b21995d6": {
+    "provider": "assistant-draft",
+    "source_hash": "4d0075195d7836c0b3a58868b4a80b4d6511b3b8722e97c22aa088cd8ad2de2d",
+    "text": "单次⟦0⟧对每一行都进行启动、计算和同步。常驻内核只启动一次，随后反复等待请求、计算树并发布结果。"
+  },
+  "attribute.1b41cd20d6fb3100": {
+    "provider": "assistant-draft",
+    "source_hash": "d2ddc940f089551754f950382e4e847e6facd1bf860826d5514a688fd6a5b701",
+    "text": "标题、作者、主题、DOI…"
+  },
+  "attribute.2aade319b836cd4f": {
+    "provider": "assistant-draft",
+    "source_hash": "abf0f62d614ff3436b42eb2b8126bdd818f5214a04df6a97b7074e004f8382eb",
+    "text": "⟦0⟧ 通信与树计算"
+  },
+  "attribute.4440572fbcef80ec": {
+    "provider": "assistant-draft",
+    "source_hash": "a2ab5c59f368fb13bf1f5e1d39b2df4d14a6c779dff21c5b5d5c841dcfe94622",
+    "text": "显式复制路径通过 cudaMemcpy 经 ⟦0⟧ 填充设备缓冲区。映射路径让 ⟦1⟧ 直接经 ⟦2⟧ 读取锁页主机内存，并可在计算前暂存到设备上。两者都经过 ⟦3⟧ 移动数据。"
+  },
+  "attribute.4a2fdf82cc98c2c9": {
+    "provider": "assistant-draft",
+    "source_hash": "209202255e521f589b4778e48d107c42757e5f3091ade9ce9c8e05d0cad68d52",
+    "text": "跨线程块完成协调与独立主机槽位的比较"
+  },
+  "attribute.5c08f131b1a6dc26": {
+    "provider": "assistant-draft",
+    "source_hash": "c49c0545a0d8819d0b3de1e4d129aa16ca6b9937484f6e60616ba614c9153b8e",
+    "text": "最初，各 ⟦0⟧ 线程块汇聚到共享原子和与完成计数器，最后一个线程块发布结果。替代方案让每个线程块经 ⟦1⟧ 写入自己的锁页主机内存槽位，再由 ⟦2⟧ 求和。"
+  },
+  "attribute.6b9fa95d1e4cd1ab": {
+    "provider": "assistant-draft",
+    "source_hash": "c0bb2c174508e0f519864287d439dffa784d65b138799dc68e99a5158151c01a",
+    "text": "技术"
+  },
+  "attribute.721b9d9201812d61": {
+    "provider": "assistant-draft",
+    "source_hash": "6ccf3a6302fb6670d151a4f32393875428a1a97283aa87ac4a6b3f8321c0652b",
+    "text": "⟦0⟧ 框架示意图"
+  },
+  "attribute.7b4229741410118b": {
+    "provider": "assistant-draft",
+    "source_hash": "17bf69e0a10b4dfead17b630a0950965bf2f11a478abd3d0ad03c547cd79e464",
+    "text": "逐请求创建线程意味着每一行都重复启动、计算和等待结束。⟦0⟧ 只启动一次工作线程，随后反复发布指针、计算树并收集结果。"
+  },
+  "attribute.7f0c96e00be1612b": {
+    "provider": "assistant-draft",
+    "source_hash": "83d163bf73768a78ba49cd5e3c2e88f58b3fe85d1e03106b4e22efb6ecae842e",
+    "text": "主机经 ⟦0⟧ 发送特征行，⟦1⟧ 计算驻留的树并协调结果，输出经 ⟦2⟧ 返回。计时覆盖整个往返过程。"
+  },
+  "attribute.ad49fb1cbcf92c71": {
+    "provider": "assistant-draft",
+    "source_hash": "cd60abf68d57f3265bc0ad43665654c5a88cabb2db6bd2c3883e945b8fd47cfe",
+    "text": "⟦0⟧ 单次启动与常驻执行"
+  },
+  "attribute.baa2a80cf42e6422": {
+    "provider": "assistant-draft",
+    "source_hash": "6a2463082f0c15b7183ce33aab9bc243f5f6b7503cf1948c9f0cc08509427a74",
+    "text": "⟦0⟧ 的照片"
+  },
+  "attribute.ce7b27cc035d4810": {
+    "provider": "assistant-draft",
+    "source_hash": "6d76a0ae2e35c9fa3ce01ca04467cbcc985d65408b46b5fbed17994357fe0104",
+    "text": "⟦0⟧ 工作线程生命周期比较"
+  },
+  "attribute.eb355944b92d1058": {
+    "provider": "assistant-draft",
+    "source_hash": "d365bf75da9cc4f5dcdd3711d1569f5fe191107f29e1541963ba0d77c577df97",
+    "text": "主导航"
+  },
+  "blog.html.description": {
+    "provider": "assistant-draft",
+    "source_hash": "7c0536dcb793e956ade0e5cb64a52d3ee297b7f05fd7e4ac3f2388bbb4515716",
+    "text": "⟦0⟧ 关于机器学习、计算系统、市场与物理的技术笔记。"
+  },
+  "blog.html.title": {
+    "provider": "assistant-draft",
+    "source_hash": "54709ede87837963252de4f7411bbd87675d5a5e8d2d785d60d8c7cb423d7acc",
+    "text": "技术笔记 · ⟦0⟧"
+  },
+  "blog/qleaf-inference-latency/index.html.description": {
+    "provider": "assistant-draft",
+    "source_hash": "69df77e8845352551d6a3f87b02e58ab166284f712d24cc8fc0f5fb5cba4dff0",
+    "text": "本文介绍 ⟦0⟧：一个框架与基准测试项目，从内核启动到⟦2⟧，逐步降低整条⟦1⟧路径上的延迟。"
+  },
+  "blog/qleaf-inference-latency/index.html.title": {
+    "provider": "assistant-draft",
+    "source_hash": "8809fa4fd2fdfb20a0a4693801d51e06798857db529991bc9d9535447fd33824",
+    "text": "如何将单样本树模型⟦0⟧优化到几微秒？ · ⟦1⟧"
+  },
+  "contact.block01": {
+    "provider": "assistant-draft",
+    "source_hash": "aa2836d6c0d877d7abcd174dc3b5c646cb5c9a36f72b8d5cc7b18d466081d535",
+    "text": "联系方式 / 个人资料"
+  },
+  "contact.block02": {
+    "provider": "assistant-draft",
+    "source_hash": "38b6fb5f8d61b1f72d8f663be9c93f71890ebe7d8322eedb56167f78e3658412",
+    "text": "保持联系。"
+  },
+  "contact.block03": {
+    "provider": "assistant-draft",
+    "source_hash": "0972e25efa4424be60eb358ae36a3fbf0b0702214673a5e1ac5fb25937c49577",
+    "text": "关于职业交流、研究或开源项目，可以通过电子邮件或以下个人资料页面联系我。"
+  },
+  "contact.block04": {
+    "provider": "assistant-draft",
+    "source_hash": "9978d0ba93f6d8dabdf0a397d605ef37addb94b550f15b0d39798f8130c89620",
+    "text": "电子邮件：⟦0⟧jiajunligg@gmail.com⟦1⟧"
+  },
+  "contact.block06": {
+    "provider": "assistant-draft",
+    "source_hash": "8307e254eaf52d313911c2a6b3f0880487d458b5e2433c0530951cb687f425e5",
+    "text": "工作经历、个人背景与职业联系。"
+  },
+  "contact.block07": {
+    "provider": "assistant-draft",
+    "source_hash": "31e0982ca6d8f1b849d5abc856c190804ffbe1fe02336073b189f3f1da2d9236",
+    "text": "谷歌学术 ⟦0⟧↗⟦1⟧"
+  },
+  "contact.block08": {
+    "provider": "assistant-draft",
+    "source_hash": "315ee9bd6d39c328fd7a33943b1e2a03e3ee6baf12de61634c0f85b74de3d185",
+    "text": "论文、引用与相关研究。"
+  },
+  "contact.block10": {
+    "provider": "assistant-draft",
+    "source_hash": "fecb283c9ed3ec24ff0bc16c7bc8b55c6e6b202c5096efaae7e44d6e88fa6367",
+    "text": "源代码、文档与项目讨论。"
+  },
+  "contact.block11": {
+    "provider": "assistant-draft",
+    "source_hash": "e88582e51d85abeb40d28156b21da873cfd43d14625b38fc0c974a567d236a89",
+    "text": "瑞士苏黎世地区"
+  },
+  "contact.html.description": {
+    "provider": "assistant-draft",
+    "source_hash": "d025b7940d04ffc8d45a08acb5e56d1540aa26f3fca1cdba1325b18f83d6739c",
+    "text": "通过电子邮件联系 ⟦0⟧，或访问 ⟦1⟧、谷歌学术与 ⟦2⟧ 个人页面。"
+  },
+  "contact.html.title": {
+    "provider": "assistant-draft",
+    "source_hash": "c76451046dbf0d82683151d84345fdfdf27226729b777fc3db5046242b577ce5",
+    "text": "联系方式 · ⟦0⟧"
+  },
+  "diagram.completion.1": {
+    "provider": "assistant-draft",
+    "source_hash": "6493ffda6cff5d2dfc6ef907dd8ac60faf0150bfbf56b2cdd1190f5b587fe2a0",
+    "text": "共享的 ⟦0⟧ 完成状态与独立的主机结果槽位"
+  },
+  "diagram.completion.12": {
+    "provider": "assistant-draft",
+    "source_hash": "7727e3eaa4f66d81cd98427333832d789772f31c1b8dcaa8591819e502b9f4c3",
+    "text": "线程块 ⟦0⟧：局部和"
+  },
+  "diagram.completion.15": {
+    "provider": "assistant-draft",
+    "source_hash": "64fb5eea41661a15085207052b33c9998710d0d4b6101461088a753e0360eba5",
+    "text": "线程块 ⟦0⟧：局部和"
+  },
+  "diagram.completion.18": {
+    "provider": "assistant-draft",
+    "source_hash": "59ab79c1fbda1f458ab755c04db5273596da45a169a4b1f9699be8b5b7984aa1",
+    "text": "原子求和 + 计数器"
+  },
+  "diagram.completion.19": {
+    "provider": "assistant-draft",
+    "source_hash": "321947e308e695c7a6122b28bfcef5b42018e33ead166a4be7bdb84a9da242b7",
+    "text": "最后完成的线程块发布结果"
+  },
+  "diagram.completion.21": {
+    "provider": "assistant-draft",
+    "source_hash": "53393bcf96ef13340910127366ca64c64b1d0ec3763bd7f2c7855a1d5852d024",
+    "text": "主机端结果"
+  },
+  "diagram.completion.23": {
+    "provider": "assistant-draft",
+    "source_hash": "71183983f6ac7a03a6983f82ee6ac8d9a8ed2e3edc916b61a89a0fc5282ad099",
+    "text": "所有线程块更新 ⟦0⟧ 上共享的完成状态。"
+  },
+  "diagram.completion.25": {
+    "provider": "assistant-draft",
+    "source_hash": "8e2d990cd9bfd876e02f05502ae367127d17b129888b5ac814b02c48d27f1ec3",
+    "text": "主机可见的独立槽位"
+  },
+  "diagram.completion.27": {
+    "provider": "assistant-draft",
+    "source_hash": "af105aeed82886c04e744f43d385ee7db5fa4e88ee4d94aadd08dda467e9631e",
+    "text": "锁页主机内存"
+  },
+  "diagram.completion.30": {
+    "provider": "assistant-draft",
+    "source_hash": "2914f81ab91f6c4537a6aa202c6eaa093308d1a1c11a226ac0cad374497c80b9",
+    "text": "线程块 ⟦0⟧：局部和"
+  },
+  "diagram.completion.32": {
+    "provider": "assistant-draft",
+    "source_hash": "799b52c914b90be0dd8b9ead8bfafbf856f76632ebcd87062498b5ceedb718c1",
+    "text": "槽位 ⟦0⟧"
+  },
+  "diagram.completion.36": {
+    "provider": "assistant-draft",
+    "source_hash": "7727e3eaa4f66d81cd98427333832d789772f31c1b8dcaa8591819e502b9f4c3",
+    "text": "线程块 ⟦0⟧：局部和"
+  },
+  "diagram.completion.38": {
+    "provider": "assistant-draft",
+    "source_hash": "867bc367706ef0918b9b37333a08dd560be8792c4a7285e9e336a84cb3c12529",
+    "text": "槽位 ⟦0⟧"
+  },
+  "diagram.completion.42": {
+    "provider": "assistant-draft",
+    "source_hash": "64fb5eea41661a15085207052b33c9998710d0d4b6101461088a753e0360eba5",
+    "text": "线程块 ⟦0⟧：局部和"
+  },
+  "diagram.completion.44": {
+    "provider": "assistant-draft",
+    "source_hash": "9ad1938b19aa2cd39855481434324015660f1f47a1d162f62a120a9365e5cc00",
+    "text": "槽位 ⟦0⟧"
+  },
+  "diagram.completion.48": {
+    "provider": "assistant-draft",
+    "source_hash": "262d7160da97359b036f9315b425ad4a9b8a78af530ae5eec294558041f35ed2",
+    "text": "主机收集"
+  },
+  "diagram.completion.49": {
+    "provider": "assistant-draft",
+    "source_hash": "5c8b7718d9af03c0c1c75d7e3aa0f81fa4d70b490d8e340acefda90e7ac8df23",
+    "text": "并求和"
+  },
+  "diagram.completion.7": {
+    "provider": "assistant-draft",
+    "source_hash": "af23ff3a58f64548d9943472c3b13cac9e8260054349e87e041fa28d399bdaa6",
+    "text": "设备端共享完成状态"
+  },
+  "diagram.completion.9": {
+    "provider": "assistant-draft",
+    "source_hash": "2914f81ab91f6c4537a6aa202c6eaa093308d1a1c11a226ac0cad374497c80b9",
+    "text": "线程块 ⟦0⟧：局部和"
+  },
+  "diagram.cpu-workers.1": {
+    "provider": "assistant-draft",
+    "source_hash": "4f0d4013c62a68b310dc7059e16a17ca883a665e654d451eb60d787eb57840ad",
+    "text": "⟦0⟧：逐请求启动与常驻工作线程"
+  },
+  "diagram.cpu-workers.10": {
+    "provider": "assistant-draft",
+    "source_hash": "448daae8bd518ed8652e305b483d3d32942836c296cb7d44ffa64506c99bd75e",
+    "text": "创建"
+  },
+  "diagram.cpu-workers.13": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.cpu-workers.16": {
+    "provider": "assistant-draft",
+    "source_hash": "4e185ab3f9e0512caa614cd01d1d8bbf1717863d1464fd0b554454e50f88e89e",
+    "text": "等待结束"
+  },
+  "diagram.cpu-workers.17": {
+    "provider": "assistant-draft",
+    "source_hash": "4fca08791a2f038306b83aae3cfaafb824503e9c1d769504b1c5b4937115a840",
+    "text": "第 ⟦0⟧ 行"
+  },
+  "diagram.cpu-workers.19": {
+    "provider": "assistant-draft",
+    "source_hash": "448daae8bd518ed8652e305b483d3d32942836c296cb7d44ffa64506c99bd75e",
+    "text": "创建"
+  },
+  "diagram.cpu-workers.22": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.cpu-workers.25": {
+    "provider": "assistant-draft",
+    "source_hash": "4e185ab3f9e0512caa614cd01d1d8bbf1717863d1464fd0b554454e50f88e89e",
+    "text": "等待结束"
+  },
+  "diagram.cpu-workers.26": {
+    "provider": "assistant-draft",
+    "source_hash": "085da1ecf9429333fd11090dbfaaae33746d58dda0de9dbb9158ef1cb691e27c",
+    "text": "每一行都重复初始化与完成操作"
+  },
+  "diagram.cpu-workers.28": {
+    "provider": "assistant-draft",
+    "source_hash": "6cd61b4b336880226d7642937eaa5e3976268410acbab7513f2665cc36710a13",
+    "text": "⟦0⟧ · 常驻"
+  },
+  "diagram.cpu-workers.30": {
+    "provider": "assistant-draft",
+    "source_hash": "82dd064628f1741ccb5d9a40fef73268f4b97e07f1d446a18485099e417d79e1",
+    "text": "线程只创建一次 · 绑核工作线程在请求间保持就绪"
+  },
+  "diagram.cpu-workers.32": {
+    "provider": "assistant-draft",
+    "source_hash": "49ec326111131bb18fbfe4f8c828931704ba5d23c69b74d513a647ef373a2f80",
+    "text": "发布"
+  },
+  "diagram.cpu-workers.35": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.cpu-workers.38": {
+    "provider": "assistant-draft",
+    "source_hash": "b9d5e3ee75539d6b465296aa884fc2aa3f858fcd24e6a5084b28352879c20dab",
+    "text": "收集"
+  },
+  "diagram.cpu-workers.40": {
+    "provider": "assistant-draft",
+    "source_hash": "49ec326111131bb18fbfe4f8c828931704ba5d23c69b74d513a647ef373a2f80",
+    "text": "发布"
+  },
+  "diagram.cpu-workers.43": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.cpu-workers.46": {
+    "provider": "assistant-draft",
+    "source_hash": "b9d5e3ee75539d6b465296aa884fc2aa3f858fcd24e6a5084b28352879c20dab",
+    "text": "收集"
+  },
+  "diagram.cpu-workers.48": {
+    "provider": "assistant-draft",
+    "source_hash": "dc844063dd7a9af729f7c705dbb64babbb24bdbf984c679a729a073e38c7e1fd",
+    "text": "流程示意；方框宽度不代表测得的耗时。"
+  },
+  "diagram.cpu-workers.7": {
+    "provider": "assistant-draft",
+    "source_hash": "40b99707a1517369bdbbf41dd63d43b9b541012ec2000c30fca0c91993f73c07",
+    "text": "⟦0⟧ · 逐请求启动"
+  },
+  "diagram.cpu-workers.8": {
+    "provider": "assistant-draft",
+    "source_hash": "2ef808f0d859417a1bb930870293adf3cdebfabd564b93f91790ba37475dab3b",
+    "text": "第 ⟦0⟧ 行"
+  },
+  "diagram.framework.1": {
+    "provider": "assistant-draft",
+    "source_hash": "33ca00a88541899ee8869326be58f7b5aa1fb09f6b275d121560f51a54ceb2f9",
+    "text": "⟦0⟧：准备一次，重复预测"
+  },
+  "diagram.framework.11": {
+    "provider": "assistant-draft",
+    "source_hash": "05f825e464ba84f817c6ef54a03a5d64004c557145e016ae562e78246e83bf85",
+    "text": "Inferrer：节点缓冲区 + 树的分区"
+  },
+  "diagram.framework.13": {
+    "provider": "assistant-draft",
+    "source_hash": "4f710e20e47fa9c72b57b70fd34786628bae220ae9fbeefbd5400224370c07aa",
+    "text": "上方为初始化 · 下方为每次请求的路径"
+  },
+  "diagram.framework.16": {
+    "provider": "assistant-draft",
+    "source_hash": "0d5c4544368a1a740e174a7ebece7a8bee40099adfdb210e191c60c2009faa8e",
+    "text": "特征行"
+  },
+  "diagram.framework.18": {
+    "provider": "assistant-draft",
+    "source_hash": "e37d426debc59d283a802a8d261667abb3c06f465eae951dadb33a055a45c17b",
+    "text": "⟦0⟧ 工作线程"
+  },
+  "diagram.framework.19": {
+    "provider": "assistant-draft",
+    "source_hash": "6c25c091c7a19de2a3b5ab0480349f74ba3d80ad336ac42331a63ca6e2c6d4a7",
+    "text": "常驻主机线程"
+  },
+  "diagram.framework.21": {
+    "provider": "assistant-draft",
+    "source_hash": "7578919b7c90cd757d299608c8ce8ec52a9ff587f15230efb9c62dd403b9c624",
+    "text": "⟦0⟧ 工作单元"
+  },
+  "diagram.framework.22": {
+    "provider": "assistant-draft",
+    "source_hash": "5f1962e2c4939b0170ed3c413c0d6d01abc971805e5c11582b2c0086e855f6e1",
+    "text": "单次启动或常驻"
+  },
+  "diagram.framework.26": {
+    "provider": "assistant-draft",
+    "source_hash": "0d57795fe8c70270b399dc9f7d56fc286d43fbf4b99824c17aeb500096d4a3f8",
+    "text": "收集 + 求和"
+  },
+  "diagram.framework.27": {
+    "provider": "assistant-draft",
+    "source_hash": "48c34012f928bb91f493dac7cce4c1f21ecea093f807014fb4b617502bba6e81",
+    "text": "原始预测分数"
+  },
+  "diagram.framework.30": {
+    "provider": "assistant-draft",
+    "source_hash": "5e1870f9e49d223f60f87d6a47a1432776c90a0eddd6a026cee2d992c83d6684",
+    "text": "或"
+  },
+  "diagram.framework.31": {
+    "provider": "assistant-draft",
+    "source_hash": "04c8f7d6249da1ae01aae207a050102e8e5c1adb17b3b538e55bcb1053027803",
+    "text": "使用同一预测接口；由 ⟦0⟧ 类型选择后端和布局。"
+  },
+  "diagram.framework.7": {
+    "provider": "assistant-draft",
+    "source_hash": "26a05248f4eaea0c4510b253b36f3fc00c21285a78dbab2cf575046ca551ebc2",
+    "text": "框架"
+  },
+  "diagram.framework.9": {
+    "provider": "assistant-draft",
+    "source_hash": "30ea5e43c3b10a30c5b5acf576daaf0175ca772dd1cb7d3929aa62cce23367a7",
+    "text": "树模型 + 工作单元 JSON"
+  },
+  "diagram.gpu-workers.1": {
+    "provider": "assistant-draft",
+    "source_hash": "8bad5611d181cc50608dc03b5ad533b3d731f6707074c1202c2e2c8edf638912",
+    "text": "⟦0⟧：逐请求启动与常驻工作线程"
+  },
+  "diagram.gpu-workers.10": {
+    "provider": "assistant-draft",
+    "source_hash": "684b4d6f71edbbc4e96bc5e8d37b88e5302866b584d0b5e43f83b72191f9fa6c",
+    "text": "启动"
+  },
+  "diagram.gpu-workers.13": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.gpu-workers.16": {
+    "provider": "assistant-draft",
+    "source_hash": "5c262e6c93bcc92090e6f96bdb92310f80cc6fe75c54fafcca35d79fdb1c8e3e",
+    "text": "同步"
+  },
+  "diagram.gpu-workers.17": {
+    "provider": "assistant-draft",
+    "source_hash": "4fca08791a2f038306b83aae3cfaafb824503e9c1d769504b1c5b4937115a840",
+    "text": "第 ⟦0⟧ 行"
+  },
+  "diagram.gpu-workers.19": {
+    "provider": "assistant-draft",
+    "source_hash": "684b4d6f71edbbc4e96bc5e8d37b88e5302866b584d0b5e43f83b72191f9fa6c",
+    "text": "启动"
+  },
+  "diagram.gpu-workers.22": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.gpu-workers.25": {
+    "provider": "assistant-draft",
+    "source_hash": "5c262e6c93bcc92090e6f96bdb92310f80cc6fe75c54fafcca35d79fdb1c8e3e",
+    "text": "同步"
+  },
+  "diagram.gpu-workers.26": {
+    "provider": "assistant-draft",
+    "source_hash": "085da1ecf9429333fd11090dbfaaae33746d58dda0de9dbb9158ef1cb691e27c",
+    "text": "每一行都重复初始化与完成操作"
+  },
+  "diagram.gpu-workers.28": {
+    "provider": "assistant-draft",
+    "source_hash": "81ff64a0e459ddbec9ea2775b7b2c643a345b733b7a7a190c0b00b6cdf3cda75",
+    "text": "⟦0⟧ · 常驻"
+  },
+  "diagram.gpu-workers.30": {
+    "provider": "assistant-draft",
+    "source_hash": "45112dd741f53b8d5abd289cd5b925bcaf6bc89d4970975a0ef6ac3eb316be89",
+    "text": "内核只启动一次 · 常驻线程块等待后续请求"
+  },
+  "diagram.gpu-workers.32": {
+    "provider": "assistant-draft",
+    "source_hash": "fda934259dc9dce4e6c41f6f07b776c4e6bc10c863e3ae60450f3b3c7594cf43",
+    "text": "通知"
+  },
+  "diagram.gpu-workers.35": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.gpu-workers.38": {
+    "provider": "assistant-draft",
+    "source_hash": "49ec326111131bb18fbfe4f8c828931704ba5d23c69b74d513a647ef373a2f80",
+    "text": "发布"
+  },
+  "diagram.gpu-workers.40": {
+    "provider": "assistant-draft",
+    "source_hash": "fda934259dc9dce4e6c41f6f07b776c4e6bc10c863e3ae60450f3b3c7594cf43",
+    "text": "通知"
+  },
+  "diagram.gpu-workers.43": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.gpu-workers.46": {
+    "provider": "assistant-draft",
+    "source_hash": "49ec326111131bb18fbfe4f8c828931704ba5d23c69b74d513a647ef373a2f80",
+    "text": "发布"
+  },
+  "diagram.gpu-workers.48": {
+    "provider": "assistant-draft",
+    "source_hash": "dc844063dd7a9af729f7c705dbb64babbb24bdbf984c679a729a073e38c7e1fd",
+    "text": "流程示意；方框宽度不代表测得的耗时。"
+  },
+  "diagram.gpu-workers.7": {
+    "provider": "assistant-draft",
+    "source_hash": "3ca8a74627ac6d0113c9449cc2c9712a5c83871681e7da1c655258372c04c253",
+    "text": "⟦0⟧ · 逐请求启动"
+  },
+  "diagram.gpu-workers.8": {
+    "provider": "assistant-draft",
+    "source_hash": "2ef808f0d859417a1bb930870293adf3cdebfabd564b93f91790ba37475dab3b",
+    "text": "第 ⟦0⟧ 行"
+  },
+  "diagram.input-memory.1": {
+    "provider": "assistant-draft",
+    "source_hash": "75a327fdf5e6c218d9725b9b2952701f3a257ab0242350b3afb64618dba0fe1e",
+    "text": "显式复制和映射主机输入都需要经过 ⟦0⟧"
+  },
+  "diagram.input-memory.10": {
+    "provider": "assistant-draft",
+    "source_hash": "fc70eb97ae7326b345e8f15c78aa09e1d499077d9dff04178baabdaa9534d53b",
+    "text": "可使用锁页内存"
+  },
+  "diagram.input-memory.12": {
+    "provider": "assistant-draft",
+    "source_hash": "c624805f8b00d73fc61a2569801d694dcc91f93d9e7b56468f77b315721b8ecb",
+    "text": "设备缓冲区"
+  },
+  "diagram.input-memory.14": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.input-memory.16": {
+    "provider": "assistant-draft",
+    "source_hash": "97eed4bef23e9ff25c2a1b1d18c7d0da733c68f5a615ccd97a7f02cd6424a6a0",
+    "text": "cudaMemcpy"
+  },
+  "diagram.input-memory.17": {
+    "provider": "assistant-draft",
+    "source_hash": "34480a4724f7b4f5d34e99d014d0d4a1d68369ccf1b550f67d66b731d817667a",
+    "text": "经过 ⟦0⟧"
+  },
+  "diagram.input-memory.19": {
+    "provider": "assistant-draft",
+    "source_hash": "01f2cf7b7ac5c0fe4671671616b13cf2a3e1e6a85aec78abff96422242606b16",
+    "text": "先传输特征行，再在计算中读取设备本地内存。"
+  },
+  "diagram.input-memory.21": {
+    "provider": "assistant-draft",
+    "source_hash": "e09fc32eb006d59406083ed2a66cab1de7addd0aa9113b1b1d0e6e444de4272e",
+    "text": "映射的锁页输入"
+  },
+  "diagram.input-memory.23": {
+    "provider": "assistant-draft",
+    "source_hash": "2186d883802b95ead8e1dcbe81dc87062b14578aa53ef53d12296e9d47deae19",
+    "text": "映射的主机特征行"
+  },
+  "diagram.input-memory.24": {
+    "provider": "assistant-draft",
+    "source_hash": "502d6273cc715e98f1a3470cb5c61a347b1196c6310cffc9e4d6c9117390cd94",
+    "text": "锁页内存"
+  },
+  "diagram.input-memory.26": {
+    "provider": "assistant-draft",
+    "source_hash": "ad32480c4d9e9ab11f25d958c3812c140289eb32333853636ec6dc8aa1c7695f",
+    "text": "⟦0⟧ 读取"
+  },
+  "diagram.input-memory.27": {
+    "provider": "assistant-draft",
+    "source_hash": "6384ed4ec41481530cb8a05ff89231f7baecbed582d41c156d820af22dc440e0",
+    "text": "可选设备端暂存"
+  },
+  "diagram.input-memory.29": {
+    "provider": "assistant-draft",
+    "source_hash": "16a961b05bbe9c186d64e07d127d1b102995327a6cf5e9b53c61989d18d251f5",
+    "text": "计算"
+  },
+  "diagram.input-memory.31": {
+    "provider": "assistant-draft",
+    "source_hash": "861ef58b493db3fde9b775fe5dc48046e74e076f9754ca101594d513dbfd5d5f",
+    "text": "直接读取"
+  },
+  "diagram.input-memory.32": {
+    "provider": "assistant-draft",
+    "source_hash": "34480a4724f7b4f5d34e99d014d0d4a1d68369ccf1b550f67d66b731d817667a",
+    "text": "经过 ⟦0⟧"
+  },
+  "diagram.input-memory.34": {
+    "provider": "assistant-draft",
+    "source_hash": "c3fae5badd5e7f566b045bf0e708f92ecd9f6ae9e2a05702a524750d6ec0bf6b",
+    "text": "避免显式输入复制；通过设备端暂存复用特征。"
+  },
+  "diagram.input-memory.35": {
+    "provider": "assistant-draft",
+    "source_hash": "41cb0e69ed5b2d701f9337072013ecef2db01b6a0ff9235763a4ff7c4edf70f5",
+    "text": "锁页内存 ≠ 设备内存。映射省去了复制调用，仍需跨互连传输。"
+  },
+  "diagram.input-memory.7": {
+    "provider": "assistant-draft",
+    "source_hash": "55c25ae3486ec6ea3f8e23d10d97839dad8958698a37fb35eee00141ecafa33c",
+    "text": "显式输入复制"
+  },
+  "diagram.input-memory.9": {
+    "provider": "assistant-draft",
+    "source_hash": "a4fd0df51be23e72e546e720eda4e9331401cf015ea634e357d275360fc81e31",
+    "text": "主机特征行"
+  },
+  "diagram.request-path.1": {
+    "provider": "assistant-draft",
+    "source_hash": "b1482d8e145267fba621b003fcdbb81d51aca4d0c7ef0ed3f7f84c421bf5bec1",
+    "text": "主机到主机延迟包括通信与计算"
+  },
+  "diagram.request-path.11": {
+    "provider": "assistant-draft",
+    "source_hash": "0857b4d4e64a2738698e38293dd2a5ee1251b551cb93f63342122fa2d2954ada",
+    "text": "主机特征行"
+  },
+  "diagram.request-path.13": {
+    "provider": "assistant-draft",
+    "source_hash": "3cf6893fddd9427df3f3468b7fe3eee9eb3fd513b103ee7ec7ffdcd96e5f9b74",
+    "text": "⟦0⟧：计算树模型"
+  },
+  "diagram.request-path.15": {
+    "provider": "assistant-draft",
+    "source_hash": "f71cd7a4d57df33bf0b3a95ae4f3d914f4f87caf993b69287b3bf2fae185e58e",
+    "text": "输入 / 请求"
+  },
+  "diagram.request-path.17": {
+    "provider": "assistant-draft",
+    "source_hash": "932be97ca4b4b6795fc389fb5c0b50d467a845f7b6deb3ba206c091860fe98fa",
+    "text": "协调 + 发布"
+  },
+  "diagram.request-path.20": {
+    "provider": "assistant-draft",
+    "source_hash": "8e51b9b0247357c50ed1faf2d706cef077a59d90128c85a119e196b1df4040eb",
+    "text": "主机可见的结果"
+  },
+  "diagram.request-path.22": {
+    "provider": "assistant-draft",
+    "source_hash": "3d4a60f0d539430fc2a51a3f57ddf6d7a0d3fce1662350a55f8a785db95edda6",
+    "text": "输出 / 完成"
+  },
+  "diagram.request-path.23": {
+    "provider": "assistant-draft",
+    "source_hash": "7ae08e511882a19bc237f9fe86db53bac3fe88d4554656c8450582c16cc8b448",
+    "text": "模型驻留在 ⟦0⟧；每次请求只传输输入与结果。"
+  },
+  "diagram.request-path.7": {
+    "provider": "assistant-draft",
+    "source_hash": "ad77d4ea9a0aaee6b5ffcd40c99e77ab7e0d5bcd6ebeac951986f29d8076cff7",
+    "text": "测量完整的往返过程"
+  },
+  "fragment.2a6b511468948549": {
+    "provider": "assistant-draft",
+    "source_hash": "8e3516a34f6315bc909387f624ee14cc2be58cb858f012370330c5f713eee80e",
+    "text": "⟦1⟧ 年 10 月 ⟦0⟧ 日"
+  },
+  "home.introduction": {
+    "provider": "assistant-draft",
+    "source_hash": "faa0d2174451c311f5e47f6ec06b0131dba6ceff5ad3d4ec48befd467f596a1a",
+    "text": "我从事量化金融、人工智能和量子物理领域的算法与计算方法研究。目前的工作主要将机器学习和高性能计算用于高频交易、⟦0⟧研究和短期预测。此前，我研究强关联量子系统以及非平衡光与物质相互作用的动力学。"
+  },
+  "home.role": {
+    "provider": "assistant-draft",
+    "source_hash": "dbfc1a28e9dc4ac63c02487065737aeb1ddb65b39984285817c6ffabef4f9a4d",
+    "text": "现任 ⟦0⟧ 量化研究员，工作地点为苏黎世。"
+  },
+  "home.software": {
+    "provider": "assistant-draft",
+    "source_hash": "2ed6768cc750e8b9dd44311985132fb3f208d8d49ecc7e1d0c3cfcd1f74e1013",
+    "text": "十余年来，我一直使用 ⟦0⟧、⟦1⟧、⟦2⟧ 和 ⟦3⟧ 开发高性能软件。我的开源项目涉及量子模拟、低延迟 AI ⟦4⟧和高效的 ⟦5⟧ 数据结构。"
+  },
+  "index.block02": {
+    "provider": "assistant-draft",
+    "source_hash": "531bd455fe7b4a99242bb296226d36b1ea74efa76d0ccde7953a9d757e25b47c",
+    "text": "人工智能、计算与交易。"
+  },
+  "index.block06": {
+    "provider": "assistant-draft",
+    "source_hash": "1b76075bb8851150fcfcb06cb09a27f75981121d1d68ce904fcc45263d58915a",
+    "text": "工作经历"
+  },
+  "index.block07": {
+    "provider": "assistant-draft",
+    "source_hash": "001a6a14d8f2c2f64928d84c33ace41168f37aab88253154df37fb0bf3193e94",
+    "text": "⟦0⟧⟦1⟧ — 至今⟦2⟧⟦3⟧⟦4⟧⟦5⟧⟦6⟧⟦7⟧量化研究员 · 苏黎世⟦8⟧⟦9⟧"
+  },
+  "index.block08": {
+    "provider": "assistant-draft",
+    "source_hash": "589b3938a0a65ec6cf71f0855bd18b9e067655932a569460d706f91dc49775b4",
+    "text": "⟦0⟧⟦1⟧ — ⟦2⟧⟦3⟧⟦4⟧⟦5⟧⟦6⟧⟦7⟧⟦8⟧量化开发员，⟦9⟧–⟦10⟧；离职前带薪休假，⟦11⟧–⟦12⟧ · 楚格⟦13⟧⟦14⟧"
+  },
+  "index.block09": {
+    "provider": "assistant-draft",
+    "source_hash": "eb964998cbe870f5956d3fe4ebc9d71618e5d3846f3e008cdda77b1bf45ecc3c",
+    "text": "⟦0⟧⟦1⟧ — ⟦2⟧⟦3⟧⟦4⟧⟦5⟧保罗谢勒研究所⟦6⟧⟦7⟧PSI Fellow · 菲利根⟦8⟧⟦9⟧"
+  },
+  "index.block10": {
+    "provider": "assistant-draft",
+    "source_hash": "1884236ce9705089b8845fb77f923be1d9cd6867fa9daecbe79c03fc402d06af",
+    "text": "⟦0⟧⟦1⟧ — ⟦2⟧⟦3⟧⟦4⟧⟦5⟧埃尔朗根–纽伦堡大学⟦6⟧⟦7⟧博士后研究员 · 埃尔朗根⟦8⟧⟦9⟧"
+  },
+  "index.block11": {
+    "provider": "assistant-draft",
+    "source_hash": "aa84676c90ea8d03aff757255132416d7a6495b38007e9e83466483c30ef8246",
+    "text": "⟦0⟧物理学博士⟦1⟧ · 纽约州立大学布法罗分校"
+  },
+  "index.block12": {
+    "provider": "assistant-draft",
+    "source_hash": "e579a46633489e5b9505a4e0feee70f7516af7cefc623abf1672992e9bfc1ee7",
+    "text": "精选项目"
+  },
+  "index.block13": {
+    "provider": "assistant-draft",
+    "source_hash": "eae9c152b3839756a1633d5b1af6e98d25c51c060ac932cbfd9f26ed76fe7353",
+    "text": "低延迟工具"
+  },
+  "index.block14": {
+    "provider": "assistant-draft",
+    "source_hash": "5538ca9df5126f6094b8db5d823a94bf48757fa53b888beb7ebba0de1704f873",
+    "text": "⟦0⟧⟦1⟧⟦2⟧ — 安全的侵入式 ⟦3⟧ 对象存储，提供稳定地址、对象生命周期管理和可选索引。"
+  },
+  "index.block15": {
+    "provider": "assistant-draft",
+    "source_hash": "88fb70a30a540b6b5d5a60d41053a59445eed5da248c74fed455cd6013c700c8",
+    "text": "AI ⟦0⟧优化"
+  },
+  "index.block16": {
+    "provider": "assistant-draft",
+    "source_hash": "ff64826cd0d118fe4d60e649ea8d7adb2ea6256e5106ea6b89dd1739ec9eacb4",
+    "text": "⟦0⟧⟦1⟧⟦2⟧ — 低延迟树模型⟦3⟧框架，可对数百至数千棵浅层树实现个位数微秒延迟。"
+  },
+  "index.block17": {
+    "provider": "assistant-draft",
+    "source_hash": "784b9bf206aa7a491a05649227775cdc3989fbd57b7085553ddf424eb9994355",
+    "text": "量子物理"
+  },
+  "index.block18": {
+    "provider": "assistant-draft",
+    "source_hash": "23748696b5b51f01922faa194f903ffdb4f35daf168c5764c1fc201c842f2a8b",
+    "text": "⟦0⟧⟦1⟧ ⟦2⟧⟦3⟧ — 用于非平衡格林函数模拟的合作研究软件；⟦4⟧⟦5⟧⟦6⟧ — 量子多体系统的精确模拟与动力学计算。"
+  },
+  "index.block19": {
+    "provider": "assistant-draft",
+    "source_hash": "10a241b8d127ebb4dc6ce5bc692637e0c032bc42efdfd9d9f6105e1267ffc195",
+    "text": "精选论文"
+  },
+  "index.html.description": {
+    "provider": "assistant-draft",
+    "source_hash": "153d308b1d75b2974072b842853a4097cc00470c9a63f6cd477cb4f47f49fc7d",
+    "text": "⟦0⟧ — 人工智能、计算与交易。从事高性能软件开发的量化研究员与物理学研究者。"
+  },
+  "index.html.title": {
+    "provider": "assistant-draft",
+    "source_hash": "478d8c03d92dddd838f29fd954f5d650ea800efefdf2dbb924ec1f75c7ee865f",
+    "text": "⟦0⟧ · 人工智能、计算与交易"
+  },
+  "note.qleaf-inference-latency.qleaf.block001": {
+    "provider": "assistant-draft",
+    "source_hash": "23db71bad177b4e257ff3dac14d16b7c95a95ef58786f708195c1b176f59507f",
+    "text": "在 AI 和深度学习的时代，为什么还要讨论树模型？一个实际的原因是，在各种表格数据问题上，从高能物理中的模式识别到机器人中的实时决策，树模型仍然表现良好，有时甚至达到最优水平。树模型在训练和⟦0⟧中面临的挑战与神经网络不同。本文关注⟦1⟧。例如，梯度提升作为最常用的树模型方法之一，通常会生成大量浅层树。"
+  },
+  "note.qleaf-inference-latency.qleaf.block002": {
+    "provider": "assistant-draft",
+    "source_hash": "040a8e735f448c5b31629aee3a9f605b2548be8beff582b56d335e925460a411",
+    "text": "大量树提供了可观的并行度，但有限的深度意味着，无论使用 ⟦0⟧ 还是 ⟦1⟧，处理器在每棵树上完成的工作都很少。这并不是 GPU 擅长的典型负载：把树分配给线程后，每个线程的工作可能少到不足以让 ⟦2⟧ 忙起来。在单样本⟦3⟧这一极端情形下，⟦4⟧和协调开销可能主导端到端延迟。对于算术强度较高的负载，这些开销通常能分摊到更多计算上。因此，传统做法是使用 ⟦5⟧ 进行树模型⟦6⟧，并在可能时利用多个核心并行计算。"
+  },
+  "note.qleaf-inference-latency.qleaf.block003": {
+    "provider": "assistant-draft",
+    "source_hash": "f73bb6b129e92ecff5c95031bc5f2d7bd7042407737d8a2188793f17ea6769d9",
+    "text": "本文介绍 ⟦0⟧，一个系统性的基准测试框架，也可能用于生产环境。它为多线程 ⟦1⟧ 与 ⟦2⟧ 后端提供统一接口。我们先看延迟消融实验和框架结构，再讨论采用常驻工作线程与无锁交接的 ⟦3⟧ 实现。随后从朴素的 ⟦4⟧ 实现出发，通过一系列优化，得到具有竞争力的 ⟦5⟧ 实现。有意思的是，请求时间中究竟有多少花在树计算之外，以及如何通过一些不太常规的技巧降低这部分开销。"
+  },
+  "note.qleaf-inference-latency.qleaf.block004": {
+    "provider": "assistant-draft",
+    "source_hash": "cf3b583787cf6539b6a25b43f420aafd75c5fda6dc2d6b3d9c2cc4e2b4f5a865",
+    "text": "⟦0⟧本文内容：⟦1⟧ ⟦2⟧延迟消融⟦3⟧ · ⟦4⟧框架⟦5⟧ · ⟦6⟧⟦7⟧⟦8⟧ · ⟦9⟧⟦10⟧⟦11⟧ · ⟦12⟧负载的影响⟦13⟧"
+  },
+  "note.qleaf-inference-latency.qleaf.block005": {
+    "provider": "assistant-draft",
+    "source_hash": "bc81405a02de58d38844c09a82883de382eb694af54566e6e552911384c1bb75",
+    "text": "从延迟消融实验开始"
+  },
+  "note.qleaf-inference-latency.qleaf.block006": {
+    "provider": "assistant-draft",
+    "source_hash": "bf679275b5a6b102a836f9c5f08053923097e9a07d751acd859c309256fc6ea8",
+    "text": "下表展示了针对⟦0⟧ ⟦1⟧ 棵深度为六的 ⟦2⟧ 树⟦3⟧的一条优化路径，输入包含 ⟦4⟧ 个特征，每个线程块使用 ⟦5⟧ 个 ⟦6⟧ 线程。常驻内核各行的优化依次累积；单次启动一行是独立的参考。数值为主机到主机的延迟，单位是微秒。"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.tbody1.tr0.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "967c8143aaadf59b4f432a0c660e01f6a43e002efe6dee1a4bd6bddac4343af8",
+    "text": "单次启动内核，映射输入"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.tbody1.tr1.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "8ec6bae66f372c751530b7042e0bfc84c6e311436243e2fe5d8e1d72abd887be",
+    "text": "初始常驻内核，复制输入"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.tbody1.tr2.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "38626cdeb0b23bd1ff6875df05a94af777a2363a7dd14ea8b00de38862ae241b",
+    "text": "移除设备端跨线程块完成协调"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.tbody1.tr3.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "3988ff883895682e71fcbaa9df33e58019bc9966046fcecb11aa93e65e720ddb",
+    "text": "使用单一请求轮询者"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.tbody1.tr4.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "2d1e37eb5f4af06fa46a853df9ae892c92d525fca6b43a47e7b8304a5c857c54",
+    "text": "读取映射的主机输入"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.tbody1.tr5.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "e3a68ecd92bf6ab768e8d6d6fb280330a9cf5e33a686c0729e0eeccb912e4a34",
+    "text": "暂存输入并使用哨兵值通知"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.thead0.tr0.th0": {
+    "provider": "assistant-draft",
+    "source_hash": "d8535833f127d368bae2647b30aeb87ef733425fd0f8fe17b711bdb2d67eb1d8",
+    "text": "⟦0⟧ 遍历配置"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.thead0.tr0.th1": {
+    "provider": "assistant-draft",
+    "source_hash": "a3e9bb5f6a802bdc9a1d905eaae0139a489c165a3bed10410030785448e97655",
+    "text": "中位数，µs"
+  },
+  "note.qleaf-inference-latency.qleaf.block007.thead0.tr0.th2": {
+    "provider": "assistant-draft",
+    "source_hash": "baa13c013f2d6c559552976eb236613bedacae60185407bc09caa3fc1f63d065",
+    "text": "p99，µs"
+  },
+  "note.qleaf-inference-latency.qleaf.block008": {
+    "provider": "assistant-draft",
+    "source_hash": "5cb5f0dd3e1b722d2b99e02c039ae84c84ac51f5140737ef7af8a4351b9fc5da",
+    "text": "起初，让内核常驻反而使请求⟦0⟧更慢⟦1⟧。移除跨线程块的完成协调、减少请求轮询者数量，带来了最大的收益；随后改变输入交接方式，使中位数降到七微秒以下。后文会逐一解释每行优化背后的机制。"
+  },
+  "note.qleaf-inference-latency.qleaf.block009": {
+    "provider": "assistant-draft",
+    "source_hash": "90e4aa1abbca272bd38ea71fe6a5124e3083418cc72f8df67553a0ee048f87e7",
+    "text": "计时从特征暂存前开始，到 ⟦0⟧ 可以读取结果时结束。对于映射输入，当前特征行复制到映射主机缓冲区的过程也包含在这个区间内。每次运行包含 ⟦1⟧ 次预热请求和 ⟦2⟧ 次测量请求。模型加载与工作线程初始化不计入稳态测量。"
+  },
+  "note.qleaf-inference-latency.qleaf.block010": {
+    "provider": "assistant-draft",
+    "source_hash": "880591bb0dfc884943cf35d876e0a35898d1ead0fa72e727eca9cc8e7acb0412",
+    "text": "基准测试机器配备 Intel Core i7-12700F 和一块显存为 ⟦0⟧ GiB、支持 ⟦1⟧ 的消费级 ⟦2⟧。主要比较中关闭 ⟦3⟧ 睿频；⟦4⟧ 的应用时钟请求值分别为 SM ⟦5⟧ MHz、显存 ⟦6⟧ MHz。第二组负载 ⟦7⟧ 有 ⟦8⟧ 个特征，而非 ⟦9⟧ 个。两组负载均使用深度为六、分别包含 ⟦10⟧、⟦11⟧、⟦12⟧ 和 ⟦13⟧ 棵树的集成模型。⟦14⟧完整基准报告⟦15⟧记录了分布、配置和数据来源。"
+  },
+  "note.qleaf-inference-latency.qleaf.block011": {
+    "provider": "assistant-draft",
+    "source_hash": "d0f440154829ee475af2232bb9ca719bf34132c2cd66cc51c1bec6688b4c18a4",
+    "text": "框架：模型、工作单元与归约"
+  },
+  "note.qleaf-inference-latency.qleaf.block012": {
+    "provider": "assistant-draft",
+    "source_hash": "4af89a11c07a29ecadfbf56685b0f53d359c020a08d6fc124a2811813db24b3b",
+    "text": "核心接口是 ⟦0⟧。它持有模型表示，将树集合划分给工作单元，提交特征行并收集各工作单元的结果。目前预测输出是一个标量原始分数，即各棵树输出之和。"
+  },
+  "note.qleaf-inference-latency.qleaf.block013": {
+    "provider": "assistant-draft",
+    "source_hash": "b43d89e104c2696e9478b6bfd56530ba3129e6c9a52b91dfb75345e00e6cc922",
+    "text": "⟦0⟧ 类型决定节点布局、工作单元实现、负载均衡器与归约器。运行时 JSON 提供模型和工作单元配置，例如 ⟦1⟧ 亲和性。因此，可以在保持预测接口和工作负载不变的情况下，改变执行策略。"
+  },
+  "note.qleaf-inference-latency.qleaf.block014.figcaption1": {
+    "provider": "assistant-draft",
+    "source_hash": "0f838c1e996f75dd8d598a11e9a690dcdb3f2d3d2325186c9f2a19c1d3c96f33",
+    "text": "树集合与工作单元只准备一次，随后对每一行输入重复使用。"
+  },
+  "note.qleaf-inference-latency.qleaf.block015.li0": {
+    "provider": "assistant-draft",
+    "source_hash": "c86d724e9ea925295fc74cf33e9ffc1af7efc61e2195fcfa7f2268e10e40ece6",
+    "text": "⟦0⟧节点缓冲区：⟦1⟧保存树数据。⟦2⟧ 将分裂阈值与特征索引存放在不同数组中；⟦3⟧ 提供直接的节点布局。"
+  },
+  "note.qleaf-inference-latency.qleaf.block015.li1": {
+    "provider": "assistant-draft",
+    "source_hash": "392ba7cb8e6fd131b8c8f4b23dfd72bfab55a776173fa53925fba59055e36610",
+    "text": "⟦0⟧负载均衡器：⟦1⟧将树分组分配给工作单元。默认的 ⟦2⟧ 按树的数量均分。"
+  },
+  "note.qleaf-inference-latency.qleaf.block015.li2": {
+    "provider": "assistant-draft",
+    "source_hash": "74b58ad16751342280b25a94c4d2e395000376b272fe3f75ca911fe5570d12d0",
+    "text": "⟦0⟧工作单元：⟦1⟧计算分配给自己的树。⟦2⟧ 遍历、⟦3⟧ 位掩码计算与 ⟦4⟧ 工作单元使用同一接口。⟦5⟧ 在 ⟦6⟧ 工作单元外封装一个常驻主机线程。"
+  },
+  "note.qleaf-inference-latency.qleaf.block015.li3": {
+    "provider": "assistant-draft",
+    "source_hash": "3bddf78b6f22b4dfc1c09701ce674f52eef85fe039ffa9496542618995e04710",
+    "text": "⟦0⟧归约器：⟦1⟧合并各工作单元的部分和。⟦2⟧ 将其相加，得到原始分数。"
+  },
+  "note.qleaf-inference-latency.qleaf.block016": {
+    "provider": "assistant-draft",
+    "source_hash": "b0058c44e2ce16ac5f9366ce0da3b17b31a5c2f03efcb5eb3f1c4624f5a8f153",
+    "text": "在接口层面，一次请求很简单："
+  },
+  "note.qleaf-inference-latency.qleaf.block018": {
+    "provider": "assistant-draft",
+    "source_hash": "b064e5403fba25bb3be29b4075b24a07d2ab34f59b59aba8476bc460c27efccc",
+    "text": "在内部，推理器先向所有工作单元提交特征行，再收集结果，让线程化工作单元能并发计算各自的分区。一个 ⟦0⟧ 工作单元管理自己的线程块网格，这是工作单元内部的另一层并行。"
+  },
+  "note.qleaf-inference-latency.qleaf.block019": {
+    "provider": "assistant-draft",
+    "source_hash": "67debb00692bf6ecab041c147a707677890c6ad2fa94e221ca995e6d3b2e09db",
+    "text": "实现位于 ⟦0⟧⟦1⟧⟦2⟧；⟦3⟧ 策略和工作单元位于 ⟦4⟧⟦5⟧⟦6⟧。"
+  },
+  "note.qleaf-inference-latency.qleaf.block020": {
+    "provider": "assistant-draft",
+    "source_hash": "613863b6fa4f1d043cf95d59e52d2c7969f6ae1d79264e8df85c2ec12587d7b7",
+    "text": "⟦0⟧：减少每棵树的工作，并让工作线程保持就绪"
+  },
+  "note.qleaf-inference-latency.qleaf.block021": {
+    "provider": "assistant-draft",
+    "source_hash": "1a6465d8605fe6f9d93b84f7342d7117f32de9f193b93931bed578d6fd31eb62",
+    "text": "每棵树只沿一条路径遍历"
+  },
+  "note.qleaf-inference-latency.qleaf.block022": {
+    "provider": "assistant-draft",
+    "source_hash": "6288b64a4f36df8a7900a563daec69e7e3aa310abb7d53a09bcfcf46a5a77074",
+    "text": "对于深度为六的二叉树，⟦0⟧只需进行六次分裂判断，然后读取叶节点的值，无需检查所有内部节点。⟦1⟧ 的分支遍历工作单元在每一层通过算术运算计算下一节点索引，并累加各棵树的叶值。"
+  },
+  "note.qleaf-inference-latency.qleaf.block023": {
+    "provider": "assistant-draft",
+    "source_hash": "9d76e54627171bcc4cb6e0a1471e01e526ff89e658c2281ce90deee223e2c88a",
+    "text": "这是针对紧凑模型表示的一段小循环。代码向编译器暴露了不存在别名这一条件，为跨树向量化留下空间。不过，单条路径内的依赖仍然存在：下一个特征与阈值取决于前一次比较。"
+  },
+  "note.qleaf-inference-latency.qleaf.block024": {
+    "provider": "assistant-draft",
+    "source_hash": "7ddbfdc493857e059d80418a0fe83ef0aeb433c2b209133d292053d8de0cd40c",
+    "text": "另一种位掩码工作单元会计算条件，并对可达叶节点的掩码求交。这让工作更规则，但比沿单一路径遍历需要更多比较。对于浅层树，额外工作必须通过并行执行获得足够收益才有意义。"
+  },
+  "note.qleaf-inference-latency.qleaf.block025": {
+    "provider": "assistant-draft",
+    "source_hash": "a1362fc94253bf5e159e12505e897d90f0adeedc0892bfbf76919ef0d0b927b1",
+    "text": "线程只创建一次，随后交接请求"
+  },
+  "note.qleaf-inference-latency.qleaf.block026": {
+    "provider": "assistant-draft",
+    "source_hash": "19d0d73cab31b133d3b8820ec6c9076660d6f7dd2d57aaeb358afd19a8da5663",
+    "text": "如果每次预测都创建线程并等待其结束，就会给一个仅持续几微秒的请求增加初始化和调度工作。⟦0⟧ 在构造推理器时就创建常驻线程。每个线程持有一组树，并可绑定到一个 ⟦1⟧ 核心。"
+  },
+  "note.qleaf-inference-latency.qleaf.block027.figcaption1": {
+    "provider": "assistant-draft",
+    "source_hash": "4ad5da7a91faedffcdd54db95701509188379490629d5504fa5d462f87ccebd9",
+    "text": "上行示意每次请求都创建线程的情况，并非单独测量过的基准。⟦0⟧ 在请求之间保持工作线程存活。"
+  },
+  "note.qleaf-inference-latency.qleaf.block028": {
+    "provider": "assistant-draft",
+    "source_hash": "a4ff96d09cbc45895c0d7014ab1d7ca9682fa628b13226f76bf393c1e87383c2",
+    "text": "交接使用原子操作，而非由互斥锁保护的任务队列。调用者通过 release store 发布特征指针。工作线程用 acquire load 观察到指针后，计算自己的分区，再以 release 语义发布就绪标志。调用者通过 acquire load 等待，随后读取结果。特征行在预测完成前始终保持有效。"
+  },
+  "note.qleaf-inference-latency.qleaf.block029": {
+    "provider": "assistant-draft",
+    "source_hash": "d9838ea8dab20de4f546b2fb1dc4a2eedd81036cab32792be00de4dc15221740",
+    "text": "指针和就绪标志构成一个小型请求—响应协议，同一时刻只有一个在途请求。这避免了稳态路径上的线程启动或阻塞唤醒。工作线程在等待时自旋，因此这种低延迟配置即使在请求之间也会占用核心。"
+  },
+  "note.qleaf-inference-latency.qleaf.block030": {
+    "provider": "assistant-draft",
+    "source_hash": "257472b1b8bb51dc29e76ca2ed0986ec13aaa7a5e8e936f7bf3abb14600ea851",
+    "text": "线程放置也是算法的一部分"
+  },
+  "note.qleaf-inference-latency.qleaf.block031": {
+    "provider": "assistant-draft",
+    "source_hash": "cb7831248813d583fb10d9ac8f57b0e7b969ffe1810604999179e8b20b7dd280",
+    "text": "在混合架构 ⟦0⟧ 上，“八个线程”并不是完整的配置。物理核心、同核 SMT 线程和能效核不能互换。基准比较了物理核心优先与同核线程优先的放置方式，并预留一个逻辑 ⟦1⟧ 负责分发。"
+  },
+  "note.qleaf-inference-latency.qleaf.block032": {
+    "provider": "assistant-draft",
+    "source_hash": "b22bdba7815af66c9f4110513a5926c0e7e7a9a14297e09989d27a1290244c89",
+    "text": "在使用两个、四个或八个工作线程的 ⟦1⟧ 项比较中，物理核心优先赢得了 ⟦0⟧ 项。使用 ⟦2⟧ 个工作线程时，同核线程优先在八项比较中赢得七项。后一种顺序可以先使用性能核的 SMT 同核线程，再把工作分配到能效核。"
+  },
+  "note.qleaf-inference-latency.qleaf.block033": {
+    "provider": "assistant-draft",
+    "source_hash": "7c5b167d0d5b48dda1935c49b6dac78f407b83b80116bfb1f0cfb628302e2b47",
+    "text": "对于 ⟦0⟧ 棵 ⟦1⟧ 树，八个工作线程在物理核心优先时耗时 ⟦2⟧⟦3⟧ µs⟦4⟧，同核线程优先时为 ⟦5⟧⟦6⟧ µs⟦7⟧。使用 ⟦8⟧ 个工作线程时，结果反转：分别为 ⟦9⟧⟦10⟧ µs⟦11⟧ 和 ⟦12⟧⟦13⟧ µs⟦14⟧。只有工作分配与放置方式能抵消额外协调开销时，增加线程才有帮助。"
+  },
+  "note.qleaf-inference-latency.qleaf.block034.tbody1.tr0.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "ab78ddfa7b44534a9f15e623388894859452733c6dbdbbdd95003d35bdc19b17",
+    "text": "⟦0⟧，⟦1⟧ 棵树"
+  },
+  "note.qleaf-inference-latency.qleaf.block034.tbody1.tr1.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "0c5018d166d56d45ef3b3914d93b25fb311b53d4312b5554b20dbac786026b11",
+    "text": "⟦0⟧，⟦1⟧ 棵树"
+  },
+  "note.qleaf-inference-latency.qleaf.block034.tbody1.tr2.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "2d22849b8287fec63b212dc551a6fbc6075c38336139270dc970a628c2d647c0",
+    "text": "⟦0⟧，⟦1⟧ 棵树"
+  },
+  "note.qleaf-inference-latency.qleaf.block034.tbody1.tr3.td0": {
+    "provider": "assistant-draft",
+    "source_hash": "0b65c0005e0ecab4db072018b00dfb6c12f8c4d67af9cf9c0624d33c58d3db36",
+    "text": "⟦0⟧，⟦1⟧ 棵树"
+  },
+  "note.qleaf-inference-latency.qleaf.block034.thead0.tr0.th0": {
+    "provider": "assistant-draft",
+    "source_hash": "0e16217d66d03244c5cc0dd1623112b4b47cfae35d67f66842e548f869c17642",
+    "text": "工作负载"
+  },
+  "note.qleaf-inference-latency.qleaf.block034.thead0.tr0.th1": {
+    "provider": "assistant-draft",
+    "source_hash": "87e48dae534b7f962b9ba79b2a1370d8fa2d0da1f82abe6938315327be7a2445",
+    "text": "最佳 ⟦0⟧ 中位数，µs"
+  },
+  "note.qleaf-inference-latency.qleaf.block034.thead0.tr0.th2": {
+    "provider": "assistant-draft",
+    "source_hash": "cd072390c517e3441427b9e6aef9c02217b5bb16e94dd8b8ac998f1a6ff5520c",
+    "text": "最佳未缓存 ⟦0⟧ 中位数，µs"
+  },
+  "note.qleaf-inference-latency.qleaf.block035": {
+    "provider": "assistant-draft",
+    "source_hash": "cb5f6502c62f9a9b2f6791b5d8ed3bce4c24d28cc627eabe863972a8e5b0562a",
+    "text": "这些 ⟦0⟧ 结果使用关闭睿频的策略。另行测量的开启睿频的 ⟦1⟧ 参考中，⟦5⟧ 棵 ⟦6⟧ 树达到 ⟦2⟧⟦3⟧ µs⟦4⟧，⟦10⟧ 棵 ⟦11⟧ 树达到 ⟦7⟧⟦8⟧ µs⟦9⟧。纯主机请求完全避免了与设备的往返通信，而 ⟦12⟧ 频率在这个时间尺度上很重要。"
+  },
+  "note.qleaf-inference-latency.qleaf.block036": {
+    "provider": "assistant-draft",
+    "source_hash": "43eb1e7df93577585cb68356b816d736f903ec512ae36c86cb75efbe4592c134",
+    "text": "⟦0⟧：把延迟预算用在树计算上"
+  },
+  "note.qleaf-inference-latency.qleaf.block037": {
+    "provider": "assistant-draft",
+    "source_hash": "ad1e1bd060b53a1eb334fa3eba7ee061f7f8093685e71947dc73fee15b39cb35",
+    "text": "⟦0⟧. 每个请求启动一次内核"
+  },
+  "note.qleaf-inference-latency.qleaf.block038": {
+    "provider": "assistant-draft",
+    "source_hash": "fe7a7b526b880416f0df6793e7021c2ae212a7fb4434ef1e87fec7aa12e1af6c",
+    "text": "最简单的 ⟦0⟧ 路径是启动网格、计算树集合、等待完成，再将各线程块的部分和返回主机进行最终求和。树集合已驻留在 ⟦1⟧ 上，无需在每次预测时重新传输。"
+  },
+  "note.qleaf-inference-latency.qleaf.block039": {
+    "provider": "assistant-draft",
+    "source_hash": "3be46fe7e8db3744f71f16677ec59620915cca64bb019716c4a9670b5f7fa982",
+    "text": "一个线程可以沿一棵树的路径执行，同时并行处理许多树。每棵树的算术运算很少，因此内核启动、输入传输、同步和结果可见性占据了请求时间的很大一部分。更多的算术吞吐量并不能消除这些成本。"
+  },
+  "note.qleaf-inference-latency.qleaf.block040.figcaption1": {
+    "provider": "assistant-draft",
+    "source_hash": "c2be157290a453e84d15eec1615ae6a88484d247a78e090f9e00c185fc5208f5",
+    "text": "测量包括两次跨互连传输和完成操作。这是一张数据流示意图，并非实测耗时的分解。"
+  },
+  "note.qleaf-inference-latency.qleaf.block041": {
+    "provider": "assistant-draft",
+    "source_hash": "abfa3cbb89a15c1d8da7ff3f16d5c6138fed57b85c85b3a5ddc8b02cf0196b4a",
+    "text": "⟦0⟧. 让内核常驻"
+  },
+  "note.qleaf-inference-latency.qleaf.block042": {
+    "provider": "assistant-draft",
+    "source_hash": "fd460e8e72da268f89275622a9f3b3710e126475f7035de9ee53c9029c8f9082",
+    "text": "常驻内核只启动一次，然后循环处理请求。这相当于 ⟦1⟧ 工作线程池在 ⟦0⟧ 上的对应形式：初始化移出稳态路径，每一行新数据通过交接协议到达。"
+  },
+  "note.qleaf-inference-latency.qleaf.block043.figcaption1": {
+    "provider": "assistant-draft",
+    "source_hash": "fbcf30bdcd4e6baf23b612f195a3ead392701aaf89bd3922269b50c60257d3d6",
+    "text": "常驻消除了重复启动，但内核仍需检测请求，并使结果对主机可见。"
+  },
+  "note.qleaf-inference-latency.qleaf.block044": {
+    "provider": "assistant-draft",
+    "source_hash": "2b16a7451e68d9facec44d3ed40e36f52f034956277dcb67673d93500fa2b8ee",
+    "text": "最初的常驻实现将特征行复制到设备内存，推进序列标志，让所有线程块轮询它，再通过设备范围的完成逻辑合并结果。其延迟中位数为 ⟦0⟧⟦1⟧ µs⟦2⟧，高于单次启动、映射输入参考的 ⟦3⟧⟦4⟧ µs⟦5⟧。这项比较同时改变了输入路径和启动策略，展示的是初始设计的成本，而非单独隔离内核启动开销。"
+  },
+  "note.qleaf-inference-latency.qleaf.block045": {
+    "provider": "assistant-draft",
+    "source_hash": "52a7895069fa7cee5a4ee91b92e821ba631d32b2ef062cd53d4eeed3e113e605",
+    "text": "当协议要求所有线程块都能取得进展时，常驻网格必须能同时驻留在设备上。⟦0⟧ 会检查共同驻留条件，而不是假设任意大小的网格都能参与握手。"
+  },
+  "note.qleaf-inference-latency.qleaf.block046": {
+    "provider": "assistant-draft",
+    "source_hash": "7cad6845374482b05b329c6faf48f12eb665c28defcfd5834d5d299c92540cf0",
+    "text": "⟦0⟧. 让线程块独立完成，在主机上归约"
+  },
+  "note.qleaf-inference-latency.qleaf.block047": {
+    "provider": "assistant-draft",
+    "source_hash": "f45a105430fd0a871cf1d0927e201200303c14c764c3c572f0fe41f18d8210ad",
+    "text": "每个线程块首先在内部归约自己的树输出。最初的设计将部分和原子地加到共享的设备结果中，并更新共享完成计数器。最后到达的线程块发布完整结果并通知主机。"
+  },
+  "note.qleaf-inference-latency.qleaf.block048": {
+    "provider": "assistant-draft",
+    "source_hash": "b68d86dfc431c17700f0652a0e09c704a595ca14c673396e448ea155f7b7340d",
+    "text": "各线程块独立计算树，但完成时会争用共享状态。原子累加与最后到达者的协调，在请求中引入了一个串行步骤。"
+  },
+  "note.qleaf-inference-latency.qleaf.block049": {
+    "provider": "assistant-draft",
+    "source_hash": "c1ef1159d0df06bfe9e6990e03a054104f9e07fe27ac21df13cbe48e2a917d5c",
+    "text": "替代方案保留线程块内部归约，移除共享完成步骤。⟦0⟧每个线程块把自己的和写入独立的、主机可见的锁页结果槽位。⟦1⟧ ⟦2⟧ 等待所有槽位填满，然后对这组小规模线程块结果求和。"
+  },
+  "note.qleaf-inference-latency.qleaf.block050.figcaption1": {
+    "provider": "assistant-draft",
+    "source_hash": "31704ff82718b7cd2f2fb1abad9c25b5df3c0dbbe59b488195ee97ed29e19eda",
+    "text": "把最终归约移到主机，消除了 ⟦0⟧ 上共享的完成点。每个线程块仍然对自己的树结果进行归约。"
+  },
+  "note.qleaf-inference-latency.qleaf.block051": {
+    "provider": "assistant-draft",
+    "source_hash": "05a315971bbd9188b78b416f2979f2673e436aee1257108e0828f6542d2481ee",
+    "text": "对于 ⟦0⟧ 棵 ⟦1⟧ 树，中位数从 ⟦2⟧⟦3⟧ 降至 ⟦4⟧ µs⟦5⟧，p99 从 ⟦6⟧⟦7⟧ 降至 ⟦8⟧ µs⟦9⟧。⟦10⟧ 多做少量工作，就能简化设备端路径。"
+  },
+  "note.qleaf-inference-latency.qleaf.block052": {
+    "provider": "assistant-draft",
+    "source_hash": "524f0a3242ca7158ba4ce54d33138812dd9e24b1dd45fe4e32c14c1ddf217aae",
+    "text": "尚未填充的槽位包含 NaN；一个非 NaN 的部分和同时也充当完成标志。主机收集结果后重新初始化槽位。这依赖于部分和非 NaN 以及单请求协议。独立槽位消除了线程块之间的争用，但结果发布与缓冲区复用仍然需要明确定义的协议。"
+  },
+  "note.qleaf-inference-latency.qleaf.block053": {
+    "provider": "assistant-draft",
+    "source_hash": "79d83f3bc0970b56ad35237dd6905d1e4eaad78fdbb8d850560376261aa97078",
+    "text": "⟦0⟧. 一个线程块轮询主机，其余等待设备状态"
+  },
+  "note.qleaf-inference-latency.qleaf.block054": {
+    "provider": "assistant-draft",
+    "source_hash": "e72ab14366dbaf9cac7f824c90878573c8b232a2332beabcb37664a0cac7399f",
+    "text": "如果每个线程块都反复读取一个系统可见的请求标志，成本会很高。许多消费者检查同一个标志，会制造流量，却没有完成有用的树计算。"
+  },
+  "note.qleaf-inference-latency.qleaf.block055": {
+    "provider": "assistant-draft",
+    "source_hash": "fa8f0fe27cecc9ab6242f8d20a62a9bdfceb8cb9ed27e3840801bae9b9776067",
+    "text": "单轮询者策略把这项工作交给零号线程块，由它检测请求并更新设备范围的广播序列。其他线程块等待设备端序列。在带暂存的变体中，零号线程块还会先准备特征行，再广播就绪状态。"
+  },
+  "note.qleaf-inference-latency.qleaf.block056": {
+    "provider": "assistant-draft",
+    "source_hash": "31d18b7e354abab432d19e2de466272a72df5ef049ee734f2c4eea0bf62eb099",
+    "text": "这改变了等待发生的⟦0⟧位置⟦1⟧：大多数线程块不再观察主机可见的请求状态。对于 ⟦2⟧ 棵 ⟦3⟧ 树，中位数从 ⟦4⟧⟦5⟧ 降至 ⟦6⟧ µs⟦7⟧。对于 ⟦8⟧ 棵树，反而从 ⟦9⟧⟦10⟧ 小幅升至 ⟦11⟧ µs⟦12⟧。线程块较少时，新增的广播阶段能消除的流量也较少。"
+  },
+  "note.qleaf-inference-latency.qleaf.block057": {
+    "provider": "assistant-draft",
+    "source_hash": "03a8a55342122b443ba1acd140e2b44a2be1fbfbed7b02a2bc53857e6039cb4e",
+    "text": "⟦0⟧. 映射锁页输入与显式复制"
+  },
+  "note.qleaf-inference-latency.qleaf.block058": {
+    "provider": "assistant-draft",
+    "source_hash": "517fee74275e3d7f033dfad51881abf5b2e6a768bc35739df663cd334a1876db",
+    "text": "锁页内存是页面保持驻留的主机内存，可作为显式传输的数据源。映射进一步使它能够被 ⟦0⟧ 的加载和存储操作访问。在独立 ⟦1⟧ 上，访问映射主机内存仍需经过互连：“零复制”避免的是向独立设备缓冲区的显式复制，并非物理数据移动。⟦2⟧NVIDIA 的内存指南⟦3⟧解释了这一差别。"
+  },
+  "note.qleaf-inference-latency.qleaf.block059.figcaption1": {
+    "provider": "assistant-draft",
+    "source_hash": "61cd859ec9933b3e81a31a14375e7865c790a4c20135fc868f13bbc7061f7b36",
+    "text": "锁页与复制是不同的选择。映射省去了每次请求的复制操作；暂存则可让重复的特征读取留在 ⟦0⟧ 上。"
+  },
+  "note.qleaf-inference-latency.qleaf.block060": {
+    "provider": "assistant-draft",
+    "source_hash": "f6bf537f1087f51162a643294a5270cc1049c02cd88e13dd2f463f65e0a55f7c",
+    "text": "对于较小的特征行，发起并完成一次复制的成本可能高于实际移动这些字节的成本。⟦0⟧ 的浮点特征仅有 ⟦1⟧⟦2⟧ 字节⟦3⟧。消除轮询风暴后，映射输入使 ⟦4⟧ 棵树的延迟中位数从 ⟦5⟧⟦6⟧ 降至 ⟦7⟧ µs⟦8⟧。"
+  },
+  "note.qleaf-inference-latency.qleaf.block061": {
+    "provider": "assistant-draft",
+    "source_hash": "607a606a09ac7b6110f316e300e26f89f53750f60fa81093a352f52a59c7fed0",
+    "text": "如果许多工作单元反复从主机内存读取较大的特征行，直接访问的吸引力就会下降。暂存解决了这一复用问题：主导线程块将行读入设备缓冲区，发布就绪状态，各工作单元再使用暂存副本计算。⟦0⟧ 仍需把每一行写入映射输入缓冲区；这次主机端复制仍包含在基准计时区间内。"
+  },
+  "note.qleaf-inference-latency.qleaf.block062": {
+    "provider": "assistant-draft",
+    "source_hash": "0a55049d9144ad10f7b7b3e762f7c20e7d429fc2c731e4950cf3a8a6bd415a94",
+    "text": "⟦0⟧. 让数据自行表明已到达"
+  },
+  "note.qleaf-inference-latency.qleaf.block063": {
+    "provider": "assistant-draft",
+    "source_hash": "f3210caf20bddf86e9dc648b5529983b42360d472365b562b777a07cf061b7ed",
+    "text": "序列标志协议将数据发布与通知分开：先准备特征，再发布具有顺序保证的请求标志。哨兵协议把这两项操作合在一起。"
+  },
+  "note.qleaf-inference-latency.qleaf.block064": {
+    "provider": "assistant-draft",
+    "source_hash": "e40ba71a35af380a96905aa73a623c29976ece911e93ee9fd50d5e855b75b3f3",
+    "text": "请求到来前，映射输入包含预留哨兵值。⟦0⟧ 写入特征行。主导线程块检查并暂存特征，直到所有值都已到达，然后把映射输入重置为哨兵值，再通过设备端状态广播请求。计算读取的是暂存行，因此重置输入不会破坏正在处理的数据。"
+  },
+  "note.qleaf-inference-latency.qleaf.block065": {
+    "provider": "assistant-draft",
+    "source_hash": "b1d0ca5725273a085462c20762aab1dc4668c3706a4c99c8281a6fa574fd0eaf",
+    "text": "主机等待所有结果后才发送下一行。特征值必须有限，且不能使用预留的 ⟦0⟧ 哨兵值。在这一协议下，稳态交接中由数据到达替代单独的主机可见请求标志。"
+  },
+  "note.qleaf-inference-latency.qleaf.block066": {
+    "provider": "assistant-draft",
+    "source_hash": "38407ade00013941fdaa05c160fff1b53d0aa00c8ef1c60722ded07171d9d548",
+    "text": "对于 ⟦0⟧ 棵 ⟦1⟧ 树，中位数从 ⟦2⟧⟦3⟧ 降至 ⟦4⟧ µs⟦5⟧，p99 从 ⟦6⟧⟦7⟧ 降至 ⟦8⟧ µs⟦9⟧。收益小于前面的协调优化。这一步同时切换了暂存和哨兵通知，因此没有单独测量其中任何一项变化。"
+  },
+  "note.qleaf-inference-latency.qleaf.block067": {
+    "provider": "assistant-draft",
+    "source_hash": "b8bd0ec3ff345f653e57d852443eff62139025b47daea9d8c3305c6b54892015",
+    "text": "⟦0⟧. 挖掘每棵树内部有用的并行性"
+  },
+  "note.qleaf-inference-latency.qleaf.block068": {
+    "provider": "assistant-draft",
+    "source_hash": "06c0357be6fa15433cc40692d7174da9918f2faef1388b2dfc1ee7506c79a19b",
+    "text": "遍历只走一条路径，但后续步骤依赖前面的比较。位掩码计算进行更多比较，再合并可能叶节点的掩码。它的潜在优势是可以由多个执行通道分担工作。"
+  },
+  "note.qleaf-inference-latency.qleaf.block069": {
+    "provider": "assistant-draft",
+    "source_hash": "8dfe595eaa58c86a8dad588da94e3069d733b9e8301f996c49009e1bdcd8137b",
+    "text": "每棵树只用一个线程时，额外工作通常得不偿失：带暂存的常驻位掩码路径处理 ⟦3⟧ 棵 ⟦4⟧ 树需 ⟦0⟧⟦1⟧ µs⟦2⟧。调到每棵树四个线程后降为 ⟦5⟧⟦6⟧ µs⟦7⟧，在受控比较中仍高于遍历的 ⟦8⟧⟦9⟧ µs⟦10⟧。"
+  },
+  "note.qleaf-inference-latency.qleaf.block070": {
+    "provider": "assistant-draft",
+    "source_hash": "3c1087a1991d40550ec34671a92456e329e83c1e762a25cdea4be2d7ce9c9d71",
+    "text": "布局也很重要。节点优先存储将相邻树中同一位置的节点放在一起；当相邻执行通道处理不同树时，这有助于合并访存。当多个通道处理同一棵树时，另一种布局可能更合适。对于 ⟦0⟧，在 ⟦2⟧ 和 ⟦3⟧ 棵树时，经调优的行优先位掩码工作单元是最佳 ⟦1⟧ 变体。布局和每棵树的线程数需要一起考虑。"
+  },
+  "note.qleaf-inference-latency.qleaf.block071": {
+    "provider": "assistant-draft",
+    "source_hash": "be2e24e49c3586f249df72c16a8ee2854d4697ab112d415b63a016017e0b4900",
+    "text": "⟦0⟧. 在常驻工作集容得下时缓存树"
+  },
+  "note.qleaf-inference-latency.qleaf.block072": {
+    "provider": "assistant-draft",
+    "source_hash": "3cd7167f141f52a382cf28da34aa667ac6910abcc09190bc7e00bff0b8ce3e4e",
+    "text": "常驻内核可跨请求将树数据保存在共享内存中，避免反复从全局内存读取这些节点。代价是占用更多共享内存，可能限制常驻线程块的数量。"
+  },
+  "note.qleaf-inference-latency.qleaf.block073": {
+    "provider": "assistant-draft",
+    "source_hash": "ea52e2c1064b32167c0b469d8d0f2e888cf6cdecd5672f8370fca5724e2d9bae",
+    "text": "对于 ⟦0⟧ 棵 ⟦1⟧ 树，缓存参数扫描中匹配的未缓存遍历耗时 ⟦2⟧⟦3⟧ µs⟦4⟧，单波次缓存为 ⟦5⟧⟦6⟧ µs⟦7⟧。更广泛扫描中的最佳未缓存结果是 ⟦8⟧⟦9⟧ µs⟦10⟧；使用匹配比较，才能区分缓存与线程块大小调优的影响。⟦11⟧ 棵树的缓存常驻变体被跳过，因为其网格无法共同驻留。"
+  },
+  "note.qleaf-inference-latency.qleaf.block074": {
+    "provider": "assistant-draft",
+    "source_hash": "83943f2845b28789e88fda91cdd1dc0fcfb6bc7913f81dcad11dd0beaf04ea04",
+    "text": "工作负载改变了什么？"
+  },
+  "note.qleaf-inference-latency.qleaf.block075": {
+    "provider": "assistant-draft",
+    "source_hash": "427e9e4a297650594905320c8c89e5f26725c17f53292004f27e26538b61885f",
+    "text": "⟦0⟧ 的特征行约为 ⟦1⟧⟦2⟧ KiB⟦3⟧，而 ⟦4⟧ 只有 ⟦5⟧ 字节。在 ⟦6⟧ 棵树时，移除跨线程块完成协调并选择轮询策略，使 ⟦7⟧ 遍历从 ⟦8⟧⟦9⟧ 降至 ⟦10⟧ µs⟦11⟧。加入映射与暂存通知后，反而增至 ⟦12⟧⟦13⟧ µs⟦14⟧。此时复制输入的路径更合适。"
+  },
+  "note.qleaf-inference-latency.qleaf.block076": {
+    "provider": "assistant-draft",
+    "source_hash": "c4bb0e764cfff069e51dc7bace6a0c950b0789e40e4b9cd45701518623f37872",
+    "text": "这也解释了为什么 ⟦0⟧ 提供可组合的策略，而不是为所有负载选定一个配置。特征宽度改变通信成本，树集合的大小改变可分配的工作量，树深度与计算方法改变每棵树内部的工作，共享内存用量则改变哪些常驻网格能够同时驻留。"
+  },
+  "note.qleaf-inference-latency.qleaf.block077": {
+    "provider": "assistant-draft",
+    "source_hash": "4b0850ae8efe76a8be9a816fa987351cdaa060cd1e0ec7bcad51229fd7527a26",
+    "text": "对于单样本⟦0⟧，优化应从良好的 ⟦1⟧ 实现和完整请求的测量开始。在 ⟦2⟧ 上，消除重复启动只是第一步。降低跨线程块完成协调、主机轮询和输入交接的开销，才让常驻路径具有竞争力。最终延迟越来越受通信与结果可见性的影响；消融实验展示了降低这些成本的方法，但并未测量物理上的通信下界。"
+  },
+  "note.qleaf-inference-latency.qleaf.block078": {
+    "provider": "assistant-draft",
+    "source_hash": "e4daef3864037fe05ad02b2a83f4d5d6d5e55d0052cb86e56be5c2235b8981cb",
+    "text": "框架代码位于 ⟦0⟧⟦1⟧ 仓库⟦2⟧。⟦3⟧本文使用的基准报告⟦4⟧与⟦5⟧同一版本的源代码⟦6⟧提供完整配置和实现细节。"
+  },
+  "project.NESSi 2.0.category": {
+    "provider": "assistant-draft",
+    "source_hash": "ebdda4625ebabad3be95a66887cc1bf101c9624174196ce5358799f0b0d465eb",
+    "text": "⟦0⟧ / 合作科研软件"
+  },
+  "project.NESSi 2.0.description": {
+    "provider": "assistant-draft",
+    "source_hash": "7080f4202008e9412e53f1e74450e31fc5aac89f8b8649c5b99fac78e943f2ec",
+    "text": "用于非平衡格林函数与相互作用量子系统的共享研究库。⟦0⟧ 版本增加了记忆截断的时间传播与稳态计算。"
+  },
+  "project.NESSi 2.0.detail": {
+    "provider": "assistant-draft",
+    "source_hash": "00dbfd7a30e14dbce4b57804e277503caa972e5b2b06e1c0cd702e76d3252fb0",
+    "text": "我通过非平衡多体方法的研究参与了 ⟦0⟧ ⟦1⟧ 的开发。软件包支持量子动力学的高精度数值积分与分布式内存计算。"
+  },
+  "project.NESSi 2.0.subtitle": {
+    "provider": "assistant-draft",
+    "source_hash": "92328ca7d8901882f2f4520c7262f25634a081b7e7388f25236a73f97d9a68d9",
+    "text": "非平衡系统模拟"
+  },
+  "project.OptIndex.category": {
+    "provider": "assistant-draft",
+    "source_hash": "3b97c5a94249a60bcc1dc64df6f4a771c6a64d42d09a0238fd6095f3005a3c20",
+    "text": "⟦0⟧ / 数据结构"
+  },
+  "project.OptIndex.description": {
+    "provider": "assistant-draft",
+    "source_hash": "a92f44e8f68e7f23a78088225a6eb274b759b4d123c40f80e1c08684dd2a3e6e",
+    "text": "安全的侵入式对象存储，具有稳定地址和编译期索引定义。集中管理存储与对象生命周期，使可选视图和分区视图保持一致，无需复制对象。"
+  },
+  "project.OptIndex.detail": {
+    "provider": "assistant-draft",
+    "source_hash": "0e6dee9b972c063dc866532c7b5afd556dd1c1ce170ae2fbcdb63fafc1e64655",
+    "text": "面向有界工作集和重复查询，提供显式索引控制与可选的固定大小内存池。设计重点是在不复制存储对象的前提下，保证不同索引间的一致性。"
+  },
+  "project.OptIndex.subtitle": {
+    "provider": "assistant-draft",
+    "source_hash": "48f4c87b8a927f8eb97357f38c159c81bef13d9978529f2ad84fdbdd32401de4",
+    "text": "安全的侵入式对象存储"
+  },
+  "project.QLeaf.category": {
+    "provider": "assistant-draft",
+    "source_hash": "c9f9b2558bee7412b46d7ca20e0d752a6f2e430220608cdb3aa50ab962cabfaf",
+    "text": "⟦0⟧ / 系统与机器学习"
+  },
+  "project.QLeaf.description": {
+    "provider": "assistant-draft",
+    "source_hash": "a08a98aa5af5dcc4bda3d80e6c3ed36cb6d4cfcf60f1d9a3bfb4e6a308eebf44",
+    "text": "低延迟树模型⟦0⟧框架，可对数百至数千棵浅层树实现个位数微秒延迟。"
+  },
+  "project.QLeaf.detail": {
+    "provider": "assistant-draft",
+    "source_hash": "9c3cc42316d6f7acac1a31458f5181475b859d31d65eafacf6a6c3220f8d16af",
+    "text": "⟦0⟧ 深入优化数据传输与线程块间的协调，并采用无锁的⟦1⟧机制，使端到端延迟接近主机与设备通信的极限。"
+  },
+  "project.QLeaf.subtitle": {
+    "provider": "assistant-draft",
+    "source_hash": "3bf0853e27fc4f3e62665e6ef203ce780ea72cfdf07c638a85aa76c371043dfc",
+    "text": "低延迟树模型⟦0⟧"
+  },
+  "project.QuDrip.category": {
+    "provider": "assistant-draft",
+    "source_hash": "2ca84c67e18d707e2afbde4686014d8d1b51c9bdb1d486993ba2ce0cb040cec0",
+    "text": "⟦0⟧ / 计算物理"
+  },
+  "project.QuDrip.description": {
+    "provider": "assistant-draft",
+    "source_hash": "1786e48d9b6705e9f0d363fadb7d1fde7db3c5a01367d48c9223fa4af502845f",
+    "text": "用于构造受约束希尔伯特空间、量子算符和哈密顿量的工具箱。通过稀疏矩阵与 Krylov 方法，支持基态计算、实时演化和 Lindblad 动力学。"
+  },
+  "project.QuDrip.detail": {
+    "provider": "assistant-draft",
+    "source_hash": "fbcc89acbf4ae29f8ef8af9bf15a854fbb79a24acd21ed8c57e4516401f8d916",
+    "text": "面向中小规模量子系统的灵活计算，支持费米子与玻色子自由度。已用于量子光调控和光掺杂超导的研究。"
+  },
+  "project.QuDrip.subtitle": {
+    "provider": "assistant-draft",
+    "source_hash": "07f3803a9f2afb8da2b64369a68595f4db1d21fc7ef5a4823a2ce6a3d6df1e27",
+    "text": "精确量子多体模拟"
+  },
+  "project.RL Tools.category": {
+    "provider": "assistant-draft",
+    "source_hash": "761d4956378e074325ae8c0ce4b19e685136dfe38491fd1814c0f0f64efaccfa",
+    "text": "⟦0⟧ / 学习算法"
+  },
+  "project.RL Tools.description": {
+    "provider": "assistant-draft",
+    "source_hash": "1f693eccecce9e306c47be404b20b51cedb1ac218f01bd65e38dbc49bfa19fbe",
+    "text": "一个轻量级强化学习框架，将智能体与其价值模型分离。SARSA 和 Q-learning 智能体可使用表格存储，也可使用基于 Torch 的函数近似器。"
+  },
+  "project.RL Tools.detail": {
+    "provider": "assistant-draft",
+    "source_hash": "9a513b0f4f2f1e12f25913d74e0064b0a82517e617bd74cd2144a8deacaa9373",
+    "text": "基于模板的接口使交互循环保持简洁：观察状态、选择动作、获得奖励。核心组件仅依赖头文件；神经网络模型使用 ⟦0⟧。"
+  },
+  "project.RL Tools.subtitle": {
+    "provider": "assistant-draft",
+    "source_hash": "792b9aa7b629bd8fe2dd5edd824686be254e4bf70d14c07ee32e3687b4a47ca7",
+    "text": "可组合的强化学习"
+  },
+  "projects.block01": {
+    "provider": "assistant-draft",
+    "source_hash": "48cabf32f7c956c471d760cbc453fdf4b71a63adb4dd9feef40bd0335d05afcd",
+    "text": "工程 / 开源"
+  },
+  "projects.block02": {
+    "provider": "assistant-draft",
+    "source_hash": "f95873eba6697bde0cd8cd516fdf2ee90352af034af04c3fefef6f890c7a6089",
+    "text": "项目与软件。"
+  },
+  "projects.block03": {
+    "provider": "assistant-draft",
+    "source_hash": "8d9b3cc4143ec6ba2a9569d71c78b0bfca705b766425c69f16d34abe9a433943",
+    "text": "面向科学计算与性能敏感系统的 ⟦0⟧ 工具。每个项目针对一个具体的计算问题，源代码与实现细节均发布在 ⟦1⟧ 上。"
+  },
+  "projects.block04": {
+    "provider": "assistant-draft",
+    "source_hash": "dea415ea055a18413d02bce10500f81278861d0cc48e71afb7f0d50d0c0aa6bb",
+    "text": "研究 ↔ 软件"
+  },
+  "projects.block05": {
+    "provider": "assistant-draft",
+    "source_hash": "13b22bfbd21412d242f5d16a45518ac6738ec4e0c50871e953c2623c7d52f7fe",
+    "text": "物理研究背后的代码。"
+  },
+  "projects.block06": {
+    "provider": "assistant-draft",
+    "source_hash": "fdcef8a6c9a07697d1e81e86aba3d48976a2659bde8afbe42d6de696ec822493",
+    "text": "⟦0⟧ 支持光调控量子物质与光掺杂超导的研究。论文列表也包括合作开发的 ⟦1⟧ ⟦2⟧ 模拟软件包。"
+  },
+  "projects.html.description": {
+    "provider": "assistant-draft",
+    "source_hash": "c7ae991fb0acdc03d5b71d32cf99aed25af568eed5df84737ba5ada72a8690bd",
+    "text": "⟦0⟧、⟦1⟧、⟦2⟧、⟦3⟧ 及对 ⟦4⟧ ⟦5⟧ 的贡献 — ⟦6⟧ 的工程与科研软件。"
+  },
+  "projects.html.title": {
+    "provider": "assistant-draft",
+    "source_hash": "dd6dbcf033761c060dd0cf654cc42378534033bb0b34f9b16c33d2981b760857",
+    "text": "项目 · ⟦0⟧"
+  },
+  "publications.block01": {
+    "provider": "assistant-draft",
+    "source_hash": "cab94f50bc30c2e92bf2b87e493d303ac691b70dc9d2325f6f9d8857a04300d0",
+    "text": "研究 / 论文记录"
+  },
+  "publications.block02": {
+    "provider": "assistant-draft",
+    "source_hash": "9ae714983518340e2a6f12ab8fbd0b0580afbea4bad3915d32e890a0ed1547f4",
+    "text": "论文。"
+  },
+  "publications.block03": {
+    "provider": "assistant-draft",
+    "source_hash": "531cf69c7e15da1a1d4591ca99c3ed341aa56533be26ca99fe05b2d97244846e",
+    "text": "期刊论文、预印本、博士学位论文与会议摘要。研究涉及非平衡量子物质、光与物质耦合，以及计算方法。"
+  },
+  "publications.block04": {
+    "provider": "assistant-draft",
+    "source_hash": "69e7dcbb02dbc89fea9a909510767b7657af593d726eb835ba2c25ef0baf0ab8",
+    "text": "已确认开放获取的文章使用期刊 PDF，其余论文使用 ⟦0⟧ PDF。会议摘要链接至对应记录，没有单独的论文 PDF。"
+  },
+  "publications.block05": {
+    "provider": "assistant-draft",
+    "source_hash": "d617e1033a30de52e217e148c497dcea9bbea248480f4a000e5df0cc02478bcc",
+    "text": "搜索论文"
+  },
+  "publications.block06": {
+    "provider": "assistant-draft",
+    "source_hash": "94f3cf49be286357bd2cd21ca1333917a5cc8002597c764bfe07650a9c7e6416",
+    "text": "文献类型"
+  },
+  "publications.block07": {
+    "provider": "assistant-draft",
+    "source_hash": "185182d26954c785bff4a7c6383993c1f0e05f089f37a49408d279725cf1d860",
+    "text": "年份"
+  },
+  "publications.block08": {
+    "provider": "assistant-draft",
+    "source_hash": "b26c8f39c3f5b898dc66e445ab7a6776bc5c1fcd105c32782810bc6db947988a",
+    "text": "重置"
+  },
+  "publications.block09": {
+    "provider": "assistant-draft",
+    "source_hash": "9b2677e93ad633da9459049bd54246e245fc0c20ec45d6ddccc0efac0f290270",
+    "text": "完整列表"
+  },
+  "publications.block10": {
+    "provider": "assistant-draft",
+    "source_hash": "08688a56beb144df1469942bc3011575bd00aa6aee84065d5777910546028d36",
+    "text": "没有符合当前筛选条件的论文。请尝试其他关键词或重置筛选。"
+  },
+  "publications.block11": {
+    "provider": "assistant-draft",
+    "source_hash": "aa6d930341e5d8a5d77e290d2f1452257df1a380cf4f7f48ba76aafc41f3fa9e",
+    "text": "关于此文献列表"
+  },
+  "publications.block12": {
+    "provider": "assistant-draft",
+    "source_hash": "f448f7a5fe9b7ca68ee18ed283aa1a759e9636ec1267d04669fbc363457f4af1",
+    "text": "本列表整理自我在谷歌学术上的 ⟦0⟧ 条记录，将四条重复预印本合并至已发表论文。旧标题保留在“早期标题 / 版本”中。⟦1⟧ 年关于光子介导自旋相互作用的论文另经 ⟦2⟧ 与出版商元数据核验，共计 ⟦3⟧ 条独立记录。"
+  },
+  "publications.block13": {
+    "provider": "assistant-draft",
+    "source_hash": "7f725e0e8350d4d811744957f7a0643f40287028007d59d59c75f23d150f5f1f",
+    "text": "文献元数据与访问链接于 ⟦1⟧ 年 10 月 ⟦0⟧ 日核验。预印本与期刊论文分别标注，下载文件由出版商或 ⟦2⟧ 托管。"
+  },
+  "publications.html.description": {
+    "provider": "assistant-draft",
+    "source_hash": "fb80ad64b6bbb9b64582fe0529e115440cae041795d0b233183dea5d449b8fcc",
+    "text": "⟦0⟧ 的完整论文记录，附期刊链接、⟦1⟧ PDF 与可下载的 ⟦2⟧。"
+  },
+  "publications.html.result-count": {
+    "provider": "assistant-draft",
+    "source_hash": "5698e4461cc75d3c23662d1f451c57091900f0073c8a1709a465ab65202b6e33",
+    "text": "⟦0⟧ 篇论文"
+  },
+  "publications.html.title": {
+    "provider": "assistant-draft",
+    "source_hash": "dac64d13e64394ea61d1f82258e9eaf965dc70461a3affed4219c678457be8c6",
+    "text": "论文 · ⟦0⟧"
+  },
+  "shared.0249efe7b6416814": {
+    "provider": "assistant-draft",
+    "source_hash": "1ea04930fe8b1f139545e341cde4733e7ad4ba32407851239da82663a6458cd7",
+    "text": "基准测试 ↗"
+  },
+  "shared.0447ced38d8eed33": {
+    "provider": "assistant-draft",
+    "source_hash": "7046171fb773157d73728dc5c957c3bf6b42465c1c3e816e6e6e49ea2582b320",
+    "text": "代码仓库 ↗"
+  },
+  "shared.04e2a9728af75840": {
+    "provider": "assistant-draft",
+    "source_hash": "cee0686b1cf1d7df9ead18f7f0abe82720454d6ee9384c5c0454b8f66ea69a37",
+    "text": "项目"
+  },
+  "shared.06af8652bb1ee776": {
+    "provider": "assistant-draft",
+    "source_hash": "07d66c4e95fdc3ebc5acb9747dc29c4616580ae2f4deb2be8b7e664c903dd64a",
+    "text": "学位论文"
+  },
+  "shared.0b4450e1a3d8a9b9": {
+    "provider": "assistant-draft",
+    "source_hash": "b5153d2217b392cdd5fe5cf34a51b798d9a7251905d52019787c9f7c53782f52",
+    "text": "⟦0⟧← 全部笔记⟦1⟧"
+  },
+  "shared.0caf154fb0c0f721": {
+    "provider": "assistant-draft",
+    "source_hash": "69df77e8845352551d6a3f87b02e58ab166284f712d24cc8fc0f5fb5cba4dff0",
+    "text": "本文介绍 ⟦0⟧：一个框架与基准测试项目，从内核启动到⟦2⟧，逐步降低整条⟦1⟧路径上的延迟。"
+  },
+  "shared.1237d0c4ac09734f": {
+    "provider": "assistant-draft",
+    "source_hash": "33180e902a0065d77f08adef0082d59035076055fd3b5dfa447ba57817e0b009",
+    "text": "⟦0⟧ 年 3 月 — 至今"
+  },
+  "shared.17a59710ba7eaa7c": {
+    "provider": "assistant-draft",
+    "source_hash": "bcfb3ddef6636ea96610c5c4e782806cec103b6384ea04a2aa24211d2d941151",
+    "text": "⟦0⟧ 年 8 月 — ⟦1⟧ 年 10 月"
+  },
+  "shared.1c5d7d8e7c763aaa": {
+    "provider": "assistant-draft",
+    "source_hash": "e63ca304b830ec7032ad69d58ec32a0145ad14e21ba6edaf7f8c81c5c52a64fa",
+    "text": "会议摘要"
+  },
+  "shared.1d393b0081b632c5": {
+    "provider": "assistant-draft",
+    "source_hash": "a7a4b4c278641ffda2e56358791163e927908d4f669a4091d1444d78eda9099b",
+    "text": "PDF"
+  },
+  "shared.21650fd54a7bea2f": {
+    "provider": "assistant-draft",
+    "source_hash": "f3c7b50bbd75f175ffc68d16ae791870e759e112a29ca5e88f9e0fd37f6fb9dc",
+    "text": "内存管理"
+  },
+  "shared.22fbf484f84643ff": {
+    "provider": "assistant-draft",
+    "source_hash": "86bc8868bf21a753929f45f66697c6ccf992fce447b4afe4cce24c1426524069",
+    "text": "相关论文 →"
+  },
+  "shared.24ab8627b57779d2": {
+    "provider": "assistant-draft",
+    "source_hash": "25dfe2d74c47e0493e1936fa93ad9da556cca2ab1ecffef38f5418743f5f778c",
+    "text": "谷歌学术 ↗"
+  },
+  "shared.26eea3ce1a86abba": {
+    "provider": "assistant-draft",
+    "source_hash": "0cc968c1132fe2e3aaa8fc9db9ea18b8b00d358ccd2501b2b887cba2cf67fa28",
+    "text": "期刊 ↗"
+  },
+  "shared.2708568935d338ea": {
+    "provider": "assistant-draft",
+    "source_hash": "e7d5e8739a000733fbba0f3ff812757939eeba3e2d9c120f74d75df368dbc4bf",
+    "text": "预印本"
+  },
+  "shared.299800d9c7c2e498": {
+    "provider": "assistant-draft",
+    "source_hash": "114db4c6d132cf121ca58596095d8d22ca0cd80a811931a2798bdfa00e55cfe2",
+    "text": "⟦0⟧ 年 11 月 — ⟦1⟧ 年 3 月"
+  },
+  "shared.2b5c3d26721ae9c3": {
+    "provider": "assistant-draft",
+    "source_hash": "0cb5c37cf4758aa9f4f296bdde436a272ceab84a64b9816ea45faa7ff5a60087",
+    "text": "联系"
+  },
+  "shared.3bdf26b1f93e646c": {
+    "provider": "assistant-draft",
+    "source_hash": "0e83b866e6198b502c0c5630d7aba242fba9b776db3cb43400aae5bc83762eeb",
+    "text": "如何将单样本树模型⟦0⟧优化到几微秒？"
+  },
+  "shared.3c82e2993641053c": {
+    "provider": "assistant-draft",
+    "source_hash": "9a387c97e331c0269477521d79e9de6e3c450078097d18c265364fd42279da39",
+    "text": "PDF · 期刊 ↓"
+  },
+  "shared.3d1626989d3e9234": {
+    "provider": "assistant-draft",
+    "source_hash": "835bd02130d5604c70d217b3bf819b4b1feb338593c58a467bff640c0b66685f",
+    "text": "摘要"
+  },
+  "shared.3d956de4d012421d": {
+    "provider": "assistant-draft",
+    "source_hash": "55ba6f47119f6d11ffc414de2a666fc86cd8f8c9efc3f0c8db1e47eca2976dcc",
+    "text": "⟦0⟧ / 教育"
+  },
+  "shared.4a140d149b882aff": {
+    "provider": "assistant-draft",
+    "source_hash": "81abf464a5e2994369eff447827e66843c38b85a4104349bd3e9d65d8621969e",
+    "text": "所在地"
+  },
+  "shared.4a4a52d5723afdfb": {
+    "provider": "assistant-draft",
+    "source_hash": "e8f342b0257416cf6c773a362ca4ac704a67d74826484de9c9dfaab22822e158",
+    "text": "格林函数"
+  },
+  "shared.539e7b7b67ab7874": {
+    "provider": "assistant-draft",
+    "source_hash": "59d7ff5c0b3b1c574da6c823e15ec9482494fa3552ed9637adb9c439a6c568cc",
+    "text": "关于机器学习、计算系统、市场与物理的实验和思考。"
+  },
+  "shared.56b564b75c7fdb48": {
+    "provider": "assistant-draft",
+    "source_hash": "6d3ae5bd435e974733378b094b921be5a429fb4745dd7f6753913ecd983f5297",
+    "text": "模板"
+  },
+  "shared.5aec8e7ae6b047a3": {
+    "provider": "assistant-draft",
+    "source_hash": "470411891410f0011b6c2abf5e1d0c8dc4bbaecf10406515ad3e6cadf2ddab5b",
+    "text": "⟦0⟧ ⟦1⟧ 论文 →"
+  },
+  "shared.5cd5fdd2e026dab7": {
+    "provider": "assistant-draft",
+    "source_hash": "c2115674831105e28167b7505cbf4f08aaf2369c3c13a5a606c07fb520b03fcc",
+    "text": "期刊 / 会议论文"
+  },
+  "shared.609c079485ecf4c4": {
+    "provider": "assistant-draft",
+    "source_hash": "ee85123a9b3c0bbc9307e8c58d9fbbb1b4dcc4088dc0f51bd4c5360bc33906fd",
+    "text": "学士 / 物理学"
+  },
+  "shared.693eb9cbbe20862b": {
+    "provider": "assistant-draft",
+    "source_hash": "b60b0973957635d5aba7b65137f59e90a35fdf7c07773b4fe64a4ee837115d31",
+    "text": "全部论文 →"
+  },
+  "shared.6d708542c3114262": {
+    "provider": "assistant-draft",
+    "source_hash": "fe4e390f037143406fb2d036bec07dc8eff2e81d8b671394caebd73bd41cd626",
+    "text": "摘要 ↗"
+  },
+  "shared.6dbb9d1206ab04e6": {
+    "provider": "assistant-draft",
+    "source_hash": "09b41b4115c1a00a000232b285d2ec9d99d2cbf45405455d84495759a209debe",
+    "text": "⟦0⟧ / 经历"
+  },
+  "shared.701abbf0a06f4023": {
+    "provider": "assistant-draft",
+    "source_hash": "46f316f678495105616e65c895ff9a4e0ae58169ae148780a84b21463a627a4b",
+    "text": "机器学习"
+  },
+  "shared.718cc4db3dda3b2b": {
+    "provider": "assistant-draft",
+    "source_hash": "6e8d79daf4970c5e79e0cdfb5cf2ca8616d4f497e5896c308a173d73f5fd634c",
+    "text": "⟦0⟧ / 证书"
+  },
+  "shared.74148cac62b1f588": {
+    "provider": "assistant-draft",
+    "source_hash": "0aeeb94d2e46ebad2a6dbb70906cdc6cb984ed59d7ce8406d8fdf121e33114c5",
+    "text": "PDF · ⟦0⟧ ↓"
+  },
+  "shared.8235eda2741de68d": {
+    "provider": "assistant-draft",
+    "source_hash": "8d3aa471dba498cdd3f50f5699510dbbe0009a53614a2eca2d0b7e924ecb6132",
+    "text": "⟦0⟧通过 RSS 订阅 ↗⟦1⟧"
+  },
+  "shared.82b2eb07aaea1da8": {
+    "provider": "assistant-draft",
+    "source_hash": "beaec167d9b718a07b3e579003b0797e9d871641e7aeb6b66455281f413affbc",
+    "text": "论文"
+  },
+  "shared.8701f954069a428e": {
+    "provider": "assistant-draft",
+    "source_hash": "f54bb20a20ba157fa9f8134f3cfbc0eeb07a0a8a2025b56faa015507fd25527c",
+    "text": "早期标题 / 版本"
+  },
+  "shared.8a7525b1492fb848": {
+    "provider": "assistant-draft",
+    "source_hash": "93de79bcc4faaae33788bf84f9fa39b7328d621c38b19a416044283405f12028",
+    "text": "笔记"
+  },
+  "shared.944df45b5703dee3": {
+    "provider": "assistant-draft",
+    "source_hash": "6f23754a6f905802e2b618ea04dcc7d630e6d8fd47ed4996d937d2a162845bc3",
+    "text": "下载全部 ⟦0⟧ ↓"
+  },
+  "shared.992a21fbba9d32e2": {
+    "provider": "assistant-draft",
+    "source_hash": "24376a1d8f35ad75ccaa390d8072fe5831e6a3657cd3b32c3e587bb8630348e1",
+    "text": "博士 / 物理学"
+  },
+  "shared.9c16a16d8eacfae5": {
+    "provider": "assistant-draft",
+    "source_hash": "e9108e6cc2c83b45043db0fa44c18b672bd5b15c415d2a82ecaed6c7eaace3ef",
+    "text": "⟦0⟧ / 职业"
+  },
+  "shared.9c7a295f67d29249": {
+    "provider": "assistant-draft",
+    "source_hash": "cd3e01a79c45fc0c111ab4e05342da434f4dc203cafbea2e97d3efe7edcfd367",
+    "text": "人工智能 · 计算 · 交易"
+  },
+  "shared.a0f09510650034a0": {
+    "provider": "assistant-draft",
+    "source_hash": "567caa983d9b4b8e691f50e8f05b05502f64fb06f9381e5bef3136fea1d72244",
+    "text": "全部年份"
+  },
+  "shared.a4989d0d4f10d411": {
+    "provider": "assistant-draft",
+    "source_hash": "9475deda47c65086c5709e8c1a8ba0bcfbd3e5ad841721103de8408f38307ee4",
+    "text": "会议摘要"
+  },
+  "shared.a5035bed868ca912": {
+    "provider": "assistant-draft",
+    "source_hash": "e2a8949671fd23d48a91b31e24c260e72bb9ac22f858c640a7a5ba7e170e948e",
+    "text": "⟦0⟧ 个人资料 ↗"
+  },
+  "shared.aa3dcca7faa832c0": {
+    "provider": "assistant-draft",
+    "source_hash": "4fa17499cdcc19d73cbefd8c37553336edc7442efeff414e38835176c50a05a0",
+    "text": "⟦0⟧ 年 8 月 — ⟦1⟧ 年 8 月"
+  },
+  "shared.ac4dc1ce6ecfc8f2": {
+    "provider": "assistant-draft",
+    "source_hash": "e62c447469fbcc3d018478f8be5e3e631b76305a24a6d462efa093fc9187cb32",
+    "text": "预印本"
+  },
+  "shared.ac576a66d4563e60": {
+    "provider": "assistant-draft",
+    "source_hash": "d489e57fcf401d76dca2b78b3565d8926219f6d302dca570444dda48eb2d1ae6",
+    "text": "跳至正文"
+  },
+  "shared.ae0272f9a5be7d48": {
+    "provider": "assistant-draft",
+    "source_hash": "8f2d98ff928f03b4d57b8c97e2fea9ceee1b31114399cf250d4f834c3055fb07",
+    "text": "笔记。"
+  },
+  "shared.ae40aefcea6f6a41": {
+    "provider": "assistant-draft",
+    "source_hash": "198ac7417e9dde12f9639a260d44f4382230309e1878a6afe31bf69e6ae97ab5",
+    "text": "⟦0⟧ / 简介"
+  },
+  "shared.b2d799f9056d4059": {
+    "provider": "assistant-draft",
+    "source_hash": "c5e6eded8d0e591470be822230255c4dfdbdd2d8d6cfae209bd29a362e550638",
+    "text": "代码 ↗"
+  },
+  "shared.b7fa9eb8a7baec04": {
+    "provider": "assistant-draft",
+    "source_hash": "d2365996df59ae5b2eb160707e9154a6ba3647d516ce4e4adef2e94012e24bbf",
+    "text": "⟦0⟧ / 代码"
+  },
+  "shared.bbacc01c522408ac": {
+    "provider": "assistant-draft",
+    "source_hash": "ebdc851f15e5122d0eba6d0aadfb096839c7ca1d3f25c60cd41bb50704cdb753",
+    "text": "⟦0⟧ / 研究"
+  },
+  "shared.be8d88349bdcc060": {
+    "provider": "assistant-draft",
+    "source_hash": "0419ba740a28a60370561a9bb3e75585fa89991d42c4701e9632391dcd09cf18",
+    "text": "全部 ⟦0⟧ 仓库 ↗"
+  },
+  "shared.c0ed736236b6e9dd": {
+    "provider": "assistant-draft",
+    "source_hash": "174717cafb57040b1d323331fabbfa1988b0a9d69e74e5172cffc3da9b31caff",
+    "text": "谷歌学术"
+  },
+  "shared.c87f290656e4b4d7": {
+    "provider": "assistant-draft",
+    "source_hash": "e0d5a7bbfa19153f1b21d60f5d1583a5d72485756dfa9a1399da06bfbc7dafa7",
+    "text": "论文"
+  },
+  "shared.c89b6cf6cdc6b729": {
+    "provider": "assistant-draft",
+    "source_hash": "b464c58094b66183bcaac72fbf1436e429cc0d8ac61822dca31d56108c794dd9",
+    "text": "阅读学位论文 · PDF ↓"
+  },
+  "shared.c9a23cdf0947f82a": {
+    "provider": "assistant-draft",
+    "source_hash": "941906d11937de2c9b39caa4fae75c164ce1ea756e88f2f37eba78536a11bb7d",
+    "text": "⟦0⟧如何将单样本树模型⟦1⟧优化到几微秒？⟦2⟧"
+  },
+  "shared.ca127e900e355be3": {
+    "provider": "assistant-draft",
+    "source_hash": "0a0e7a73d5b136840ec6b921869533db577df7bab52e80ce13d476cbac28df11",
+    "text": "Krylov 方法"
+  },
+  "shared.d466647f30531a60": {
+    "provider": "assistant-draft",
+    "source_hash": "072bd3be7c136319545c125566543894c8f397f53520ad401a3230b41a5765a0",
+    "text": "学术资料 ↗"
+  },
+  "shared.d4b1ea5708dd5329": {
+    "provider": "assistant-draft",
+    "source_hash": "a329aeac5c945ece8af52083e19981090dd957c5eb5996c10cb98f8a87907afb",
+    "text": "概览"
+  },
+  "shared.d9148b16c1107bd3": {
+    "provider": "assistant-draft",
+    "source_hash": "785f5ea7b61dc335809f1be7e27e67621e9b9d8f33545a2e5a826bca104b47d3",
+    "text": "计算系统"
+  },
+  "shared.da7edcbba5dbbd8b": {
+    "provider": "assistant-draft",
+    "source_hash": "9dc58025bb3bdb3fb1527147856b63418410a9fe87a3e48e49d87c7f880a93fe",
+    "text": "全部项目 →"
+  },
+  "shared.dd0592e05ecf2941": {
+    "provider": "assistant-draft",
+    "source_hash": "cf4ad610eb65f9a0d4e81145a75294623448d2b42b0ffebfec6c485d54872715",
+    "text": "写作 / 笔记"
+  },
+  "shared.dd5b4ac2e980f5d2": {
+    "provider": "assistant-draft",
+    "source_hash": "d08ed10c16df7dbff3a9d228dc3e37ca59250894574f10e0b9f22d5dcbf673ba",
+    "text": "完整背景 →"
+  },
+  "shared.e32f1549324f4a53": {
+    "provider": "assistant-draft",
+    "source_hash": "02bd667b8d9962de607abcc3a6f1f24e77d705b6626482ae9e37d6a97e2f9532",
+    "text": "返回概览 →"
+  },
+  "shared.ea0e1a419215bfb6": {
+    "provider": "assistant-draft",
+    "source_hash": "680d56cad6a8943acdcf4e62d93b3e30e824e4ee924b2c4f082f694506803a98",
+    "text": "期刊 / 会议论文"
+  },
+  "shared.ea2b8a878841df59": {
+    "provider": "assistant-draft",
+    "source_hash": "741a4ad5d7ea1e013d720b2370a02e7a0efda2d5719f3607dcad5ef213923118",
+    "text": "背景"
+  },
+  "shared.f10988e79e8d9a49": {
+    "provider": "assistant-draft",
+    "source_hash": "e0a130e8b7a89e57fec030b92f909b6ec45fe0b5d2df272a5f6eced3803ede94",
+    "text": "全部类型"
+  },
+  "shared.f11c3f3431e6e5cc": {
+    "provider": "assistant-draft",
+    "source_hash": "997e91562c5ca1d2ace0860a114dd74aaca880b4652f978f3e0ca6f83b3337fc",
+    "text": "学位论文"
+  },
+  "shared.f325a4e6b972f5e4": {
+    "provider": "assistant-draft",
+    "source_hash": "17669ea61fe1d22b33c6a83f7fcfef2e032dabe11108e4a3454263771dff0c88",
+    "text": "预印本"
+  },
+  "shared.fc22a6fcb06d78b7": {
+    "provider": "assistant-draft",
+    "source_hash": "05e6e3d6849b21f861dcfb4db0776b42363c75d2377f51c0e77d852e7b1d2398",
+    "text": "⟦0⟧ / 研究主题"
+  }
+}

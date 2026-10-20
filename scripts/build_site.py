@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 from importlib.util import find_spec
 
 ROOT = Path(__file__).resolve().parent.parent
-if any(find_spec(module) is None for module in ('markdown', 'yaml')):
+if any(find_spec(module) is None for module in ('markdown', 'yaml', 'bs4')):
     local_python = ROOT / '.venv/bin/python'
     if local_python.exists() and Path(sys.prefix) != ROOT / '.venv':
         os.execv(str(local_python), [str(local_python), str(Path(__file__).resolve()), *sys.argv[1:]])
@@ -102,7 +102,7 @@ def shell(filename, title, description, body, script=False):
 {canonical_tags}  <link rel="alternate" type="application/rss+xml" title="Jiajun Li — Notes" href="/feed.xml">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/style.css">
-  {'<script src="assets/publications.js" defer></script>' if script else ''}
+  {'<script src="/assets/publications.js" defer></script>' if script else ''}
 </head>
 <body{' class="home-page"' if filename == 'index.html' else ''}>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -129,97 +129,35 @@ def shell(filename, title, description, body, script=False):
 def hero(label, title, intro):
     return f'<section class="page-hero"><p class="eyebrow">{label}</p><h1>{title}</h1><p class="intro">{intro}</p></section>'
 
-PROJECTS=[
- dict(name='QLeaf',subtitle='Low-latency tree inference',category='01 / SYSTEMS & MACHINE LEARNING',tags=['C++','CUDA','CPU / GPU'],text='A low-latency tree inference framework, reaching single-digit microsecond latency for hundreds to thousands of shallow trees.',detail='QLeaf aggressively optimizes data transfer and cross-block coordination, and uses a lock-free host–device handoff to bring end-to-end latency close to the limits of host–device communication.',href='QLeaf',extra=link(GITHUB+'/QLeaf/blob/main/BENCHMARK.md','Benchmarks ↗')),
- dict(name='QuDrip',subtitle='Exact quantum many-body simulation',category='02 / COMPUTATIONAL PHYSICS',tags=['C++','Eigen','Krylov methods'],text='A toolbox for constructing constrained Hilbert spaces, quantum operators, and Hamiltonians. Sparse-matrix and Krylov methods support ground-state calculations, real-time evolution, and Lindblad dynamics.',detail='Designed for flexible small-to-medium quantum systems, including fermionic and bosonic degrees of freedom. Used in research on quantum-light control and photodoped superconductivity.',href='QuDrip',extra=link('publications.html#paper-03','Related publication →')),
- dict(name='OptIndex',subtitle='Safe intrusive object store',category='03 / DATA STRUCTURES',tags=['C++','Boost.Intrusive','Memory management'],text='A safe intrusive object store with stable addresses and compile-time index definitions. Centralized storage and object lifetime management keep optional or partitioned views consistent without duplicating objects.',detail='Built for bounded working sets and repeated queries, with explicit indexing control and an optional fixed-size pool. The design addresses consistency across indices without duplicating the stored objects.',href='OptIndex',extra=''),
- dict(name='RL Tools',subtitle='Composable reinforcement learning',category='04 / LEARNING ALGORITHMS',tags=['C++','Templates','LibTorch'],text='A lightweight reinforcement learning framework that separates agents from their value models. SARSA and Q-learning agents work with tabular storage or Torch-based function approximators.',detail='Template-based interfaces keep the interaction loop small: observe a state, select an action, and collect a reward. Core components are header-only; neural models use LibTorch.',href='rl_tools',extra='')
-]
-
-PROJECTS.append(dict(name='NESSi 2.0',subtitle='Nonequilibrium systems simulation',category='05 / COLLABORATIVE RESEARCH SOFTWARE',tags=['C++','Green’s functions','DMFT'],text='A shared research library for nonequilibrium Green’s functions and interacting quantum systems. Version 2.0 adds memory-truncated time propagation and steady-state calculations.',detail='I contributed to the development of NESSi 2.0 through my research on nonequilibrium many-body methods. The package supports accurate numerical integration and distributed-memory calculations for quantum dynamics.',href='https://github.com/nessi-cntr/nessi',extra=link('publications.html#paper-33','NESSi 2.0 paper →')))
-
 def project_card(p,compact=False):
     repo_url = p['href'] if p['href'].startswith('https://') else GITHUB+'/'+p['href']
-    details='' if compact or not p['detail'] else f'<p class="project-detail">{p["detail"]}</p>'
-    return f'<article class="project-card"><p class="eyebrow">{p["category"]}</p><h3>{link(repo_url,p["name"]+" ↗")}</h3><p class="project-subtitle">{p["subtitle"]}</p><p>{p["text"]}</p>{details}<ul class="tags" aria-label="Technologies">'+''.join(f'<li>{t}</li>' for t in p['tags'])+f'</ul><div class="project-links">{link(repo_url,"Repository ↗")}{p["extra"]}</div></article>'
+    details='' if compact or not p['detail'] else f'<p class="project-detail" data-i18n="project.{p["name"]}.detail">{p["detail"]}</p>'
+    return f'<article class="project-card" data-i18n-scope="project-{p["name"]}"><p class="eyebrow" data-i18n="project.{p["name"]}.category">{p["category"]}</p><h3>{link(repo_url,p["name"]+" ↗")}</h3><p class="project-subtitle" data-i18n="project.{p["name"]}.subtitle">{p["subtitle"]}</p><p data-i18n="project.{p["name"]}.description">{p["text"]}</p>{details}<ul class="tags" aria-label="Technologies">'+''.join(f'<li>{t}</li>' for t in p['tags'])+f'</ul><div class="project-links">{link(repo_url,"Repository ↗")}{p["extra"]}</div></article>'
 
-# Selection lives in the reviewed dataset; newest year first, citations break ties.
-selected = sorted(
-    (p for p in PUBLICATIONS if p.get('selected')),
-    key=lambda p: (-p['year'], -p.get('citation_count', 0), p['title']),
-)
-body=f'''<section class="home-intro">
-  <div class="home-heading"><h1>Jiajun Li</h1>
-  <p class="home-tagline">AI, computation, and trading.</p></div>
-  <div class="home-details">
-  <p class="home-bio">Quantitative researcher at Qube Research &amp; Technologies in Zürich.</p>
-  <div class="home-description"><p class="home-bio">I develop algorithms and computational methods across quantitative finance, AI, and quantum physics. My current work applies machine learning and high-performance computing to high-frequency trading, market microstructure research, and short-term forecasting. Previously, I studied strongly correlated quantum systems and nonequilibrium light–matter dynamics.</p>
-  <p class="home-bio">For more than a decade, I’ve built high-performance software in C++, Python, Fortran, and CUDA. My open-source work includes quantum simulation tools, low-latency AI inference, and efficient C++ data structures.</p>
-  <div class="home-links">{link(SCHOLAR,'Google Scholar')}{link(GITHUB,'GitHub')}{link(LINKEDIN,'LinkedIn')}</div></div></div>
-</section>
-<section class="home-experience" aria-labelledby="experience-heading">
-  <div class="home-section-heading"><h2 id="experience-heading">Experience</h2>{link('about.html','Full background →')}</div>
-  <ul class="experience-list">
-    <li><span class="experience-date">2025 — present</span><span><strong>Qube Research &amp; Technologies</strong><span class="experience-role">Quantitative Researcher · Zürich</span></span></li>
-    <li><span class="experience-date">2022 — 2025</span><span><strong>IMC Trading</strong><span class="experience-role">Quantitative Developer, 2022–2024; garden leave, 2024–2025 · Zug</span></span></li>
-    <li><span class="experience-date">2021 — 2022</span><span><strong>Paul Scherrer Institut</strong><span class="experience-role">PSI Fellow · Villigen</span></span></li>
-    <li><span class="experience-date">2017 — 2021</span><span><strong>FAU Erlangen–Nürnberg</strong><span class="experience-role">Postdoctoral Research Associate · Erlangen</span></span></li>
-  </ul>
-  <p class="home-education"><strong>PhD in Physics</strong> · University at Buffalo, State University of New York</p>
-</section>
-<section class="home-projects" aria-labelledby="projects-heading">
-  <div class="home-section-heading"><h2 id="projects-heading">Selected projects</h2>{link('projects.html','All projects →')}</div>
-  <div class="selected-project-list">
-    <article><h3>Low latency tools</h3><p>{link(GITHUB+'/OptIndex','OptIndex')} — A safe intrusive C++ object store with stable addresses, managed object lifetimes, and optional indices.</p></article>
-    <article><h3>AI inference optimization</h3><p>{link(GITHUB+'/QLeaf','QLeaf')} — A low-latency tree inference framework, reaching single-digit microsecond latency for hundreds to thousands of shallow trees.</p></article>
-    <article><h3>Quantum physics</h3><p>{link('https://github.com/nessi-cntr/nessi','NESSi 2.0')} — Collaborative software for nonequilibrium Green’s-function simulations; {link(GITHUB+'/QuDrip','QuDrip')} — Exact quantum many-body simulation and dynamics.</p></article>
-  </div>
-</section>
-<section class="home-publications" aria-labelledby="selected-heading">
-  <div class="home-section-heading"><h2 id="selected-heading">Selected publications</h2>{link('publications.html','All publications →')}</div>
-  <div class="publication-list">{''.join(publication(p,True) for p in selected)}</div>
-</section>'''
-shell('index.html','AI, computation, and trading','Jiajun Li — AI, computation, and trading. Quantitative researcher and physicist building high-performance software.',body)
-
-body=hero('PROFILE / BACKGROUND','Research meets engineering.','I’m a quantitative researcher based in Zürich. My work concerns machine learning, market microstructure, and real-time computation.')+f'''
-<div class="two-column section"><aside class="side-heading"><span class="eyebrow">01 / PROFILE</span><h2>From machine learning<br>to real-time decisions.</h2></aside><div class="prose"><p>Since 2022, I have worked at IMC Trading and Qube Research &amp; Technologies on high-frequency trading and short-term forecasting. My work includes machine-learning models for market-making strategies, market microstructure research, and the implementation of trading systems and low-latency inference in C++.</p><p>I have spent more than a decade developing computational methods and scientific software, mainly in C++, Python, Fortran, and CUDA. Much of this work involves numerical algorithms and performance-critical code.</p><p>Trained as a theoretical physicist, I combine mathematical insight with a hands-on, empirical approach to time series research, trading strategy design, and performance engineering. My work at QRT and IMC has deepened my understanding of statistics and market microstructure.</p><ul class="tags" aria-label="Programming languages"><li>C++</li><li>Python</li><li>Fortran</li><li>CUDA</li></ul><div class="inline-links">{link(LINKEDIN,'LinkedIn profile ↗')}{link(SCHOLAR,'Google Scholar ↗')}</div></div></div>
-<section class="section">{section_heading('02 / EXPERIENCE','Industry &amp; research')}<div class="timeline">
-<article><span class="timeline-label">MAR 2025 — PRESENT</span><div><h3>Quantitative Researcher</h3><p class="venue">Qube Research &amp; Technologies · Zürich, Switzerland</p><p>High-frequency trading and short-term alpha research.</p></div></article>
-<article><span class="timeline-label">NOV 2022 — MAR 2025</span><div><h3>Quantitative Developer</h3><p class="venue">IMC Trading · Zug, Switzerland</p><p><strong>Nov 2022 – Apr 2024</strong><br>Machine-learning signals for market-making strategies, delta-one market-access engineering, and market microstructure research.</p><p class="career-note">Garden leave · Apr 2024 – Mar 2025</p></div></article>
-<article><span class="timeline-label">AUG 2021 — OCT 2022</span><div><h3>PSI Fellow</h3><p class="venue">Paul Scherrer Institut · Villigen, Switzerland</p><p>Quantum Monte Carlo algorithms and Green’s-function approximations; light-induced superconductivity and photodoping; optimal control of laser-induced quantum states in solids.</p></div></article>
-<article><span class="timeline-label">AUG 2017 — AUG 2021</span><div><h3>Postdoctoral Research Associate</h3><p class="venue">FAU Erlangen–Nürnberg · Erlangen, Germany</p><p>Foundations of strongly coupled lattice quantum electrodynamics, hidden phases in photodoped Mott insulators, and steady-state photodoping theory. Developed time-truncation and steady-state methods for non-Markovian integro-differential equations.</p></div></article>
-</div></section>
-<section class="section">{section_heading('03 / EDUCATION','A foundation in physics')}<div class="timeline">
-<article><span class="timeline-label">PHD / PHYSICS</span><div><h3>University at Buffalo</h3><p class="venue">State University of New York</p><p>Thesis: <em>Non-equilibrium Effects in Dissipative Strongly Correlated Systems</em> (2017).</p><p>President of the Physics Graduate Student Association; member of the UB Chinese Football Team.</p>{link('https://arxiv.org/pdf/2009.12865','Read the thesis · PDF ↓','text-link')}</div></article>
-<article><span class="timeline-label">BSC / PHYSICS</span><div><h3>Beijing Normal University</h3><p>Thesis: <em>Mie scattering of electromagnetic waves over nanoheterostructures.</em></p><p>White Pigeon Volunteers, Singularity Drama, and University Debate Team.</p></div></article>
-<article><span class="timeline-label">2016 / CERTIFICATE</span><div><h3>Computational Sciences</h3><p class="venue">Advanced Certificate · University at Buffalo</p></div></article>
-</div></section>
-<section class="section">{section_heading('04 / RESEARCH THEMES','Questions and methods')}<div class="theme-grid"><article><h3>Driven quantum matter</h3><p>Photodoping, resistive switching, hidden superconductivity, and the dynamics of correlated electrons away from equilibrium.</p></article><article><h3>Light–matter interaction</h3><p>Gauge-invariant descriptions of strongly coupled light and matter, collective behavior in cavities, and photon-mediated interactions.</p></article><article><h3>Numerical many-body methods</h3><p>Quantum Monte Carlo, impurity solvers, dynamical mean-field theory, and efficient treatment of non-Markovian dynamics.</p></article></div></section>'''
-shell('about.html','Background','Jiajun Li’s experience at QRT, IMC Trading, PSI, and FAU; physics education at University at Buffalo and Beijing Normal University.',body)
-
-body=hero('ENGINEERING / OPEN SOURCE','Projects &amp; software.','C++ tools for scientific computing and performance-sensitive systems. Each project explores a specific computational problem, with source code and implementation details on GitHub.')+f'<section class="section"><div class="project-grid">'+''.join(project_card(p) for p in PROJECTS)+f'</div></section><section class="closing"><div><p class="eyebrow">RESEARCH ↔ SOFTWARE</p><h2>Code behind the physics.</h2></div><div><p>QuDrip supports research on light-controlled quantum matter and photodoped superconductivity. The publication record also includes the collaborative NESSi 2.0 simulation package.</p><div class="inline-links">{link("publications.html#paper-33","NESSi 2.0 paper →")}{link(GITHUB,"All GitHub repositories ↗")}</div></div></section>'
-shell('projects.html','Projects','QLeaf, QuDrip, OptIndex, RL Tools, and contributions to NESSi 2.0 — engineering and research software by Jiajun Li.',body)
-
-counts={k:sum(p['kind']==k for p in PUBLICATIONS) for k in TYPES}
-years=sorted({p['year'] for p in PUBLICATIONS},reverse=True)
-body=hero('RESEARCH / PUBLICATION RECORD','Publications.','Journal articles, preprints, a doctoral thesis, and conference abstracts. Research in nonequilibrium quantum matter, light–matter coupling, and computational methods.')+f'''
-<div class="publication-summary"><div><strong>{counts['article']}</strong><span>JOURNAL / PROCEEDINGS</span></div><div><strong>{counts['preprint']}</strong><span>PREPRINTS</span></div><div><strong>{counts['thesis']}</strong><span>THESIS</span></div><div><strong>{counts['abstract']}</strong><span>MEETING ABSTRACTS</span></div></div>
-<div class="bibliography-tools"><div class="inline-links">{link(SCHOLAR,'Google Scholar ↗')}{link('assets/publications.bib','Download all BibTeX ↓',extra='download')}</div><p>PDF links use the journal copy for confirmed open-access articles and arXiv for other papers. Meeting abstracts link to their records; a separate paper PDF is not available.</p></div>
-<form class="publication-filters" id="publication-filters" role="search" hidden><div class="search-field"><label for="publication-search">Search publications</label><input type="search" id="publication-search" placeholder="Title, author, topic, DOI…" autocomplete="off"></div><div><label for="publication-type">Publication type</label><select id="publication-type"><option value="all">All types</option>{''.join(f'<option value="{k}">{v}</option>' for k,v in TYPES.items())}</select></div><div><label for="publication-year">Year</label><select id="publication-year"><option value="all">All years</option>{''.join(f'<option value="{y}">{y}</option>' for y in years)}</select></div><button type="reset" class="reset-button">Reset</button></form>
-<div class="results-heading"><h2>Complete record</h2><p id="result-count" role="status" aria-live="polite">{len(PUBLICATIONS)} publications</p></div>
-<div class="publication-list" id="publication-list">{''.join(publication(p) for p in PUBLICATIONS)}</div><p id="no-results" class="no-results" hidden>No publications match these filters. Try a different search or reset the filters.</p>
-<details class="record-notes"><summary>About this bibliography</summary><p>Compiled from the 46 records in my Google Scholar profile, with four duplicate preprint entries consolidated into their published papers. Earlier titles remain available under “Earlier titles / versions.” The 2024 paper on photon-mediated spin interactions is additionally verified through arXiv and the publisher’s metadata. This gives 43 distinct records.</p><p>Publication metadata and access links were checked on 19 October 2026. Preprints are identified separately from journal articles. Downloads are hosted by the publisher or arXiv.</p></details>'''
-shell('publications.html','Publications','Complete publication record of Jiajun Li, with journal links, arXiv PDFs, and downloadable BibTeX.',body,True)
-
-body=hero('CONTACT / PROFILES','Get in touch.','For professional connections, research, and open-source work, you can reach me by email or through the profiles below.')+f'''<p class="contact-email">Email: <a href="mailto:jiajunligg@gmail.com">jiajunligg@gmail.com</a></p><section class="contact-grid section"><a href="{LINKEDIN}" class="contact-card"><span class="eyebrow">01 / PROFESSIONAL</span><h2>LinkedIn <span aria-hidden="true">↗</span></h2><p>Experience, background, and professional connections.</p><span class="contact-handle">linkedin.com/in/jiajunli</span></a><a href="{escape(SCHOLAR,quote=True)}" class="contact-card"><span class="eyebrow">02 / RESEARCH</span><h2>Google Scholar <span aria-hidden="true">↗</span></h2><p>Publications, citations, and related research.</p><span class="contact-handle">Jiajun Li / Google Scholar</span></a><a href="{GITHUB}" class="contact-card"><span class="eyebrow">03 / CODE</span><h2>GitHub <span aria-hidden="true">↗</span></h2><p>Source code, documentation, and project discussions.</p><span class="contact-handle">github.com/LiJ21</span></a></section><div class="contact-location"><span class="eyebrow">BASED IN</span><p>Zürich area, Switzerland</p></div>'''
-shell('contact.html','Contact','Contact Jiajun Li by email or connect on LinkedIn, Google Scholar, and GitHub.',body)
-shell('404.html','Page not found','The requested page could not be found.',hero('404 / PAGE NOT FOUND','Outside the domain.','This page does not exist or has moved.')+'<div class="actions section">'+link('/','Return to overview →','button')+'</div>')
-p=ROOT/'404.html';p.write_text(p.read_text().replace('href="assets/','href="/assets/').replace('href="index.html"','href="/index.html"').replace('href="about.html"','href="/about.html"').replace('href="publications.html"','href="/publications.html"').replace('href="projects.html"','href="/projects.html"').replace('href="contact.html"','href="/contact.html"'))
+# Page prose lives in editable templates; generated lists share the reviewed data.
+import yaml
+from i18n import build_languages
+PROJECTS = yaml.safe_load((ROOT/'content/projects.yaml').read_text())
+PAGES = yaml.safe_load((ROOT/'content/pages.yaml').read_text())
+selected = sorted((p for p in PUBLICATIONS if p.get('selected')), key=lambda p: (-p['year'], -p.get('citation_count', 0), p['title']))
+counts = {k: sum(p['kind'] == k for p in PUBLICATIONS) for k in TYPES}
+slots = {
+    'selected_publications': ''.join(publication(p, True) for p in selected),
+    'projects': ''.join(project_card(p) for p in PROJECTS),
+    'publications': ''.join(publication(p) for p in PUBLICATIONS),
+    'publication_types': '<option value="all">All types</option>' + ''.join(f'<option value="{k}">{v}</option>' for k, v in TYPES.items()),
+    'publication_years': '<option value="all">All years</option>' + ''.join(f'<option value="{y}">{y}</option>' for y in sorted({p['year'] for p in PUBLICATIONS}, reverse=True)),
+    'count_all': str(len(PUBLICATIONS)),
+    **{'count_'+k: str(v) for k,v in counts.items()},
+}
+for name, metadata in PAGES.items():
+    body = (ROOT/f'content/pages/{name}.html').read_text()
+    body = re.sub(r'{{\s*(\w+)\s*}}', lambda m: slots[m[1]], body)
+    shell(name+'.html', metadata['title'], metadata['description'], body, name=='publications')
 (ROOT/'assets/publications.bib').write_text('% Jiajun Li — publication record, checked 2026-10-19\n% UTF-8; compatible with biblatex/biber.\n\n'+'\n\n'.join(bibtex(p) for p in PUBLICATIONS)+'\n')
 note_count = build_notes(ROOT, shell, hero)
-print(f'Generated seven main pages, {note_count} notes, RSS, and {len(PUBLICATIONS)} BibTeX entries.')
-
-# Include only pages rendered in this build; drafts and the error page stay out.
+translated_urls = build_languages(ROOT, list(PAGES), note_count)
+SITEMAP_URLS.extend(translated_urls)
 namespace = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 ET.register_namespace('', namespace)
 sitemap = ET.Element(f'{{{namespace}}}urlset')
@@ -229,3 +167,4 @@ for url in sorted(set(SITEMAP_URLS)):
 ET.indent(sitemap)
 ET.ElementTree(sitemap).write(ROOT/'sitemap.xml', encoding='utf-8', xml_declaration=True)
 (ROOT/'robots.txt').write_text(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
+print(f'Generated English/Chinese pages, {note_count} notes, feeds, and {len(PUBLICATIONS)} BibTeX entries.')

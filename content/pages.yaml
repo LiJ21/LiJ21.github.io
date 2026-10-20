@@ -1,0 +1,23 @@
+index:
+  title: AI, computation, and trading
+  description: Jiajun Li — AI, computation, and trading. Quantitative researcher and
+    physicist building high-performance software.
+about:
+  title: Background
+  description: Jiajun Li’s experience at QRT, IMC Trading, PSI, and FAU; physics education
+    at University at Buffalo and Beijing Normal University.
+projects:
+  title: Projects
+  description: QLeaf, QuDrip, OptIndex, RL Tools, and contributions to NESSi 2.0 —
+    engineering and research software by Jiajun Li.
+publications:
+  title: Publications
+  description: Complete publication record of Jiajun Li, with journal links, arXiv
+    PDFs, and downloadable BibTeX.
+contact:
+  title: Contact
+  description: Contact Jiajun Li by email or connect on LinkedIn, Google Scholar,
+    and GitHub.
+'404':
+  title: Page not found
+  description: The requested page could not be found.

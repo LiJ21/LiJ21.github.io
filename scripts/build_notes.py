@@ -8,6 +8,8 @@ import xml.etree.ElementTree as ET
 
 import markdown
 import yaml
+from hashlib import sha256
+from i18n import annotate_note
 
 SITE = 'https://jjli.info'
 MARKER = '<!-- Generated from content/posts by build_notes.py -->'
@@ -37,11 +39,11 @@ def load_posts(root):
             raise ValueError(f'{path}: tags must be a list of strings')
         if meta.get('draft', False):
             continue
-        html = markdown.markdown(parts[2], extensions=['extra', 'sane_lists'], output_format='html')
+        html = annotate_note(markdown.markdown(parts[2], extensions=['extra', 'sane_lists'], output_format='html'), slug)
         # The page template owns its one top-level heading.
         if re.search(r'<h1(?:\s|>)', html):
             raise ValueError(f'{path}: use level-two headings in the article body')
-        posts.append(dict(meta, date=published, tags=tags, html=html, url=f'/blog/{slug}/'))
+        posts.append(dict(meta, source_hash=sha256(path.read_bytes()).hexdigest(), date=published, tags=tags, html=html, url=f'/blog/{slug}/'))
     return sorted(posts, key=lambda p: (p['date'], p['slug']), reverse=True)
 
 

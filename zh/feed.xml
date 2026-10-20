@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0">
+  <channel>
+    <title>Jiajun Li — 技术笔记</title>
+    <link>https://jjli.info/zh/blog.html</link>
+    <description>关于机器学习、计算系统、市场与物理的笔记。</description>
+    <language>zh-Hans</language>
+    <item>
+      <title>如何将单样本树模型推理优化到几微秒？</title>
+      <link>https://jjli.info/zh/blog/qleaf-inference-latency/</link>
+      <guid>https://jjli.info/zh/blog/qleaf-inference-latency/</guid>
+      <description>本文介绍 QLeaf：一个框架与基准测试项目，从内核启动到主机与设备之间的交接，逐步降低整条推理路径上的延迟。</description>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+      <category>2026 年 10 月 19 日</category>
+      <category>机器学习</category>
+    </item>
+  </channel>
+</rss>
