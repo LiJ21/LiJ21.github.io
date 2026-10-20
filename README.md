@@ -2,7 +2,7 @@
 
 A static academic and engineering portfolio for GitHub Pages. Pages are served directly from the repository root, with no runtime dependencies or third-party scripts.
 
-The visual design takes cues from [PSI](https://www.psi.ch/en): black-and-white sans-serif typography, deep blue accents inspired by Citadel Securities, subtle gray-blue color fields, and simple editorial rows. The homepage retains a concise introduction and selected publications. All fonts use a local system stack.
+The visual design takes cues from [PSI](https://www.psi.ch/en): black-and-white sans-serif typography, black accents, neutral gray color fields, and simple editorial rows. The homepage retains a concise introduction and selected publications. All fonts use a local system stack.
 
 ## Local preview
 
@@ -58,7 +58,7 @@ Local HTML landmarks, navigation, fragment links, bibliography coverage, JavaScr
 
 ## Publish
 
-Push the files to `main` in `LiJ21/LiJ21.github.io`. Configure the repository's **Settings → Pages** to deploy from the `main` branch and `/ (root)` directory. The intended site address is https://lij21.github.io/.
+Push the files to `main` in `LiJ21/LiJ21.github.io`. Configure the repository's **Settings → Pages** to deploy from the `main` branch and `/ (root)` directory. The canonical site address is https://jjli.info/.
 
 `.nojekyll` keeps the deployment a plain static site. This edit does not commit, push, or alter hosting settings.
 
@@ -122,3 +122,8 @@ Every build regenerates `sitemap.xml` with the main pages and published notes,
 using `https://jjli.info`. Drafts and the 404 page are excluded. `robots.txt`
 allows crawling and points to the sitemap. After deploying, submit
 `https://jjli.info/sitemap.xml` in Google Search Console → Sitemaps.
+
+Each published page includes an absolute canonical URL and Open Graph URL
+matching its sitemap entry. Page titles and descriptions are generated with the
+content; the homepage title identifies Jiajun Li and the site's focus. The 404
+page has no canonical URL and remains excluded from the sitemap.

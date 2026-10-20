@@ -1,48 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="340" viewBox="0 0 720 340" role="img" aria-labelledby="title">
 <title id="title">GPU: per-request launch versus persistent workers</title>
-<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#003b71"/></marker></defs>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#111111"/></marker></defs>
 <rect width="720" height="340" fill="white"/>
-<g font-family="Arial, Helvetica, sans-serif" fill="#172b3e">
-<text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#003b71">GPU · PER-REQUEST LAUNCH</text>
-<text x="28" y="59" font-size="13" font-weight="400" text-anchor="start" fill="#172b3e">row 1</text>
-<rect x="28" y="74" width="94" height="47" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="75.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Launch</text>
-<path d="M123 97 L129 97" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="130" y="74" width="94" height="47" rx="4" fill="#003b71" stroke="#003b71"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#111111">
+<text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#111111">GPU · PER-REQUEST LAUNCH</text>
+<text x="28" y="59" font-size="13" font-weight="400" text-anchor="start" fill="#111111">row 1</text>
+<rect x="28" y="74" width="94" height="47" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="75.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Launch</text>
+<path d="M123 97 L129 97" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="130" y="74" width="94" height="47" rx="4" fill="#111111" stroke="#111111"/>
 <text x="177.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="white">Evaluate</text>
-<path d="M225 97 L231 97" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="232" y="74" width="94" height="47" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="279.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Sync</text>
-<text x="380" y="59" font-size="13" font-weight="400" text-anchor="start" fill="#172b3e">row 2</text>
-<rect x="380" y="74" width="94" height="47" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="427.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Launch</text>
-<path d="M475 97 L481 97" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="482" y="74" width="94" height="47" rx="4" fill="#003b71" stroke="#003b71"/>
+<path d="M225 97 L231 97" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="232" y="74" width="94" height="47" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="279.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Sync</text>
+<text x="380" y="59" font-size="13" font-weight="400" text-anchor="start" fill="#111111">row 2</text>
+<rect x="380" y="74" width="94" height="47" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="427.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Launch</text>
+<path d="M475 97 L481 97" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="482" y="74" width="94" height="47" rx="4" fill="#111111" stroke="#111111"/>
 <text x="529.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="white">Evaluate</text>
-<path d="M577 97 L583 97" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="584" y="74" width="94" height="47" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="631.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Sync</text>
-<text x="28" y="151" font-size="14" font-weight="400" text-anchor="start" fill="#172b3e">Setup and completion repeated for every row</text>
-<path d="M28 170 L692 170" fill="none" stroke="#bccbd7" stroke-dasharray="5 5"/>
-<text x="28" y="199" font-size="13" font-weight="600" text-anchor="start" fill="#003b71">GPU · PERSISTENT</text>
-<rect x="24" y="214" width="672" height="90" rx="4" fill="#f8fafc" stroke="#bccbd7"/>
-<text x="40" y="237" font-size="13" font-weight="400" text-anchor="start" fill="#172b3e">Kernel launched once · resident blocks wait for successive requests</text>
-<rect x="40" y="250" width="92" height="38" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="86.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Signal</text>
-<path d="M133 269 L139 269" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="140" y="250" width="92" height="38" rx="4" fill="#003b71" stroke="#003b71"/>
+<path d="M577 97 L583 97" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="584" y="74" width="94" height="47" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="631.0" y="102.5" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Sync</text>
+<text x="28" y="151" font-size="14" font-weight="400" text-anchor="start" fill="#111111">Setup and completion repeated for every row</text>
+<path d="M28 170 L692 170" fill="none" stroke="#d2d2d2" stroke-dasharray="5 5"/>
+<text x="28" y="199" font-size="13" font-weight="600" text-anchor="start" fill="#111111">GPU · PERSISTENT</text>
+<rect x="24" y="214" width="672" height="90" rx="4" fill="#fafafa" stroke="#d2d2d2"/>
+<text x="40" y="237" font-size="13" font-weight="400" text-anchor="start" fill="#111111">Kernel launched once · resident blocks wait for successive requests</text>
+<rect x="40" y="250" width="92" height="38" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="86.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Signal</text>
+<path d="M133 269 L139 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="140" y="250" width="92" height="38" rx="4" fill="#111111" stroke="#111111"/>
 <text x="186.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="white">Evaluate</text>
-<path d="M233 269 L239 269" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="240" y="250" width="92" height="38" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="286.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Publish</text>
-<rect x="386" y="250" width="92" height="38" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="432.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Signal</text>
-<path d="M479 269 L485 269" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="486" y="250" width="92" height="38" rx="4" fill="#003b71" stroke="#003b71"/>
+<path d="M233 269 L239 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="240" y="250" width="92" height="38" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="286.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Publish</text>
+<rect x="386" y="250" width="92" height="38" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="432.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Signal</text>
+<path d="M479 269 L485 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="486" y="250" width="92" height="38" rx="4" fill="#111111" stroke="#111111"/>
 <text x="532.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="white">Evaluate</text>
-<path d="M579 269 L585 269" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="586" y="250" width="92" height="38" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="632.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#172b3e">Publish</text>
-<path d="M334 269 L381 269" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M579 269 L585 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="586" y="250" width="92" height="38" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="632.0" y="274.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Publish</text>
+<path d="M334 269 L381 269" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
 <text x="28" y="328" font-size="12" font-weight="400" text-anchor="start" fill="#505050">Schematic sequence; box widths do not represent measured time.</text>
 </g></svg>

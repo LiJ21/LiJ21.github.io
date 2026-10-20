@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="340" viewBox="0 0 720 340" role="img" aria-labelledby="title">
 <title id="title">Host-to-host latency includes communication and evaluation</title>
-<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#003b71"/></marker></defs>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#111111"/></marker></defs>
 <rect width="720" height="340" fill="white"/>
-<g font-family="Arial, Helvetica, sans-serif" fill="#172b3e">
-<text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#003b71">MEASURE THE COMPLETE ROUND TRIP</text>
-<rect x="252" y="60" width="145" height="222" rx="4" fill="#f8fafc" stroke="#bccbd7"/>
-<text x="324" y="86" font-size="15" font-weight="600" text-anchor="middle" fill="#003b71">PCIe</text>
-<rect x="28" y="110" width="180" height="62" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="118.0" y="146.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">Host feature row</text>
-<rect x="445" y="110" width="247" height="62" rx="4" fill="#003b71" stroke="#003b71"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#111111">
+<text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#111111">MEASURE THE COMPLETE ROUND TRIP</text>
+<rect x="252" y="60" width="145" height="222" rx="4" fill="#fafafa" stroke="#d2d2d2"/>
+<text x="324" y="86" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">PCIe</text>
+<rect x="28" y="110" width="180" height="62" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="118.0" y="146.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">Host feature row</text>
+<rect x="445" y="110" width="247" height="62" rx="4" fill="#111111" stroke="#111111"/>
 <text x="568.5" y="146.0" font-size="15" font-weight="400" text-anchor="middle" fill="white">GPU: evaluate trees</text>
-<path d="M209 141 L442 141" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<text x="324" y="127" font-size="13" font-weight="400" text-anchor="middle" fill="#172b3e">input / request</text>
-<rect x="445" y="206" width="247" height="62" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="568.5" y="242.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">Coordinate + publish</text>
-<path d="M568 173 L568 203" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<rect x="28" y="206" width="180" height="62" rx="4" fill="#edf3f8" stroke="#bccbd7"/>
-<text x="118.0" y="242.0" font-size="15" font-weight="400" text-anchor="middle" fill="#172b3e">Host-visible result</text>
-<path d="M442 237 L211 237" fill="none" stroke="#003b71" stroke-width="1.6" marker-end="url(#arrow)"/>
-<text x="324" y="224" font-size="13" font-weight="400" text-anchor="middle" fill="#172b3e">output / completion</text>
-<text x="28" y="309" font-size="14" font-weight="400" text-anchor="start" fill="#172b3e">The model stays on the GPU; input and result cross for each request.</text>
+<path d="M209 141 L442 141" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="324" y="127" font-size="13" font-weight="400" text-anchor="middle" fill="#111111">input / request</text>
+<rect x="445" y="206" width="247" height="62" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="568.5" y="242.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">Coordinate + publish</text>
+<path d="M568 173 L568 203" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="28" y="206" width="180" height="62" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
+<text x="118.0" y="242.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">Host-visible result</text>
+<path d="M442 237 L211 237" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="324" y="224" font-size="13" font-weight="400" text-anchor="middle" fill="#111111">output / completion</text>
+<text x="28" y="309" font-size="14" font-weight="400" text-anchor="start" fill="#111111">The model stays on the GPU; input and result cross for each request.</text>
 </g></svg>

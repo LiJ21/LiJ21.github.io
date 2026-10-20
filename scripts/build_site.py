@@ -79,9 +79,13 @@ def section_heading(n, title, trailing=''):
 SITEMAP_URLS = []
 
 def shell(filename, title, description, body, script=False):
+    canonical_tags = ''
     if filename != '404.html':
         route = '/' if filename == 'index.html' else '/' + filename.removesuffix('index.html') if filename.endswith('/index.html') else '/' + filename
-        SITEMAP_URLS.append(SITE + route)
+        canonical_url = SITE + route
+        SITEMAP_URLS.append(canonical_url)
+        canonical_tags = f'  <link rel="canonical" href="{escape(canonical_url,quote=True)}">\n  <meta property="og:url" content="{escape(canonical_url,quote=True)}">\n'
+    page_title = f'Jiajun Li · {title}' if filename == 'index.html' else f'{title} · Jiajun Li'
     nav=''.join(link('/'+f,t,extra='aria-current="page"' if f==filename or (f=='blog.html' and filename.startswith('blog/')) else '') for f,t in NAV)
     footer=f'<footer><p>© 2026 Jiajun Li</p><p>AI · Computation · Trading</p><div>{link(SCHOLAR,"Scholar ↗")}{link(GITHUB,"GitHub ↗")}{link(LINKEDIN,"LinkedIn ↗")}</div></footer>'
     html=f'''<!doctype html>
@@ -90,12 +94,12 @@ def shell(filename, title, description, body, script=False):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{escape(description,quote=True)}">
-  <meta name="theme-color" content="#003b71">
-  <meta property="og:title" content="{escape(title,quote=True)} · Jiajun Li">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:title" content="{escape(page_title,quote=True)}">
   <meta property="og:description" content="{escape(description,quote=True)}">
   <meta property="og:type" content="website">
-  <title>{escape(title)} · Jiajun Li</title>
-  <link rel="alternate" type="application/rss+xml" title="Jiajun Li — Notes" href="/feed.xml">
+  <title>{escape(page_title)}</title>
+{canonical_tags}  <link rel="alternate" type="application/rss+xml" title="Jiajun Li — Notes" href="/feed.xml">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/style.css">
   {'<script src="assets/publications.js" defer></script>' if script else ''}
@@ -175,7 +179,7 @@ body=f'''<section class="home-intro">
   <div class="home-section-heading"><h2 id="selected-heading">Selected publications</h2>{link('publications.html','All publications →')}</div>
   <div class="publication-list">{''.join(publication(p,True) for p in selected)}</div>
 </section>'''
-shell('index.html','Overview','Jiajun Li — AI, computation, and trading. Quantitative researcher and physicist building high-performance software.',body)
+shell('index.html','AI, computation, and trading','Jiajun Li — AI, computation, and trading. Quantitative researcher and physicist building high-performance software.',body)
 
 body=hero('PROFILE / BACKGROUND','Research meets engineering.','I’m a quantitative researcher based in Zürich. My work concerns machine learning, market microstructure, and real-time computation.')+f'''
 <div class="two-column section"><aside class="side-heading"><span class="eyebrow">01 / PROFILE</span><h2>From machine learning<br>to real-time decisions.</h2></aside><div class="prose"><p>Since 2022, I have worked at IMC Trading and Qube Research &amp; Technologies on high-frequency trading and short-term forecasting. My work includes machine-learning models for market-making strategies, market microstructure research, and the implementation of trading systems and low-latency inference in C++.</p><p>I have spent more than a decade developing computational methods and scientific software, mainly in C++, Python, Fortran, and CUDA. Much of this work involves numerical algorithms and performance-critical code.</p><p>Trained as a theoretical physicist, I combine mathematical insight with a hands-on, empirical approach to time series research, trading strategy design, and performance engineering. My work at QRT and IMC has deepened my understanding of statistics and market microstructure.</p><ul class="tags" aria-label="Programming languages"><li>C++</li><li>Python</li><li>Fortran</li><li>CUDA</li></ul><div class="inline-links">{link(LINKEDIN,'LinkedIn profile ↗')}{link(SCHOLAR,'Google Scholar ↗')}</div></div></div>
