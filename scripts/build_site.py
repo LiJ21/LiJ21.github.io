@@ -49,11 +49,17 @@ def citation(p):
     return f"{p['journal']} {p['volume']}, {p['pages']} ({p['year']})"
 
 def publication(p, compact=False):
+    rights = ''
+    if p.get('pdf_copyright'):
+        notice = escape(p['pdf_copyright'])
+        if p.get('pdf_license'):
+            notice = link(p['pdf_license'], notice)
+        rights = f'<p class="pdf-rights" translate="no" lang="en">{notice}</p>'
     if compact:
         pdf = link(p['pdf'], 'PDF', extra=f'aria-label="{escape("Read PDF: "+p["title"],quote=True)}"') if p['pdf'] else ''
         return f'''<article class="publication publication-compact" id="{p['id']}">
           <h3>{link(p['url'], escape(p['title']))}</h3>
-          <div class="compact-meta"><span>{escape(citation(p))}</span>{pdf}</div>
+          <div class="compact-meta"><span>{escape(citation(p))}</span>{pdf}</div>{rights}
         </article>'''
     authors = ', '.join('<strong>'+escape(a)+'</strong>' if a in ['Jiajun Li','J. Li','J Li'] else escape(a) for a in p['authors'])
     buttons = [link(p['url'], 'Journal ↗' if p['kind']=='article' else 'Abstract ↗' if p['kind']=='abstract' else 'arXiv ↗')]
@@ -70,7 +76,7 @@ def publication(p, compact=False):
             extras += '<details class="versions"><summary>Earlier titles / versions</summary><ul>'+''.join(f'<li>{escape(a["title"])} ({a["year"]})</li>' for a in p['aliases'])+'</ul></details>'
     return f'''<article class="publication" id="{p['id']}" data-year="{p['year']}" data-kind="{p['kind']}" data-search="{escape(search,quote=True)}">
       <div class="pub-year">{p['year']}<span>{'PREPRINT' if p['kind']=='preprint' else 'THESIS' if p['kind']=='thesis' else 'ABSTRACT' if p['kind']=='abstract' else 'PAPER'}</span></div>
-      <div class="pub-body"><h3>{link(p['url'],escape(p['title']))}</h3><p class="authors">{authors}</p><p class="venue">{escape(citation(p))}</p><div class="paper-links">{''.join(buttons)}</div>{extras}</div>
+      <div class="pub-body"><h3>{link(p['url'],escape(p['title']))}</h3><p class="authors">{authors}</p><p class="venue">{escape(citation(p))}</p><div class="paper-links">{''.join(buttons)}</div>{rights}{extras}</div>
     </article>'''
 
 def section_heading(n, title, trailing=''):

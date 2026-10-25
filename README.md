@@ -156,3 +156,11 @@ Each published page includes an absolute canonical URL and Open Graph URL
 matching its sitemap entry. Page titles and descriptions are generated with the
 content; the homepage title identifies Jiajun Li and the site's focus. The 404
 page has no canonical URL and remains excluded from the sitemap.
+
+## Hosted journal PDFs
+
+Thirteen unmodified APS journal PDFs are stored in `assets/papers/`, with download
+provenance and checksums in `data/hosted-pdfs.json`. Copyright or CC BY notices
+appear with the corresponding citations. Eleven other APS journal copies remain
+unavailable; their existing arXiv download links are retained. See
+[the PDF inventory](assets/papers/README.md) for the remaining papers.

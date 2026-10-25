@@ -3484,8 +3484,8 @@
     "replacements": {
       "⟦0⟧": "arXiv"
     },
-    "source": "PDF links use the journal copy for confirmed open-access articles and ⟦0⟧ for other papers. Meeting abstracts link to their records; a separate paper PDF is not available.",
-    "source_hash": "69e7dcbb02dbc89fea9a909510767b7657af593d726eb835ba2c25ef0baf0ab8"
+    "source": "PDF links include unmodified APS journal copies hosted here, publisher-hosted open-access articles, and ⟦0⟧ versions where a journal copy is unavailable. Meeting abstracts link to their records; a separate paper PDF is not available.",
+    "source_hash": "093c38d6cd2328ecbe713565e5f667d58ce785d76a4513eba5a34ac1a8328533"
   },
   "publications.block05": {
     "context": "publications.html",
@@ -3558,15 +3558,17 @@
     "protected": {
       "⟦0⟧": "19",
       "⟦1⟧": "2026",
-      "⟦2⟧": "arXiv"
+      "⟦2⟧": "25",
+      "⟦3⟧": "2026"
     },
     "replacements": {
       "⟦0⟧": "19",
       "⟦1⟧": "2026",
-      "⟦2⟧": "arXiv"
+      "⟦2⟧": "25",
+      "⟦3⟧": "2026"
     },
-    "source": "Publication metadata and access links were checked on ⟦0⟧ October ⟦1⟧. Preprints are identified separately from journal articles. Downloads are hosted by the publisher or ⟦2⟧.",
-    "source_hash": "7f725e0e8350d4d811744957f7a0643f40287028007d59d59c75f23d150f5f1f"
+    "source": "Publication metadata was checked on ⟦0⟧ October ⟦1⟧; locally hosted APS journal PDFs were added on ⟦2⟧ October ⟦3⟧. Preprints are identified separately from journal articles. Each hosted journal copy retains its original copyright or license notice.",
+    "source_hash": "3feb98679bd018878e3735d1c0b0be5ad8b5646c5bf5133f601c55e25c621356"
   },
   "publications.html.description": {
     "context": "publications.html",

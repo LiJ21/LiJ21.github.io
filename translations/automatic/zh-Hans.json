@@ -1621,8 +1621,8 @@
   },
   "publications.block04": {
     "provider": "assistant-draft",
-    "source_hash": "69e7dcbb02dbc89fea9a909510767b7657af593d726eb835ba2c25ef0baf0ab8",
-    "text": "已确认开放获取的文章使用期刊 PDF，其余论文使用 ⟦0⟧ PDF。会议摘要链接至对应记录，没有单独的论文 PDF。"
+    "source_hash": "093c38d6cd2328ecbe713565e5f667d58ce785d76a4513eba5a34ac1a8328533",
+    "text": "PDF 链接包括本站提供的未经修改的 APS 期刊版本、出版商托管的开放获取文章，以及无法获取期刊版本时提供的 ⟦0⟧ 版本。会议摘要链接至对应记录，没有单独的论文 PDF。"
   },
   "publications.block05": {
     "provider": "assistant-draft",
@@ -1666,8 +1666,8 @@
   },
   "publications.block13": {
     "provider": "assistant-draft",
-    "source_hash": "7f725e0e8350d4d811744957f7a0643f40287028007d59d59c75f23d150f5f1f",
-    "text": "文献元数据与访问链接于 ⟦1⟧ 年 10 月 ⟦0⟧ 日核验。预印本与期刊论文分别标注，下载文件由出版商或 ⟦2⟧ 托管。"
+    "source_hash": "3feb98679bd018878e3735d1c0b0be5ad8b5646c5bf5133f601c55e25c621356",
+    "text": "论文元数据核对于 ⟦1⟧ 年 10 月 ⟦0⟧ 日；本站托管的 APS 期刊 PDF 添加于 ⟦3⟧ 年 10 月 ⟦2⟧ 日。预印本与期刊论文分别标注。每份托管的期刊版本均保留原始版权或许可声明。"
   },
   "publications.html.description": {
     "provider": "assistant-draft",

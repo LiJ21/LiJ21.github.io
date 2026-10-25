@@ -270,3 +270,5 @@ footer { border-top: 2px solid var(--ink); font-size: 12px; }
 html[lang="zh-Hans"] body { font-family: Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif; }
 html[lang="zh-Hans"] h1, html[lang="zh-Hans"] h2, html[lang="zh-Hans"] h3 { letter-spacing: 0; }
 html[lang="zh-Hans"] .note-content { line-height: 1.95; }
+
+.pdf-rights { font-size: 11px; line-height: 1.5; color: var(--muted); margin: 8px 0; }

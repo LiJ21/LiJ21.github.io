@@ -1,0 +1,178 @@
+{
+  "files": [
+    {
+      "id": "paper-46",
+      "doi": "10.1103/PhysRevB.109.085149",
+      "file": "assets/papers/PhysRevB.109.085149.pdf",
+      "downloaded_from": "https://www.dora.lib4ri.ch/psi/dload/psi:60984/PDF/view",
+      "downloaded_on": "2026-10-25",
+      "sha256": "8b0c2366d3d3fadaa91df9428fb36488fe4d44336f8b286d3b506fdaf4e2e671",
+      "rights": "© 2024 American Physical Society"
+    },
+    {
+      "id": "paper-23",
+      "doi": "10.1103/PhysRevB.107.165102",
+      "file": "assets/papers/PhysRevB.107.165102.pdf",
+      "downloaded_from": "https://www.dora.lib4ri.ch/psi/dload/psi:51950/PDF/view",
+      "downloaded_on": "2026-10-25",
+      "sha256": "4051dd275fbb376c9b1174ea4bd6db87a9268247d999c135cceee50d5e0d7365",
+      "rights": "© 2023 American Physical Society"
+    },
+    {
+      "id": "paper-24",
+      "doi": "10.1103/PhysRevB.107.205115",
+      "file": "assets/papers/PhysRevB.107.205115.pdf",
+      "downloaded_from": "https://www.dora.lib4ri.ch/psi/dload/psi:52576/PDF/view",
+      "downloaded_on": "2026-10-25",
+      "sha256": "73024954fa3a4983819e649fc1baed3b867b708a65f39191c2367fb2c9b85090",
+      "rights": "© 2023 American Physical Society"
+    },
+    {
+      "id": "paper-22",
+      "doi": "10.1103/PhysRevLett.130.036901",
+      "file": "assets/papers/PhysRevLett.130.036901.pdf",
+      "downloaded_from": "https://www.dora.lib4ri.ch/psi/dload/psi:50946/PDF/view",
+      "downloaded_on": "2026-10-25",
+      "sha256": "a8d587543fb641bdc856111d4b6db47e73615d02abbdc604a813ee15c1e25dd7",
+      "rights": "© 2023 American Physical Society"
+    },
+    {
+      "id": "paper-12",
+      "doi": "10.1103/PhysRevB.106.245124",
+      "file": "assets/papers/PhysRevB.106.245124.pdf",
+      "downloaded_from": "https://www.dora.lib4ri.ch/psi/dload/psi:49563/PDF/view",
+      "downloaded_on": "2026-10-25",
+      "sha256": "2fe4cc88e9d8a038508f1648d85ad537c9da6367295dd5b9f050495f8771420d",
+      "rights": "© 2022 American Physical Society"
+    },
+    {
+      "id": "paper-05",
+      "doi": "10.1103/PhysRevB.105.165121",
+      "file": "assets/papers/PhysRevB.105.165121.pdf",
+      "downloaded_from": "https://www.dora.lib4ri.ch/psi/dload/psi:42302/PDF/view",
+      "downloaded_on": "2026-10-25",
+      "sha256": "d455896126f6036500454ca6b6f16c460a740b05884192f3e751aa2470ee26b7",
+      "rights": "© 2022 American Physical Society"
+    },
+    {
+      "id": "paper-13",
+      "doi": "10.1103/PhysRevB.105.115146",
+      "file": "assets/papers/PhysRevB.105.115146.pdf",
+      "downloaded_from": "https://www.dora.lib4ri.ch/psi/dload/psi:41640/PDF/view",
+      "downloaded_on": "2026-10-25",
+      "sha256": "268d49ba608ea2a9a40263076a7d66fc5dbeb3f792298a4b23fff1d14d1bfa48",
+      "rights": "© 2022 American Physical Society"
+    },
+    {
+      "id": "paper-15",
+      "doi": "10.1103/PhysRevB.106.085124",
+      "file": "assets/papers/PhysRevB.106.085124.pdf",
+      "downloaded_from": "https://www.dora.lib4ri.ch/psi/dload/psi:45004/PDF/view",
+      "downloaded_on": "2026-10-25",
+      "sha256": "4bed3a9cfc16b101f42f852ecb4197ae326486fc97ed86438f1bdcdb0479d5d3",
+      "rights": "© 2022 American Physical Society"
+    },
+    {
+      "id": "paper-01",
+      "doi": "10.1103/PhysRevResearch.2.033033",
+      "file": "assets/papers/PhysRevResearch.2.033033.pdf",
+      "downloaded_from": "https://harvest.aps.org/v2/journals/articles/10.1103/PhysRevResearch.2.033033/fulltext",
+      "downloaded_on": "2026-10-25",
+      "sha256": "e714ee3143fbadbafcce42b15b7ac56971f500c43b7b31777c48851d1cb9bc49",
+      "rights": "Published by the American Physical Society · CC BY 4.0"
+    },
+    {
+      "id": "paper-25",
+      "doi": "10.1103/PhysRevB.101.161107",
+      "file": "assets/papers/PhysRevB.101.161107.pdf",
+      "downloaded_from": "https://sonar.ch/documents/308647/files/wer_rhm.pdf?download",
+      "downloaded_on": "2026-10-25",
+      "sha256": "d5a3adb48595bd984fab1908fb2ce2864ec5869a3df9dfc10f7354fdce132b43",
+      "rights": "© 2020 American Physical Society"
+    },
+    {
+      "id": "paper-02",
+      "doi": "10.1103/PhysRevB.102.165136",
+      "file": "assets/papers/PhysRevB.102.165136.pdf",
+      "downloaded_from": "https://fredi.hepvs.ch/documents/308938/files/wer_nps.pdf",
+      "downloaded_on": "2026-10-25",
+      "sha256": "e7901503a229b29d90ce6bff7dd58711e6b3a4d1a825523a0a184c72768ef8dd",
+      "rights": "© 2020 American Physical Society"
+    },
+    {
+      "id": "paper-08",
+      "doi": "10.1103/PhysRevB.100.155130",
+      "file": "assets/papers/PhysRevB.100.155130.pdf",
+      "downloaded_from": "https://folia.unifr.ch/documents/308203/files/wer_ecn.pdf?download",
+      "downloaded_on": "2026-10-25",
+      "sha256": "5cfa226d1f341783d9df01a030d4a750b4fb865cbf33a5ebe471727d1c888cb3",
+      "rights": "© 2019 American Physical Society"
+    },
+    {
+      "id": "paper-06",
+      "doi": "10.1103/PhysRevX.9.021020",
+      "file": "assets/papers/PhysRevX.9.021020.pdf",
+      "downloaded_from": "https://harvest.aps.org/v2/journals/articles/10.1103/PhysRevX.9.021020/fulltext",
+      "downloaded_on": "2026-10-25",
+      "sha256": "09d20f5f5ea20a684816e9005df505559744f0844fb8afaa79445df94a1eaae2",
+      "rights": "Published by the American Physical Society · CC BY 4.0"
+    }
+  ],
+  "unavailable": [
+    {
+      "id": "paper-09",
+      "doi": "10.1103/PhysRevB.103.045133",
+      "title": "Nonequilibrium steady-state theory of photodoped Mott insulators"
+    },
+    {
+      "id": "paper-20",
+      "doi": "10.1103/PhysRevB.103.L201116",
+      "title": "Photoinduced strange metal with electron and hole quasiparticles"
+    },
+    {
+      "id": "paper-14",
+      "doi": "10.1103/PhysRevB.104.085108",
+      "title": "Quantum Boltzmann equation for strongly correlated electrons"
+    },
+    {
+      "id": "paper-16",
+      "doi": "10.1103/PhysRevB.103.L041110",
+      "title": "Ultrafast Mott transition driven by nonlinear electron-phonon interaction"
+    },
+    {
+      "id": "paper-00",
+      "doi": "10.1103/PhysRevB.101.205140",
+      "title": "Electromagnetic coupling in tight-binding models for strongly correlated light and matter"
+    },
+    {
+      "id": "paper-03",
+      "doi": "10.1103/PhysRevLett.125.217402",
+      "title": "Manipulating intertwined orders in solids with quantum light"
+    },
+    {
+      "id": "paper-21",
+      "doi": "10.1103/PhysRevB.98.180502",
+      "title": "Control of competing superconductivity and charge order by nonequilibrium currents"
+    },
+    {
+      "id": "paper-18",
+      "doi": "10.1103/PhysRevB.97.205412",
+      "title": "Nonequilibrium excitations and transport of Dirac electrons in electric-field-driven graphene"
+    },
+    {
+      "id": "paper-11",
+      "doi": "10.1103/PhysRevB.98.035145",
+      "title": "Nonequilibrium mean-field theory of resistive phase transitions"
+    },
+    {
+      "id": "paper-04",
+      "doi": "10.1103/PhysRevLett.114.226403",
+      "title": "Electric-field-driven resistive switching in the dissipative Hubbard model"
+    },
+    {
+      "id": "paper-17",
+      "doi": "10.1103/PhysRevB.88.075113",
+      "title": "Energy dissipation in a dc-field-driven electron lattice coupled to fermion baths"
+    }
+  ]
+}
