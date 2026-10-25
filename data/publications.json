@@ -485,13 +485,15 @@
     "doi": "10.1103/PhysRevLett.125.217402",
     "arxiv": "2005.07643",
     "url": "https://doi.org/10.1103/PhysRevLett.125.217402",
-    "pdf": "https://arxiv.org/pdf/2005.07643",
-    "pdf_source": "arxiv",
+    "pdf": "/assets/papers/PhysRevLett.125.217402.pdf",
+    "pdf_source": "publisher",
     "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:Tyk-4Ss8FVUC",
     "aliases": [],
     "citation_count": 105,
-    "citation_count_checked": "2026-10-19"
+    "citation_count_checked": "2026-10-19",
+    "pdf_previous": "https://arxiv.org/pdf/2005.07643",
+    "pdf_copyright": "© 2020 American Physical Society"
   },
   {
     "id": "paper-01",
@@ -1058,13 +1060,15 @@
     "doi": "10.1103/PhysRevLett.114.226403",
     "arxiv": "1410.0626",
     "url": "https://doi.org/10.1103/PhysRevLett.114.226403",
-    "pdf": "https://arxiv.org/pdf/1410.0626",
-    "pdf_source": "arxiv",
+    "pdf": "/assets/papers/PhysRevLett.114.226403.pdf",
+    "pdf_source": "publisher",
     "selected": true,
     "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=tP-VfEAAAAAJ&pagesize=100&citation_for_view=tP-VfEAAAAAJ:qxL8FJ1GzNcC",
     "aliases": [],
     "citation_count": 100,
-    "citation_count_checked": "2026-10-19"
+    "citation_count_checked": "2026-10-19",
+    "pdf_previous": "https://arxiv.org/pdf/1410.0626",
+    "pdf_copyright": "© 2015 American Physical Society"
   },
   {
     "id": "paper-43",

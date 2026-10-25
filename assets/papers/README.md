@@ -11,7 +11,8 @@ The publication pages display the applicable notice alongside their citations.
 These PDFs are not covered by any license that may apply to the website code.
 
 `data/hosted-pdfs.json` records download sources, SHA-256 checksums, and remaining
-papers. Downloaded on 25 October 2026 from APS and public institutional repositories.
+papers. Retrieved on 25 October 2026 from APS and public institutional repositories,
+with two additional PRL PDFs supplied by Jiajun Li.
 First-page journal headers, DOIs, author names, and rights notices were checked.
 
 ## Journal copies still needed
@@ -27,9 +28,7 @@ fields (and `pdf_license` for a Creative Commons paper). Then rebuild the site.
 - 10.1103/PhysRevB.104.085108 — Quantum Boltzmann equation for strongly correlated electrons
 - 10.1103/PhysRevB.103.L041110 — Ultrafast Mott transition driven by nonlinear electron-phonon interaction
 - 10.1103/PhysRevB.101.205140 — Electromagnetic coupling in tight-binding models for strongly correlated light and matter
-- 10.1103/PhysRevLett.125.217402 — Manipulating intertwined orders in solids with quantum light
 - 10.1103/PhysRevB.98.180502 — Control of competing superconductivity and charge order by nonequilibrium currents
 - 10.1103/PhysRevB.97.205412 — Nonequilibrium excitations and transport of Dirac electrons in electric-field-driven graphene
 - 10.1103/PhysRevB.98.035145 — Nonequilibrium mean-field theory of resistive phase transitions
-- 10.1103/PhysRevLett.114.226403 — Electric-field-driven resistive switching in the dissipative Hubbard model
 - 10.1103/PhysRevB.88.075113 — Energy dissipation in a dc-field-driven electron lattice coupled to fermion baths

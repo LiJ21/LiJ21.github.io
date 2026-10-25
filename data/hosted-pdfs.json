@@ -116,6 +116,24 @@
       "downloaded_on": "2026-10-25",
       "sha256": "09d20f5f5ea20a684816e9005df505559744f0844fb8afaa79445df94a1eaae2",
       "rights": "Published by the American Physical Society · CC BY 4.0"
+    },
+    {
+      "id": "paper-03",
+      "doi": "10.1103/PhysRevLett.125.217402",
+      "file": "assets/papers/PhysRevLett.125.217402.pdf",
+      "provided_by": "Jiajun Li",
+      "provided_on": "2026-10-25",
+      "sha256": "6079f7eb4219956b52fe4ff81bca953315428e22fef7c64205d756e158e3f3fb",
+      "rights": "© 2020 American Physical Society"
+    },
+    {
+      "id": "paper-04",
+      "doi": "10.1103/PhysRevLett.114.226403",
+      "file": "assets/papers/PhysRevLett.114.226403.pdf",
+      "provided_by": "Jiajun Li",
+      "provided_on": "2026-10-25",
+      "sha256": "3014efd01a421fa66222e4638ae2f75d9c858b7548719e02edc1568f54689d6b",
+      "rights": "© 2015 American Physical Society"
     }
   ],
   "unavailable": [
@@ -145,11 +163,6 @@
       "title": "Electromagnetic coupling in tight-binding models for strongly correlated light and matter"
     },
     {
-      "id": "paper-03",
-      "doi": "10.1103/PhysRevLett.125.217402",
-      "title": "Manipulating intertwined orders in solids with quantum light"
-    },
-    {
       "id": "paper-21",
       "doi": "10.1103/PhysRevB.98.180502",
       "title": "Control of competing superconductivity and charge order by nonequilibrium currents"
@@ -163,11 +176,6 @@
       "id": "paper-11",
       "doi": "10.1103/PhysRevB.98.035145",
       "title": "Nonequilibrium mean-field theory of resistive phase transitions"
-    },
-    {
-      "id": "paper-04",
-      "doi": "10.1103/PhysRevLett.114.226403",
-      "title": "Electric-field-driven resistive switching in the dissipative Hubbard model"
     },
     {
       "id": "paper-17",
