@@ -82,7 +82,7 @@
 <!-- i18n: qleaf.block009 -->
 <p data-i18n="note.qleaf-inference-latency.qleaf.block009">计时从特征暂存前开始，到 CPU 可以读取结果时结束。对于映射输入，当前特征行复制到映射主机缓冲区的过程也包含在这个区间内。每次运行包含 10,000 次预热请求和 100,000 次测量请求。模型加载与工作线程初始化不计入稳态测量。</p>
 <!-- i18n: qleaf.block010 -->
-<p data-i18n="note.qleaf-inference-latency.qleaf.block010">基准测试机器配备 Intel Core i7-12700F 和一块显存为 12 GiB、支持 CUDA 的消费级 GPU。主要比较中关闭 CPU 睿频；GPU 的应用时钟请求值分别为 SM 1,800 MHz、显存 7,501 MHz。第二组负载 epsilon 有 2,000 个特征，而非 28 个。两组负载均使用深度为六、分别包含 500、1,000、2,000 和 5,000 棵树的集成模型。<a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/BENCHMARK.md">完整基准报告</a>记录了分布、配置和数据来源。</p>
+<p data-i18n="note.qleaf-inference-latency.qleaf.block010">基准测试机器配备 Intel Core i7-12700F 和一块显存为 12 GiB、支持 CUDA 的消费级 GPU。主要比较中关闭 CPU 睿频；GPU 的应用时钟请求值分别为 SM 1,800 MHz、显存 7,501 MHz。第二组负载 epsilon 有 2,000 个特征，而非 28 个。两组负载均使用深度为六、分别包含 500、1,000、2,000 和 5,000 棵树的集成模型。<a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/BENCHMARK.md" rel="noopener noreferrer" target="_blank">完整基准报告</a>记录了分布、配置和数据来源。</p>
 <!-- i18n: qleaf.block011 -->
 <h2 data-i18n="note.qleaf-inference-latency.qleaf.block011" id="framework">框架：模型、工作单元与归约</h2>
 <!-- i18n: qleaf.block012 -->
@@ -110,7 +110,7 @@ auto margin = inferrer.predict(features);
 <!-- i18n: qleaf.block018 -->
 <p data-i18n="note.qleaf-inference-latency.qleaf.block018">在内部，推理器先向所有工作单元提交特征行，再收集结果，让线程化工作单元能并发计算各自的分区。一个 CUDA 工作单元管理自己的线程块网格，这是工作单元内部的另一层并行。</p>
 <!-- i18n: qleaf.block019 -->
-<p data-i18n="note.qleaf-inference-latency.qleaf.block019">实现位于 <a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/include/qleaf.h"><code>qleaf.h</code></a>；CUDA 策略和工作单元位于 <a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/include/gworkers.cuh"><code>gworkers.cuh</code></a>。</p>
+<p data-i18n="note.qleaf-inference-latency.qleaf.block019">实现位于 <a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/include/qleaf.h" rel="noopener noreferrer" target="_blank"><code>qleaf.h</code></a>；CUDA 策略和工作单元位于 <a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/include/gworkers.cuh" rel="noopener noreferrer" target="_blank"><code>gworkers.cuh</code></a>。</p>
 <!-- i18n: qleaf.block020 -->
 <h2 data-i18n="note.qleaf-inference-latency.qleaf.block020" id="cpu">CPU：减少每棵树的工作，并让工作线程保持就绪</h2>
 <!-- i18n: qleaf.block021 -->
@@ -230,7 +230,7 @@ auto margin = inferrer.predict(features);
 <!-- i18n: qleaf.block057 -->
 <h3 data-i18n="note.qleaf-inference-latency.qleaf.block057">5. 映射锁页输入与显式复制</h3>
 <!-- i18n: qleaf.block058 -->
-<p data-i18n="note.qleaf-inference-latency.qleaf.block058">锁页内存是页面保持驻留的主机内存，可作为显式传输的数据源。映射进一步使它能够被 GPU 的加载和存储操作访问。在独立 GPU 上，访问映射主机内存仍需经过互连：“零复制”避免的是向独立设备缓冲区的显式复制，并非物理数据移动。<a href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#zero-copy">NVIDIA 的内存指南</a>解释了这一差别。</p>
+<p data-i18n="note.qleaf-inference-latency.qleaf.block058">锁页内存是页面保持驻留的主机内存，可作为显式传输的数据源。映射进一步使它能够被 GPU 的加载和存储操作访问。在独立 GPU 上，访问映射主机内存仍需经过互连：“零复制”避免的是向独立设备缓冲区的显式复制，并非物理数据移动。<a href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#zero-copy" rel="noopener noreferrer" target="_blank">NVIDIA 的内存指南</a>解释了这一差别。</p>
 <!-- i18n: qleaf.block059 -->
 <figure class="note-figure" data-i18n="note.qleaf-inference-latency.qleaf.block059">
 <div aria-label="显式复制与映射锁页输入的比较" class="diagram-scroll" role="region" tabindex="0"><img alt="显式复制路径通过 cudaMemcpy 经 PCIe 填充设备缓冲区。映射路径让 GPU 直接经 PCIe 读取锁页主机内存，并可在计算前暂存到设备上。两者都经过 PCIe 移动数据。" height="420" src="../../assets/posts/qleaf-inference-latency/input-memory.svg" width="720"/></div>
@@ -273,9 +273,9 @@ auto margin = inferrer.predict(features);
 <!-- i18n: qleaf.block077 -->
 <p data-i18n="note.qleaf-inference-latency.qleaf.block077">对于单样本推理，优化应从良好的 CPU 实现和完整请求的测量开始。在 GPU 上，消除重复启动只是第一步。降低跨线程块完成协调、主机轮询和输入交接的开销，才让常驻路径具有竞争力。最终延迟越来越受通信与结果可见性的影响；消融实验展示了降低这些成本的方法，但并未测量物理上的通信下界。</p>
 <!-- i18n: qleaf.block078 -->
-<p data-i18n="note.qleaf-inference-latency.qleaf.block078">框架代码位于 <a href="https://github.com/LiJ21/QLeaf">QLeaf 仓库</a>。<a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/BENCHMARK.md">本文使用的基准报告</a>与<a href="https://github.com/LiJ21/QLeaf/tree/3019985b98235074e39104be1a6a3be7dbba917f">同一版本的源代码</a>提供完整配置和实现细节。</p></div>
+<p data-i18n="note.qleaf-inference-latency.qleaf.block078">框架代码位于 <a href="https://github.com/LiJ21/QLeaf" rel="noopener noreferrer" target="_blank">QLeaf 仓库</a>。<a href="https://github.com/LiJ21/QLeaf/blob/3019985b98235074e39104be1a6a3be7dbba917f/BENCHMARK.md" rel="noopener noreferrer" target="_blank">本文使用的基准报告</a>与<a href="https://github.com/LiJ21/QLeaf/tree/3019985b98235074e39104be1a6a3be7dbba917f" rel="noopener noreferrer" target="_blank">同一版本的源代码</a>提供完整配置和实现细节。</p></div>
 </article></main>
-<footer><p>© 2026 Jiajun Li</p><p>人工智能 · 计算 · 交易</p><div><a href="https://scholar.google.com/citations?user=tP-VfEAAAAAJ&amp;hl=en">学术资料 ↗</a><a href="https://github.com/LiJ21">GitHub ↗</a><a href="https://www.linkedin.com/in/jiajunli/">LinkedIn ↗</a></div></footer>
+<footer><p>© 2026 Jiajun Li</p><p>人工智能 · 计算 · 交易</p><div><a href="https://scholar.google.com/citations?user=tP-VfEAAAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank">学术资料 ↗</a><a href="https://github.com/LiJ21" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/in/jiajunli/" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a></div></footer>
 </div>
 </body>
 </html>

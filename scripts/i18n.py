@@ -303,6 +303,14 @@ def build_languages(root, page_names, note_count):
                     if path.endswith('/'):path+='index.html'
                     relative=posixpath.relpath(path.lstrip('/'),posixpath.dirname(outname) or '.')
                     tag[attr]=urlunsplit(('', '',relative,parsed.query,parsed.fragment))
+            # Resource links open separately; site and language navigation stay in place.
+            for anchor in soup.select('a[href]'):
+                url=urlsplit(anchor['href'])
+                external=url.scheme in ['http','https'] and url.netloc!=urlsplit(SITE).netloc
+                resource=url.path.lower().endswith(('.pdf','.bib'))
+                if external or resource:
+                    anchor['target']='_blank'
+                    anchor['rel']=sorted(set(anchor.get('rel',[])) | {'noopener','noreferrer'})
             counter=soup.select_one('#result-count')
             if counter:counter['data-count-template']=language['count_template']
             destination=root/outname;destination.parent.mkdir(parents=True,exist_ok=True)
