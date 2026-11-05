@@ -1,0 +1,59 @@
+[I 2026-11-05 17:16:21,574] A new study created in memory with name: no-name-8be6ea2b-72ee-4512-8dfb-f690ac93a682
+[W 2026-11-05 17:16:21,577] Trial 0 failed with parameters: {} because of the following error: ValueError('max_buffer_bytes=1,048,576 is too small for batch_size=100,000: a pass needs 12,000,000 bytes for the batch the consumer holds plus a 2x claim for the next. Raise max_buffer_bytes to at least 12,000,000 or lower batch_size to at most 8,738.').
+Traceback (most recent call last):
+  File "GardenPipe/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/pipeline.py", line 787, in objective
+    model = self._fit_model(
+            ^^^^^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/pipeline.py", line 1546, in _fit_model
+    return self.adapter.fit(model, train, val, self.tracker, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/model.py", line 950, in fit
+    stats = self._stats(train)
+            ^^^^^^^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/model.py", line 979, in _stats
+    for value in src.batches(self.batch_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/buffered.py", line 614, in batches
+    self._check_budget(batch_size, workers)
+  File "GardenPipe/gardenpipe/buffered.py", line 666, in _check_budget
+    raise ValueError(
+ValueError: max_buffer_bytes=1,048,576 is too small for batch_size=100,000: a pass needs 12,000,000 bytes for the batch the consumer holds plus a 2x claim for the next. Raise max_buffer_bytes to at least 12,000,000 or lower batch_size to at most 8,738.
+[W 2026-11-05 17:16:21,577] Trial 0 failed with value None.
+Traceback (most recent call last):
+  File "WORK/run_mem.py", line 47, in <module>
+    t = time.perf_counter(); pipe.train(); res = pipe.test(score=r2, keep_predictions=False); t_run = time.perf_counter() - t
+                             ^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/pipeline.py", line 848, in train
+    self.study.optimize(objective, n_trials=self.n_trials)
+  File "GardenPipe/.venv/lib/python3.12/site-packages/optuna/study/study.py", line 502, in optimize
+    _optimize(
+  File "GardenPipe/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 68, in _optimize
+    _optimize_sequential(
+  File "GardenPipe/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 165, in _optimize_sequential
+    frozen_trial_id = _run_trial(study, func, catch)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "GardenPipe/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 263, in _run_trial
+    raise func_err
+  File "GardenPipe/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/pipeline.py", line 787, in objective
+    model = self._fit_model(
+            ^^^^^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/pipeline.py", line 1546, in _fit_model
+    return self.adapter.fit(model, train, val, self.tracker, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/model.py", line 950, in fit
+    stats = self._stats(train)
+            ^^^^^^^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/model.py", line 979, in _stats
+    for value in src.batches(self.batch_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "GardenPipe/gardenpipe/buffered.py", line 614, in batches
+    self._check_budget(batch_size, workers)
+  File "GardenPipe/gardenpipe/buffered.py", line 666, in _check_budget
+    raise ValueError(
+ValueError: max_buffer_bytes=1,048,576 is too small for batch_size=100,000: a pass needs 12,000,000 bytes for the batch the consumer holds plus a 2x claim for the next. Raise max_buffer_bytes to at least 12,000,000 or lower batch_size to at most 8,738.

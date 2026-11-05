@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title">
+<ns0:title id="title">显式复制和映射主机输入都需要经过 PCIe</ns0:title>
+<ns0:defs><ns0:marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><ns0:path d="M0 0 L8 4 L0 8Z" fill="#111111" /></ns0:marker></ns0:defs>
+<ns0:rect width="720" height="420" fill="white" />
+<ns0:g font-family="Arial, Helvetica, sans-serif" fill="#111111">
+<ns0:text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#111111">显式输入复制</ns0:text>
+<ns0:rect x="28" y="70" width="172" height="64" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="114.0" y="97.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">主机特征行</ns0:text>
+<ns0:text x="114.0" y="117.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">可使用锁页内存</ns0:text>
+<ns0:rect x="338" y="70" width="160" height="64" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="418.0" y="107.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">设备缓冲区</ns0:text>
+<ns0:rect x="548" y="70" width="144" height="64" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="620.0" y="107.0" font-size="15" font-weight="400" text-anchor="middle" fill="white">计算</ns0:text>
+<ns0:path d="M201 102 L335 102" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:text x="268" y="79" font-size="13" font-weight="400" text-anchor="middle" fill="#111111">cudaMemcpy</ns0:text>
+<ns0:text x="268" y="123" font-size="12" font-weight="400" text-anchor="middle" fill="#111111">经过 PCIe</ns0:text>
+<ns0:path d="M499 102 L545 102" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:text x="28" y="162" font-size="14" font-weight="400" text-anchor="start" fill="#111111">先传输特征行，再在计算中读取设备本地内存。</ns0:text>
+<ns0:path d="M28 188 L692 188" fill="none" stroke="#d2d2d2" stroke-dasharray="5 5" />
+<ns0:text x="28" y="218" font-size="13" font-weight="600" text-anchor="start" fill="#111111">映射的锁页输入</ns0:text>
+<ns0:rect x="28" y="258" width="172" height="64" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="114.0" y="285.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">映射的主机特征行</ns0:text>
+<ns0:text x="114.0" y="305.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">锁页内存</ns0:text>
+<ns0:rect x="338" y="258" width="160" height="64" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="418.0" y="285.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">GPU 读取</ns0:text>
+<ns0:text x="418.0" y="305.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">可选设备端暂存</ns0:text>
+<ns0:rect x="548" y="258" width="144" height="64" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="620.0" y="295.0" font-size="15" font-weight="400" text-anchor="middle" fill="white">计算</ns0:text>
+<ns0:path d="M201 290 L335 290" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:text x="268" y="267" font-size="13" font-weight="400" text-anchor="middle" fill="#111111">直接读取</ns0:text>
+<ns0:text x="268" y="312" font-size="12" font-weight="400" text-anchor="middle" fill="#111111">经过 PCIe</ns0:text>
+<ns0:path d="M499 290 L545 290" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:text x="28" y="355" font-size="14" font-weight="400" text-anchor="start" fill="#111111">避免显式输入复制；通过设备端暂存复用特征。</ns0:text>
+<ns0:text x="28" y="389" font-size="13" font-weight="400" text-anchor="start" fill="#505050">锁页内存 ≠ 设备内存。映射省去了复制调用，仍需跨互连传输。</ns0:text>
+</ns0:g></ns0:svg>

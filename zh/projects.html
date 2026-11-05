@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="QLeaf、GardenPipe、QuDrip、OptIndex、RL Tools 及对 NESSi 2.0 的贡献 — Jiajun Li 的工程与科研软件。" name="description"/>
+<meta content="#111111" name="theme-color"/>
+<meta content="项目 · Jiajun Li" property="og:title"/>
+<meta content="QLeaf、GardenPipe、QuDrip、OptIndex、RL Tools 及对 NESSi 2.0 的贡献 — Jiajun Li 的工程与科研软件。" property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>项目 · Jiajun Li</title>
+<link href="https://jjli.info/zh/projects.html" rel="canonical"/>
+<meta content="https://jjli.info/zh/projects.html" property="og:url"/>
+<link href="feed.xml" rel="alternate" title="Jiajun Li — Notes" type="application/rss+xml"/>
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<link href="https://jjli.info/projects.html" hreflang="en" rel="alternate"/><link href="https://jjli.info/zh/projects.html" hreflang="zh-Hans" rel="alternate"/><link href="https://jjli.info/projects.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#main">跳至正文</a>
+<div class="site-wrap">
+<header class="site-header"><a class="site-name" href="index.html" translate="no">Jiajun Li</a><nav aria-label="主导航"><a href="about.html">关于</a><a href="publications.html">论文</a><a aria-current="page" href="projects.html">项目</a><a href="blog.html">笔记</a><a href="contact.html">联系</a></nav><div aria-label="Language" class="language-switch" translate="no"><a href="../projects.html" hreflang="en" lang="en">English</a><a aria-current="true" href="projects.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></div></header>
+<main id="main"><aside class="translation-notice">本页部分文字为机器辅助翻译。 <a data-original-link="true" href="https://jjli.info/projects.html">查看英文原文</a></aside><section class="page-hero"><h1 data-i18n="projects.block02">项目与软件。</h1><p class="intro" data-i18n="projects.block03">面向科学计算、机器学习与性能敏感系统的开源工具。每个项目针对一个具体的计算问题，源代码与实现细节均发布在 GitHub 上。</p></section><section class="project-list"><article class="project-row" data-i18n-scope="project-QLeaf">
+<div class="project-summary"><h2><a href="https://github.com/LiJ21/QLeaf" rel="noopener noreferrer" target="_blank">QLeaf ↗</a></h2><p class="project-subtitle" data-i18n="project.QLeaf.subtitle">低延迟树模型推理</p><div class="project-metric"><strong translate="no">6.9 µs</strong><span data-i18n="project.QLeaf.metric_label">GPU 最佳中位延迟（5,000 棵树）</span></div></div>
+<div class="project-body"><p data-i18n="project.QLeaf.description">可对数百至数千棵浅层树实现个位数微秒延迟。</p><p class="project-detail" data-i18n="project.QLeaf.detail">QLeaf 深入优化数据传输与线程块间的协调，并采用无锁的主机与设备之间的交接机制，使端到端延迟接近主机与设备通信的极限。</p><ul aria-label="技术" class="tags"><li>C++</li><li>CUDA</li><li>CPU / GPU</li></ul><div class="project-links"><a href="https://github.com/LiJ21/QLeaf" rel="noopener noreferrer" target="_blank">代码仓库 ↗</a><a href="https://github.com/LiJ21/QLeaf/blob/main/BENCHMARK.md" rel="noopener noreferrer" target="_blank">基准测试 ↗</a></div></div>
+</article><article class="project-row" data-i18n-scope="project-GardenPipe">
+<div class="project-summary"><h2><a href="https://github.com/LiJ21/GardenPipe" rel="noopener noreferrer" target="_blank">GardenPipe ↗</a></h2><p class="project-subtitle" data-i18n="project.GardenPipe.subtitle">以受限的批次内存处理任意规模的数据</p></div>
+<div class="project-body"><p data-i18n="project.GardenPipe.description">面向序列数据的训练与测试框架，数据量可达内存容量的许多倍。它按日期逐日读取，并以固定大小的批次流式处理，让内存成为由你设定的上限，而不是运行的副作用。</p><p class="project-detail" data-i18n="project.GardenPipe.detail">基于 Polars，专为单台工作站而非集群设计。有状态特征可跨批次延续，流式处理与完整运行的结果一致；后台预取受字节预算限制。数据量增长只增加时间，不增加内存。</p><ul aria-label="技术" class="tags"><li>Python</li><li>Polars</li><li>流式处理</li></ul><div class="project-links"><a href="https://github.com/LiJ21/GardenPipe" rel="noopener noreferrer" target="_blank">代码仓库 ↗</a><a href="https://github.com/LiJ21/GardenPipe/tree/main/examples/weather" rel="noopener noreferrer" target="_blank">天气示例 ↗</a></div></div>
+</article><article class="project-row" data-i18n-scope="project-OptIndex">
+<div class="project-summary"><h2><a href="https://github.com/LiJ21/OptIndex" rel="noopener noreferrer" target="_blank">OptIndex ↗</a></h2><p class="project-subtitle" data-i18n="project.OptIndex.subtitle">安全的侵入式对象存储</p></div>
+<div class="project-body"><p data-i18n="project.OptIndex.description">具有稳定地址和编译期索引定义。集中管理存储与对象生命周期，使可选视图和分区视图保持一致，无需复制对象。</p><p class="project-detail" data-i18n="project.OptIndex.detail">面向有界工作集和重复查询，提供显式索引控制与可选的固定大小内存池。设计重点是在不复制存储对象的前提下，保证不同索引间的一致性。</p><ul aria-label="技术" class="tags"><li>C++</li><li>Boost.Intrusive</li><li>内存管理</li></ul><div class="project-links"><a href="https://github.com/LiJ21/OptIndex" rel="noopener noreferrer" target="_blank">代码仓库 ↗</a></div></div>
+</article><article class="project-row" data-i18n-scope="project-RL Tools">
+<div class="project-summary"><h2><a href="https://github.com/LiJ21/rl_tools" rel="noopener noreferrer" target="_blank">RL Tools ↗</a></h2><p class="project-subtitle" data-i18n="project.RL Tools.subtitle">可组合的强化学习</p></div>
+<div class="project-body"><p data-i18n="project.RL Tools.description">一个轻量级强化学习框架，将智能体与其价值模型分离。SARSA 和 Q-learning 智能体可使用表格存储，也可使用基于 Torch 的函数近似器。</p><p class="project-detail" data-i18n="project.RL Tools.detail">基于模板的接口使交互循环保持简洁：观察状态、选择动作、获得奖励。核心组件仅依赖头文件；神经网络模型使用 LibTorch。</p><ul aria-label="技术" class="tags"><li>C++</li><li>模板</li><li>LibTorch</li></ul><div class="project-links"><a href="https://github.com/LiJ21/rl_tools" rel="noopener noreferrer" target="_blank">代码仓库 ↗</a></div></div>
+</article><article class="project-row" data-i18n-scope="project-QuDrip">
+<div class="project-summary"><h2><a href="https://github.com/LiJ21/QuDrip" rel="noopener noreferrer" target="_blank">QuDrip ↗</a></h2><p class="project-subtitle" data-i18n="project.QuDrip.subtitle">精确量子多体模拟</p></div>
+<div class="project-body"><p data-i18n="project.QuDrip.description">用于构造受约束希尔伯特空间、量子算符和哈密顿量的工具箱。通过稀疏矩阵与 Krylov 方法，支持基态计算、实时演化和 Lindblad 动力学。</p><p class="project-detail" data-i18n="project.QuDrip.detail">面向中小规模量子系统的灵活计算，支持费米子与玻色子自由度。已用于量子光调控和光掺杂超导的研究。</p><ul aria-label="技术" class="tags"><li>C++</li><li>Eigen</li><li>Krylov 方法</li></ul><div class="project-links"><a href="https://github.com/LiJ21/QuDrip" rel="noopener noreferrer" target="_blank">代码仓库 ↗</a><a href="publications.html#paper-03">相关论文 →</a></div></div>
+</article><article class="project-row" data-i18n-scope="project-NESSi 2.0">
+<div class="project-summary"><h2><a href="https://github.com/nessi-cntr/nessi" rel="noopener noreferrer" target="_blank">NESSi 2.0 ↗</a></h2><p class="project-subtitle" data-i18n="project.NESSi 2.0.subtitle">非平衡系统模拟</p></div>
+<div class="project-body"><p data-i18n="project.NESSi 2.0.description">用于非平衡格林函数与相互作用量子系统的共享研究库。2.0 版本增加了记忆截断的时间传播与稳态计算。</p><p class="project-detail" data-i18n="project.NESSi 2.0.detail">我通过非平衡多体方法的研究参与了 NESSi 2.0 的开发。软件包支持量子动力学的高精度数值积分与分布式内存计算。</p><ul aria-label="技术" class="tags"><li>C++</li><li>格林函数</li><li>DMFT</li></ul><div class="project-links"><a href="https://github.com/nessi-cntr/nessi" rel="noopener noreferrer" target="_blank">代码仓库 ↗</a><a href="publications.html#paper-33">NESSi 2.0 论文 →</a></div></div>
+</article><div class="project-list-end"><a href="https://github.com/LiJ21" rel="noopener noreferrer" target="_blank">全部 GitHub 仓库 ↗</a></div></section>
+</main>
+<footer><p>© 2026 Jiajun Li</p><div><a href="mailto:jiajunligg@gmail.com">邮箱</a><a href="https://github.com/LiJ21" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="https://scholar.google.com/citations?user=tP-VfEAAAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank">学术资料 ↗</a><a href="https://www.linkedin.com/in/jiajunli/" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a><a href="feed.xml">RSS</a></div></footer>
+</div>
+</body>
+</html>

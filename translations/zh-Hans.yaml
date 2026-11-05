@@ -1,0 +1,99 @@
+about.html.title:
+  text: 关于 · Jiajun Li
+  source_hash: e36b1d6c171b9e2a22f4e203c862c911f120e47baed1e0b1ebd13619c9b8d81e
+home.latest_note:
+  text: 最新笔记
+  source_hash: ee653b80ee693fb0c7944fde3ca5a28fae48f0a33fd10dfa157c0eba22c6fb79
+home.all_notes:
+  text: 全部笔记 →
+  source_hash: aedf14af132db90053b70ffa440594978f2c688215c31392905769e8f227bacb
+project.QLeaf.metric_label:
+  text: GPU 最佳中位延迟（5,000 棵树）
+  source_hash: 95da6d7a8c73e5f3f797b17003566fa20f0275fdc69a8f26b52f4c05ca8a96d2
+shared.4efca0d10c5feb8e:
+  text: 关于
+  source_hash: ef1e4540effceec8a3b95563a9a074cd47af62b206fc4b75ed9a553a0dcac364
+home.statement:
+  text: 从机器学习到实时决策。
+  source_hash: e46da0bebe3dbf641270df2a50a427e223e4815d9d1897064afc0a1e0c6e022b
+home.introduction:
+  text: 我在苏黎世的 QRT 担任量化研究员，从事高频交易和短期预测研究。自 2022 年以来，我在 QRT 和 IMC 的工作涵盖机器学习信号、市场微观结构研究和实时交易系统。
+  source_hash: e3b4a67bc4865dfae370716c88ab845c79a178325b487a0edadec880bd4ab9dc
+home.career_turn:
+  text: 自 2022 年 11 月起从事量化金融
+  source_hash: 7afc3f34ceebdf6da17e78a055dc0eb21ca705d94f955d8ec5b0b5d4ce267d55
+home.career_key:
+  html: <span class="key-mark"></span>论文 <span class="key-mark key-other"></span>预印本、学位论文或会议摘要。每个标记代表一条记录，点击可跳转。
+  source_hash: a1e4728dcd53dac16dc784b241db1265675a440c0f8e3e6da2d6932649ad07c9
+index.block06:
+  text: 我走过的路
+  source_hash: e3b8ca31b4eb25e459b1a0d87a43609fd15f58145f8fd3d8273429aab55c0ac9
+index.block12:
+  text: 我做过的项目
+  source_hash: 64754a4369f541ccfadd2744eda46f656fc18f91422ecfd8ab5f9cce349fef59
+index.block19:
+  text: 建议先读的论文
+  source_hash: 18dfcff8efce6acf6dbb4c46b4e6b5b2032c6d8682c872e0c53d4d83fc6047d1
+home.gardenpipe.title:
+  text: 大规模模型训练
+  source_hash: 5ff18e7c2abee72e40dc58afaca2390942e1d1aa2bb4308cd120cb5eb8032a1b
+home.gardenpipe.description:
+  html: <a href="https://github.com/LiJ21/GardenPipe">GardenPipe</a> — 以受限的批次内存处理任意规模的数据：专为单台工作站设计的训练与测试框架。
+  source_hash: 379ff426b4d3ccd08ef4eb1e18c54ed91fc3f61d424c1972f76773eb2e94ab54
+home.software:
+  text: 我将统计研究与动手实践的性能工程相结合。十余年来，我一直使用 C++、Python、Fortran 和 CUDA 开发高性能软件。目前的开源工作主要围绕低延迟推理、内存受限的模型训练和高效的 C++ 数据结构。
+  source_hash: 3736a7630d641b699ded9c8af7bb49c869da4e5d832f05e734718f9a76948413
+project.GardenPipe.subtitle:
+  text: 以受限的批次内存处理任意规模的数据
+  source_hash: 8b725d2bbd975d07558269619b0985ef5d7365066fce3482b44e4ece6757252a
+project.GardenPipe.description:
+  text: 面向序列数据的训练与测试框架，数据量可达内存容量的许多倍。它按日期逐日读取，并以固定大小的批次流式处理，让内存成为由你设定的上限，而不是运行的副作用。
+  source_hash: 9d9ddb7f76bfdc2f775b3d95674a2c9245fdc1a80695c2ce5d7523f023023733
+project.GardenPipe.detail:
+  text: 基于 Polars，专为单台工作站而非集群设计。有状态特征可跨批次延续，流式处理与完整运行的结果一致；后台预取受字节预算限制。数据量增长只增加时间，不增加内存。
+  source_hash: f0fbc517a376f3ba7b757818cd17e10f92c0129e639beb68d1411f95361d1a51
+projects.block03:
+  text: 面向科学计算、机器学习与性能敏感系统的开源工具。每个项目针对一个具体的计算问题，源代码与实现细节均发布在 GitHub 上。
+  source_hash: 99220efc646df061b7f4153b54442a8dc90298085bef6a920245308e28744323
+projects.html.description:
+  text: QLeaf、GardenPipe、QuDrip、OptIndex、RL Tools 及对 NESSi 2.0 的贡献 — Jiajun Li 的工程与科研软件。
+  source_hash: 515c86291e3d9ae23e0b398fcaa6fee999dc13a633e204a5d1e607a96e6e291f
+shared.48179d67d98527e6:
+  text: 天气示例 ↗
+  source_hash: d9c793032debebc759a92be4b018fca8ef8064e3b14f22850fbfdf139a72fda5
+shared.8f4b95ff453f588a:
+  html: <a href="https://github.com/LiJ21/GardenPipe">GardenPipe ↗</a>
+  source_hash: b28d865c9f77eb7d03a070d2989c6c7d383012bd5d20dcc8c5a69cd550af60ee
+shared.93150c190c14ed56:
+  text: Polars
+  source_hash: 2ba082d80f606af916abf10a09c2e716bfc8e80f9165ec8dbe35e857af1dfcdd
+shared.a951c5945635e2d3:
+  text: 流式处理
+  source_hash: 2225b5ed1f4cb4ef7a5af9e7a78e9750535137190a8677fdc990b0cc69e24443
+about.themes.finance.title:
+  text: 量化金融
+  source_hash: c809d7ba833e75b183058c197503d17d1db0284ea523ee917dcba011c48e72d3
+about.themes.ml.title:
+  text: 机器学习与计算系统
+  source_hash: b58ab2c52f0f66c53d467848cf4629e29758e2479c7f1ef7776a43af81bc0bcb
+index.block13:
+  text: 低延迟工具
+  source_hash: c3b47a44e4c6b97b92dc78f0d1f5cba49b3daae7196ae67c7790f8cdeb24be49
+index.html.title:
+  text: Jiajun Li · 量化研究员
+  source_hash: 1c243cc7dd8d365b6e741d16f7d51065d5943096f1830f1999a2d93a3f34376f
+project.OptIndex.description:
+  text: 具有稳定地址和编译期索引定义。集中管理存储与对象生命周期，使可选视图和分区视图保持一致，无需复制对象。
+  source_hash: ef53ac200d52d1b680adbd059042607d7dcfc2f810db56cb61791966a95b5f39
+project.QLeaf.description:
+  text: 可对数百至数千棵浅层树实现个位数微秒延迟。
+  source_hash: c82d0e59e3ea08f011c8e1b54c2f221ce40c63124d286f3cf42123fb5ebb36ff
+shared.3bcf9f2bf07261cf:
+  text: RSS
+  source_hash: 58e48580d3a35b5ce6a6bf7f91de8abeb63f39f46b80a9fc95217b66f1129ed9
+shared.8204cdf27bb8adfd:
+  text: 返回首页 →
+  source_hash: 8086cf81943dcbae145994a2882ebac57695571bfc3fe32ee0834a3cc3aa2fab
+shared.969ccbd3cf6300ec:
+  text: 邮箱
+  source_hash: 1682061aa01e88205add246b2f4ab24d63c37d997f5cd55da5b269eb6ca924a3

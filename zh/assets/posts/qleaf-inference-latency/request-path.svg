@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="720" height="340" viewBox="0 0 720 340" role="img" aria-labelledby="title">
+<ns0:title id="title">主机到主机延迟包括通信与计算</ns0:title>
+<ns0:defs><ns0:marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><ns0:path d="M0 0 L8 4 L0 8Z" fill="#111111" /></ns0:marker></ns0:defs>
+<ns0:rect width="720" height="340" fill="white" />
+<ns0:g font-family="Arial, Helvetica, sans-serif" fill="#111111">
+<ns0:text x="28" y="29" font-size="13" font-weight="600" text-anchor="start" fill="#111111">测量完整的往返过程</ns0:text>
+<ns0:rect x="252" y="60" width="145" height="222" rx="4" fill="#fafafa" stroke="#d2d2d2" />
+<ns0:text x="324" y="86" font-size="15" font-weight="600" text-anchor="middle" fill="#111111">PCIe</ns0:text>
+<ns0:rect x="28" y="110" width="180" height="62" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="118.0" y="146.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">主机特征行</ns0:text>
+<ns0:rect x="445" y="110" width="247" height="62" rx="4" fill="#111111" stroke="#111111" />
+<ns0:text x="568.5" y="146.0" font-size="15" font-weight="400" text-anchor="middle" fill="white">GPU：计算树模型</ns0:text>
+<ns0:path d="M209 141 L442 141" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:text x="324" y="127" font-size="13" font-weight="400" text-anchor="middle" fill="#111111">输入 / 请求</ns0:text>
+<ns0:rect x="445" y="206" width="247" height="62" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="568.5" y="242.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">协调 + 发布</ns0:text>
+<ns0:path d="M568 173 L568 203" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:rect x="28" y="206" width="180" height="62" rx="4" fill="#f5f5f5" stroke="#d2d2d2" />
+<ns0:text x="118.0" y="242.0" font-size="15" font-weight="400" text-anchor="middle" fill="#111111">主机可见的结果</ns0:text>
+<ns0:path d="M442 237 L211 237" fill="none" stroke="#111111" stroke-width="1.6" marker-end="url(#arrow)" />
+<ns0:text x="324" y="224" font-size="13" font-weight="400" text-anchor="middle" fill="#111111">输出 / 完成</ns0:text>
+<ns0:text x="28" y="309" font-size="14" font-weight="400" text-anchor="start" fill="#111111">模型驻留在 GPU；每次请求只传输输入与结果。</ns0:text>
+</ns0:g></ns0:svg>

@@ -1,0 +1,6 @@
+failfast exit 1 after 0.2 s
+    raise ValueError(
+ValueError: max_buffer_bytes=1,048,576 is too small for batch_size=100,000: a pass needs 12,000,000 bytes for the batch the consumer holds plus a 2x claim for the next. Raise max_buffer_bytes to at least 12,000,000 or lo
+cap stream exit 0 after 151.5 s
+cap materialize exit 247 after 21.5 s
+billion exit 0 after 1613.9 s
