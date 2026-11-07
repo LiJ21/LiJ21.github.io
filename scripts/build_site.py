@@ -188,7 +188,7 @@ for name, metadata in PAGES.items():
     body = (ROOT/f'content/pages/{name}.html').read_text()
     body = re.sub(r'{{\s*(\w+)\s*}}', lambda m: slots[m[1]], body)
     shell(name+'.html', metadata['title'], metadata['description'], body, name=='publications')
-(ROOT/'assets/publications.bib').write_text('% Jiajun Li — publication record, checked 2026-10-19\n% UTF-8; compatible with biblatex/biber.\n\n'+'\n\n'.join(bibtex(p) for p in PUBLICATIONS)+'\n')
+(ROOT/'assets/publications.bib').write_text('% Jiajun Li — publication record, checked 2026-11-07\n% UTF-8; compatible with biblatex/biber.\n\n'+'\n\n'.join(bibtex(p) for p in PUBLICATIONS)+'\n')
 note_count = build_notes(ROOT, shell, hero)
 translated_urls = build_languages(ROOT, list(PAGES), note_count)
 SITEMAP_URLS.extend(translated_urls)
