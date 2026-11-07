@@ -5,9 +5,9 @@ The scripts behind the note *Arbitrarily large data, bounded memory*. They run a
 note quotes that commit with two small changes to `gardenpipe/data.py`, kept here as `window-filter.patch` and
 `time-chunks.patch`, to apply in that order. In GardenPipe they are commits `4066ad2` and `ab41d38`, and `main` has
 both since `89d7244`, which adds `time-column-guard.patch` for unusual time columns. `RESULTS.md` holds the results
-with and without them, and explains `larger-time-chunks.patch`, a third change that was tested and not adopted. `multi-source-reads.patch` brings
-the same two fixes to `MultiSourceLoader`. It is tested and has not been applied, and `multi-source-filter.patch` is its
-first half, for measuring that half alone.
+with and without them, and explains `larger-time-chunks.patch`, a third change that was tested and not adopted.
+`multi-source-reads.patch` brings the same two fixes to `MultiSourceLoader`, and is in GardenPipe as `693cc4b`.
+`multi-source-filter.patch` is its first half, for measuring that half alone.
 
 ```sh
 git clone https://github.com/LiJ21/GardenPipe && cd GardenPipe && git checkout 9bc5e3e

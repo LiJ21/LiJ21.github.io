@@ -330,13 +330,13 @@ We do not claim that random features generally keep up with boosting. This is on
 
 <!-- i18n: gardenpipe.block054 -->
 
-- **Look-ahead is counted in rows.** A horizon in minutes holds more rows as the data get denser, at about 540 bytes per row here. It is the one term that still grows with rows per date.
+- **Look-ahead is counted in rows.** A horizon in minutes holds more rows as the data get denser, at about 540 bytes per row here. With one source, it is the one term that still grows with rows per date.
 - **One timestamp is indivisible.** A window never splits a timestamp, so a burst of rows at one time makes a larger batch.
 - **A date without windows is a unit of its own.** With no target or front pad, the streaming scan can hold most of a date, so very large dates should be split into smaller files.
 - **The budget counts batches.** Reader and allocator buffers sit outside it. With a slow consumer, each MiB of budget added about 1.4 MiB to the peak, so leave a margin.
 - **Convenience spends the budget.** Keeping every prediction, caching arrays across trials, or using a non-streaming adapter all trade the bound for speed or ease.
 - **Small batches cost time.** Each window is a separate read. On the weather data, 5,000-row batches took 40 seconds, and one batch per year took 10.
-- **We fixed one path.** These runs stream one source at a time. Joining several streams goes through other code, which does not have these fixes yet. With three streams in one shared file, the peak rises from 570 MiB at 4M rows per date to 1,423 MiB at 40M. The same two changes, tested but not merged, bring 40M down to about 600 MiB in less than half the time. They leave a slower rise, to 739 MiB at 80M.
+- **Joining streams still rises, slowly.** These runs stream one source at a time. Joining several streams goes through other code, which needed the same two changes, now in [commit `693cc4b`](https://github.com/LiJ21/GardenPipe/commit/693cc4b52b3d89e16585af2b3cd6a894f878c87c). With three streams in one shared file, they took 40M rows per date from 1,423 MiB to about 600 MiB, in less than half the time. The peak still reaches 739 MiB at 80M: each date opens with a pass over its whole file, and that part still grows with rows per date.
 - **One machine is still one machine.** Time grows with the data, so a job with a deadline may need more hardware regardless of memory.
 
 <!-- i18n: gardenpipe.block055 -->

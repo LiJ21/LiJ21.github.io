@@ -1,0 +1,19 @@
+job                  before MiB  after MiB  before s  after s
+minimal_10_warm             453        435      49.1     49.0
+minimal_30_warm             421        440     150.7    145.4
+minimal_10_cold             596        606      52.0     51.3
+weather_5000                263        254      38.8     48.4
+weather_20000               271        260      13.6     19.6
+weather_1000000             270        260       7.8      9.7
+fixed 20M 60s               613        606     139.2    126.3
+  loader d2baba8ea452 to 05070cd3a9a2: R2 gap 0.00e+00, largest coefficient gap 0.00e+00, intercept gap 0.00e+00
+fixed 40M 30s               618        603     271.2    262.4
+  loader d2baba8ea452 to 05070cd3a9a2: R2 gap 0.00e+00, largest coefficient gap 2.22e-16, intercept gap 2.08e-17
+
+minimal_10_warm: score line identical: True (test R^2: 0.508 on 7,972,222 rows)
+minimal_30_warm: score line identical: True (test R^2: 0.502 on 23,916,666 rows)
+minimal_10_cold: score line identical: True (test R^2: 0.508 on 7,972,222 rows)
+weather 5000: 17377 predictions exactly equal: True; validation.json identical: True
+weather 20000: 17377 predictions exactly equal: True; validation.json identical: True
+weather 1000000: 17377 predictions exactly equal: True; validation.json identical: True
+

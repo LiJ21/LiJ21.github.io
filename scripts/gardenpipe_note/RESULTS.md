@@ -2,7 +2,7 @@
 
 Everything behind the note *Arbitrarily large data, bounded memory*: the machine, the exact versions, the data, the commands, the numbers, and what went wrong on the way. Raw outputs are in `results/`.
 
-The memory experiments were run twice: on GardenPipe as published at commit `9bc5e3e`, and on the same commit with two small patches that came out of this work. Section 6 holds the published code's results, section 7 explains why the patches exist, and section 8 holds the full grid with both patches. The tables in the note come from section 8. Both patches are now on GardenPipe's `main`, with a small guard on top, at `89d7244` (section 13). `MultiSourceLoader` goes through other code: section 13.7 measures it, and holds the same two fixes as a patch that has not been applied.
+The memory experiments were run twice: on GardenPipe as published at commit `9bc5e3e`, and on the same commit with two small patches that came out of this work. Section 6 holds the published code's results, section 7 explains why the patches exist, and section 8 holds the full grid with both patches. The tables in the note come from section 8. Both patches are now on GardenPipe's `main`, with a small guard on top, at `89d7244` (section 13). `MultiSourceLoader` goes through other code: section 13.7 measures it, and the same two fixes reached `main` at `693cc4b`.
 
 ## 1. Environment
 
@@ -919,7 +919,7 @@ Section 7 gives the conclusions. These are the steps on the way that were wrong,
 | Peak RSS, shape | Flat in the number of dates, rising with batch size and workers. With the published code it also rises with rows per date. With both patches it stays flat in rows per date at a fixed look-ahead in rows |
 | Peak RSS, size | Depends on thread count and allocator: Polars sizes its pools from the number of threads, so expect different constants on a different CPU count |
 | Time | Depends on the machine. Ratios travel better than seconds. With the published code, time per row grows with rows per date; with the window filter it does not, at a fixed look-ahead in rows |
-| `MultiSourceLoader` | On `main`, time per row rises with rows per date in both layouts, and the peak rises steeply with one shared file and little with one file per stream. With `multi-source-reads.patch`, time per row is flat and the shared file's peak rises slowly |
+| `MultiSourceLoader` | At `89d7244`, time per row rises with rows per date in both layouts, and the peak rises steeply with one shared file and little with one file per stream. At `693cc4b`, time per row is flat and the shared file's peak rises slowly |
 | Under the 1 GiB limit | Streamed finishes and materialized is killed, as long as the streamed peak on your machine stays below the limit |
 
 ## 12. Files
@@ -936,7 +936,7 @@ Section 7 gives the conclusions. These are the steps on the way that were wrong,
 | `loader_column_types.py`, `compare_column_types.py`, `window_filter_types.py` | The loader and the window filter on other kinds of time column |
 | `materialize_steps.py` | Memory at each step of a materialized split |
 | `multi_source_check.py` | Every batch of instruments and sources, published against patched |
-| `multi-source-reads.patch`, `multi-source-filter.patch` | The same two fixes for `MultiSourceLoader`, tested and not applied, and the filter alone, each against `89d7244`: see section 13.7 |
+| `multi-source-reads.patch`, `multi-source-filter.patch` | The same two fixes for `MultiSourceLoader`, in GardenPipe as `693cc4b`, and the filter alone, each against `89d7244`: see section 13.7 |
 | `panel_data.py`, `measure_panel.py`, `panel_steps.py` | Three stations from the generated data, one measured run, and memory at each step of one date |
 | `multi_source_types.py`, `multi_source_units.py` | `MultiSourceLoader` on each kind of time column, and with a different time unit on each stream, batch by batch, to compare two checkouts |
 | `results/results.jsonl` | One line per memory run on the published code, with every setting and result |
@@ -964,8 +964,9 @@ They were then committed one at a time, with the guard of 13.3 after them, and `
 | `4066ad2cca4a6d735014baabfa3c5ec01bdf53cc` | The window filter | `3eb3b1aaf173` |
 | `ab41d3846e20acd4dd1136b6c03a832b0c051dfe` | The time chunks and the new table in GardenPipe's README | `be906867b2f2` |
 | `89d72445201635a99b3ee373ba4782bababf7cf0` | The guard | `d2baba8ea452` |
+| `693cc4b52b3d89e16585af2b3cd6a894f878c87c` | The same two fixes for `MultiSourceLoader` (13.7) | `05070cd3a9a2` |
 
-So a checkout of `ab41d38` has the same `data.py` as applying both patches, and `89d7244` the same as applying all three.
+So a checkout of `ab41d38` has the same `data.py` as applying both patches, `89d7244` the same as applying all three, and `693cc4b` the same as `multi-source-reads.patch` on top.
 
 The grids ran on Polars 2.1.0. The repository's own `.venv` has 2.0.0, which its README's table also names, and `pyproject.toml` allows 1.41.2 and later. The window filter also stopped going through `_epoch_ns`, and the grids only ever used one kind of time column. So the change was checked on those versions and on other kinds of time column. The raw output is in `results/apply_check/`.
 
@@ -1107,21 +1108,21 @@ Instruments in one file do go through the patched code, and rows that share a ti
 
 ### 13.7 `MultiSourceLoader`
 
-The question left by 13.6 is whether this loader shows the growth that `FeatureLoader` had. It does: with one shared file, both memory and time per row rise with rows per date. The same two fixes take most of that away. They are in `multi-source-reads.patch`, tested against `main` at `89d7244`. **That patch has not been applied, so `main` behaves as the `main` columns below.** Raw output is in `results/apply_check/panel/`.
+The question left by 13.6 is whether this loader shows the growth that `FeatureLoader` had. It does: with one shared file, both memory and time per row rise with rows per date. The same two fixes take most of that away. They were measured as `multi-source-reads.patch` on `89d7244`, and went into GardenPipe unchanged as commit `693cc4b`, so `main` now behaves as the Both columns below. Raw output is in `results/apply_check/panel/`.
 
 **The job.** `panel_data.py` deals the rows of each generated date to stations A, B, and C in turn, and writes them twice: one shared file with a `station` column, and one file per station. Row groups hold 122,880 rows, as in the files they came from, and the 40M shared file has 326 of them. `measure_panel.py` is the five-date job of 7.2 on three streams: streaming ridge predicts station A's forward change at its own ticks, from five features across the three stations, with 100,000-row batches, a 64 MiB budget, and two workers. Rows per date count all three stations. The horizon shrinks as the rows grow, so the look-ahead stays at 13,888 rows, as in 7.4.
 
-**Conditions.** Polars 2.0.0, in the repository's own `.venv`. Every run started with the files out of the page cache. ComfyUI held about 20 GiB throughout, so `quiet.py` ran with `QUIET_FREE_MIB=4000 QUIET_CPUS=3`. Each run is recorded with the CPU that other programs used during it: 48–265 s for the `main` runs from 20M up, and at most 24 s for all the others, out of many minutes at 20 threads. The `main` runs at 80M were left out, since each would take over half an hour and the rise is already plain at 40M.
+**Conditions.** Polars 2.0.0, in the repository's own `.venv`. Every run started with the files out of the page cache. ComfyUI held about 20 GiB throughout, so `quiet.py` ran with `QUIET_FREE_MIB=4000 QUIET_CPUS=3`. Each run is recorded with the CPU that other programs used during it: 48–265 s for the `89d7244` runs from 20M up, and at most 24 s for all the others, out of many minutes at 20 threads. The `89d7244` runs at 80M were left out, since each would take over half an hour and the rise is already plain at 40M.
 
 | Code | `gardenpipe/data.py` | What it is |
 | --- | --- | --- |
-| `main` | `d2baba8ea452` | `89d7244` as it stands |
-| Filter | `b50f0b12aa6a` | `main` with `multi-source-filter.patch` |
-| Both | `05070cd3a9a2` | `main` with `multi-source-reads.patch` |
+| `89d7244` | `d2baba8ea452` | The commit before the fix |
+| Filter | `b50f0b12aa6a` | `89d7244` with `multi-source-filter.patch` |
+| Both | `05070cd3a9a2` | `89d7244` with `multi-source-reads.patch`: the same file as `693cc4b` |
 
 **Peak RSS, MiB**
 
-| Rows per date | Horizon | `main`, shared | `main`, per stream | Filter, shared | Filter, per stream | Both, shared | Both, per stream |
+| Rows per date | Horizon | `89d7244`, shared | `89d7244`, per stream | Filter, shared | Filter, per stream | Both, shared | Both, per stream |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 4M | 5m | 570 | 445 | 540 | 424 | 480 | 437 |
 | 20M | 60s | 929 | 562 | 1,015 | 555 | 600 | 537 |
@@ -1130,7 +1131,7 @@ The question left by 13.6 is whether this loader shows the growth that `FeatureL
 
 **Time, s**
 
-| Rows per date | `main`, shared | `main`, per stream | Filter, shared | Filter, per stream | Both, shared | Both, per stream |
+| Rows per date | `89d7244`, shared | `89d7244`, per stream | Filter, shared | Filter, per stream | Both, shared | Both, per stream |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 4M | 35.4 | 33.0 | 30.9 | 31.5 | 33.7 | 29.9 |
 | 20M | 246.8 | 235.8 | 160.2 | 154.4 | 171.9 | 155.9 |
@@ -1139,9 +1140,9 @@ The question left by 13.6 is whether this loader shows the growth that `FeatureL
 
 Most cells are one run. With one file per stream, Filter and Both read the same way, because the second change touches only the one-file path, so those two columns are repeats of each other. They give the scatter: 424 and 437 MiB at 4M, 555 and 537 at 20M, and 558, 621, and 576 at 40M.
 
-- **Time.** On `main`, time per row rises from 1.7 to 3.7 µs with one shared file, and from 1.7 to 3.5 µs per stream. With the filter it stays at 1.5–1.6 µs, and per stream that holds at 80M. Reading the times in short queries adds about 5–9% with a shared file: 1.7–1.8 µs.
-- **Memory with a shared file.** `main` rises by 853 MiB from 4M to 40M. The filter alone does not lower the peak, as with `FeatureLoader` (7.3), and at 40M it is 181 MiB higher, for a reason we did not look into. With both changes the peak is 480, 600, 588–608, and 739 MiB at 4M, 20M, 40M, and 80M: less than half of `main` at 40M, but not flat.
-- **Memory with one file per stream.** This layout was never the problem: 445 MiB to 580 MiB on `main`, and the same within scatter with both changes, at 612 MiB at 80M. It gains the time and not the memory.
+- **Time.** On `89d7244`, time per row rises from 1.7 to 3.7 µs with one shared file, and from 1.7 to 3.5 µs per stream. With the filter it stays at 1.5–1.6 µs, and per stream that holds at 80M. Reading the times in short queries adds about 5–9% with a shared file: 1.7–1.8 µs.
+- **Memory with a shared file.** `89d7244` rises by 853 MiB from 4M to 40M. The filter alone does not lower the peak, as with `FeatureLoader` (7.3), and at 40M it is 181 MiB higher, for a reason we did not look into. With both changes the peak is 480, 600, 588–608, and 739 MiB at 4M, 20M, 40M, and 80M: less than half of `89d7244` at 40M, but not flat.
+- **Memory with one file per stream.** This layout was never the problem: 445 MiB to 580 MiB on `89d7244`, and the same within scatter with both changes, at 612 MiB at 80M. It gains the time and not the memory.
 - **Against one stream.** One stream on the same Polars, with the guard, peaks at 613 MiB at 20M and 618 MiB at 40M (13.3). So at these sizes three streams cost no more than one. At 80M, the shared file's 739 MiB is about 120 MiB above the one-stream 617 MiB (Polars 2.1.0, 7.4).
 
 **What the fix is.** The two changes are the same two ideas, and neither carries over word for word:
@@ -1151,27 +1152,27 @@ Most cells are one run. With one file per stream, Filter and Both read the same 
 
 **Results did not move.** At each size, test R² agrees to 13 digits across the runs, in both layouts and all three versions of the code, and `test_n` is equal. Coefficients differ by up to 2.6e-10, far more than the 2.2e-16 of the one-stream jobs, but that is a property of these runs and not of the code. Two runs of the same code differ by 5.3e-11 (shared, 40M) and 9.6e-12 (per stream, 40M), and the per-stream Filter and Both runs, which read the same way, differ by up to 2.6e-10. We did not trace where it comes from. The batches themselves are compared directly, on small data:
 
-| Check | Result, `main` against Both |
+| Check | Result, `89d7244` against Both |
 | --- | --- |
 | `multi_source_check.py`: the 20 cases of 13.6, on Polars 2.0.0 | 20 of 20 identical |
 | `multi_source_types.py`: 17 kinds of time column, 16 cases each, on Polars 2.0.0 | 272 of 272 identical, with the same error in the 64 cases that fail: `string_iso`, `string_space`, `time_of_day`, `duration_ns` |
 | The same on Polars 1.41.2 | 272 of 272 identical, with the same error in the 48 cases that fail: `string_space`, `time_of_day`, `duration_ns` |
 | `multi_source_units.py`: a different time unit on each stream, on times after and before 1970, on Polars 2.0.0 and 1.41.2 | 32 of 32 identical on each. The 16 wide cases fail the same way in both, because that layout cannot join keys of different units. The 16 long cases return all 12,000 rows |
-| Tests, Polars 2.0.0 | 5 failed, 173 passed, 12 skipped, as on `main`: the 5 are `tests/test_viewer.py` without plotly |
-| Tests, Polars 1.41.2 | 190 passed, as on `main` |
+| Tests, Polars 2.0.0 | 5 failed, 173 passed, 12 skipped, as on `89d7244`: the 5 are `tests/test_viewer.py` without plotly |
+| Tests, Polars 1.41.2 | 190 passed, as on `89d7244` |
 
 **Where a date's memory goes.** `panel_steps.py` takes one date through the loader in one process, with no prefetch, from files out of the page cache, and resets the high-water mark between steps. So these numbers show which step is largest and not the peak of a whole run, and a step's peak includes what the step before left behind. All in MiB:
 
 | Layout, code | Rows per date | Open the date, peak | Window ends, peak | Left after window ends | Every window, peak |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Shared, `main` | 4M | 196 | 241 | 240 | 386 |
+| Shared, `89d7244` | 4M | 196 | 241 | 240 | 386 |
 | | 20M | 309 | 397 | 396 | 455 |
 | | 40M | 372 | 787 | 783 | 1,017 |
 | Shared, Both | 4M | 191 | 207 | 207 | 323 |
 | | 20M | 313 | 317 | 183 | 309 |
 | | 40M | 374 | 378 | 173 | 310 |
 | | 80M | 439 | 443 | 167 | 315 |
-| Per stream, `main` | 4M | 127 | 187 | 187 | 325 |
+| Per stream, `89d7244` | 4M | 127 | 187 | 187 | 325 |
 | | 20M | 168 | 293 | 293 | 444 |
 | | 40M | 177 | 330 | 329 | 468 |
 | Per stream, Both | 4M | 132 | 185 | 185 | 298 |
@@ -1179,11 +1180,26 @@ Most cells are one run. With one file per stream, Filter and Both read the same 
 | | 40M | 182 | 338 | 337 | 426 |
 | | 80M | 183 | 360 | 354 | 421 |
 
-- **Shared file, `main`.** The growth is in the read of the window ends. It leaves 783 MiB behind at 40M, and the windows start on top of that. This is not the open query of `FeatureLoader`, because that read has finished before the first window (10.2).
-- **Shared file, both changes.** The short queries leave 167–207 MiB at every size, and the windows peak at 309–323 MiB at every size. Those two steps no longer depend on rows per date. They do cost time: at 40M the window ends take 4.5 s per date, against 0.2 s on `main`, which is the 5–9% above.
+- **Shared file, `89d7244`.** The growth is in the read of the window ends. It leaves 783 MiB behind at 40M, and the windows start on top of that. This is not the open query of `FeatureLoader`, because that read has finished before the first window (10.2).
+- **Shared file, both changes.** The short queries leave 167–207 MiB at every size, and the windows peak at 309–323 MiB at every size. Those two steps no longer depend on rows per date. They do cost time: at 40M the window ends take 4.5 s per date, against 0.2 s on `89d7244`, which is the 5–9% above.
 - **What still rises.** Two passes over whole files, once per date, that neither change touches. With a shared file it is `_open`, which reads the last time of each station with a `group_by` over the file: 191, 313, 374, and 439 MiB. With one file per stream that step levels off at about 180 MiB, and the rise is in `_union_window_ends`, which reads every file to build its histograms: 185, 268, 338, and 360 MiB.
 
 A whole run peaks above every step here. Two workers can have two dates in these steps at once, which would explain that, but we did not measure the overlap, so that last part is an inference.
+
+**The commit.** The fix moved `_time_chunks` and the filter, so `FeatureLoader` runs through the moved code. The queries it builds are the same, and the one-stream jobs of 13.3 ran again to confirm that, on the commit unpacked with `git archive`, on Polars 2.0.0, before `main` moved. This run had the machine to itself, and the guard's did not. Raw output is in `results/apply_check/commit_693cc4b/`.
+
+| Job | Guard, MiB | `693cc4b`, MiB | Guard, s | `693cc4b`, s |
+| --- | ---: | ---: | ---: | ---: |
+| `minimal.py`, 10 dates, warm | 453 | 435 | 49.1 | 49.0 |
+| `minimal.py`, 30 dates, warm | 421 | 440 | 150.7 | 145.4 |
+| `minimal.py`, 10 dates, cold | 596 | 606 | 52.0 | 51.3 |
+| Weather, 5,000-row batches | 263 | 254 | 38.8 | 48.4 |
+| Weather, 20,000 | 271 | 260 | 13.6 | 19.6 |
+| Weather, 1,000,000 | 270 | 260 | 7.8 | 9.7 |
+| Fixed look-ahead, 20M | 613 | 606 | 139.2 | 126.3 |
+| Fixed look-ahead, 40M | 618 | 603 | 271.2 | 262.4 |
+
+The peaks move by at most 19 MiB, in both directions, which is the scatter of 13.2 and 13.3. The results did not move: the R² gap is zero, coefficients differ by at most 2.2e-16 and intercepts by at most 2.1e-17, the `minimal.py` score lines are identical, all 17,377 weather predictions are exactly equal at each batch size, and `validation.json` is byte-identical. The weather times look worse, but the run before the guard took 47.0, 19.8, and 8.2 s, so we read those short runs as scatter. We did not test that with a rotation. The tests give the same counts as `89d7244`: 5 failed, 173 passed, and 12 skipped on Polars 2.0.0, and 190 passed on 1.41.2. GardenPipe's README keeps its `~440 MiB`.
 
 **Row groups matter here.** By mistake, the first set of these runs used files with 262,144 rows per group (10.2). With both changes and a shared file, those gave 523, 820, 875, and 973 MiB at 4M, 20M, 40M, and 80M, against 480, 600, 588–608, and 739 MiB here. Groups a little over twice as large cost up to about 45% more peak, for the same rows. So a file written with large row groups should not expect these numbers.
 
@@ -1211,7 +1227,8 @@ CODE=$PATCHED PY=python WORK=$WORK OUT=$OUT "$NOTE/apply_check.sh" after
 python "$NOTE/compare_apply_check.py" "$OUT/before" "$OUT/after"
 PUBLISHED=$PUBLISHED PATCHED=$PATCHED PY=python WORK=$WORK OUT=$OUT "$NOTE/apply_check.sh" rotate
 
-# The guard: the same jobs on a checkout with it, compared with the run above, about 12 minutes
+# The guard: the same jobs on a checkout with it, compared with the run above, about 12 minutes.
+# 693cc4b was compared with the guard's run in the same way, as CODE with its own OUT.
 CODE=$GUARDED PY=python WORK=$WORK OUT=$GUARD_OUT "$NOTE/apply_check.sh" after
 python "$NOTE/compare_apply_check.py" "$OUT/after" "$GUARD_OUT/after"
 
@@ -1228,7 +1245,7 @@ PYTHONPATH=$CODE python "$NOTE/multi_source_check.py" "$WORK/tmp" > "$OUT/$NAME.
 python3 "$NOTE/multi_source_check.py" --compare "$OUT/published.json" "$OUT/patched.json"
 
 # MultiSourceLoader, about 1.75 hours in all. MAIN is 89d7244, with multi-source-filter.patch in FILTER and
-# multi-source-reads.patch in BOTH.
+# multi-source-reads.patch in BOTH, which is the same code as 693cc4b.
 for m in 4 20 40 80; do
   PYTHONPATH=$MAIN python "$NOTE/panel_data.py" --source "$WORK/d${m}m" --data "$WORK/p${m}m" --days 5
 done
