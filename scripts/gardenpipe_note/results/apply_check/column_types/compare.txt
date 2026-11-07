@@ -1,0 +1,63 @@
+
+polars-1.41.2: published 7c64551632de, patched be906867b2f2, guarded d2baba8ea452
+  column          both patches               guarded
+  dt_ns           {'same': 8}                {'same': 8}
+  dt_us           {'same': 8}                {'same': 8}
+  dt_ms           {'same': 8}                {'same': 8}
+  dt_ns_utc       {'same': 8}                {'same': 8}
+  dt_us_ams       {'same': 8}                {'same': 8}
+  int64_ns        {'same': 8}                {'same': 8}
+  uint64_ns       {'same': 8}                {'same': 8}
+  int64_small     {'same': 8}                {'same': 8}
+  int32_small     {'newly fails': 8}         {'same': 8}
+  uint32_small    {'newly fails': 8}         {'same': 8}
+  float64_ns      {'same': 8}                {'same': 8}
+  float64_small   {'same': 8}                {'same': 8}
+  string_iso      {'ROWS DIFFER': 8}         {'same': 8}
+  string_space    {'both fail': 8}           {'both fail': 8}
+  date            {'same': 8}                {'same': 8}
+  time_of_day     {'both fail': 8}           {'both fail': 8}
+  duration_ns     {'both fail': 8}           {'both fail': 8}
+  cases: 136
+
+polars-2.0.0: published 7c64551632de, patched be906867b2f2, guarded d2baba8ea452
+  column          both patches               guarded
+  dt_ns           {'same': 8}                {'same': 8}
+  dt_us           {'same': 8}                {'same': 8}
+  dt_ms           {'same': 8}                {'same': 8}
+  dt_ns_utc       {'same': 8}                {'same': 8}
+  dt_us_ams       {'same': 8}                {'same': 8}
+  int64_ns        {'same': 8}                {'same': 8}
+  uint64_ns       {'same': 8}                {'same': 8}
+  int64_small     {'same': 8}                {'same': 8}
+  int32_small     {'newly fails': 8}         {'same': 8}
+  uint32_small    {'newly fails': 8}         {'same': 8}
+  float64_ns      {'same': 8}                {'same': 8}
+  float64_small   {'same': 8}                {'same': 8}
+  string_iso      {'both fail': 8}           {'both fail': 8}
+  string_space    {'both fail': 8}           {'both fail': 8}
+  date            {'same': 8}                {'same': 8}
+  time_of_day     {'both fail': 8}           {'both fail': 8}
+  duration_ns     {'both fail': 8}           {'both fail': 8}
+  cases: 136
+
+polars-2.1.0: published 7c64551632de, patched be906867b2f2, guarded d2baba8ea452
+  column          both patches               guarded
+  dt_ns           {'same': 8}                {'same': 8}
+  dt_us           {'same': 8}                {'same': 8}
+  dt_ms           {'same': 8}                {'same': 8}
+  dt_ns_utc       {'same': 8}                {'same': 8}
+  dt_us_ams       {'same': 8}                {'same': 8}
+  int64_ns        {'same': 8}                {'same': 8}
+  uint64_ns       {'same': 8}                {'same': 8}
+  int64_small     {'same': 8}                {'same': 8}
+  int32_small     {'newly fails': 8}         {'same': 8}
+  uint32_small    {'newly fails': 8}         {'same': 8}
+  float64_ns      {'same': 8}                {'same': 8}
+  float64_small   {'same': 8}                {'same': 8}
+  string_iso      {'both fail': 8}           {'both fail': 8}
+  string_space    {'both fail': 8}           {'both fail': 8}
+  date            {'same': 8}                {'same': 8}
+  time_of_day     {'both fail': 8}           {'both fail': 8}
+  duration_ns     {'both fail': 8}           {'both fail': 8}
+  cases: 136

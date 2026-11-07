@@ -1,0 +1,19 @@
+before: both patches, be906867b2f2. after: with the guard, d2baba8ea452. Polars 2.0.0.
+job                  before MiB  after MiB  before s  after s
+minimal_10_warm             440        453      48.9     49.1
+minimal_30_warm             450        421     147.2    150.7
+minimal_10_cold             615        596      49.9     52.0
+weather_5000                252        263      47.0     38.8
+weather_20000               261        271      19.8     13.6
+weather_1000000             264        270       8.2      7.8
+fixed 20M 60s               601        613     124.9    139.2
+  loader be906867b2f2 to d2baba8ea452: R2 gap 0.00e+00, largest coefficient gap 0.00e+00, intercept gap 6.94e-18
+fixed 40M 30s               641        618     257.5    271.2
+  loader be906867b2f2 to d2baba8ea452: R2 gap 0.00e+00, largest coefficient gap 2.22e-16, intercept gap 2.08e-17
+
+minimal_10_warm: score line identical: True (test R^2: 0.508 on 7,972,222 rows)
+minimal_30_warm: score line identical: True (test R^2: 0.502 on 23,916,666 rows)
+minimal_10_cold: score line identical: True (test R^2: 0.508 on 7,972,222 rows)
+weather 5000: 17377 predictions exactly equal: True; validation.json identical: True
+weather 20000: 17377 predictions exactly equal: True; validation.json identical: True
+weather 1000000: 17377 predictions exactly equal: True; validation.json identical: True

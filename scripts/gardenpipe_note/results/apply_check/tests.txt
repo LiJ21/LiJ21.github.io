@@ -1,0 +1,20 @@
+python -m pytest -q --ignore=tests/test_sample_weight.py --ignore=tests/test_torch_adapter_snapshots.py
+Those two files import torch, which none of these environments has. Last line of each run:
+
+Polars 2.0.0, the repository's own .venv, no plotly (the 5 failures are all in tests/test_viewer.py: "No module named 'plotly'")
+  published  7c64551632de  5 failed, 173 passed, 12 skipped, 2 warnings, 214 subtests passed
+  patched    be906867b2f2  5 failed, 173 passed, 12 skipped, 2 warnings, 214 subtests passed
+  guarded    d2baba8ea452  5 failed, 173 passed, 12 skipped, 2 warnings, 214 subtests passed
+Polars 1.41.2, with plotly, scikit-learn and xgboost
+  published  7c64551632de  190 passed, 4 warnings, 214 subtests passed
+  patched    be906867b2f2  190 passed, 4 warnings, 214 subtests passed
+  guarded    d2baba8ea452  190 passed, 4 warnings, 214 subtests passed
+Polars 2.1.0, the environment of the grids
+  patched    be906867b2f2  190 passed (section 8)
+  guarded    d2baba8ea452  190 passed, 4 warnings, 214 subtests passed
+The commits themselves, unpacked with git archive
+  4066ad2  3eb3b1aaf173  Polars 2.0.0   5 failed, 173 passed, 12 skipped, 2 warnings, 214 subtests passed
+  ab41d38  be906867b2f2  Polars 2.0.0   5 failed, 173 passed, 12 skipped, 2 warnings, 214 subtests passed
+  ab41d38  be906867b2f2  Polars 1.41.2  190 passed, 4 warnings, 214 subtests passed
+  89d7244  d2baba8ea452  Polars 2.0.0   5 failed, 173 passed, 12 skipped, 2 warnings, 214 subtests passed
+  89d7244  d2baba8ea452  Polars 1.41.2  190 passed, 4 warnings, 214 subtests passed

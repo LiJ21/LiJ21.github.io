@@ -21,14 +21,14 @@
 <text x="558.6" y="290.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">2,018</text>
 <text x="623.9" y="290.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">4,018</text>
 <text x="367.0" y="312.0" font-size="13" font-weight="400" text-anchor="middle" fill="#505050">Features in the linear model (logarithmic)</text>
-<path d="M72.0 244.5 L662.0 244.5" fill="none" stroke="#111111" stroke-width="1"/>
-<text x="78.0" y="262.5" font-size="13" font-weight="400" text-anchor="start" fill="#111111">Gradient boosting, 1.36 °C, holds rows in memory</text>
+<path d="M72.0 255.7 L662.0 255.7" fill="none" stroke="#111111" stroke-width="1"/>
+<text x="78.0" y="247.7" font-size="13" font-weight="400" text-anchor="start" fill="#111111">Gradient boosting, 1.33 °C, holds rows in memory</text>
 <path d="M110.5 93.8 L429.4 217.9 L558.6 244.0 L623.9 249.8" fill="none" stroke="#0550ae" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="110.5" cy="93.8" r="6" fill="white"/><circle cx="110.5" cy="93.8" r="4" fill="#0550ae"/>
 <circle cx="429.4" cy="217.9" r="6" fill="white"/><circle cx="429.4" cy="217.9" r="4" fill="#0550ae"/>
 <circle cx="558.6" cy="244.0" r="6" fill="white"/><circle cx="558.6" cy="244.0" r="4" fill="#0550ae"/>
 <circle cx="623.9" cy="249.8" r="6" fill="white"/><circle cx="623.9" cy="249.8" r="4" fill="#0550ae"/>
-<text x="120.5" y="79.8" font-size="13" font-weight="600" text-anchor="start" fill="#111111">2.6 KiB</text>
+<text x="120.5" y="79.8" font-size="13" font-weight="600" text-anchor="start" fill="#111111">2.5 KiB</text>
 <text x="439.4" y="203.9" font-size="13" font-weight="600" text-anchor="start" fill="#111111">2 MiB</text>
 <text x="552.6" y="230.0" font-size="13" font-weight="600" text-anchor="end" fill="#111111">31 MiB</text>
 <text x="617.9" y="235.8" font-size="13" font-weight="600" text-anchor="start" fill="#111111">123 MiB</text>

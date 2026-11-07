@@ -1,0 +1,7 @@
+mode         setting     rows loader        peaks, MiB         times, s         test R2 
+stream       published     4M 7c64551632de  [724]              [18.0]           0.5046138370314
+stream       patched       4M be906867b2f2  [699]              [18.4]           0.5046138370314
+stream       published    20M 7c64551632de  [958]              [110.3]          0.5017873181898
+stream       patched      20M be906867b2f2  [697]              [92.1]           0.5017873181898
+stream       published    40M 7c64551632de  [1086]             [279.9]          0.5008873903777
+stream       patched      40M be906867b2f2  [692]              [184.6]          0.5008873903777

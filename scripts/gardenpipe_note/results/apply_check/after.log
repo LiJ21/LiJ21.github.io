@@ -1,0 +1,19 @@
+=== 2026-11-06T13:09:05+01:00 code under test
+be906867b2f2
+polars 2.0.0 GARDENPIPE/gardenpipe/data.py
+=== 2026-11-06T13:09:05+01:00 examples/minimal.py, the README table
+d4m: warm, 3,683 of 3,683 MiB resident
+minimal_10_warm exit=0 450180 48.89
+minimal_30_warm exit=0 461172 147.21
+d4m: cold, 0 of 3,683 MiB resident
+minimal_10_cold exit=0 629744 49.90
+=== 2026-11-06T13:14:46+01:00 examples/weather/train.py, the weather README table
+weather_5000 exit=0 257660 47.04
+weather_20000 exit=0 267492 19.75
+weather_1000000 exit=0 270208 8.18
+=== 2026-11-06T13:17:31+01:00 fixed look-ahead, five dates
+d20m: cold, 0 of 1,941 MiB resident
+fixed_20 exit=0
+d40m: cold, 0 of 1,998 MiB resident
+fixed_40 exit=0
+=== 2026-11-06T13:24:54+01:00 done

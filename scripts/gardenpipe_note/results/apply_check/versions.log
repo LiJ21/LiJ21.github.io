@@ -1,0 +1,17 @@
+d4m: warm, 3,683 of 3,683 MiB resident
+1.2.0.0.10 be906867b2f2 exit=0 | resident 39 then 409 MiB | peak RSS: 613 MiB | 49.52 s | test R^2: 0.508 on 7,972,222 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+1.2.0.0.30 be906867b2f2 exit=0 | resident 614 then 1228 MiB | peak RSS: 605 MiB | 151.75 s | test R^2: 0.502 on 23,916,666 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+2.1.41.2.10 be906867b2f2 exit=0 | resident 409 then 409 MiB | peak RSS: 420 MiB | 46.16 s | test R^2: 0.508 on 7,972,222 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+2.1.41.2.30 be906867b2f2 exit=0 | resident 1223 then 1228 MiB | peak RSS: 402 MiB | 141.06 s | test R^2: 0.502 on 23,916,666 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+3.1.41.2.10 be906867b2f2 exit=0 | resident 409 then 409 MiB | peak RSS: 400 MiB | 48.97 s | test R^2: 0.508 on 7,972,222 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+3.1.41.2.30 be906867b2f2 exit=0 | resident 1212 then 1228 MiB | peak RSS: 403 MiB | 139.69 s | test R^2: 0.502 on 23,916,666 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+4.2.0.0.10 be906867b2f2 exit=0 | resident 409 then 409 MiB | peak RSS: 426 MiB | 51.44 s | test R^2: 0.508 on 7,972,222 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+4.2.0.0.30 be906867b2f2 exit=0 | resident 1221 then 1228 MiB | peak RSS: 447 MiB | 157.28 s | test R^2: 0.502 on 23,916,666 rows
+

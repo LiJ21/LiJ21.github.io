@@ -1,0 +1,22 @@
+step                                      RSS MiB peak in step  rise B/row  ctx arrays alive
+--- start of materialize                      427          470                             0
+frame collected (5 cols)                     1348         1348         121                 0
+x and y converted to NumPy                   1591         1591          32                 0
+ctx built, batch returned                    1499         1864          36                 1
+--- start of materialize                     1062         1576          10                 1
+frame collected (5 cols)                     1999         1999         123                 1
+x and y converted to NumPy                   2219         2285          38                 1
+ctx built, batch returned                    2160         2560          45                 2
+end of train()                                472         2274          15                 0
+--- start of materialize                      472          472           0                 0
+frame collected (5 cols)                     1336         1336         114                 0
+x and y converted to NumPy                   1617         1617          37                 0
+ctx built, batch returned                    1541         1899          37                 1
+end of test()                                 827         1563           3                 0
+
+frame itself: 34 B/row {'level': 8.0, 'level_ewm_1m': 8.0, 'forward_change': 8.0, 'date': 10.0, 'tag': 0.0}
+ctx: date dtype object, distinct objects in first 1000: 1000, one object 51 B, pointer array 8 B/row; tag first value '', distinct objects in first 1000: 1; dates list ['2026-01-09', '2026-01-10'] tags list ['']
+frame itself: 34 B/row {'level': 8.0, 'level_ewm_1m': 8.0, 'forward_change': 8.0, 'date': 10.0, 'tag': 0.0}
+ctx: date dtype object, distinct objects in first 1000: 1000, one object 51 B, pointer array 8 B/row; tag first value '', distinct objects in first 1000: 1; dates list ['2026-01-11', '2026-01-12'] tags list ['']
+frame itself: 34 B/row {'level': 8.0, 'level_ewm_1m': 8.0, 'forward_change': 8.0, 'date': 10.0, 'tag': 0.0}
+ctx: date dtype object, distinct objects in first 1000: 1000, one object 51 B, pointer array 8 B/row; tag first value '', distinct objects in first 1000: 1; dates list ['2026-01-13', '2026-01-14'] tags list ['']

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="356" viewBox="0 0 720 356" role="img" aria-labelledby="title">
+<title id="title">Peak memory against rows per date, before and after the two fixes</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#111111"/></marker></defs>
+<rect width="720" height="356" fill="white"/>
+<g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#111111">
+<text x="24.0" y="32.0" font-size="13" font-weight="600" text-anchor="start" fill="#111111">PEAK MEMORY AS EACH DATE GROWS</text>
+<path d="M24.0 54.5 L40.0 54.5" fill="none" stroke="#d95926" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="46.0" y="59.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">First version</text>
+<path d="M154.2 54.5 L170.2 54.5" fill="none" stroke="#0550ae" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="176.2" y="59.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Both fixes</text>
+<path d="M262.2 54.5 L278.2 54.5" fill="none" stroke="#0550ae" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 5"/>
+<text x="284.2" y="59.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Both fixes, same look-ahead in rows</text>
+<text x="72.0" y="88.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Peak RSS, GiB</text>
+<path d="M72.0 290.0 L662.0 290.0" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+<text x="62.0" y="294.0" font-size="12" font-weight="400" text-anchor="end" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">0.0</text>
+<path d="M72.0 214.0 L662.0 214.0" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+<text x="62.0" y="218.0" font-size="12" font-weight="400" text-anchor="end" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">0.5</text>
+<path d="M72.0 138.0 L662.0 138.0" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+<text x="62.0" y="142.0" font-size="12" font-weight="400" text-anchor="end" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">1.0</text>
+<path d="M72.0 290.0 L662.0 290.0" fill="none" stroke="#d2d2d2" stroke-width="1"/>
+<text x="98.7" y="310.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">1M</text>
+<text x="264.9" y="310.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">4M</text>
+<text x="374.7" y="310.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">10M</text>
+<text x="457.7" y="310.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">20M</text>
+<text x="540.8" y="310.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">40M</text>
+<text x="623.8" y="310.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">80M</text>
+<text x="367.0" y="332.0" font-size="13" font-weight="400" text-anchor="middle" fill="#505050">Rows per date, five dates (logarithmic)</text>
+<path d="M72.0 138.0 L662.0 138.0" fill="none" stroke="#111111" stroke-width="1"/>
+<text x="78.0" y="131.0" font-size="13" font-weight="400" text-anchor="start" fill="#111111">1 GiB</text>
+<path d="M98.7 207.8 L264.9 190.2 L374.7 174.5 L457.7 149.9 L540.8 132.2 L623.8 123.3" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="98.7" cy="207.8" r="6" fill="white"/><circle cx="98.7" cy="207.8" r="4" fill="#d95926"/>
+<circle cx="264.9" cy="190.2" r="6" fill="white"/><circle cx="264.9" cy="190.2" r="4" fill="#d95926"/>
+<circle cx="374.7" cy="174.5" r="6" fill="white"/><circle cx="374.7" cy="174.5" r="4" fill="#d95926"/>
+<circle cx="457.7" cy="149.9" r="6" fill="white"/><circle cx="457.7" cy="149.9" r="4" fill="#d95926"/>
+<circle cx="540.8" cy="132.2" r="6" fill="white"/><circle cx="540.8" cy="132.2" r="4" fill="#d95926"/>
+<circle cx="623.8" cy="123.3" r="6" fill="white"/><circle cx="623.8" cy="123.3" r="4" fill="#d95926"/>
+<path d="M98.7 215.0 L264.9 203.2 L374.7 199.2 L457.7 197.2 L540.8 187.3 L623.8 182.8" fill="none" stroke="#0550ae" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="98.7" cy="215.0" r="6" fill="white"/><circle cx="98.7" cy="215.0" r="4" fill="#0550ae"/>
+<circle cx="264.9" cy="203.2" r="6" fill="white"/><circle cx="264.9" cy="203.2" r="4" fill="#0550ae"/>
+<circle cx="374.7" cy="199.2" r="6" fill="white"/><circle cx="374.7" cy="199.2" r="4" fill="#0550ae"/>
+<circle cx="457.7" cy="197.2" r="6" fill="white"/><circle cx="457.7" cy="197.2" r="4" fill="#0550ae"/>
+<circle cx="540.8" cy="187.3" r="6" fill="white"/><circle cx="540.8" cy="187.3" r="4" fill="#0550ae"/>
+<circle cx="623.8" cy="182.8" r="6" fill="white"/><circle cx="623.8" cy="182.8" r="4" fill="#0550ae"/>
+<path d="M264.9 203.3 L457.7 198.6 L540.8 201.4 L623.8 198.4" fill="none" stroke="#0550ae" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 5"/>
+<text x="633.8" y="128.3" font-size="13" font-weight="600" text-anchor="start" fill="#111111">1.1 GiB</text>
+<text x="633.8" y="187.8" font-size="13" font-weight="600" text-anchor="start" fill="#111111">722 MiB</text>
+<text x="633.8" y="209.4" font-size="13" font-weight="600" text-anchor="start" fill="#111111">617 MiB</text>
+</g></svg>

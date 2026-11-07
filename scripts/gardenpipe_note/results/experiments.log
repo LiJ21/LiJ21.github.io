@@ -1,0 +1,307 @@
+=== 2026-11-05T21:32:45+01:00 generating data, in its own process
+d4m: 4000000 rows, 90 dates, first file sha256 9a2b84772c0d7d8e42dd3c7f122a28034040771e23f2cbbfd3a9d66f9a78cae8
+d10m: 10000000 rows, 100 dates, first file sha256 6dd1e51fc42cf2113f0e1fceff3cc2a45d035a4986f1cfadc94648c7f2e2e370
+d1m: 1000000 rows, 10 dates, first file sha256 e84d59db93176f409af0fd5d407a1fb56a66a1b0fa1413b571a6fe0a547c0acf
+d2m: 2000000 rows, 10 dates, first file sha256 b9b165a5f9302648fbf38da1582715a39e3f384579d9dd715da4312e04527b89
+d6m: 6000000 rows, 10 dates, first file sha256 796051e15396d6e21a756f2ca29219aa0557e98054a17cac7d8530e6611e47c8
+d8m: 8000000 rows, 10 dates, first file sha256 252cd7f7e038275f850a1d90f3377d9131f1efd39302a6e4fa733b5c8cc9aaea
+d12m: 12000000 rows, 10 dates, first file sha256 f929a456346c83c222e8492e9fedac2b43656d1100cff6bc2e324ed72c8028c9
+d16m: 16000000 rows, 10 dates, first file sha256 1800690ba804b9720e6ccee790b7036515f054498b10d5d6bb73c40f75066049
+d20m: 20000000 rows, 10 dates, first file sha256 e31a376c1957c4000040356348ab4948dc50a091c3f49921cd64d5c5acb6c4c9
+=== 2026-11-05T21:32:48+01:00 the interpreter and libraries alone
+imports only, peak RSS MiB: 61.5
+=== 2026-11-05T21:32:48+01:00 rows per date, with ten dates
+d1m: cold, 0 of 103 MiB resident
+[I 2026-11-05 21:32:48,853] A new study created in memory with name: no-name-a5155e1a-573e-4a97-a466-d27f8c1d8b7c
+[I 2026-11-05 21:32:56,560] Trial 0 finished with value: 0.5088834975078251 and parameters: {}. Best is trial 0 with value: 0.5088834975078251.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 1000000, "days": 10, "total_rows": 10000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 102.5782642364502, "started_at": "2026-11-05T21:32:48", "seconds": 12.107044207004947, "other_cpu_seconds": 1.9, "peak_rss_mib": 561.95703125, "test_r2": 0.5173205306132167, "test_n": 1993054, "coef": [-1.0041885726370587, -0.01776633893710213], "intercept": 0.11404175785022401}
+d2m: cold, 0 of 205 MiB resident
+[I 2026-11-05 21:33:01,340] A new study created in memory with name: no-name-6581834c-3a81-4ceb-a133-13427a64d3b1
+[I 2026-11-05 21:33:16,172] Trial 0 finished with value: 0.5037189664012064 and parameters: {}. Best is trial 0 with value: 0.5037189664012064.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 2000000, "days": 10, "total_rows": 20000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 204.86735916137695, "started_at": "2026-11-05T21:33:01", "seconds": 23.852734792002593, "other_cpu_seconds": 1.4, "peak_rss_mib": 635.90234375, "test_r2": 0.5039200528346623, "test_n": 3986110, "coef": [-1.0013545710986065, -0.002150572887827471], "intercept": 0.042093344418973694}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 21:33:25,544] A new study created in memory with name: no-name-6d6fc26b-1248-4ef7-b95e-fa602e30f713
+[I 2026-11-05 21:33:57,669] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T21:33:25", "seconds": 52.303890276001766, "other_cpu_seconds": 19.3, "peak_rss_mib": 678.0234375, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404414, -0.00289276647274491], "intercept": 0.0199387134311885}
+d6m: cold, 0 of 614 MiB resident
+[I 2026-11-05 21:34:18,196] A new study created in memory with name: no-name-a991813a-6f1d-4139-bb71-87e4a7b3fbf2
+[I 2026-11-05 21:35:10,047] Trial 0 finished with value: 0.49960530822292154 and parameters: {}. Best is trial 0 with value: 0.49960530822292154.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 6000000, "days": 10, "total_rows": 60000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 613.8004293441772, "started_at": "2026-11-05T21:34:18", "seconds": 82.81933385900629, "other_cpu_seconds": 25.8, "peak_rss_mib": 725.79296875, "test_r2": 0.5024507851451321, "test_n": 11958332, "coef": [-0.9975816810624052, 0.0053956122093105205], "intercept": 0.01833734081256833}
+d8m: cold, 0 of 849 MiB resident
+[I 2026-11-05 21:35:41,418] A new study created in memory with name: no-name-be4a3975-7cb4-40ba-a913-381c61975ecf
+[I 2026-11-05 21:36:54,644] Trial 0 finished with value: 0.5009487425782735 and parameters: {}. Best is trial 0 with value: 0.5009487425782735.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 8000000, "days": 10, "total_rows": 80000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 849.1057863235474, "started_at": "2026-11-05T21:35:41", "seconds": 117.36905277300684, "other_cpu_seconds": 11.4, "peak_rss_mib": 795.44140625, "test_r2": 0.5048610766748005, "test_n": 15944444, "coef": [-1.0011215802836555, -0.0029722972053756033], "intercept": 0.0011645598152391703}
+d10m: cold, 0 of 9,996 MiB resident
+[I 2026-11-05 21:37:39,473] A new study created in memory with name: no-name-62cf626a-9e96-46e3-b0f2-30912a534282
+[I 2026-11-05 21:39:11,865] Trial 0 finished with value: 0.5003708619770809 and parameters: {}. Best is trial 0 with value: 0.5003708619770809.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 10000000, "days": 10, "total_rows": 100000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 999.6065130233765, "started_at": "2026-11-05T21:37:39", "seconds": 149.911059407008, "other_cpu_seconds": 10.5, "peak_rss_mib": 812.77734375, "test_r2": 0.5056748531359543, "test_n": 19930554, "coef": [-0.9992988943846892, 0.004372129249009997], "intercept": 0.0037657059095131135}
+d12m: cold, 0 of 1,189 MiB resident
+[I 2026-11-05 21:40:09,881] A new study created in memory with name: no-name-90e62a8f-46a9-4406-a318-5d038af48189
+[I 2026-11-05 21:42:05,703] Trial 0 finished with value: 0.5025044356718654 and parameters: {}. Best is trial 0 with value: 0.5025044356718654.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 12000000, "days": 10, "total_rows": 120000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1189.2102842330933, "started_at": "2026-11-05T21:40:09", "seconds": 187.4836139819963, "other_cpu_seconds": 20.8, "peak_rss_mib": 915.796875, "test_r2": 0.5017848091796548, "test_n": 23916666, "coef": [-1.002817607360217, -0.001648818399834656], "intercept": 0.0035464607240286677}
+d16m: cold, 0 of 1,661 MiB resident
+[I 2026-11-05 21:43:17,872] A new study created in memory with name: no-name-1f1196c3-81d5-4b49-8c23-2a6a40db4d4f
+[I 2026-11-05 21:46:05,575] Trial 0 finished with value: 0.4992881467164861 and parameters: {}. Best is trial 0 with value: 0.4992881467164861.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 16000000, "days": 10, "total_rows": 160000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1661.3440046310425, "started_at": "2026-11-05T21:43:17", "seconds": 273.62541553299525, "other_cpu_seconds": 14.1, "peak_rss_mib": 958.20703125, "test_r2": 0.5003033802909165, "test_n": 31888888, "coef": [-0.9990424685194077, -0.004702417511727903], "intercept": 0.007381377782459337}
+d20m: cold, 0 of 1,941 MiB resident
+[I 2026-11-05 21:47:52,059] A new study created in memory with name: no-name-36137a91-8823-47b5-aee7-e70073eecee8
+[I 2026-11-05 21:51:29,751] Trial 0 finished with value: 0.49942534990654663 and parameters: {}. Best is trial 0 with value: 0.49942534990654663.
+======== training done.
+{"tag": "density", "mode": "stream", "rows": 20000000, "days": 10, "total_rows": 200000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1941.0899677276611, "started_at": "2026-11-05T21:47:52", "seconds": 356.42457582200586, "other_cpu_seconds": 90.3, "peak_rss_mib": 956.58984375, "test_r2": 0.5007489309650225, "test_n": 39861110, "coef": [-0.9994784187206793, -0.005081265816970034], "intercept": 0.006779170790760854}
+=== 2026-11-05T21:53:48+01:00 the same job with its files out of the page cache and in it
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 21:53:48,995] A new study created in memory with name: no-name-bf7ac140-0c40-4da6-8ece-d3ac0697f59a
+[I 2026-11-05 21:54:22,211] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "cache", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T21:53:48", "seconds": 52.694190531008644, "other_cpu_seconds": 12.9, "peak_rss_mib": 694.7109375, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.00289276647274491], "intercept": 0.01993871343118851}
+d4m: warm, 3,683 of 3,683 MiB resident
+[I 2026-11-05 21:54:46,227] A new study created in memory with name: no-name-9ed2467d-9950-4879-8827-cbe15bd064ad
+[I 2026-11-05 21:55:18,230] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "cache", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "warm", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T21:54:46", "seconds": 51.293812179996166, "other_cpu_seconds": 12.8, "peak_rss_mib": 535.6171875, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404414, -0.00289276647274491], "intercept": 0.0199387134311885}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 21:55:37,862] A new study created in memory with name: no-name-4e7795cf-8d42-42ed-a23f-1843c71a9328
+[I 2026-11-05 21:56:10,086] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "cache", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T21:55:37", "seconds": 51.14206579698657, "other_cpu_seconds": 1.9, "peak_rss_mib": 680.25, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.002892766472744868], "intercept": 0.01993871343118852}
+d4m: warm, 3,683 of 3,683 MiB resident
+[I 2026-11-05 21:56:33,478] A new study created in memory with name: no-name-61840090-f3c9-4ba1-8fc2-b12e9ef14895
+[I 2026-11-05 21:57:05,276] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "cache", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "warm", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T21:56:33", "seconds": 51.11646955399192, "other_cpu_seconds": 2.1, "peak_rss_mib": 531.0234375, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404414, -0.00289276647274491], "intercept": 0.019938713431188502}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 21:57:24,925] A new study created in memory with name: no-name-060ed49d-59bb-4e9d-af84-47867f6c3af9
+[I 2026-11-05 21:57:57,086] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "cache", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T21:57:24", "seconds": 52.04169734999596, "other_cpu_seconds": 6.9, "peak_rss_mib": 697.25, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404414, -0.00289276647274491], "intercept": 0.0199387134311885}
+d4m: warm, 3,683 of 3,683 MiB resident
+[I 2026-11-05 21:58:21,460] A new study created in memory with name: no-name-6b0dd3f2-e2bf-4d8b-bac2-05bf3084d187
+[I 2026-11-05 21:58:52,137] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "cache", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "warm", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T21:58:21", "seconds": 49.497656494990224, "other_cpu_seconds": 6.7, "peak_rss_mib": 524.45703125, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.00289276647274491], "intercept": 0.019938713431188533}
+=== 2026-11-05T21:59:11+01:00 number of dates, streamed and materialized
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 21:59:11,315] A new study created in memory with name: no-name-23c942b1-effc-4d33-8a71-2951d8845c22
+[I 2026-11-05 21:59:28,328] Trial 0 finished with value: 0.5001108702282425 and parameters: {}. Best is trial 0 with value: 0.5001108702282425.
+======== training done.
+{"tag": "scale", "mode": "stream", "rows": 4000000, "days": 5, "total_rows": 20000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 204.5949306488037, "started_at": "2026-11-05T21:59:11", "seconds": 26.83333769100136, "other_cpu_seconds": 2.4, "peak_rss_mib": 669.96484375, "test_r2": 0.5046138370314405, "test_n": 3986111, "coef": [-0.9969762820622811, -0.006165172142673643], "intercept": 0.06652231986028055}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 21:59:38,475] A new study created in memory with name: no-name-ffb3e10b-629f-42cc-8931-df74810d18c4
+[I 2026-11-05 21:59:48,168] Trial 0 finished with value: 0.5001108702282425 and parameters: {}. Best is trial 0 with value: 0.5001108702282425.
+======== training done.
+{"tag": "scale", "mode": "materialize", "rows": 4000000, "days": 5, "total_rows": 20000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 204.5949306488037, "started_at": "2026-11-05T21:59:38", "seconds": 17.016181127997697, "other_cpu_seconds": 2.0, "peak_rss_mib": 1589.3671875, "test_r2": 0.5046138370314406, "test_n": 3986111, "coef": [-0.9969762820622808, -0.006165172142673511], "intercept": 0.06652231986028051}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 21:59:55,867] A new study created in memory with name: no-name-d4f72ace-3c1b-4af9-98e0-78f6c1bdad6e
+[I 2026-11-05 22:00:28,061] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "scale", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T21:59:55", "seconds": 51.704078798007686, "other_cpu_seconds": 0.3, "peak_rss_mib": 687.16015625, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.0028927664727449514], "intercept": 0.019938713431188505}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:00:47,898] A new study created in memory with name: no-name-e86a8523-3925-4153-a755-e7575216374b
+[I 2026-11-05 22:01:07,407] Trial 0 finished with value: 0.5030201841751136 and parameters: {}. Best is trial 0 with value: 0.5030201841751136.
+======== training done.
+{"tag": "scale", "mode": "materialize", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:00:47", "seconds": 33.67208721500356, "other_cpu_seconds": 5.3, "peak_rss_mib": 2423.29296875, "test_r2": 0.5083425401423356, "test_n": 7972222, "coef": [-0.9999209985404407, -0.002892766472745036], "intercept": 0.019938713431188505}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:01:22,079] A new study created in memory with name: no-name-e223a343-b66e-4c18-9a2a-902ec2fe8bf4
+[I 2026-11-05 22:02:28,121] Trial 0 finished with value: 0.5057120358269532 and parameters: {}. Best is trial 0 with value: 0.5057120358269532.
+======== training done.
+{"tag": "scale", "mode": "stream", "rows": 4000000, "days": 20, "total_rows": 80000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 818.3753185272217, "started_at": "2026-11-05T22:01:22", "seconds": 105.87270136100415, "other_cpu_seconds": 33.4, "peak_rss_mib": 689.78125, "test_r2": 0.5010798586349915, "test_n": 15944444, "coef": [-1.0022805505548316, -0.002095480011671218], "intercept": 0.005519490636461586}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:03:08,292] A new study created in memory with name: no-name-55193b3d-f89e-4e90-b5da-c96ff1963cc6
+[I 2026-11-05 22:03:47,480] Trial 0 finished with value: 0.5057120358269533 and parameters: {}. Best is trial 0 with value: 0.5057120358269533.
+======== training done.
+{"tag": "scale", "mode": "materialize", "rows": 4000000, "days": 20, "total_rows": 80000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 818.3753185272217, "started_at": "2026-11-05T22:03:08", "seconds": 67.94212365400745, "other_cpu_seconds": 49.6, "peak_rss_mib": 4200.41796875, "test_r2": 0.5010798586349912, "test_n": 15944444, "coef": [-1.0022805505548307, -0.002095480011671417], "intercept": 0.0055194906364615815}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:04:16,791] A new study created in memory with name: no-name-75f9b75a-99c2-4e8a-9743-037d0432954d
+[I 2026-11-05 22:05:54,674] Trial 0 finished with value: 0.5017732001629318 and parameters: {}. Best is trial 0 with value: 0.5017732001629318.
+======== training done.
+{"tag": "scale", "mode": "stream", "rows": 4000000, "days": 30, "total_rows": 120000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1227.6121263504028, "started_at": "2026-11-05T22:04:16", "seconds": 156.82227632199647, "other_cpu_seconds": 23.7, "peak_rss_mib": 726.02734375, "test_r2": 0.5016227752169511, "test_n": 23916666, "coef": [-1.0007457008292346, -0.0024306074177271055], "intercept": 0.003594664626367612}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:06:53,954] A new study created in memory with name: no-name-1f666311-f205-4e96-a7db-4f0cc7c1e256
+[I 2026-11-05 22:07:52,515] Trial 0 finished with value: 0.5017732001629317 and parameters: {}. Best is trial 0 with value: 0.5017732001629317.
+======== training done.
+{"tag": "scale", "mode": "materialize", "rows": 4000000, "days": 30, "total_rows": 120000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1227.6121263504028, "started_at": "2026-11-05T22:06:53", "seconds": 100.72878095599299, "other_cpu_seconds": -0.0, "peak_rss_mib": 6128.51171875, "test_r2": 0.5016227752169515, "test_n": 23916666, "coef": [-1.0007457008292346, -0.002430607417727106], "intercept": 0.0035946646263676036}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:08:35,337] A new study created in memory with name: no-name-7b672174-b3d8-4b1e-9a1f-a7c6e7ed5043
+[I 2026-11-05 22:11:45,885] Trial 0 finished with value: 0.5011321604612672 and parameters: {}. Best is trial 0 with value: 0.5011321604612672.
+======== training done.
+{"tag": "scale", "mode": "stream", "rows": 4000000, "days": 60, "total_rows": 240000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 2455.1884632110596, "started_at": "2026-11-05T22:08:35", "seconds": 308.44933296900126, "other_cpu_seconds": 18.8, "peak_rss_mib": 729.97265625, "test_r2": 0.5010318680873774, "test_n": 47833332, "coef": [-0.9991491884646438, -0.000687762372633252], "intercept": -0.008072566038867718}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:13:44,191] A new study created in memory with name: no-name-66911361-64bd-4ec6-95c7-6b42f27080bd
+[I 2026-11-05 22:15:41,816] Trial 0 finished with value: 0.5011321604612676 and parameters: {}. Best is trial 0 with value: 0.5011321604612676.
+======== training done.
+{"tag": "scale", "mode": "materialize", "rows": 4000000, "days": 60, "total_rows": 240000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 2455.1884632110596, "started_at": "2026-11-05T22:13:44", "seconds": 201.88646109799447, "other_cpu_seconds": 14.4, "peak_rss_mib": 11960.8984375, "test_r2": 0.5010318680873773, "test_n": 47833332, "coef": [-0.9991491884646432, -0.0006877623726333506], "intercept": -0.008072566038867707}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:17:07,008] A new study created in memory with name: no-name-bf9f5f02-1886-4072-adaf-941d4be3a1a9
+[I 2026-11-05 22:22:00,718] Trial 0 finished with value: 0.5017237437856152 and parameters: {}. Best is trial 0 with value: 0.5017237437856152.
+======== training done.
+{"tag": "scale", "mode": "stream", "rows": 4000000, "days": 90, "total_rows": 360000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 3682.7466373443604, "started_at": "2026-11-05T22:17:06", "seconds": 471.4319994219986, "other_cpu_seconds": 40.4, "peak_rss_mib": 722.015625, "test_r2": 0.5034249876693666, "test_n": 71749998, "coef": [-0.9996415143057853, -0.0017484460511564812], "intercept": 0.005901456461796552}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:24:58,862] A new study created in memory with name: no-name-437e8306-bfc7-423b-baa6-7827856447bc
+[I 2026-11-05 22:28:02,309] Trial 0 finished with value: 0.501723743785615 and parameters: {}. Best is trial 0 with value: 0.501723743785615.
+======== training done.
+{"tag": "scale", "mode": "materialize", "rows": 4000000, "days": 90, "total_rows": 360000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 3682.7466373443604, "started_at": "2026-11-05T22:24:58", "seconds": 312.5077021270117, "other_cpu_seconds": 11.4, "peak_rss_mib": 16528.60546875, "test_r2": 0.5034249876693655, "test_n": 71749998, "coef": [-0.9996415143057851, -0.0017484460511564448], "intercept": 0.005901456461796543}
+=== 2026-11-05T22:30:12+01:00 three repeats of one job, for run-to-run spread
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:30:12,828] A new study created in memory with name: no-name-1f69e471-4cde-4b58-971e-0901d66bc2d9
+[I 2026-11-05 22:31:50,139] Trial 0 finished with value: 0.5017732001629318 and parameters: {}. Best is trial 0 with value: 0.5017732001629318.
+======== training done.
+{"tag": "repeat", "mode": "stream", "rows": 4000000, "days": 30, "total_rows": 120000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1227.6121263504028, "started_at": "2026-11-05T22:30:12", "seconds": 155.25309396100056, "other_cpu_seconds": -3.4, "peak_rss_mib": 719.19140625, "test_r2": 0.5016227752169511, "test_n": 23916666, "coef": [-1.0007457008292344, -0.002430607417727157], "intercept": 0.0035946646263676192}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:32:48,488] A new study created in memory with name: no-name-78a4958a-1ad1-4a97-8b19-0a5ce2a279fd
+[I 2026-11-05 22:34:26,529] Trial 0 finished with value: 0.5017732001629318 and parameters: {}. Best is trial 0 with value: 0.5017732001629318.
+======== training done.
+{"tag": "repeat", "mode": "stream", "rows": 4000000, "days": 30, "total_rows": 120000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1227.6121263504028, "started_at": "2026-11-05T22:32:48", "seconds": 156.88370341599511, "other_cpu_seconds": 34.8, "peak_rss_mib": 712.4375, "test_r2": 0.5016227752169511, "test_n": 23916666, "coef": [-1.0007457008292344, -0.002430607417727157], "intercept": 0.0035946646263676084}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:35:25,710] A new study created in memory with name: no-name-bec50b39-2586-4f56-bb01-ba2bd08e15c9
+[I 2026-11-05 22:37:03,859] Trial 0 finished with value: 0.5017732001629318 and parameters: {}. Best is trial 0 with value: 0.5017732001629318.
+======== training done.
+{"tag": "repeat", "mode": "stream", "rows": 4000000, "days": 30, "total_rows": 120000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1227.6121263504028, "started_at": "2026-11-05T22:35:25", "seconds": 156.24241286999313, "other_cpu_seconds": 22.9, "peak_rss_mib": 702.71875, "test_r2": 0.5016227752169511, "test_n": 23916666, "coef": [-1.0007457008292344, -0.0024306074177271055], "intercept": 0.003594664626367608}
+=== 2026-11-05T22:38:01+01:00 batch size, with a budget of at least three generous batches
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:38:02,325] A new study created in memory with name: no-name-092b073c-14d2-4506-adb5-b52146e64dc6
+[I 2026-11-05 22:39:32,431] Trial 0 finished with value: 0.5030201841751136 and parameters: {}. Best is trial 0 with value: 0.5030201841751136.
+======== training done.
+{"tag": "batch", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 25000, "buffer_mib": 64.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:38:02", "seconds": 142.66897719299595, "other_cpu_seconds": 6.0, "peak_rss_mib": 574.78125, "test_r2": 0.5083425401423346, "test_n": 7972222, "coef": [-0.9999209985404415, -0.0028927664727451258], "intercept": 0.019938713431188457}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:40:25,323] A new study created in memory with name: no-name-b1449b85-5d1b-4e92-bbb4-a26fdaad9e54
+[I 2026-11-05 22:41:17,780] Trial 0 finished with value: 0.5030201841751136 and parameters: {}. Best is trial 0 with value: 0.5030201841751136.
+======== training done.
+{"tag": "batch", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 50000, "buffer_mib": 64.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:40:25", "seconds": 82.84276183199836, "other_cpu_seconds": 1.4, "peak_rss_mib": 631.53515625, "test_r2": 0.5083425401423354, "test_n": 7972222, "coef": [-0.999920998540441, -0.0028927664727449107], "intercept": 0.019938713431188505}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:41:48,529] A new study created in memory with name: no-name-edacd632-2234-4706-b903-ef02d83bf5ff
+[I 2026-11-05 22:42:20,936] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "batch", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:41:48", "seconds": 51.20045790600125, "other_cpu_seconds": 1.2, "peak_rss_mib": 684.578125, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.002892766472744952], "intercept": 0.01993871343118853}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:42:40,057] A new study created in memory with name: no-name-b8dc0c95-6a6e-48fd-8d42-e67fa3fd564c
+[I 2026-11-05 22:43:01,636] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "batch", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 200000, "buffer_mib": 69.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:42:40", "seconds": 34.886893938004505, "other_cpu_seconds": 3.7, "peak_rss_mib": 722.07421875, "test_r2": 0.5083425401423356, "test_n": 7972222, "coef": [-0.9999209985404415, -0.002892766472744784], "intercept": 0.01993871343118848}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:43:15,276] A new study created in memory with name: no-name-407c6c66-11cf-4adc-bed0-56e6df7a6ac7
+[I 2026-11-05 22:43:31,895] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "batch", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 400000, "buffer_mib": 137.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:43:15", "seconds": 27.534317208992434, "other_cpu_seconds": 5.3, "peak_rss_mib": 926.765625, "test_r2": 0.5083425401423355, "test_n": 7972222, "coef": [-0.9999209985404406, -0.002892766472745164], "intercept": 0.01993871343118852}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:43:43,146] A new study created in memory with name: no-name-37411791-23c9-4ff9-b700-5e6f387aca06
+[I 2026-11-05 22:43:58,455] Trial 0 finished with value: 0.5030201841751138 and parameters: {}. Best is trial 0 with value: 0.5030201841751138.
+======== training done.
+{"tag": "batch", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 800000, "buffer_mib": 275.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:43:43", "seconds": 25.632098103000317, "other_cpu_seconds": 10.1, "peak_rss_mib": 1187.03515625, "test_r2": 0.5083425401423354, "test_n": 7972222, "coef": [-0.9999209985404409, -0.0028927664727451223], "intercept": 0.019938713431188495}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:44:09,119] A new study created in memory with name: no-name-f90e1a35-e6e2-4716-951c-269cc8ea2d10
+[I 2026-11-05 22:44:23,118] Trial 0 finished with value: 0.5030201841751136 and parameters: {}. Best is trial 0 with value: 0.5030201841751136.
+======== training done.
+{"tag": "batch", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 1600000, "buffer_mib": 549.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:44:09", "seconds": 23.644356010001502, "other_cpu_seconds": 3.9, "peak_rss_mib": 1599.10546875, "test_r2": 0.5083425401423356, "test_n": 7972222, "coef": [-0.9999209985404405, -0.0028927664727452047], "intercept": 0.019938713431188495}
+=== 2026-11-05T22:44:32+01:00 prefetch budget
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:44:33,096] A new study created in memory with name: no-name-f6511b76-4710-4d01-86a8-8ad2a9278094
+[I 2026-11-05 22:45:10,011] Trial 0 finished with value: 0.5030201841751136 and parameters: {}. Best is trial 0 with value: 0.5030201841751136.
+======== training done.
+{"tag": "buffer", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 16.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:44:33", "seconds": 60.31839585000125, "other_cpu_seconds": 1.9, "peak_rss_mib": 656.7578125, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404411, -0.0028927664727446574], "intercept": 0.01993871343118845}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:45:33,735] A new study created in memory with name: no-name-c6d71cb3-4ea8-41bf-82f1-f05b7ad98437
+[I 2026-11-05 22:46:06,375] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "buffer", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 32.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:45:33", "seconds": 52.47356877000129, "other_cpu_seconds": 19.2, "peak_rss_mib": 686.20703125, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.002892766472744868], "intercept": 0.019938713431188523}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:46:26,535] A new study created in memory with name: no-name-e92477a8-fe52-40a4-b503-d5c599351bb1
+[I 2026-11-05 22:46:58,903] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "buffer", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:46:26", "seconds": 51.50195705400256, "other_cpu_seconds": 5.7, "peak_rss_mib": 687.12109375, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404414, -0.00289276647274491], "intercept": 0.019938713431188516}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:47:18,387] A new study created in memory with name: no-name-92695453-44b5-469d-8b9f-c14e9685fc1d
+[I 2026-11-05 22:47:50,131] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "buffer", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 128.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:47:18", "seconds": 51.185485191002954, "other_cpu_seconds": 0.9, "peak_rss_mib": 686.37890625, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.002892766472744868], "intercept": 0.019938713431188526}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:48:09,911] A new study created in memory with name: no-name-d2a3491d-e413-4083-ac88-e1f71b54ef39
+[I 2026-11-05 22:48:42,195] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "buffer", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 256.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:48:09", "seconds": 51.81006748499931, "other_cpu_seconds": 6.0, "peak_rss_mib": 689.14453125, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404414, -0.00289276647274491], "intercept": 0.0199387134311885}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:49:02,072] A new study created in memory with name: no-name-5b710429-a7ff-4a64-825e-a7149eacf22f
+[I 2026-11-05 22:49:34,674] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "buffer", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 512.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:49:02", "seconds": 52.005357709000236, "other_cpu_seconds": 2.9, "peak_rss_mib": 682.1875, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.00289276647274491], "intercept": 0.01993871343118852}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:49:54,392] A new study created in memory with name: no-name-80a14c7f-00f7-42fd-a691-ec66ed7da6c3
+[I 2026-11-05 22:50:26,448] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "buffer", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 1024.0, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:49:54", "seconds": 51.27510694900411, "other_cpu_seconds": -0.7, "peak_rss_mib": 688.74609375, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404415, -0.002892766472744868], "intercept": 0.019938713431188505}
+=== 2026-11-05T22:50:45+01:00 workers
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:50:45,990] A new study created in memory with name: no-name-855652aa-57ab-48e0-80f5-5b2af81ed6dc
+[I 2026-11-05 22:51:23,690] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "workers", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 1, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:50:45", "seconds": 60.65949158099829, "other_cpu_seconds": -0.0, "peak_rss_mib": 579.81640625, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404407, -0.002892766472745036], "intercept": 0.019938713431188505}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:51:47,002] A new study created in memory with name: no-name-20661f48-49ca-4cc8-a9ea-ec54540a6002
+[I 2026-11-05 22:52:19,072] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "workers", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:51:46", "seconds": 51.23174852599914, "other_cpu_seconds": 2.4, "peak_rss_mib": 677.48828125, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404414, -0.00289276647274491], "intercept": 0.01993871343118852}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:52:38,562] A new study created in memory with name: no-name-12f3a946-8ef8-4633-928f-119cc674a452
+[I 2026-11-05 22:53:10,388] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "workers", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 4, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:52:38", "seconds": 50.84062973399705, "other_cpu_seconds": 3.1, "peak_rss_mib": 871.1640625, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404411, -0.0028927664727450343], "intercept": 0.019938713431188547}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:53:29,731] A new study created in memory with name: no-name-0d2476d7-079b-4d1d-aa1e-91c6b04fac6e
+[I 2026-11-05 22:54:01,710] Trial 0 finished with value: 0.5030201841751137 and parameters: {}. Best is trial 0 with value: 0.5030201841751137.
+======== training done.
+{"tag": "workers", "mode": "stream", "rows": 4000000, "days": 10, "total_rows": 40000000, "batch": 100000, "buffer_mib": 64, "workers": 8, "page_cache": "cold", "disk_mib": 409.19313049316406, "started_at": "2026-11-05T22:53:29", "seconds": 51.095043973007705, "other_cpu_seconds": 1.5, "peak_rss_mib": 1125.0859375, "test_r2": 0.5083425401423352, "test_n": 7972222, "coef": [-0.9999209985404414, -0.002892766472744911], "intercept": 0.019938713431188523}
+=== 2026-11-05T22:54:20+01:00 a budget too small to make progress
+exit status 1 after 0.3 s
+=== 2026-11-05T22:54:21+01:00 the same job under a hard limit of 1 GiB, with swap disabled
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:54:21,519] A new study created in memory with name: no-name-a7bb489a-e02c-4f61-8df7-b2a1a0ac0dc4
+[I 2026-11-05 22:55:58,843] Trial 0 finished with value: 0.5017732001629318 and parameters: {}. Best is trial 0 with value: 0.5017732001629318.
+======== training done.
+{"tag": "cap", "mode": "stream", "rows": 4000000, "days": 30, "total_rows": 120000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 1227.6121263504028, "started_at": "2026-11-05T22:54:21", "seconds": 156.8496846449998, "other_cpu_seconds": -0.1, "peak_rss_mib": 731.90625, "test_r2": 0.5016227752169511, "test_n": 23916666, "coef": [-1.0007457008292344, -0.002430607417727157], "intercept": 0.003594664626367612}
+streamed run exit status 0
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 22:56:58,822] A new study created in memory with name: no-name-dcd690a1-1106-4ae1-b251-c959ff6c0ebf
+materialized run exit status 247 (247 is -9, SIGKILL, as sample_rss.py passes it on)
+=== 2026-11-05T22:57:19+01:00 one billion rows under the same limit
+d10m: cold, 0 of 9,996 MiB resident
+[I 2026-11-05 22:57:19,962] A new study created in memory with name: no-name-01a1bbf3-4bf7-455a-9755-128eeeb318fd
+[I 2026-11-05 23:13:37,164] Trial 0 finished with value: 0.5013827313097798 and parameters: {}. Best is trial 0 with value: 0.5013827313097798.
+======== training done.
+{"tag": "billion", "mode": "stream", "rows": 10000000, "days": 100, "total_rows": 1000000000, "batch": 100000, "buffer_mib": 64, "workers": 2, "page_cache": "cold", "disk_mib": 9996.065818786621, "started_at": "2026-11-05T22:57:19", "seconds": 1579.5266079050052, "other_cpu_seconds": 182.2, "peak_rss_mib": 812.99609375, "test_r2": 0.5010724456981579, "test_n": 199305540, "coef": [-1.0012122157895131, 0.00038592730234536705], "intercept": 0.015047256460987745}
+billion-row run exit status 0
+=== 2026-11-05T23:23:39+01:00 gradient boosting, in core and with external memory
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 23:23:40,009] A new study created in memory with name: no-name-c8a04d51-406b-4281-b0a7-14081aff0e35
+[I 2026-11-05 23:25:53,778] Trial 0 finished with value: 0.5003819137000165 and parameters: {'max_depth': 4}. Best is trial 0 with value: 0.5003819137000165.
+======== training done.
+{"tag": "xgb", "mode": "in-core", "days": 10, "total_rows": 40000000, "started_at": "2026-11-05T23:23:39", "seconds": 219.3142269289965, "other_cpu_seconds": 31.3, "peak_rss_mib": 2351.54296875, "test_r2": 0.5013070853971695}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 23:27:20,032] A new study created in memory with name: no-name-1481e60c-14b2-4f91-85a6-28d976d0ceec
+[I 2026-11-05 23:30:49,454] Trial 0 finished with value: 0.5003819137000165 and parameters: {'max_depth': 4}. Best is trial 0 with value: 0.5003819137000165.
+======== training done.
+{"tag": "xgb", "mode": "external", "days": 10, "total_rows": 40000000, "started_at": "2026-11-05T23:27:20", "seconds": 353.69585442199605, "other_cpu_seconds": 61.5, "peak_rss_mib": 1849.1328125, "test_r2": 0.5013070853971695}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 23:33:14,408] A new study created in memory with name: no-name-8373396b-8f53-4949-86f8-cb0173645d28
+[I 2026-11-05 23:40:05,168] Trial 0 finished with value: 0.4988075888697184 and parameters: {'max_depth': 4}. Best is trial 0 with value: 0.4988075888697184.
+======== training done.
+{"tag": "xgb", "mode": "in-core", "days": 30, "total_rows": 120000000, "started_at": "2026-11-05T23:33:14", "seconds": 702.2991896369931, "other_cpu_seconds": 1086.5, "peak_rss_mib": 5836.67578125, "test_r2": 0.49689806997302566}
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-05 23:44:57,423] A new study created in memory with name: no-name-7f92b3db-2989-43b8-b339-55cdacfe2fcf
+[I 2026-11-05 23:57:12,476] Trial 0 finished with value: 0.4988075888697184 and parameters: {'max_depth': 4}. Best is trial 0 with value: 0.4988075888697184.
+======== training done.
+{"tag": "xgb", "mode": "external", "days": 30, "total_rows": 120000000, "started_at": "2026-11-05T23:44:57", "seconds": 1154.6235479640018, "other_cpu_seconds": 3515.9, "peak_rss_mib": 4839.4140625, "test_r2": 0.49689806997302566}
+=== 2026-11-06T00:04:12+01:00 gradient boosting under the 1 GiB limit, 40 million rows
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-06 00:04:13,067] A new study created in memory with name: no-name-1d236594-5abe-47e1-be8d-ac92e0a4bccc
+in-core boosting exit status 247
+d4m: cold, 0 of 3,683 MiB resident
+[I 2026-11-06 00:05:02,080] A new study created in memory with name: no-name-655265b5-ea5d-43a3-946d-9ae25851c779
+external-memory boosting exit status 247
+=== 2026-11-06T00:07:11+01:00 done

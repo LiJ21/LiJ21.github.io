@@ -1,0 +1,363 @@
+=== 2026-11-06T05:38:05+01:00 the GardenPipe example, at its default batch of 20,000 rows
+prepared data is cached in both/data/jena (use --force to rebuild)
+[I 2026-11-06 05:38:05,919] A new study created in memory with name: no-name-dcd36f66-abd2-4b4a-b703-9e59aefbfed3
+[I 2026-11-06 05:38:09,644] Trial 0 finished with value: 2.531440845343673 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.531440845343673.
+[I 2026-11-06 05:38:10,097] Trial 1 finished with value: 2.4810634798666733 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 2.4810634798666733.
+[I 2026-11-06 05:38:10,670] Trial 2 finished with value: 2.481142178115306 and parameters: {'alpha': 1.0}. Best is trial 1 with value: 2.4810634798666733.
+[I 2026-11-06 05:38:11,169] Trial 3 finished with value: 2.4803150943577696 and parameters: {'alpha': 100.0}. Best is trial 3 with value: 2.4803150943577696.
+[I 2026-11-06 05:38:11,725] Trial 4 finished with value: 2.481150087546392 and parameters: {'alpha': 0.1}. Best is trial 3 with value: 2.4803150943577696.
+[I 2026-11-06 05:38:12,292] Trial 5 finished with value: 2.4759040494464526 and parameters: {'alpha': 1000.0}. Best is trial 5 with value: 2.4759040494464526.
+[I 2026-11-06 05:38:14,463] A new study created in memory with name: no-name-3608a9ad-bdf0-40f1-8f45-d174e7dd59ba
+======== training done.
+[I 2026-11-06 05:38:18,401] Trial 0 finished with value: 2.1968448183165594 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.1968448183165594.
+[I 2026-11-06 05:38:18,964] Trial 1 finished with value: 2.119879656666768 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 2.119879656666768.
+[I 2026-11-06 05:38:19,336] Trial 2 finished with value: 2.1187038467445207 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 2.1187038467445207.
+[I 2026-11-06 05:38:19,701] Trial 3 finished with value: 2.121430124744623 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 2.1187038467445207.
+[I 2026-11-06 05:38:20,276] Trial 4 finished with value: 2.1186455509216002 and parameters: {'alpha': 0.1}. Best is trial 4 with value: 2.1186455509216002.
+[I 2026-11-06 05:38:20,835] Trial 5 finished with value: 2.1274270191040263 and parameters: {'alpha': 1000.0}. Best is trial 4 with value: 2.1186455509216002.
+======== training done.
+calendar: alpha=1000, validation RMSE 2.476
+history: alpha=0.1, validation RMSE 2.119
+validation selects the history recipe; 17,377 test issue times
+wrote predictions and run records to both/runs/weather
+# Jena six-hour temperature forecast: test results
+Test years 2015, 2016; 17,377 hourly issue times, 99.5% of all hourly issue times in those years. Every model is scored on the same issue times.
+| Model | MAE (°C) | RMSE (°C) | Bias (°C) | MAE skill | RMSE skill |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Persistence, T(t+6h) = T(t) | 3.256 | 4.295 | +0.001 | +0.0% | +0.0% |
+| Daily persistence, T(t+6h) = T(t-18h) | 2.618 | 3.420 | +0.009 | +19.6% | +20.4% |
+| Ridge, calendar recipe | 1.967 | 2.565 | -0.173 | +39.6% | +40.3% |
+| Ridge, history recipe | 1.704 | 2.210 | -0.091 | +47.7% | +48.6% |
+Skill is `1 - error / persistence error`. Hourly forecast errors are strongly correlated, so these are point estimates, not independent samples.
+wrote metrics.json, report.md, week_winter.html, week_summer.html to both/runs/weather
+=== 2026-11-06T05:38:24+01:00 other batch sizes, and the agreement between them
+[I 2026-11-06 05:38:24,801] A new study created in memory with name: no-name-5e2db7c4-ce33-430b-949c-e2104a8db0dd
+[I 2026-11-06 05:38:32,775] Trial 0 finished with value: 2.531440845343673 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.531440845343673.
+[I 2026-11-06 05:38:34,114] Trial 1 finished with value: 2.4810634798666733 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 2.4810634798666733.
+[I 2026-11-06 05:38:35,541] Trial 2 finished with value: 2.481142178115306 and parameters: {'alpha': 1.0}. Best is trial 1 with value: 2.4810634798666733.
+[I 2026-11-06 05:38:36,961] Trial 3 finished with value: 2.4803150943577696 and parameters: {'alpha': 100.0}. Best is trial 3 with value: 2.4803150943577696.
+[I 2026-11-06 05:38:38,402] Trial 4 finished with value: 2.481150087546392 and parameters: {'alpha': 0.1}. Best is trial 3 with value: 2.4803150943577696.
+[I 2026-11-06 05:38:39,687] Trial 5 finished with value: 2.4759040494464526 and parameters: {'alpha': 1000.0}. Best is trial 5 with value: 2.4759040494464526.
+[I 2026-11-06 05:38:44,314] A new study created in memory with name: no-name-2c9ee005-7502-4e91-a1ea-794d69a720b4
+======== training done.
+[I 2026-11-06 05:38:51,719] Trial 0 finished with value: 2.1968448183165594 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.1968448183165594.
+[I 2026-11-06 05:38:53,025] Trial 1 finished with value: 2.119879656666769 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 2.119879656666769.
+[I 2026-11-06 05:38:54,285] Trial 2 finished with value: 2.1187038467445247 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 2.1187038467445247.
+[I 2026-11-06 05:38:55,701] Trial 3 finished with value: 2.1214301247446223 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 2.1187038467445247.
+[I 2026-11-06 05:38:56,624] Trial 4 finished with value: 2.1186455509216024 and parameters: {'alpha': 0.1}. Best is trial 4 with value: 2.1186455509216024.
+[I 2026-11-06 05:38:57,868] Trial 5 finished with value: 2.1274270191040263 and parameters: {'alpha': 1000.0}. Best is trial 4 with value: 2.1186455509216024.
+======== training done.
+calendar: alpha=1000, validation RMSE 2.476
+history: alpha=0.1, validation RMSE 2.119
+validation selects the history recipe; 17,377 test issue times
+wrote predictions and run records to $PATCHED/weather_5000
+[I 2026-11-06 05:39:05,124] A new study created in memory with name: no-name-32a9d692-c394-4f6a-b16d-a1069c3786be
+[I 2026-11-06 05:39:07,617] Trial 0 finished with value: 2.531440845343673 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.531440845343673.
+[I 2026-11-06 05:39:07,876] Trial 1 finished with value: 2.4810634798666733 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 2.4810634798666733.
+[I 2026-11-06 05:39:08,112] Trial 2 finished with value: 2.481142178115306 and parameters: {'alpha': 1.0}. Best is trial 1 with value: 2.4810634798666733.
+[I 2026-11-06 05:39:08,306] Trial 3 finished with value: 2.4803150943577696 and parameters: {'alpha': 100.0}. Best is trial 3 with value: 2.4803150943577696.
+[I 2026-11-06 05:39:08,517] Trial 4 finished with value: 2.481150087546392 and parameters: {'alpha': 0.1}. Best is trial 3 with value: 2.4803150943577696.
+[I 2026-11-06 05:39:08,740] Trial 5 finished with value: 2.475904049446452 and parameters: {'alpha': 1000.0}. Best is trial 5 with value: 2.475904049446452.
+[I 2026-11-06 05:39:09,940] A new study created in memory with name: no-name-bf3a0c7b-9895-4cb8-93cb-a458b5b28e1a
+======== training done.
+[I 2026-11-06 05:39:12,268] Trial 0 finished with value: 2.19684481831656 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.19684481831656.
+[I 2026-11-06 05:39:12,514] Trial 1 finished with value: 2.1198796566667673 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 2.1198796566667673.
+[I 2026-11-06 05:39:12,722] Trial 2 finished with value: 2.118703846744526 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 2.118703846744526.
+[I 2026-11-06 05:39:12,994] Trial 3 finished with value: 2.121430124744623 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 2.118703846744526.
+[I 2026-11-06 05:39:13,190] Trial 4 finished with value: 2.118645550921609 and parameters: {'alpha': 0.1}. Best is trial 4 with value: 2.118645550921609.
+[I 2026-11-06 05:39:13,402] Trial 5 finished with value: 2.1274270191040263 and parameters: {'alpha': 1000.0}. Best is trial 4 with value: 2.118645550921609.
+======== training done.
+calendar: alpha=1000, validation RMSE 2.476
+history: alpha=0.1, validation RMSE 2.119
+validation selects the history recipe; 17,377 test issue times
+wrote predictions and run records to $PATCHED/weather_1000000
+batch 5000 against 20000, pred_calendar: 17377 forecasts, largest gap 7.105e-15 degrees C
+batch 5000 against 20000, pred_history: 17377 forecasts, largest gap 4.036e-12 degrees C
+batch 1000000 against 20000, pred_calendar: 17377 forecasts, largest gap 7.105e-15 degrees C
+batch 1000000 against 20000, pred_history: 17377 forecasts, largest gap 5.425e-12 degrees C
+=== 2026-11-06T05:39:15+01:00 the same pipeline without GardenPipe
+same issue times: True 17377
+calendar: largest gap 5.418e-06 degC, mean gap 1.255e-06 degC
+history: largest gap 3.992e-07 degC, mean gap 2.630e-08 degC
+=== 2026-11-06T05:39:15+01:00 fit diagnostics
+2009 8723 2.206 1.706
+2010 8730 2.18 1.68
+2011 8730 2.374 1.828
+2012 8754 2.218 1.707
+2013 8724 2.05 1.567
+2014 8685 2.164 1.67
+2015 8727 2.326 1.781
+2016 8650 2.085 1.627
+train RMSE 2.2007402008602615 test RMSE 2.2096181069901486
+persistence {'mae': 3.2562, 'rmse': 4.2947, 'bias': 0.0015, 'r2_level': 0.7132, 'r2_change': -0.0}
+seasonal {'mae': 2.6177, 'rmse': 3.4205, 'bias': 0.009, 'r2_level': 0.8181, 'r2_change': 0.3657, 'corr_change': 0.7263, 'cal_slope': 0.6436, 'cal_intercept': -0.0063}
+calendar {'mae': 1.9665, 'rmse': 2.5645, 'bias': -0.1728, 'r2_level': 0.8977, 'r2_change': 0.6434, 'corr_change': 0.8035, 'cal_slope': 1.0327, 'cal_intercept': 0.1785}
+history {'mae': 1.7045, 'rmse': 2.2096, 'bias': -0.0905, 'r2_level': 0.9241, 'r2_change': 0.7353, 'corr_change': 0.8578, 'cal_slope': 1.003, 'cal_intercept': 0.0908}
+target: mean change -0.001, sd 4.295; sd of level 8.02
+history abs err: median 1.37 p90 3.60 p95 4.45 p99 6.24 max 11.88
+within 1/2/3/5 C:  [0.379, 0.669, 0.841, 0.969]  persistence: [0.24, 0.423, 0.564, 0.773]
+skew -0.076 excess kurt 0.973
+error quantiles 5/25/50/75/95 [-3.77 -1.44 -0.05  1.3   3.4 ]
+error autocorr lag 1h: 0.860 (n=17373)
+error autocorr lag 3h: 0.489 (n=17365)
+error autocorr lag 6h: 0.006 (n=17356)
+error autocorr lag 12h: 0.002 (n=17338)
+error autocorr lag 24h: -0.050 (n=17302)
+error autocorr lag 48h: 0.040 (n=17248)
+error autocorr lag 168h: 0.087 (n=17072)
+mae_hist: 1.638 .. 1.766
+rmse_hist: 2.120 .. 2.291
+skill: 0.442 .. 0.506
+skill_rmse: 0.459 .. 0.508
+hist_minus_cal: -0.319 .. -0.207
+seas_skill: 0.128 .. 0.257
+weeks 106
+shape: (2, 6)
+┌──────┬──────┬──────────┬──────────┬───────────┬──────────┐
+│ y    ┆ n    ┆ mae      ┆ rmse     ┆ bias      ┆ maep     │
+│ ---  ┆ ---  ┆ ---      ┆ ---      ┆ ---       ┆ ---      │
+│ i32  ┆ u32  ┆ f64      ┆ f64      ┆ f64       ┆ f64      │
+╞══════╪══════╪══════════╪══════════╪═══════════╪══════════╡
+│ 2015 ┆ 8727 ┆ 1.78142  ┆ 2.326224 ┆ -0.143555 ┆ 3.383156 │
+│ 2016 ┆ 8650 ┆ 1.626832 ┆ 2.085377 ┆ -0.037026 ┆ 3.128106 │
+└──────┴──────┴──────────┴──────────┴───────────┴──────────┘
+shape: (12, 5)
+┌─────┬──────┬──────┬───────┬──────┐
+│ mo  ┆ n    ┆ mae  ┆ bias  ┆ maep │
+│ --- ┆ ---  ┆ ---  ┆ ---   ┆ ---  │
+│ i8  ┆ u32  ┆ f64  ┆ f64   ┆ f64  │
+╞═════╪══════╪══════╪═══════╪══════╡
+│ 1   ┆ 1440 ┆ 1.64 ┆ -0.18 ┆ 1.66 │
+│ 2   ┆ 1368 ┆ 1.7  ┆ -0.09 ┆ 2.37 │
+│ 3   ┆ 1488 ┆ 1.61 ┆ 0.13  ┆ 2.79 │
+│ 4   ┆ 1440 ┆ 1.87 ┆ -0.13 ┆ 4.17 │
+│ 5   ┆ 1488 ┆ 1.73 ┆ -0.17 ┆ 4.16 │
+│ …   ┆ …    ┆ …    ┆ …     ┆ …    │
+│ 8   ┆ 1488 ┆ 1.93 ┆ -0.52 ┆ 4.68 │
+│ 9   ┆ 1440 ┆ 1.57 ┆ -0.17 ┆ 3.97 │
+│ 10  ┆ 1384 ┆ 1.37 ┆ 0.24  ┆ 2.46 │
+│ 11  ┆ 1440 ┆ 1.61 ┆ -0.2  ┆ 2.31 │
+│ 12  ┆ 1476 ┆ 1.74 ┆ 0.14  ┆ 2.2  │
+└─────┴──────┴──────┴───────┴──────┘
+shape: (24, 4)
+┌─────┬──────┬───────┬──────┐
+│ h   ┆ mae  ┆ bias  ┆ maep │
+│ --- ┆ ---  ┆ ---   ┆ ---  │
+│ i8  ┆ f64  ┆ f64   ┆ f64  │
+╞═════╪══════╪═══════╪══════╡
+│ 0   ┆ 1.45 ┆ 0.48  ┆ 1.86 │
+│ 1   ┆ 1.41 ┆ 0.51  ┆ 1.36 │
+│ 2   ┆ 1.53 ┆ 0.37  ┆ 1.66 │
+│ 3   ┆ 1.79 ┆ 0.07  ┆ 2.61 │
+│ 4   ┆ 1.96 ┆ -0.26 ┆ 3.7  │
+│ …   ┆ …    ┆ …     ┆ …    │
+│ 19  ┆ 1.52 ┆ -0.54 ┆ 3.74 │
+│ 20  ┆ 1.53 ┆ -0.52 ┆ 3.37 │
+│ 21  ┆ 1.48 ┆ -0.32 ┆ 3.09 │
+│ 22  ┆ 1.48 ┆ -0.07 ┆ 2.76 │
+│ 23  ┆ 1.49 ┆ 0.26  ┆ 2.39 │
+└─────┴──────┴───────┴──────┘
+cell bias range: -2.06 .. 1.38; sd of cell means 0.66; share of MSE from month x hour bias: 0.091
+shape: (4, 4)
+┌─────┬─────┬───────────┬─────┐
+│ mo  ┆ h   ┆ b         ┆ n   │
+│ --- ┆ --- ┆ ---       ┆ --- │
+│ i8  ┆ i8  ┆ f64       ┆ u32 │
+╞═════╪═════╪═══════════╪═════╡
+│ 8   ┆ 6   ┆ -2.064618 ┆ 62  │
+│ 8   ┆ 5   ┆ -2.016666 ┆ 62  │
+│ 8   ┆ 7   ┆ -1.734801 ┆ 62  │
+│ 1   ┆ 19  ┆ -1.499526 ┆ 60  │
+└─────┴─────┴───────────┴─────┘
+shape: (4, 4)
+┌─────┬─────┬──────────┬─────┐
+│ mo  ┆ h   ┆ b        ┆ n   │
+│ --- ┆ --- ┆ ---      ┆ --- │
+│ i8  ┆ i8  ┆ f64      ┆ u32 │
+╞═════╪═════╪══════════╪═════╡
+│ 12  ┆ 13  ┆ 1.376759 ┆ 62  │
+│ 4   ┆ 0   ┆ 1.276432 ┆ 60  │
+│ 12  ┆ 12  ┆ 1.20897  ┆ 62  │
+│ 4   ┆ 1   ┆ 1.135309 ┆ 60  │
+└─────┴─────┴──────────┴─────┘
+shape: (20, 5)
+┌─────┬───────┬───────┬─────┬──────┐
+│ bin ┆ pred  ┆ act   ┆ n   ┆ sd   │
+│ --- ┆ ---   ┆ ---   ┆ --- ┆ ---  │
+│ u32 ┆ f64   ┆ f64   ┆ u32 ┆ f64  │
+╞═════╪═══════╪═══════╪═════╪══════╡
+│ 0   ┆ -7.33 ┆ -6.98 ┆ 868 ┆ 2.13 │
+│ 1   ┆ -5.32 ┆ -4.98 ┆ 869 ┆ 2.01 │
+│ 2   ┆ -4.31 ┆ -3.92 ┆ 869 ┆ 2.01 │
+│ 3   ┆ -3.54 ┆ -3.05 ┆ 869 ┆ 1.97 │
+│ 4   ┆ -2.91 ┆ -2.48 ┆ 869 ┆ 2.02 │
+│ …   ┆ …     ┆ …     ┆ …   ┆ …    │
+│ 15  ┆ 2.87  ┆ 2.53  ┆ 869 ┆ 2.19 │
+│ 16  ┆ 3.6   ┆ 3.46  ┆ 869 ┆ 2.44 │
+│ 17  ┆ 4.45  ┆ 4.69  ┆ 869 ┆ 2.85 │
+│ 18  ┆ 5.52  ┆ 6.06  ┆ 869 ┆ 3.16 │
+│ 19  ┆ 7.27  ┆ 8.71  ┆ 868 ┆ 3.38 │
+└─────┴───────┴───────┴─────┴──────┘
+worst
+shape: (12, 6)
+┌─────────────────────┬───────┬────────────┬──────────────┬──────┬───────┐
+│ issue_time          ┆ T_now ┆ T_observed ┆ pred_history ┆ dp   ┆ chg   │
+│ ---                 ┆ ---   ┆ ---        ┆ ---          ┆ ---  ┆ ---   │
+│ datetime[μs]        ┆ f64   ┆ f64        ┆ f64          ┆ f64  ┆ f64   │
+╞═════════════════════╪═══════╪════════════╪══════════════╪══════╪═══════╡
+│ 2015-06-01 07:00:00 ┆ 17.3  ┆ 10.3       ┆ 22.2         ┆ 4.9  ┆ -7.0  │
+│ 2015-09-01 12:00:00 ┆ 28.3  ┆ 16.1       ┆ 27.6         ┆ -0.7 ┆ -12.2 │
+│ 2016-07-02 08:00:00 ┆ 21.2  ┆ 14.4       ┆ 25.6         ┆ 4.4  ┆ -6.8  │
+│ 2015-06-01 09:00:00 ┆ 18.2  ┆ 10.2       ┆ 21.4         ┆ 3.1  ┆ -8.0  │
+│ 2015-06-01 06:00:00 ┆ 17.3  ┆ 11.3       ┆ 22.2         ┆ 5.0  ┆ -6.0  │
+│ …                   ┆ …     ┆ …          ┆ …            ┆ …    ┆ …     │
+│ 2015-03-25 07:00:00 ┆ -1.1  ┆ 15.6       ┆ 5.5          ┆ 6.6  ┆ 16.8  │
+│ 2015-08-06 06:00:00 ┆ 15.0  ┆ 30.8       ┆ 20.8         ┆ 5.8  ┆ 15.9  │
+│ 2015-08-06 05:00:00 ┆ 14.2  ┆ 29.4       ┆ 19.4         ┆ 5.2  ┆ 15.3  │
+│ 2016-07-02 10:00:00 ┆ 21.5  ┆ 14.6       ┆ 24.5         ┆ 2.9  ┆ -6.9  │
+│ 2015-08-14 12:00:00 ┆ 31.5  ┆ 20.8       ┆ 30.6         ┆ -0.9 ┆ -10.7 │
+└─────────────────────┴───────┴────────────┴──────────────┴──────┴───────┘
+worst days [(datetime.date(2015, 6, 1), 4.58), (datetime.date(2015, 7, 7), 4.51), (datetime.date(2015, 4, 14), 4.22), (datetime.date(2015, 8, 6), 3.9), (datetime.date(2015, 3, 25), 3.69), (datetime.date(2016, 5, 23), 3.67)]
+share of total squared error from worst 1%/5% hours: 0.118 0.337
+shape: (11, 6)
+┌─────────────────────┬───────┬────────┬───────┬──────┬───────┐
+│ time                ┆ T     ┆ p      ┆ rh    ┆ wv   ┆ wd    │
+│ ---                 ┆ ---   ┆ ---    ┆ ---   ┆ ---  ┆ ---   │
+│ datetime[μs]        ┆ f64   ┆ f64    ┆ f64   ┆ f64  ┆ f64   │
+╞═════════════════════╪═══════╪════════╪═══════╪══════╪═══════╡
+│ 2015-06-01 04:00:00 ┆ 17.47 ┆ 985.73 ┆ 62.22 ┆ 3.4  ┆ 199.6 │
+│ 2015-06-01 05:00:00 ┆ 17.27 ┆ 985.98 ┆ 65.36 ┆ 5.19 ┆ 211.5 │
+│ 2015-06-01 06:00:00 ┆ 17.26 ┆ 986.56 ┆ 66.32 ┆ 4.1  ┆ 206.1 │
+│ 2015-06-01 07:00:00 ┆ 17.27 ┆ 987.08 ┆ 67.68 ┆ 4.24 ┆ 211.2 │
+│ 2015-06-01 08:00:00 ┆ 15.96 ┆ 987.73 ┆ 81.2  ┆ 2.26 ┆ 217.8 │
+│ …                   ┆ …     ┆ …      ┆ …     ┆ …    ┆ …     │
+│ 2015-06-01 10:00:00 ┆ 12.79 ┆ 989.46 ┆ 88.8  ┆ 2.14 ┆ 234.7 │
+│ 2015-06-01 11:00:00 ┆ 11.32 ┆ 989.96 ┆ 92.8  ┆ 3.48 ┆ 43.65 │
+│ 2015-06-01 12:00:00 ┆ 11.28 ┆ 990.27 ┆ 90.3  ┆ 4.5  ┆ 38.44 │
+│ 2015-06-01 13:00:00 ┆ 10.3  ┆ 990.65 ┆ 92.8  ┆ 3.7  ┆ 28.85 │
+│ 2015-06-01 14:00:00 ┆ 10.4  ┆ 990.92 ┆ 95.3  ┆ 2.28 ┆ 38.71 │
+└─────────────────────┴───────┴────────┴───────┴──────┴───────┘
+=== 2026-11-06T05:39:16+01:00 model comparison
+[I 2026-11-06 05:39:16,807] A new study created in memory with name: no-name-205f85d2-7f46-4c6d-bf28-759933b25ace
+[I 2026-11-06 05:39:19,702] Trial 0 finished with value: 2.105903890606605 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.105903890606605.
+[I 2026-11-06 05:39:20,265] Trial 1 finished with value: 2.0490019896284437 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 2.0490019896284437.
+[I 2026-11-06 05:39:20,670] Trial 2 finished with value: 2.047517686680953 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 2.047517686680953.
+[I 2026-11-06 05:39:21,095] Trial 3 finished with value: 2.0520279369963106 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 2.047517686680953.
+[I 2026-11-06 05:39:21,629] Trial 4 finished with value: 2.047410452970573 and parameters: {'alpha': 0.1}. Best is trial 4 with value: 2.047410452970573.
+[I 2026-11-06 05:39:22,143] Trial 5 finished with value: 2.060106070685574 and parameters: {'alpha': 1000.0}. Best is trial 4 with value: 2.047410452970573.
+[I 2026-11-06 05:39:24,520] A new study created in memory with name: no-name-fa9395aa-515e-4872-aaa5-ae750ee68dc9
+======== training done.
+{"model": "ridge_interactions", "val_rmse": 2.047410452970573, "params": {"alpha": 0.1}, "test_mae": 1.640279993912383, "test_rmse": 2.131795612745255, "bias": -0.08917288755691717, "seconds": 7.743532142005279}
+[I 2026-11-06 05:39:35,530] Trial 0 finished with value: 1.7262011313690708 and parameters: {'max_depth': 7, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.7262011313690708.
+[I 2026-11-06 05:39:46,010] Trial 1 finished with value: 1.7303387807489585 and parameters: {'max_depth': 9, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.7262011313690708.
+[I 2026-11-06 05:40:03,784] Trial 2 finished with value: 1.7266772973835254 and parameters: {'max_depth': 11, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.7262011313690708.
+[I 2026-11-06 05:40:17,004] Trial 3 finished with value: 1.737964485499054 and parameters: {'max_depth': 11, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.7262011313690708.
+[I 2026-11-06 05:40:28,987] Trial 4 finished with value: 1.743927469306616 and parameters: {'max_depth': 5, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.7262011313690708.
+[I 2026-11-06 05:40:38,978] Trial 5 finished with value: 1.7541341407595143 and parameters: {'max_depth': 5, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.7262011313690708.
+[I 2026-11-06 05:40:49,057] Trial 6 finished with value: 1.7346547642357166 and parameters: {'max_depth': 7, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.7262011313690708.
+[I 2026-11-06 05:41:01,030] Trial 7 finished with value: 1.7198694856124768 and parameters: {'max_depth': 9, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 7 with value: 1.7198694856124768.
+[I 2026-11-06 05:41:13,086] Trial 8 finished with value: 1.78291086540472 and parameters: {'max_depth': 3, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 7 with value: 1.7198694856124768.
+[I 2026-11-06 05:41:23,889] Trial 9 finished with value: 1.7763415432535017 and parameters: {'max_depth': 3, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 7 with value: 1.7198694856124768.
+[I 2026-11-06 05:41:30,547] A new study created in memory with name: no-name-99bf0316-c652-41b5-8105-57f562f12d29
+======== training done.
+{"model": "xgb_history", "val_rmse": 1.7198694856124768, "params": {"max_depth": 9, "eta": 0.02, "subsample": 0.8, "colsample_bytree": 0.8}, "test_mae": 1.3329241105663812, "test_rmse": 1.769511703529776, "bias": -0.09602445760084419, "seconds": 126.02408311299223, "rounds": 272, "cv_rounds": [252, 471, 86, 110, 228, 343, 69, 100, 607, 1007, 284, 516, 97, 179, 220, 323, 1383, 3123, 801, 1756]}
+[I 2026-11-06 05:41:41,464] Trial 0 finished with value: 1.719991100137269 and parameters: {'max_depth': 7, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.719991100137269.
+[I 2026-11-06 05:41:52,239] Trial 1 finished with value: 1.7274070154830352 and parameters: {'max_depth': 9, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.719991100137269.
+[I 2026-11-06 05:42:12,015] Trial 2 finished with value: 1.7262611100953276 and parameters: {'max_depth': 11, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.719991100137269.
+[I 2026-11-06 05:42:26,375] Trial 3 finished with value: 1.7348470137328684 and parameters: {'max_depth': 11, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.719991100137269.
+[I 2026-11-06 05:42:37,567] Trial 4 finished with value: 1.732356492310831 and parameters: {'max_depth': 5, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.719991100137269.
+[I 2026-11-06 05:42:48,549] Trial 5 finished with value: 1.735902434681765 and parameters: {'max_depth': 5, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.719991100137269.
+[I 2026-11-06 05:42:59,399] Trial 6 finished with value: 1.7238064082222513 and parameters: {'max_depth': 7, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.719991100137269.
+[I 2026-11-06 05:43:12,587] Trial 7 finished with value: 1.7178773153315858 and parameters: {'max_depth': 9, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 7 with value: 1.7178773153315858.
+[I 2026-11-06 05:43:25,226] Trial 8 finished with value: 1.7594750873368956 and parameters: {'max_depth': 3, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 7 with value: 1.7178773153315858.
+[I 2026-11-06 05:43:36,360] Trial 9 finished with value: 1.754246813738341 and parameters: {'max_depth': 3, 'eta': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 7 with value: 1.7178773153315858.
+======== training done.
+{"model": "xgb_interactions", "val_rmse": 1.7178773153315858, "params": {"max_depth": 9, "eta": 0.02, "subsample": 0.8, "colsample_bytree": 0.8}, "test_mae": 1.3288712760049648, "test_rmse": 1.7678731411230437, "bias": -0.0933548244056451, "seconds": 134.2575028930005, "rounds": 227, "cv_rounds": [251, 450, 80, 98, 188, 279, 89, 122, 544, 899, 372, 280, 96, 258, 187, 267, 1595, 2472, 799, 1444]}
+e: month x hour bias 2015 vs 2016 corr 0.810; repeatable share of MSE (cross-year product) 0.081; total-share within-sample 0.091
+ei: month x hour bias 2015 vs 2016 corr 0.603; repeatable share of MSE (cross-year product) 0.042; total-share within-sample 0.056
+ex: month x hour bias 2015 vs 2016 corr 0.110; repeatable share of MSE (cross-year product) 0.007; total-share within-sample 0.026
+ridge MAE 1.704 RMSE 2.210 r2chg 0.735 slope 1.003 skill 0.477 p95 4.45 within2 0.669 acf1/3/6/24 [0.86, 0.489, 0.006, -0.05]
+ridge+int MAE 1.640 RMSE 2.132 r2chg 0.754 slope 1.002 skill 0.496 p95 4.29 within2 0.691 acf1/3/6/24 [0.859, 0.481, 0.011, -0.019]
+xgb MAE 1.333 RMSE 1.770 r2chg 0.830 slope 1.002 skill 0.591 p95 3.60 within2 0.784 acf1/3/6/24 [0.804, 0.453, 0.006, 0.003]
+xgb MAE reduction vs ridge: 0.218 95% 0.201..0.234
+xgb worse than ridge in n of 24 hours / 12 months: 0 0
+linear: d=18 alpha=0.1 validation RMSE 2.113 test MAE 1.704 test RMSE 2.210
+pairwise products: d=189 alpha=0.1 validation RMSE 1.883 test MAE 1.493 test RMSE 1.949
+random features D=500 gamma=0.05: d=518 alpha=1 validation RMSE 1.809 test MAE 1.420 test RMSE 1.867
+random features D=2000 gamma=0.05: d=2018 alpha=1 validation RMSE 1.752 test MAE 1.360 test RMSE 1.794
+random features D=2000 gamma=0.1: d=2018 alpha=1 validation RMSE 1.771 test MAE 1.379 test RMSE 1.816
+random features D=4000 gamma=0.05: d=4018 alpha=1 validation RMSE 1.733 test MAE 1.346 test RMSE 1.784
+random features D=4000 gamma=0.1: d=4018 alpha=10 validation RMSE 1.753 test MAE 1.377 test RMSE 1.816
+=== 2026-11-06T05:45:24+01:00 time and memory by model
+[I 2026-11-06 05:45:24,955] A new study created in memory with name: no-name-13db6629-8f18-4123-a8cd-99f03a005386
+[I 2026-11-06 05:45:37,111] Trial 0 finished with value: 1.7217352156911936 and parameters: {'max_depth': 9, 'eta': 0.02, 'subsample': 0.8, 'colsample_bytree': 0.8}. Best is trial 0 with value: 1.7217352156911936.
+{"started_at": "2026-11-06T05:45:24", "seconds": 18.71582632100035, "other_cpu_seconds": -0.8, "peak_rss_mib": 493.0546875, "settings": {"_RJEM_MALLOC_CONF": "dirty_decay_ms:500,muzzy_decay_ms:1000"}, "mae": 1.3329241105663812, "rmse": 1.769511703529776}
+[I 2026-11-06 05:45:44,090] A new study created in memory with name: no-name-550c9bb5-d40a-486c-97db-57e10eb4a7ff
+[I 2026-11-06 05:45:47,719] Trial 0 finished with value: 2.1968448183165594 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.1968448183165594.
+[I 2026-11-06 05:45:48,254] Trial 1 finished with value: 2.119879656666769 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 2.119879656666769.
+[I 2026-11-06 05:45:48,776] Trial 2 finished with value: 2.1187038467445243 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 2.1187038467445243.
+[I 2026-11-06 05:45:49,376] Trial 3 finished with value: 2.121430124744623 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 2.1187038467445243.
+[I 2026-11-06 05:45:49,976] Trial 4 finished with value: 2.1186455509216024 and parameters: {'alpha': 0.1}. Best is trial 4 with value: 2.1186455509216024.
+[I 2026-11-06 05:45:50,488] Trial 5 finished with value: 2.1274270191040263 and parameters: {'alpha': 1000.0}. Best is trial 4 with value: 2.1186455509216024.
+======== training done.
+{"D": 0, "gamma": 0.05, "seed": 0, "d": 18, "val_rmse": 2.1186455509216024, "alpha": 0.1, "mae": 1.704468519380721, "rmse": 2.209618106931379, "bias": -0.09052622873069507, "started_at": "2026-11-06T05:45:44", "seconds": 9.113827920999029, "other_cpu_seconds": -0.6, "peak_rss_mib": 249.7421875, "settings": {"_RJEM_MALLOC_CONF": "dirty_decay_ms:500,muzzy_decay_ms:1000"}, "gram_mib": 0.002471923828125, "trials": [[0.1, 2.1186], [1.0, 2.1187], [10.0, 2.1199], [100.0, 2.1214], [1000.0, 2.1274], [10000.0, 2.1968]]}
+[I 2026-11-06 05:45:53,425] A new study created in memory with name: no-name-b1013ece-9101-46a6-8e19-e090df848076
+[I 2026-11-06 05:45:59,390] Trial 0 finished with value: 2.1840686100655424 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.1840686100655424.
+[I 2026-11-06 05:46:00,267] Trial 1 finished with value: 1.8380917881033314 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 1.8380917881033314.
+[I 2026-11-06 05:46:01,082] Trial 2 finished with value: 1.8120863004977315 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 1.8120863004977315.
+[I 2026-11-06 05:46:01,934] Trial 3 finished with value: 1.9507165273257796 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 1.8120863004977315.
+[I 2026-11-06 05:46:02,813] Trial 4 finished with value: 1.8181005537089436 and parameters: {'alpha': 0.1}. Best is trial 2 with value: 1.8120863004977315.
+[I 2026-11-06 05:46:03,686] Trial 5 finished with value: 2.070298257952084 and parameters: {'alpha': 1000.0}. Best is trial 2 with value: 1.8120863004977315.
+======== training done.
+{"D": 500, "gamma": 0.05, "seed": 0, "d": 518, "val_rmse": 1.8120863004977315, "alpha": 1.0, "mae": 1.4196718773296195, "rmse": 1.8667280504663684, "bias": -0.11741292794534378, "started_at": "2026-11-06T05:45:53", "seconds": 14.298786113999086, "other_cpu_seconds": -0.1, "peak_rss_mib": 303.76171875, "settings": {"_RJEM_MALLOC_CONF": "dirty_decay_ms:500,muzzy_decay_ms:1000"}, "gram_mib": 2.047149658203125, "trials": [[0.1, 1.8181], [1.0, 1.8121], [10.0, 1.8381], [100.0, 1.9507], [1000.0, 2.0703], [10000.0, 2.1841]]}
+[I 2026-11-06 05:46:07,923] A new study created in memory with name: no-name-220ce60b-6fb8-4de0-a511-62bbda9dd662
+[I 2026-11-06 05:46:18,526] Trial 0 finished with value: 2.1834224083392915 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.1834224083392915.
+[I 2026-11-06 05:46:20,080] Trial 1 finished with value: 1.7943391223354166 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 1.7943391223354166.
+[I 2026-11-06 05:46:21,565] Trial 2 finished with value: 1.7552180835994018 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 1.7552180835994018.
+[I 2026-11-06 05:46:23,139] Trial 3 finished with value: 1.928956547622338 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 1.7552180835994018.
+[I 2026-11-06 05:46:24,727] Trial 4 finished with value: 1.7685858065273061 and parameters: {'alpha': 0.1}. Best is trial 2 with value: 1.7552180835994018.
+[I 2026-11-06 05:46:26,384] Trial 5 finished with value: 2.068345094368784 and parameters: {'alpha': 1000.0}. Best is trial 2 with value: 1.7552180835994018.
+======== training done.
+{"D": 2000, "gamma": 0.05, "seed": 0, "d": 2018, "val_rmse": 1.7552180835994018, "alpha": 1.0, "mae": 1.359569048230739, "rmse": 1.7938283990431543, "bias": -0.1290402927852179, "started_at": "2026-11-06T05:46:07", "seconds": 26.422478719003266, "other_cpu_seconds": 0.2, "peak_rss_mib": 460.54296875, "settings": {"_RJEM_MALLOC_CONF": "dirty_decay_ms:500,muzzy_decay_ms:1000"}, "gram_mib": 31.069366455078125, "trials": [[0.1, 1.7686], [1.0, 1.7552], [10.0, 1.7943], [100.0, 1.929], [1000.0, 2.0683], [10000.0, 2.1834]]}
+[I 2026-11-06 05:46:34,559] A new study created in memory with name: no-name-411fc691-2e34-44af-beb9-b73827da3143
+[I 2026-11-06 05:46:45,705] Trial 0 finished with value: 2.183737767451147 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.183737767451147.
+[I 2026-11-06 05:46:47,367] Trial 1 finished with value: 1.7929524050802819 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 1.7929524050802819.
+[I 2026-11-06 05:46:49,456] Trial 2 finished with value: 1.7576376396074243 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 1.7576376396074243.
+[I 2026-11-06 05:46:51,145] Trial 3 finished with value: 1.9296516566467847 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 1.7576376396074243.
+[I 2026-11-06 05:46:52,802] Trial 4 finished with value: 1.7813302976334326 and parameters: {'alpha': 0.1}. Best is trial 2 with value: 1.7576376396074243.
+[I 2026-11-06 05:46:54,425] Trial 5 finished with value: 2.067550795446004 and parameters: {'alpha': 1000.0}. Best is trial 2 with value: 1.7576376396074243.
+======== training done.
+{"D": 2000, "gamma": 0.05, "seed": 1, "d": 2018, "val_rmse": 1.7576376396074243, "alpha": 1.0, "mae": 1.366471015333613, "rmse": 1.8020465084749313, "bias": -0.1393397076555657, "started_at": "2026-11-06T05:46:34", "seconds": 27.87696040600713, "other_cpu_seconds": -0.0, "peak_rss_mib": 456.90234375, "settings": {"_RJEM_MALLOC_CONF": "dirty_decay_ms:500,muzzy_decay_ms:1000"}, "gram_mib": 31.069366455078125, "trials": [[0.1, 1.7813], [1.0, 1.7576], [10.0, 1.793], [100.0, 1.9297], [1000.0, 2.0676], [10000.0, 2.1837]]}
+[I 2026-11-06 05:47:02,651] A new study created in memory with name: no-name-75c16a2e-6961-4f8d-8dfd-67603bef48cf
+[I 2026-11-06 05:47:13,584] Trial 0 finished with value: 2.1832912606049852 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.1832912606049852.
+[I 2026-11-06 05:47:15,253] Trial 1 finished with value: 1.7872482175814315 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 1.7872482175814315.
+[I 2026-11-06 05:47:16,915] Trial 2 finished with value: 1.7482336465784125 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 1.7482336465784125.
+[I 2026-11-06 05:47:18,592] Trial 3 finished with value: 1.9248580151019856 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 1.7482336465784125.
+[I 2026-11-06 05:47:20,199] Trial 4 finished with value: 1.7676382487442037 and parameters: {'alpha': 0.1}. Best is trial 2 with value: 1.7482336465784125.
+[I 2026-11-06 05:47:21,943] Trial 5 finished with value: 2.068925162835457 and parameters: {'alpha': 1000.0}. Best is trial 2 with value: 1.7482336465784125.
+======== training done.
+{"D": 2000, "gamma": 0.05, "seed": 2, "d": 2018, "val_rmse": 1.7482336465784125, "alpha": 1.0, "mae": 1.3510239518948917, "rmse": 1.7863394483789639, "bias": -0.12117935227626953, "started_at": "2026-11-06T05:47:02", "seconds": 27.053463201009436, "other_cpu_seconds": -0.2, "peak_rss_mib": 460.171875, "settings": {"_RJEM_MALLOC_CONF": "dirty_decay_ms:500,muzzy_decay_ms:1000"}, "gram_mib": 31.069366455078125, "trials": [[0.1, 1.7676], [1.0, 1.7482], [10.0, 1.7872], [100.0, 1.9249], [1000.0, 2.0689], [10000.0, 2.1833]]}
+[I 2026-11-06 05:47:29,936] A new study created in memory with name: no-name-79e81500-4eea-4e5d-b2c2-b55061001eb9
+[I 2026-11-06 05:47:41,907] Trial 0 finished with value: 2.1827260748709203 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.1827260748709203.
+[I 2026-11-06 05:47:43,595] Trial 1 finished with value: 1.7891332114077718 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 1.7891332114077718.
+[I 2026-11-06 05:47:45,324] Trial 2 finished with value: 1.7509100307679244 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 1.7509100307679244.
+[I 2026-11-06 05:47:47,015] Trial 3 finished with value: 1.9234731298097407 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 1.7509100307679244.
+[I 2026-11-06 05:47:48,665] Trial 4 finished with value: 1.7711476587986754 and parameters: {'alpha': 0.1}. Best is trial 2 with value: 1.7509100307679244.
+[I 2026-11-06 05:47:50,354] Trial 5 finished with value: 2.0651685098549946 and parameters: {'alpha': 1000.0}. Best is trial 2 with value: 1.7509100307679244.
+======== training done.
+{"D": 2000, "gamma": 0.05, "seed": 3, "d": 2018, "val_rmse": 1.7509100307679244, "alpha": 1.0, "mae": 1.3589362107198764, "rmse": 1.798030450433008, "bias": -0.12479795914993254, "started_at": "2026-11-06T05:47:29", "seconds": 28.457856028006063, "other_cpu_seconds": 0.0, "peak_rss_mib": 452.265625, "settings": {"_RJEM_MALLOC_CONF": "dirty_decay_ms:500,muzzy_decay_ms:1000"}, "gram_mib": 31.069366455078125, "trials": [[0.1, 1.7711], [1.0, 1.7509], [10.0, 1.7891], [100.0, 1.9235], [1000.0, 2.0652], [10000.0, 2.1827]]}
+[I 2026-11-06 05:47:58,611] A new study created in memory with name: no-name-27f53895-6c1e-4d6e-946d-ab6947e8fd5d
+[I 2026-11-06 05:48:24,632] Trial 0 finished with value: 2.182653175466021 and parameters: {'alpha': 10000.0}. Best is trial 0 with value: 2.182653175466021.
+[I 2026-11-06 05:48:29,030] Trial 1 finished with value: 1.7734393259298429 and parameters: {'alpha': 10.0}. Best is trial 1 with value: 1.7734393259298429.
+[I 2026-11-06 05:48:32,452] Trial 2 finished with value: 1.7365611993885386 and parameters: {'alpha': 1.0}. Best is trial 2 with value: 1.7365611993885386.
+[I 2026-11-06 05:48:35,788] Trial 3 finished with value: 1.9185335234944452 and parameters: {'alpha': 100.0}. Best is trial 2 with value: 1.7365611993885386.
+[I 2026-11-06 05:48:39,148] Trial 4 finished with value: 1.77023744013086 and parameters: {'alpha': 0.1}. Best is trial 2 with value: 1.7365611993885386.
+[I 2026-11-06 05:48:42,519] Trial 5 finished with value: 2.0646270096946977 and parameters: {'alpha': 1000.0}. Best is trial 2 with value: 1.7365611993885386.
+======== training done.
+{"D": 4000, "gamma": 0.05, "seed": 0, "d": 4018, "val_rmse": 1.7365611993885386, "alpha": 1.0, "mae": 1.3463526597118298, "rmse": 1.7836378835055882, "bias": -0.12688047110848846, "started_at": "2026-11-06T05:47:58", "seconds": 61.92906806000974, "other_cpu_seconds": 1.1, "peak_rss_mib": 1062.5625, "settings": {"_RJEM_MALLOC_CONF": "dirty_decay_ms:500,muzzy_decay_ms:1000"}, "gram_mib": 123.17141723632812, "trials": [[0.1, 1.7702], [1.0, 1.7366], [10.0, 1.7734], [100.0, 1.9185], [1000.0, 2.0646], [10000.0, 2.1827]]}
+=== 2026-11-06T05:49:00+01:00 figure data
+ridge bias map correlation, 2015 against 2016: 0.81
+xgb bias map correlation, 2015 against 2016: 0.11
+rff2000 bias map correlation, 2015 against 2016: 0.107
+average of boosting and 2,000 random features, test MAE: 1.3186
+=== 2026-11-06T05:49:00+01:00 done

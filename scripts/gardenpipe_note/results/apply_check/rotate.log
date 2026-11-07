@@ -1,0 +1,8 @@
+d4m: warm, 3,683 of 3,683 MiB resident
+1 published 7c64551632de exit=0 | start: resident 1228 MiB, available 27220 MiB | end: resident 1228 MiB, available 26980 MiB | peak RSS: 528 MiB | 154.26 s | test R^2: 0.502 on 23,916,666 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+2 patched be906867b2f2 exit=0 | start: resident 1228 MiB, available 27262 MiB | end: resident 1228 MiB, available 27050 MiB | peak RSS: 452 MiB | 141.98 s | test R^2: 0.502 on 23,916,666 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+3 patched be906867b2f2 exit=0 | start: resident 1228 MiB, available 27274 MiB | end: resident 1228 MiB, available 27061 MiB | peak RSS: 435 MiB | 144.35 s | test R^2: 0.502 on 23,916,666 rows
+d4m: warm, 3,683 of 3,683 MiB resident
+4 published 7c64551632de exit=0 | start: resident 1228 MiB, available 27298 MiB | end: resident 1228 MiB, available 27109 MiB | peak RSS: 526 MiB | 152.43 s | test R^2: 0.502 on 23,916,666 rows

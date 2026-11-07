@@ -33,7 +33,7 @@ phase "model comparison"
 "$PY" "$NOTE/feature_width.py"
 
 phase "time and memory by model"
-"$PY" "$NOTE/boosting_weather.py" "$WORK" | tee -a "$WORK/boosting_weather.jsonl"
+"$PY" "$NOTE/boosting_weather.py" "$WORK" | grep '^{' | tee -a "$WORK/boosting_weather.jsonl"
 for spec in "0 0" "500 0" "2000 0" "2000 1" "2000 2" "2000 3" "4000 0"; do
   read -r width seed <<< "$spec"
   "$PY" "$NOTE/random_features.py" --D "$width" --seed "$seed" --out "$WORK/rff.jsonl" --pred-dir "$WORK"

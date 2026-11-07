@@ -1,0 +1,9 @@
+mode         setting     rows loader        peaks, MiB         times, s         test R2 
+materialize  published     4M 7c64551632de  [2390, 2441]       [35.2, 36.2]     0.5083425401423
+materialize  patched       4M be906867b2f2  [2369, 2343]       [37.5, 39.6]     0.5083425401423
+materialize  batch200k     4M be906867b2f2  [2377, 2377]       [30.6, 30.6]     0.5083425401423
+materialize  larger        4M 278db29cd861  [2365, 2452]       [35.5, 34.2]     0.5083425401423
+stream       published     4M 7c64551632de  [683, 674]         [51.9, 52.1]     0.5083425401423
+stream       patched       4M be906867b2f2  [602, 603]         [49.1, 50.8]     0.5083425401423
+stream       batch200k     4M be906867b2f2  [696, 701]         [36.3, 35.8]     0.5083425401423
+stream       larger        4M 278db29cd861  [678, 677]         [43.6, 42.4]     0.5083425401423

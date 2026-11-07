@@ -30,5 +30,5 @@
 <rect x="240.0" y="194.0" width="286.0" height="46.0" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
 <text x="383.0" y="222.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Prefetch budget, counted in bytes</text>
 <rect x="240.0" y="256.0" width="456.0" height="40.0" rx="4" fill="#f5f5f5" stroke="#d2d2d2"/>
-<text x="468.0" y="281.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Interpreter and libraries</text>
+<text x="468.0" y="281.0" font-size="14" font-weight="400" text-anchor="middle" fill="#111111">Interpreter, libraries, reader buffers</text>
 </g></svg>

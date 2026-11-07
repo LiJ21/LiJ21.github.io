@@ -29,16 +29,21 @@ def resident_bytes(fd, size):
 
 state, directory = sys.argv[1], Path(sys.argv[2])
 assert state in ("cold", "warm"), state
-total = held = 0
-for path in sorted(directory.glob("*.parquet")):
+paths = sorted(directory.glob("*.parquet"))
+for path in paths:
     fd = os.open(path, os.O_RDONLY)
-    size = os.fstat(fd).st_size
     if state == "cold":
         os.fsync(fd)
         os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
     else:
         while os.read(fd, 1 << 24):
             pass
+    os.close(fd)
+
+total = held = 0
+for path in paths:
+    fd = os.open(path, os.O_RDONLY)
+    size = os.fstat(fd).st_size
     total += size
     held += resident_bytes(fd, size)
     os.close(fd)

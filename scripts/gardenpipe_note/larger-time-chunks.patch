@@ -1,0 +1,26 @@
+diff --git a/gardenpipe/data.py b/gardenpipe/data.py
+index 1635116..6d00724 100644
+--- a/gardenpipe/data.py
++++ b/gardenpipe/data.py
+@@ -189,6 +189,12 @@ def _epoch_ns(col: str) -> pl.Expr:
+     return pl.col(col).cast(pl.Datetime("ns")).dt.epoch("ns")
+ 
+ 
++# Times fetched per query. A query costs the same however few rows it returns,
++# so fetching one batch of times at a time spends a tenth of a pass on queries.
++# A million times hold 8 MiB.
++_TIME_CHUNK_ROWS = 1_000_000
++
++
+ def _time_windows(
+     chunks: Iterable[pl.Series], batch_size: int, name: str
+ ) -> Iterator[tuple[int, int, int]]:
+@@ -1183,7 +1189,7 @@ class FeatureLoader:
+         pad_ns = self._max_horizon_ns()
+         engine = _streamed_engine(hint.polars_engine)
+         group_max_times = self._target_group_max_times(scan(), engine)
+-        times = self._time_chunks(scan, hint.batch_size, engine)
++        times = self._time_chunks(scan, max(hint.batch_size, _TIME_CHUNK_ROWS), engine)
+         for start, stop, end_t_ns in _time_windows(
+             times, hint.batch_size, f"{name} ({self.target_time})"
+         ):

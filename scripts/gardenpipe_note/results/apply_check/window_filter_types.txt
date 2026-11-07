@@ -1,0 +1,118 @@
+##### patched
+polars 1.41.2 | data.py be906867b2f2
+ok   Datetime(time_unit='ns', time_zone=None)     cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone=None)     cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone=None)     cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='UTC')    cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='UTC')    cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='UTC')    cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='Europe/Amsterdam') cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='Asia/Tokyo') cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='America/New_York') cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Date                                         cases   252 same   252 differ    0 old-err    0 new-err    0
+ok   Int64                                        cases   924 same   924 differ    0 old-err    0 new-err    0
+DIFF Int32                                        cases   672 same   636 differ    0 old-err    0 new-err   36
+       newerr: InvalidOperationError: conversion from `datetime[ns]` to `i32` failed in column 'scalar' for 1 out of 1 values: [
+DIFF UInt64                                       cases   672 same   552 differ    0 old-err    0 new-err  120
+       newerr: InvalidOperationError: conversion from `datetime[ns]` to `u64` failed in column 'scalar' for 1 out of 1 values: [
+DIFF Float64                                      cases   868 same   824 differ   44 old-err    0 new-err    0
+       example: 2024 memory/in-memory x=1710720000987654304: old [] new [0, 1]
+DIFF String                                       cases   924 same   208 differ  716 old-err    0 new-err    0
+       example: before-1970 memory/in-memory x=-3456001234567891: old [0] new []
+##### guarded
+polars 1.41.2 | data.py d2baba8ea452
+ok   Datetime(time_unit='ns', time_zone=None)     cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone=None)     cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone=None)     cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='UTC')    cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='UTC')    cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='UTC')    cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='Europe/Amsterdam') cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='Asia/Tokyo') cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='America/New_York') cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Date                                         cases   252 same   252 differ    0 old-err    0 new-err    0
+ok   Int64                                        cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Int32                                        cases   672 same   672 differ    0 old-err    0 new-err    0
+ok   UInt64                                       cases   672 same   672 differ    0 old-err    0 new-err    0
+ok   Float64                                      cases   868 same   868 differ    0 old-err    0 new-err    0
+ok   String                                       cases   924 same   924 differ    0 old-err    0 new-err    0
+##### patched
+polars 2.0.0 | data.py be906867b2f2
+ok   Datetime(time_unit='ns', time_zone=None)     cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone=None)     cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone=None)     cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='UTC')    cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='UTC')    cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='UTC')    cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='Europe/Amsterdam') cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='Asia/Tokyo') cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='America/New_York') cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Date                                         cases   252 same   252 differ    0 old-err    0 new-err    0
+ok   Int64                                        cases   924 same   924 differ    0 old-err    0 new-err    0
+DIFF Int32                                        cases   672 same   636 differ    0 old-err    0 new-err   36
+       newerr: InvalidOperationError: conversion from `datetime[ns]` to `i32` failed in column 'scalar' for 1 out of 1 values: [
+DIFF UInt64                                       cases   672 same   552 differ    0 old-err    0 new-err  120
+       newerr: InvalidOperationError: conversion from `datetime[ns]` to `u64` failed in column 'scalar' for 1 out of 1 values: [
+DIFF Float64                                      cases   868 same   824 differ   44 old-err    0 new-err    0
+       example: 2024 memory/in-memory x=1710720000987654304: old [] new [0, 1]
+ok   String                                       cases   924 same     0 differ    0 old-err  924 new-err    0
+       olderr: InvalidOperationError: casting from string to datetime is not supported.
+##### guarded
+polars 2.0.0 | data.py d2baba8ea452
+ok   Datetime(time_unit='ns', time_zone=None)     cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone=None)     cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone=None)     cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='UTC')    cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='UTC')    cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='UTC')    cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='Europe/Amsterdam') cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='Asia/Tokyo') cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='America/New_York') cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Date                                         cases   252 same   252 differ    0 old-err    0 new-err    0
+ok   Int64                                        cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Int32                                        cases   672 same   672 differ    0 old-err    0 new-err    0
+ok   UInt64                                       cases   672 same   672 differ    0 old-err    0 new-err    0
+ok   Float64                                      cases   868 same   868 differ    0 old-err    0 new-err    0
+ok   String                                       cases   924 same     0 differ    0 old-err  924 new-err  924
+       olderr: InvalidOperationError: casting from string to datetime is not supported.
+       newerr: InvalidOperationError: casting from string to datetime is not supported.
+##### patched
+polars 2.1.0 | data.py be906867b2f2
+ok   Datetime(time_unit='ns', time_zone=None)     cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone=None)     cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone=None)     cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='UTC')    cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='UTC')    cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='UTC')    cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='Europe/Amsterdam') cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='Asia/Tokyo') cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='America/New_York') cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Date                                         cases   252 same   252 differ    0 old-err    0 new-err    0
+ok   Int64                                        cases   924 same   924 differ    0 old-err    0 new-err    0
+DIFF Int32                                        cases   672 same   636 differ    0 old-err    0 new-err   36
+       newerr: InvalidOperationError: conversion from `datetime[ns]` to `i32` failed in column 'scalar' for 1 out of 1 values: [
+DIFF UInt64                                       cases   672 same   552 differ    0 old-err    0 new-err  120
+       newerr: InvalidOperationError: conversion from `datetime[ns]` to `u64` failed in column 'scalar' for 1 out of 1 values: [
+DIFF Float64                                      cases   868 same   824 differ   44 old-err    0 new-err    0
+       example: 2024 memory/in-memory x=1710720000987654304: old [] new [0, 1]
+ok   String                                       cases   924 same     0 differ    0 old-err  924 new-err    0
+       olderr: InvalidOperationError: casting from string to datetime is not supported.
+##### guarded
+polars 2.1.0 | data.py d2baba8ea452
+ok   Datetime(time_unit='ns', time_zone=None)     cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone=None)     cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone=None)     cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='UTC')    cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='UTC')    cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='UTC')    cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ns', time_zone='Europe/Amsterdam') cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='us', time_zone='Asia/Tokyo') cases   632 same   632 differ    0 old-err    0 new-err    0
+ok   Datetime(time_unit='ms', time_zone='America/New_York') cases   532 same   532 differ    0 old-err    0 new-err    0
+ok   Date                                         cases   252 same   252 differ    0 old-err    0 new-err    0
+ok   Int64                                        cases   924 same   924 differ    0 old-err    0 new-err    0
+ok   Int32                                        cases   672 same   672 differ    0 old-err    0 new-err    0
+ok   UInt64                                       cases   672 same   672 differ    0 old-err    0 new-err    0
+ok   Float64                                      cases   868 same   868 differ    0 old-err    0 new-err    0
+ok   String                                       cases   924 same     0 differ    0 old-err  924 new-err  924
+       olderr: InvalidOperationError: casting from string to datetime is not supported.
+       newerr: InvalidOperationError: casting from string to datetime is not supported.

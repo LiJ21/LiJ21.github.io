@@ -12,6 +12,11 @@ def _busy_seconds():
     return (user + nice + system + irq + softirq + steal) / os.sysconf("SC_CLK_TCK")
 
 
+def _settings():
+    """The environment that changes how Polars reads and allocates. Polars itself writes _RJEM_MALLOC_CONF on import."""
+    return {k: v for k, v in sorted(os.environ.items()) if k.startswith(("POLARS_", "_RJEM_"))}
+
+
 class Stopwatch:
     """Start after the imports. other_cpu_seconds is CPU used by every other process during the run."""
 
@@ -28,4 +33,5 @@ class Stopwatch:
             seconds=time.perf_counter() - self.wall,
             other_cpu_seconds=round(_busy_seconds() - self.busy - own, 1),
             peak_rss_mib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024,
+            settings=_settings(),
         )

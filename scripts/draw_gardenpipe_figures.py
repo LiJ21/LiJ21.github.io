@@ -47,9 +47,10 @@ class Figure:
     def arrow(self, x1, y1, x2, y2):
         self.parts.append(f'<path d="M{x1:.1f} {y1:.1f} L{x2:.1f} {y2:.1f}" fill="none" stroke="{INK}" stroke-width="1.6" marker-end="url(#arrow)"/>')
 
-    def line(self, points, stroke, width=2):
+    def line(self, points, stroke, width=2, dash=None):
         path = ' '.join(f'{"M" if i == 0 else "L"}{x:.1f} {y:.1f}' for i, (x, y) in enumerate(points))
-        self.parts.append(f'<path d="{path}" fill="none" stroke="{stroke}" stroke-width="{width}" stroke-linejoin="round" stroke-linecap="round"/>')
+        dashes = f' stroke-dasharray="{dash}"' if dash else ''
+        self.parts.append(f'<path d="{path}" fill="none" stroke="{stroke}" stroke-width="{width}" stroke-linejoin="round" stroke-linecap="round"{dashes}/>')
 
     def dot(self, x, y, fill, radius=4):
         # The white ring keeps markers legible where they meet a line.
@@ -59,8 +60,8 @@ class Figure:
         self.parts.append(f'<path d="M{x - size:.1f} {y - size:.1f} L{x + size:.1f} {y + size:.1f} M{x - size:.1f} {y + size:.1f} L{x + size:.1f} {y - size:.1f}" stroke="{stroke}" stroke-width="2.5" stroke-linecap="round"/>')
 
     def legend(self, x, y, entries):
-        for label, color in entries:
-            self.parts.append(f'<rect x="{x}" y="{y - 9}" width="16" height="3" rx="1.5" fill="{color}"/>')
+        for label, color, *dash in entries:
+            self.line([(x, y - 7.5), (x + 16, y - 7.5)], color, 3 if not dash else 2, *dash)
             self.text(x + 22, y - 3, label, 13, fill=MUTED)
             x += 34 + 7.4 * len(label)
 
@@ -119,7 +120,7 @@ def budget():
     f.arrow(378, 140, 406, 140)
     f.arrow(526, 140, 554, 140)
     f.box(240, 194, 286, 46, ['Prefetch budget, counted in bytes'])
-    f.box(240, 256, 456, 40, ['Interpreter and libraries'])
+    f.box(240, 256, 456, 40, ['Interpreter, libraries, reader buffers'])
     f.save('budget.svg')
 
 
@@ -145,6 +146,32 @@ def scale():
     f.save('scale.svg')
 
 
+def density():
+    d = DATA['density']
+    f = Figure('Peak memory against rows per date, before and after the two fixes', 720, 356)
+    f.heading('PEAK MEMORY AS EACH DATE GROWS')
+    f.legend(24, 62, [('First version', CONTROL), ('Both fixes', STREAM), ('Both fixes, same look-ahead in rows', STREAM, '2 5')])
+    ax = Axes(f, 72, 100, 590, 190, (0.8, 110), (0, 1.25), log_x=True)
+    ax.y_label('Peak RSS, GiB')
+    ax.y_ticks([0, 0.5, 1.0], lambda v: f'{v:.1f}')
+    ax.x_ticks([1, 4, 10, 20, 40, 80], lambda v: f'{v}M')
+    ax.x_label('Rows per date, five dates (logarithmic)')
+    f.rule(ax.x0, ax.py(1), ax.x0 + ax.w, ax.py(1), INK)
+    f.text(ax.x0 + 6, ax.py(1) - 7, '1 GiB', 13)
+    for name, color, dash in (('first', CONTROL, None), ('fixed', STREAM, None), ('same_lookahead', STREAM, '2 5')):
+        points = [(ax.px(x), ax.py(y / 1024)) for x, y in d[name]]
+        f.line(points, color, 2, dash)
+        if not dash:
+            for x, y in points:
+                f.dot(x, y, color)
+    for name in ('first', 'fixed'):
+        x, y = d[name][-1]
+        f.text(ax.px(x) + 10, ax.py(y / 1024) + 5, f'{y / 1024:.1f} GiB' if y >= 1024 else f'{y} MiB', 13, bold=True)
+    x, y = d['same_lookahead'][-1]
+    f.text(ax.px(x) + 10, ax.py(y / 1024) + 11, f'{y} MiB', 13, bold=True)
+    f.save('density.svg')
+
+
 def cap():
     d = DATA['cap']
     f = Figure('Memory over time for the same job under a one gibibyte limit', 720, 320)
@@ -163,7 +190,7 @@ def cap():
     f.line([(ax.px(t), ax.py(v)) for t, v in d['materialize']], CONTROL)
     x, y = d['materialize'][-1]
     f.cross(ax.px(x), ax.py(y), CONTROL)
-    f.text(ax.px(x) + 15, ax.py(y) + 5, f'Killed at {d["killed_after"]:.0f} s', 13, bold=True)
+    f.text(ax.px(x) + 15, ax.py(1) + 19, f'Killed at {d["killed_after"]:.0f} s', 13, bold=True)
     f.text(ax.px(d['stream'][-1][0]), ax.py(d['stream'][-1][1]) + 24, 'Finished', 13, bold=True, anchor='end')
     f.save('cap.svg')
 
@@ -229,7 +256,7 @@ def width():
     ax.x_label('Features in the linear model (logarithmic)')
     y = ax.py(d['boosting'])
     f.rule(ax.x0, y, ax.x0 + ax.w, y, INK)
-    f.text(ax.x0 + 6, y + 18, f"Gradient boosting, {d['boosting']:.2f} °C, holds rows in memory", 13)
+    f.text(ax.x0 + 6, y - 8, f"Gradient boosting, {d['boosting']:.2f} °C, holds rows in memory", 13)
     f.line([(ax.px(p['d']), ax.py(p['mae'])) for p in d['points']], STREAM)
     for p in d['points']:
         f.dot(ax.px(p['d']), ax.py(p['mae']), STREAM)
@@ -240,6 +267,7 @@ def width():
 
 budget()
 scale()
+density()
 cap()
 weeks()
 bias_map()

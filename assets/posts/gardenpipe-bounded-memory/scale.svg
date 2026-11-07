@@ -4,9 +4,9 @@
 <rect width="720" height="356" fill="white"/>
 <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#111111">
 <text x="24.0" y="32.0" font-size="13" font-weight="600" text-anchor="start" fill="#111111">PEAK MEMORY AS THE DATA GROW</text>
-<rect x="24" y="53" width="16" height="3" rx="1.5" fill="#d95926"/>
+<path d="M24.0 54.5 L40.0 54.5" fill="none" stroke="#d95926" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="46.0" y="59.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Materialized in memory</text>
-<rect x="220.8" y="53" width="16" height="3" rx="1.5" fill="#0550ae"/>
+<path d="M220.8 54.5 L236.8 54.5" fill="none" stroke="#0550ae" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="242.8" y="59.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Streamed</text>
 <text x="72.0" y="88.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Peak RSS, GiB</text>
 <path d="M72.0 290.0 L662.0 290.0" fill="none" stroke="#e6e6e6" stroke-width="1"/>
@@ -26,20 +26,20 @@
 <text x="491.2" y="310.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">270</text>
 <text x="630.9" y="310.0" font-size="12" font-weight="400" text-anchor="middle" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">360</text>
 <text x="367.0" y="332.0" font-size="13" font-weight="400" text-anchor="middle" fill="#505050">Rows in the dataset, millions</text>
-<path d="M103.1 276.3 L134.1 267.7 L196.2 252.1 L258.3 234.0 L444.6 179.4 L630.9 124.8" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="103.1" cy="276.3" r="6" fill="white"/><circle cx="103.1" cy="276.3" r="4" fill="#d95926"/>
-<circle cx="134.1" cy="267.7" r="6" fill="white"/><circle cx="134.1" cy="267.7" r="4" fill="#d95926"/>
-<circle cx="196.2" cy="252.1" r="6" fill="white"/><circle cx="196.2" cy="252.1" r="4" fill="#d95926"/>
-<circle cx="258.3" cy="234.0" r="6" fill="white"/><circle cx="258.3" cy="234.0" r="4" fill="#d95926"/>
-<circle cx="444.6" cy="179.4" r="6" fill="white"/><circle cx="444.6" cy="179.4" r="4" fill="#d95926"/>
-<circle cx="630.9" cy="124.8" r="6" fill="white"/><circle cx="630.9" cy="124.8" r="4" fill="#d95926"/>
-<path d="M103.1 285.0 L134.1 285.0 L196.2 284.2 L258.3 284.2 L444.6 284.3 L630.9 284.1" fill="none" stroke="#0550ae" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="103.1" cy="285.0" r="6" fill="white"/><circle cx="103.1" cy="285.0" r="4" fill="#0550ae"/>
-<circle cx="134.1" cy="285.0" r="6" fill="white"/><circle cx="134.1" cy="285.0" r="4" fill="#0550ae"/>
-<circle cx="196.2" cy="284.2" r="6" fill="white"/><circle cx="196.2" cy="284.2" r="4" fill="#0550ae"/>
+<path d="M103.1 275.3 L134.1 267.0 L196.2 251.1 L258.3 233.3 L444.6 179.1 L630.9 133.3" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="103.1" cy="275.3" r="6" fill="white"/><circle cx="103.1" cy="275.3" r="4" fill="#d95926"/>
+<circle cx="134.1" cy="267.0" r="6" fill="white"/><circle cx="134.1" cy="267.0" r="4" fill="#d95926"/>
+<circle cx="196.2" cy="251.1" r="6" fill="white"/><circle cx="196.2" cy="251.1" r="4" fill="#d95926"/>
+<circle cx="258.3" cy="233.3" r="6" fill="white"/><circle cx="258.3" cy="233.3" r="4" fill="#d95926"/>
+<circle cx="444.6" cy="179.1" r="6" fill="white"/><circle cx="444.6" cy="179.1" r="4" fill="#d95926"/>
+<circle cx="630.9" cy="133.3" r="6" fill="white"/><circle cx="630.9" cy="133.3" r="4" fill="#d95926"/>
+<path d="M103.1 284.5 L134.1 284.3 L196.2 284.4 L258.3 284.2 L444.6 284.2 L630.9 284.3" fill="none" stroke="#0550ae" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="103.1" cy="284.5" r="6" fill="white"/><circle cx="103.1" cy="284.5" r="4" fill="#0550ae"/>
+<circle cx="134.1" cy="284.3" r="6" fill="white"/><circle cx="134.1" cy="284.3" r="4" fill="#0550ae"/>
+<circle cx="196.2" cy="284.4" r="6" fill="white"/><circle cx="196.2" cy="284.4" r="4" fill="#0550ae"/>
 <circle cx="258.3" cy="284.2" r="6" fill="white"/><circle cx="258.3" cy="284.2" r="4" fill="#0550ae"/>
-<circle cx="444.6" cy="284.3" r="6" fill="white"/><circle cx="444.6" cy="284.3" r="4" fill="#0550ae"/>
-<circle cx="630.9" cy="284.1" r="6" fill="white"/><circle cx="630.9" cy="284.1" r="4" fill="#0550ae"/>
-<text x="620.9" y="112.8" font-size="13" font-weight="600" text-anchor="end" fill="#111111">17.4 GiB</text>
-<text x="628.9" y="270.1" font-size="13" font-weight="600" text-anchor="end" fill="#111111">0.6 GiB</text>
+<circle cx="444.6" cy="284.2" r="6" fill="white"/><circle cx="444.6" cy="284.2" r="4" fill="#0550ae"/>
+<circle cx="630.9" cy="284.3" r="6" fill="white"/><circle cx="630.9" cy="284.3" r="4" fill="#0550ae"/>
+<text x="620.9" y="121.3" font-size="13" font-weight="600" text-anchor="end" fill="#111111">16.5 GiB</text>
+<text x="628.9" y="270.3" font-size="13" font-weight="600" text-anchor="end" fill="#111111">0.6 GiB</text>
 </g></svg>

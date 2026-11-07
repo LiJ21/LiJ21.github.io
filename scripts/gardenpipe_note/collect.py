@@ -1,7 +1,8 @@
 """Gather experiment results into data/gardenpipe-note.json for the figures.
 
-    python collect.py WORK_DIR
-WORK_DIR holds the results*.jsonl files, rss/, and the CSV files from figure_data.py.
+    python collect.py PATCHED_DIR PUBLISHED_DIR
+PATCHED_DIR holds the grids run with both patches: results*.jsonl, rss/, and the CSV files from figure_data.py.
+PUBLISHED_DIR holds results_followup.jsonl, whose curves the rows-per-date figure draws.
 """
 
 import csv
@@ -11,14 +12,14 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-work = Path(sys.argv[1])
+work, published = Path(sys.argv[1]), Path(sys.argv[2])
 
 
 def load(path):
-    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+    return [json.loads(line) for line in path.read_text().splitlines() if line.startswith("{")]
 
 
-records = [record for path in sorted(work.glob("results*.jsonl")) for record in load(path)]
+records = [record for path in sorted(work.glob("results*.jsonl")) for record in load(path)] + load(published / "results_followup.jsonl")
 
 
 def trace(name, points=240):
@@ -58,9 +59,19 @@ def size(mib):
     return f"{mib * 1024:.1f} KiB" if mib < 1 else f"{mib:.0f} MiB"
 
 
+def curve(*tags):
+    """Peak against rows per date, from the five-date runs with these tags."""
+    return sorted([r["rows"] / 1e6, round(r["peak_rss_mib"])] for r in records if r["tag"] in tags)
+
+
 cap_stream, cap_mat = trace("cap_stream.csv"), trace("cap_mat.csv")
 out = {
     "scale": sorted(scale, key=lambda r: (r["mode"], r["rows_m"])),
+    "density": {
+        "first": curve("density5", "mech-base"),
+        "fixed": curve("chunk-curve"),
+        "same_lookahead": curve("chunk-flat"),
+    },
     "cap": {"stream": cap_stream, "materialize": cap_mat, "killed_after": cap_mat[-1][0]},
     "weeks": {"winter": week("winter", "2015-01-12"), "summer": week("summer", "2015-07-13")},
     "bias": {"ridge": bias("ridge"), "boosting": bias("xgb")},

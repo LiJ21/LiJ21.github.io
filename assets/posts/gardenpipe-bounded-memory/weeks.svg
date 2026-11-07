@@ -4,11 +4,11 @@
 <rect width="720" height="444" fill="white"/>
 <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#111111">
 <text x="24.0" y="32.0" font-size="13" font-weight="600" text-anchor="start" fill="#111111">SIX-HOUR FORECASTS, TWO FIXED WEEKS OF 2015</text>
-<rect x="24" y="53" width="16" height="3" rx="1.5" fill="#111111"/>
+<path d="M24.0 54.5 L40.0 54.5" fill="none" stroke="#111111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="46.0" y="59.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Observed</text>
-<rect x="117.2" y="53" width="16" height="3" rx="1.5" fill="#0550ae"/>
+<path d="M117.2 54.5 L133.2 54.5" fill="none" stroke="#0550ae" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="139.2" y="59.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Ridge</text>
-<rect x="188.2" y="53" width="16" height="3" rx="1.5" fill="#d95926"/>
+<path d="M188.2 54.5 L204.2 54.5" fill="none" stroke="#d95926" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="210.2" y="59.0" font-size="13" font-weight="400" text-anchor="start" fill="#505050">Persistence</text>
 <path d="M72.0 220.0 L662.0 220.0" fill="none" stroke="#e6e6e6" stroke-width="1"/>
 <text x="62.0" y="224.0" font-size="12" font-weight="400" text-anchor="end" fill="#505050" font-family="ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace">-5°</text>
