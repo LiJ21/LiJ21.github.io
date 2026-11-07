@@ -1,0 +1,34 @@
+polars 1.41.2: d2baba8ea452 against 05070cd3a9a2
+same after 1970|5s|batch 700|wide|streaming ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same after 1970|5s|batch 700|wide|in-memory ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same after 1970|5s|batch 700|long|streaming 12000 rows 18 batches 8acfd5aabf47
+same after 1970|5s|batch 700|long|in-memory 12000 rows 18 batches 8acfd5aabf47
+same after 1970|5s|batch 3000|wide|streaming ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same after 1970|5s|batch 3000|wide|in-memory ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same after 1970|5s|batch 3000|long|streaming 12000 rows 5 batches 1475b2a601b9
+same after 1970|5s|batch 3000|long|in-memory 12000 rows 5 batches 1475b2a601b9
+same after 1970|1500us|batch 700|wide|streaming ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same after 1970|1500us|batch 700|wide|in-memory ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same after 1970|1500us|batch 700|long|streaming 12000 rows 18 batches 3da382cf07e4
+same after 1970|1500us|batch 700|long|in-memory 12000 rows 18 batches 3da382cf07e4
+same after 1970|1500us|batch 3000|wide|streaming ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same after 1970|1500us|batch 3000|wide|in-memory ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same after 1970|1500us|batch 3000|long|streaming 12000 rows 5 batches bf3be7d7ed43
+same after 1970|1500us|batch 3000|long|in-memory 12000 rows 5 batches bf3be7d7ed43
+same before 1970|5s|batch 700|wide|streaming ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same before 1970|5s|batch 700|wide|in-memory ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same before 1970|5s|batch 700|long|streaming 12000 rows 18 batches 09c92e87ee6e
+same before 1970|5s|batch 700|long|in-memory 12000 rows 18 batches 09c92e87ee6e
+same before 1970|5s|batch 3000|wide|streaming ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same before 1970|5s|batch 3000|wide|in-memory ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same before 1970|5s|batch 3000|long|streaming 12000 rows 5 batches 4801bcbd112f
+same before 1970|5s|batch 3000|long|in-memory 12000 rows 5 batches 4801bcbd112f
+same before 1970|1500us|batch 700|wide|streaming ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same before 1970|1500us|batch 700|wide|in-memory ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same before 1970|1500us|batch 700|long|streaming 12000 rows 18 batches f59304cabc69
+same before 1970|1500us|batch 700|long|in-memory 12000 rows 18 batches f59304cabc69
+same before 1970|1500us|batch 3000|wide|streaming ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same before 1970|1500us|batch 3000|wide|in-memory ERROR SchemaError: datatypes of join keys don't match - `time`: datetime[ns] on left does
+same before 1970|1500us|batch 3000|long|streaming 12000 rows 5 batches 2dcf9daca70e
+same before 1970|1500us|batch 3000|long|in-memory 12000 rows 5 batches 2dcf9daca70e
+32 of 32 identical

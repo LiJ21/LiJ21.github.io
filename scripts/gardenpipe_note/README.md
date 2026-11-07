@@ -5,7 +5,9 @@ The scripts behind the note *Arbitrarily large data, bounded memory*. They run a
 note quotes that commit with two small changes to `gardenpipe/data.py`, kept here as `window-filter.patch` and
 `time-chunks.patch`, to apply in that order. In GardenPipe they are commits `4066ad2` and `ab41d38`, and `main` has
 both since `89d7244`, which adds `time-column-guard.patch` for unusual time columns. `RESULTS.md` holds the results
-with and without them, and explains `larger-time-chunks.patch`, a third change that was tested and not adopted.
+with and without them, and explains `larger-time-chunks.patch`, a third change that was tested and not adopted. `multi-source-reads.patch` brings
+the same two fixes to `MultiSourceLoader`. It is tested and has not been applied, and `multi-source-filter.patch` is its
+first half, for measuring that half alone.
 
 ```sh
 git clone https://github.com/LiJ21/GardenPipe && cd GardenPipe && git checkout 9bc5e3e
@@ -36,6 +38,8 @@ pointing here and `WORK` at a scratch directory:
 | `loader_column_types.py`, `compare_column_types.py`, `window_filter_types.py` | The loader and the window filter on other kinds of time column |
 | `materialize_steps.py` | Memory at each step of a materialized split |
 | `multi_source_check.py` | Every batch of instruments and sources, published against patched |
+| `panel_data.py`, `measure_panel.py`, `panel_steps.py` | `MultiSourceLoader`: three stations from the generated data, one measured run, and memory at each step of one date |
+| `multi_source_types.py`, `multi_source_units.py` | `MultiSourceLoader` on each kind of time column, and with a different time unit on each stream, batch by batch, to compare two checkouts |
 | `measure_boosting.py`, `boosting_weather.py` | Gradient boosting's memory, on generated and weather data |
 | `sample_rss.py` | RSS of a process over time, split into anonymous and file-backed pages |
 | `batch_agreement.py` | How far the weather forecasts move with the batch size |

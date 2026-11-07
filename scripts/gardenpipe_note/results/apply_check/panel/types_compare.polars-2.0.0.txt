@@ -1,0 +1,19 @@
+polars 2.0.0: d2baba8ea452 against 05070cd3a9a2
+dt_ns             16 of 16 identical
+dt_us             16 of 16 identical
+dt_ms             16 of 16 identical
+dt_ns_utc         16 of 16 identical
+dt_us_ams         16 of 16 identical
+int64_ns          16 of 16 identical
+uint64_ns         16 of 16 identical
+int64_small       16 of 16 identical
+int32_small       16 of 16 identical
+uint32_small      16 of 16 identical
+float64_ns        16 of 16 identical
+float64_small     16 of 16 identical
+string_iso        16 of 16 identical, 16 fail in both
+string_space      16 of 16 identical, 16 fail in both
+date              16 of 16 identical
+time_of_day       16 of 16 identical, 16 fail in both
+duration_ns       16 of 16 identical, 16 fail in both
+272 of 272 identical

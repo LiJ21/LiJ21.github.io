@@ -1,0 +1,74 @@
+p4m: 5 dates, 205 MiB shared, 205 MiB in one file each
+p20m: 5 dates, 971 MiB shared, 1,020 MiB in one file each
+p40m: 5 dates, 1,999 MiB shared, 2,073 MiB in one file each
+p80m: 5 dates, 3,995 MiB shared, 4,086 MiB in one file each
+[ParquetFileReader]: Predicate pushdown: reading 1 / 326 row groups
+=== start 2026-11-07T01:02:08+01:00
+p4m: cold, 0 of 410 MiB resident
+main 4M shared exit=0
+p4m: cold, 0 of 410 MiB resident
+main 4M each exit=0
+p20m: cold, 0 of 1,991 MiB resident
+main 20M shared exit=0
+p20m: cold, 0 of 1,991 MiB resident
+main 20M each exit=0
+p40m: cold, 0 of 4,072 MiB resident
+main 40M shared exit=0
+p40m: cold, 0 of 4,072 MiB resident
+main 40M each exit=0
+p4m: cold, 0 of 410 MiB resident
+filter 4M shared exit=0
+p4m: cold, 0 of 410 MiB resident
+filter 4M each exit=0
+p20m: cold, 0 of 1,991 MiB resident
+filter 20M shared exit=0
+p20m: cold, 0 of 1,991 MiB resident
+filter 20M each exit=0
+p40m: cold, 0 of 4,072 MiB resident
+filter 40M shared exit=0
+p40m: cold, 0 of 4,072 MiB resident
+filter 40M each exit=0
+p4m: cold, 0 of 410 MiB resident
+both 4M shared exit=0
+p4m: cold, 0 of 410 MiB resident
+both 4M each exit=0
+p20m: cold, 0 of 1,991 MiB resident
+both 20M shared exit=0
+p20m: cold, 0 of 1,991 MiB resident
+both 20M each exit=0
+p40m: cold, 0 of 4,072 MiB resident
+both 40M shared exit=0
+p40m: cold, 0 of 4,072 MiB resident
+both 40M each exit=0
+p80m: cold, 0 of 8,081 MiB resident
+both 80M shared exit=0
+p80m: cold, 0 of 8,081 MiB resident
+both 80M each exit=0
+p40m: cold, 0 of 4,072 MiB resident
+both 40M shared exit=0
+p40m: cold, 0 of 4,072 MiB resident
+both 40M each exit=0
+=== end 2026-11-07T02:53:37+01:00
+mode         setting     rows loader        peaks, MiB         times, s         test R2 
+shared       main          4M d2baba8ea452  [570]              [35.4]           0.5023757549307
+each         main          4M d2baba8ea452  [445]              [33.0]           0.5023757549307
+shared       main         20M d2baba8ea452  [929]              [246.8]          0.5014579324373
+each         main         20M d2baba8ea452  [562]              [235.8]          0.5014579324373
+shared       main         40M d2baba8ea452  [1423]             [746.3]          0.5004144115191
+each         main         40M d2baba8ea452  [580]              [689.0]          0.5004144115191
+shared       filter        4M b50f0b12aa6a  [540]              [30.9]           0.5023757549307
+each         filter        4M b50f0b12aa6a  [424]              [31.5]           0.5023757549307
+shared       filter       20M b50f0b12aa6a  [1015]             [160.2]          0.5014579324373
+each         filter       20M b50f0b12aa6a  [555]              [154.4]          0.5014579324373
+shared       filter       40M b50f0b12aa6a  [1604]             [326.1]          0.5004144115191
+each         filter       40M b50f0b12aa6a  [558]              [308.7]          0.5004144115191
+shared       both          4M 05070cd3a9a2  [480]              [33.7]           0.5023757549307
+each         both          4M 05070cd3a9a2  [437]              [29.9]           0.5023757549307
+shared       both         20M 05070cd3a9a2  [600]              [171.9]          0.5014579324373
+each         both         20M 05070cd3a9a2  [537]              [155.9]          0.5014579324373
+shared       both         40M 05070cd3a9a2  [588, 608]         [341.7, 345.3]   0.5004144115191
+each         both         40M 05070cd3a9a2  [621, 576]         [309.3, 309.7]   0.5004144115191
+shared       both         80M 05070cd3a9a2  [739]              [704.9]          0.5003056653391
+each         both         80M 05070cd3a9a2  [612]              [620.3]          0.5003056653391
+
+[exited with code 0]

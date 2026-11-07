@@ -18,7 +18,8 @@
 # versions runs the README's table from one checkout on two versions of Polars, in turn. Only peak
 # memory is read from it, so it asks for all the data to be resident around each run, not for an idle
 # machine. panel runs MultiSourceLoader on the fixed look-ahead job, with one shared file and with one
-# file per station; it needs p4m, p20m and p40m from panel_data.py, and LABEL names the code in its record.
+# file per station; it needs p4m, p20m and p40m from panel_data.py, and p80m if JOBS adds 80:15s, and LABEL
+# names the code in its record.
 set -u
 HERE=$(cd "$(dirname "$0")" && pwd)
 PHASE=$1

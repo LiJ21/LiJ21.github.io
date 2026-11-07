@@ -18,3 +18,6 @@ The commits themselves, unpacked with git archive
   ab41d38  be906867b2f2  Polars 1.41.2  190 passed, 4 warnings, 214 subtests passed
   89d7244  d2baba8ea452  Polars 2.0.0   5 failed, 173 passed, 12 skipped, 2 warnings, 214 subtests passed
   89d7244  d2baba8ea452  Polars 1.41.2  190 passed, 4 warnings, 214 subtests passed
+multi-source-reads.patch on 89d7244, from a copy of that commit, not applied to GardenPipe
+  05070cd3a9a2  Polars 2.0.0   5 failed, 173 passed, 12 skipped, 2 warnings, 214 subtests passed
+  05070cd3a9a2  Polars 1.41.2  190 passed, 4 warnings, 214 subtests passed

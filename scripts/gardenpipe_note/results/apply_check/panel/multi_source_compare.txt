@@ -1,0 +1,22 @@
+polars 2.0.0: published d2baba8ea452, patched 05070cd3a9a2
+same instruments in one file, target_by | batch 700 | streaming 30762 rows, 44 batches, timestamps in two batches 0 and 0
+same instruments in one file, target_by | batch 700 | in-memory 30762 rows, 44 batches, timestamps in two batches 0 and 0
+same instruments in one file, target_by | batch 3000 | streaming 30762 rows, 11 batches, timestamps in two batches 0 and 0
+same instruments in one file, target_by | batch 3000 | in-memory 30762 rows, 11 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one shared file, wide | batch 700 | streaming 17302 rows, 44 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one shared file, wide | batch 700 | in-memory 17302 rows, 44 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one shared file, wide | batch 3000 | streaming 17302 rows, 11 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one shared file, wide | batch 3000 | in-memory 17302 rows, 11 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one shared file, long | batch 700 | streaming 30762 rows, 44 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one shared file, long | batch 700 | in-memory 30762 rows, 44 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one shared file, long | batch 3000 | streaming 30762 rows, 11 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one shared file, long | batch 3000 | in-memory 30762 rows, 11 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one file per source, wide | batch 700 | streaming 17302 rows, 45 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one file per source, wide | batch 700 | in-memory 17302 rows, 45 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one file per source, wide | batch 3000 | streaming 17302 rows, 11 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one file per source, wide | batch 3000 | in-memory 17302 rows, 11 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one file per source, long | batch 700 | streaming 30762 rows, 45 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one file per source, long | batch 700 | in-memory 30762 rows, 45 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one file per source, long | batch 3000 | streaming 30762 rows, 11 batches, timestamps in two batches 0 and 0
+same MultiSourceLoader, one file per source, long | batch 3000 | in-memory 30762 rows, 11 batches, timestamps in two batches 0 and 0
+20 of 20 identical
